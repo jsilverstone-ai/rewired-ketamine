@@ -172,8 +172,8 @@ export default function Home() {
           <Image
             src="/logo.png"
             alt="Rewired Ketamine"
-            width={200}
-            height={60}
+            width={1263}
+            height={395}
             className="h-12 w-auto mx-auto mb-8"
           />
           <p className="text-white/50 text-sm">
