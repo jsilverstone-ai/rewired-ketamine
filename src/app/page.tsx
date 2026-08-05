@@ -5,43 +5,60 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
       
-      {/* HEADER - Light background so the real logo shows properly */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      {/* ===== TOP BAR (Logo + Contact Info) ===== */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
           
-          {/* Large clear logo */}
+          {/* Logo - larger */}
           <Link href="/">
             <Image
               src="/logo.png"
               alt="Rewired Ketamine"
-              width={280}
+              width={300}
               height={90}
               className="h-14 md:h-16 w-auto"
               priority
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-10 text-[15px] font-medium text-[#0B1D36]">
+          {/* Contact Info */}
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#0B1D36]">
+            <div className="flex items-center gap-2">
+              <span className="font-medium">2820 NE 214th St #1002</span>
+              <span className="text-gray-400">|</span>
+              <span>Aventura, FL 33180</span>
+            </div>
+            <a href="mailto:info@rewiredketamine.com" className="hover:text-[#C9A66B] transition">
+              info@rewiredketamine.com
+            </a>
+            <a href="tel:3056766070" className="font-semibold hover:text-[#C9A66B] transition">
+              (305) 676-6070
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== NAVIGATION BAR ===== */}
+      <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+          
+          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
+            <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
             <Link href="#how-we-help" className="hover:text-[#C9A66B] transition">How We Help</Link>
             <Link href="#experience" className="hover:text-[#C9A66B] transition">The Experience</Link>
             <Link href="#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
           </nav>
 
-          <div className="flex items-center gap-5">
-            <a href="tel:3056766070" className="hidden md:block font-semibold text-[#0B1D36] hover:text-[#C9A66B] transition">
-              305-676-6070
-            </a>
-            <a
-              href="#contact"
-              className="bg-[#0B1D36] text-white text-sm font-bold px-6 py-3 rounded-full hover:bg-[#C9A66B] transition"
-            >
-              Book Free Consultation
-            </a>
-          </div>
+          <a
+            href="#contact"
+            className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-6 py-2.5 rounded hover:bg-white transition"
+          >
+            FREE CONSULTATION
+          </a>
         </div>
       </header>
 
-      {/* HERO */}
+      {/* ===== HERO ===== */}
       <section className="pt-20 pb-24 md:pt-28 md:pb-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
@@ -74,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST BAR */}
+      {/* ===== TRUST BAR ===== */}
       <section className="bg-[#0B1D36] py-7">
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-4 text-white text-sm md:text-base font-medium text-center">
           <span>★ Only local 5-star Google-reviewed clinic</span>
@@ -84,7 +101,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HOW WE HELP */}
+      {/* ===== HOW WE HELP ===== */}
       <section id="how-we-help" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -115,7 +132,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXPERIENCE */}
+      {/* ===== EXPERIENCE ===== */}
       <section id="experience" className="py-24 px-6 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0B1D36] mb-8">The Experience</h2>
@@ -129,7 +146,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* ===== FINAL CTA ===== */}
       <section id="contact" className="py-28 px-6 bg-[#0B1D36] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to take the first step?</h2>
@@ -149,7 +166,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ===== FOOTER ===== */}
       <footer className="bg-[#081525] py-14 text-white text-center">
         <div className="max-w-6xl mx-auto px-6">
           <Image
