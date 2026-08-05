@@ -1,7 +1,51 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8F6F1] text-[#2C2C2C]">
-      {/* Hero Section */}
+      {/* ===== HEADER / BRANDING ===== */}
+      <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="Rewired Ketamine logo"
+              width={160}
+              height={50}
+              className="h-10 w-auto"
+              priority
+            />
+          </Link>
+
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center gap-8 text-[#0B1D36] font-medium">
+            <Link href="/" className="hover:text-[#C9A66B] transition-colors">
+              Home
+            </Link>
+            <Link href="#how-we-help" className="hover:text-[#C9A66B] transition-colors">
+              How We Help
+            </Link>
+            <Link href="#experience" className="hover:text-[#C9A66B] transition-colors">
+              The Experience
+            </Link>
+            <Link href="#contact" className="hover:text-[#C9A66B] transition-colors">
+              Contact
+            </Link>
+          </nav>
+
+          {/* Phone */}
+          <a
+            href="tel:3056766070"
+            className="hidden sm:inline-block text-[#0B1D36] font-semibold hover:text-[#C9A66B] transition-colors"
+          >
+            305-676-6070
+          </a>
+        </div>
+      </header>
+
+      {/* ===== HERO ===== */}
       <section className="relative px-6 py-20 md:py-28 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0B1D36] mb-6 leading-tight">
@@ -25,7 +69,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Bar */}
+      {/* ===== TRUST BAR ===== */}
       <section className="bg-[#0B1D36] text-white py-6">
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-8 text-center text-sm md:text-base">
           <span>★ Only local 5-star Google-reviewed ketamine clinic</span>
@@ -35,8 +79,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How We Help */}
-      <section className="py-20 px-6">
+      {/* ===== HOW WE HELP ===== */}
+      <section id="how-we-help" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] text-center mb-16">
             How We Help
@@ -64,8 +108,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Experience */}
-      <section className="py-20 px-6 bg-white">
+      {/* ===== THE EXPERIENCE ===== */}
+      <section id="experience" className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-8">
             The Experience
@@ -83,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* ===== FINAL CTA ===== */}
       <section id="contact" className="py-20 px-6 bg-[#0B1D36] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -104,6 +148,22 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* ===== FOOTER ===== */}
+      <footer className="bg-[#0B1D36] text-white py-10 border-t border-[#C9A66B]/30">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <Image
+            src="/logo.png"
+            alt="Rewired Ketamine logo"
+            width={140}
+            height={40}
+            className="h-8 w-auto mx-auto mb-6 brightness-0 invert"
+          />
+          <p className="text-sm opacity-80">
+            © {new Date().getFullYear()} Rewired Ketamine · Aventura, Florida
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
