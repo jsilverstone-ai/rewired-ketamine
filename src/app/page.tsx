@@ -14,9 +14,9 @@ export default function Home() {
 <Image
   src="/logo.png"
   alt="Rewired Ketamine"
-  width={8000}
-  height={2400}
-  className="h-[2400px] w-auto"
+  width={600}
+  height={180}
+  className="h-28 md:h-36 w-auto"
   priority
 />
           </Link>
