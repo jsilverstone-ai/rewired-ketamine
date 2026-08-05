@@ -11,14 +11,14 @@ export default function Home() {
           
           {/* Logo - larger */}
           <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="Rewired Ketamine"
-              width={300}
-              height={90}
-              className="h-14 md:h-16 w-auto"
-              priority
-            />
+<Image
+  src="/logo.png"
+  alt="Rewired Ketamine"
+  width={420}
+  height={120}
+  className="h-20 md:h-24 w-auto"
+  priority
+/>
           </Link>
 
           {/* Contact Info */}
