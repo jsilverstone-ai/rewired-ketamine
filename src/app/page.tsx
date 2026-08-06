@@ -291,7 +291,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mb-5">
+      <div className="mb-6">
         <label htmlFor="email" className="block text-sm font-medium text-[#0B1D36] mb-1.5">Email *</label>
         <input
           type="email"
@@ -303,15 +303,19 @@ export default function Home() {
         />
       </div>
 
+      {/* SMS Consent */}
       <div className="mb-6">
-        <label htmlFor="message" className="block text-sm font-medium text-[#0B1D36] mb-1.5">How can we help? (optional)</label>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C9A66B] focus:border-transparent resize-none"
-          placeholder="Tell us a bit about what you're looking for..."
-        />
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="sms_consent"
+            required
+            className="mt-1 h-4 w-4 rounded border-gray-300 text-[#C9A66B] focus:ring-[#C9A66B]"
+          />
+          <span className="text-sm text-[#444] leading-relaxed">
+            By submitting this form I agree to receive text messages from Rewired Ketamine
+          </span>
+        </label>
       </div>
 
       <button
@@ -351,8 +355,7 @@ export default function Home() {
       </a>
     </div>
   </div>
-</section>
-      {/* ===== FOOTER ===== */}
+</section>      {/* ===== FOOTER ===== */}
       <footer className="bg-[#081525] text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
