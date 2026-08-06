@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { useState } from "react";
 
 export default function Home() {
@@ -137,7 +138,7 @@ export default function Home() {
             Start Feeling Better Today
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6">
-            Fully guided ketamine therapy with real, hands-on support every step of the way
+            Offering fully guided ketamine therapy with real, hands-on support every step of the way
           </p>
           <p className="text-lg text-white/80 mb-12">
             The only local 5-star Google-reviewed ketamine clinic
@@ -174,7 +175,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
-              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Fully Guided Sessions</h3>
+              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Guided Sessions Available</h3>
               <p className="text-[#555] leading-relaxed">
                 Every infusion is carefully supervised and guided by our clinical team so you feel safe and supported the entire time.
               </p>
@@ -207,11 +208,14 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Elfsight Google Reviews */}
-          <div className="w-full">
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2" data-elfsight-app-lazy></div>
-          </div>
+          <Script
+            src="https://elfsightcdn.com/platform.js"
+            strategy="lazyOnload"
+          />
+          <div
+            className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2"
+            data-elfsight-app-lazy
+          />
         </div>
       </section>
 
@@ -275,8 +279,8 @@ export default function Home() {
             <div>
               <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Contact Us</h4>
               <ul className="space-y-3 text-white/80 text-sm">
-                <li>Open: Sunday - Friday</li>
-                <li>By Appointment</li>
+                <li>Open: Monday - Friday</li>
+                <li>9:00AM - 5:00PM</li>
                 <li>
                   <a href="tel:+13056766070" className="hover:text-[#C9A66B] transition">Phone: (305) 676-6070</a>
                 </li>
