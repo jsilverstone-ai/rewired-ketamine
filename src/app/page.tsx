@@ -119,21 +119,17 @@ export default function Home() {
         </div>
       </header>
 
-     {/* ===== HERO with clinic background ===== */}
-<section className="relative pt-28 pb-32 md:pt-36 md:pb-40 px-6 overflow-hidden">
-  {/* Background Image */}
-  <div className="absolute inset-0 z-0">
-    <Image
-      src="/clinic.jpeg"
-      alt="Rewired Ketamine clinic"
-      fill
-      className="object-cover"
-      priority
-      quality={90}
-    />
-    {/* Dark overlay so text stays readable */}
-    <div className="absolute inset-0 bg-[#0B1D36]/70"></div>
-  </div>
+{/* ===== HERO with clinic background ===== */}
+<section 
+  className="relative pt-28 pb-32 md:pt-36 md:pb-40 px-6 overflow-hidden"
+  style={{
+    backgroundImage: "url('/clinic.jpeg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  {/* Dark overlay so text stays readable */}
+  <div className="absolute inset-0 bg-[#0B1D36]/75 z-0"></div>
 
   {/* Content */}
   <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
@@ -166,7 +162,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
       {/* ===== TRUST BAR ===== */}
       <section className="bg-[#0B1D36] py-7">
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-4 text-white text-sm md:text-base font-medium text-center">
