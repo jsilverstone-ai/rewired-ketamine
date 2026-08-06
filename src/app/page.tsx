@@ -295,7 +295,7 @@ export default function Home() {
       Every treatment space at our Aventura ketamine clinic is thoughtfully designed so you can create the exact environment that helps you feel safe and at ease. Prefer soft natural light or complete darkness? Quiet stillness, gentle music, or a television? We offer every combination so the room truly becomes <em>your</em> personal space.
     </p>
     <p className="text-lg text-[#555] leading-relaxed">
-      Comfortable recliners, private rooms, and a caring team focused entirely on you. We offer offer fully guided sessions and stay by your side through integration — so the benefits continue long after you leave.
+      Comfortable recliners, private rooms, and a caring team focused entirely on you. We offer fully guided sessions and stay by your side through integration — so the benefits continue long after you leave.
     </p>
   </div>
 </section>
