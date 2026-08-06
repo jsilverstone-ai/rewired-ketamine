@@ -101,12 +101,13 @@ export default function Home() {
       {/* ===== MAIN NAVIGATION BAR ===== */}
       <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
-            <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
-            <Link href="#how-we-help" className="hover:text-[#C9A66B] transition">How We Help</Link>
-            <Link href="#experience" className="hover:text-[#C9A66B] transition">The Experience</Link>
-            <Link href="#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
-          </nav>
+<nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
+  <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
+  <Link href="/services" className="hover:text-[#C9A66B] transition">Our Services</Link>
+  <Link href="#how-we-help" className="hover:text-[#C9A66B] transition">How We Help</Link>
+  <Link href="#experience" className="hover:text-[#C9A66B] transition">The Experience</Link>
+  <Link href="#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
+</nav>
 
           <button
             className="md:hidden p-2"
@@ -150,15 +151,15 @@ export default function Home() {
         {isMenuOpen && (
           <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
             <nav className="flex flex-col px-6 py-4 space-y-4">
-              <Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home</Link>
-              <Link href="#how-we-help" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>How We Help</Link>
-              <Link href="#experience" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>The Experience</Link>
-              <Link href="#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-              
-              <a href="#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={() => setIsMenuOpen(false)}>
-                FREE CONSULTATION
-              </a>
+<Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home</Link>
+<Link href="/services" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Our Services</Link>
+<Link href="#how-we-help" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>How We Help</Link>
+<Link href="#experience" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>The Experience</Link>
+<Link href="#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
 
+<a href="#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={() => setIsMenuOpen(false)}>
+  FREE CONSULTATION
+</a>
               {/* Social icons for mobile */}
               <div className="flex items-center justify-center gap-6 pt-4 border-t border-white/10 mt-2">
                 <a href="https://www.instagram.com/rewired_ketamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Instagram">
