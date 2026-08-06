@@ -131,8 +131,24 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      {/* ===== SERVICES GRID ===== */}
+{/* ===== VIDEO ===== */}
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-3xl mx-auto">
+    <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ paddingBottom: "56.25%" }}>
+      <iframe
+        className="absolute top-0 left-0 w-full h-full"
+        src="https://www.youtube.com/embed/Hm1IF7lZ2iY"
+        title="Rewired Ketamine Services"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+    <p className="text-center text-[#666] text-sm mt-4">
+      A quick look at the care we provide
+    </p>
+  </div>
+</section>      {/* ===== SERVICES GRID ===== */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           
