@@ -65,7 +65,6 @@ export default function Home() {
             <Link href="#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
           </nav>
 
-          {/* Mobile Hamburger */}
           <button
             className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -104,7 +103,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
             <nav className="flex flex-col px-6 py-4 space-y-4">
@@ -139,7 +137,7 @@ export default function Home() {
             Start Feeling Better Today
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6">
-            Offering fully guided ketamine therapy with real, hands-on support every step of the way
+            Fully guided ketamine therapy with real, hands-on support every step of the way
           </p>
           <p className="text-lg text-white/80 mb-12">
             The only local 5-star Google-reviewed ketamine clinic
@@ -176,7 +174,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
-              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Fully Guided Available</h3>
+              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Fully Guided Sessions</h3>
               <p className="text-[#555] leading-relaxed">
                 Every infusion is carefully supervised and guided by our clinical team so you feel safe and supported the entire time.
               </p>
@@ -197,8 +195,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== GOOGLE REVIEWS CAROUSEL ===== */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">
+              What Our Patients Say
+            </h2>
+            <p className="text-lg text-[#555]">
+              Real reviews from real patients
+            </p>
+          </div>
+
+          {/* Elfsight Google Reviews */}
+          <div className="w-full">
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2" data-elfsight-app-lazy></div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== EXPERIENCE ===== */}
-      <section id="experience" className="py-24 px-6 bg-white">
+      <section id="experience" className="py-24 px-6 bg-[#F8F5F0]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#0B1D36] mb-8">The Experience</h2>
           <p className="text-xl text-[#444] mb-8">Your comfort comes first.</p>
@@ -254,12 +272,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             
-            {/* Contact Us */}
             <div>
               <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Contact Us</h4>
               <ul className="space-y-3 text-white/80 text-sm">
-                <li>Open: Monday - Friday</li>
-                <li>9:00am - 5:00pm</li>
+                <li>Open: Sunday - Friday</li>
+                <li>By Appointment</li>
                 <li>
                   <a href="tel:+13056766070" className="hover:text-[#C9A66B] transition">Phone: (305) 676-6070</a>
                 </li>
@@ -274,7 +291,6 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Center - Full color logo + LegitScript */}
             <div className="flex flex-col items-center text-center">
               <Image
                 src="/logo.png"
@@ -299,7 +315,6 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* LegitScript Badge */}
               <a 
                 href="https://www.legitscript.com/websites/?checker_keywords=rewiredketamine.com" 
                 target="_blank" 
@@ -316,7 +331,6 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Quick Links */}
             <div>
               <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Quick Links</h4>
               <ul className="space-y-3 text-white/80 text-sm">
