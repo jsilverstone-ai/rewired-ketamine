@@ -23,11 +23,12 @@ export default function Home() {
 
           {/* Contact Info - cleaner layout */}
           {/* Contact Info with icons and working links */}
+{/* Contact Info with icons and working links */}
 <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#0B1D36]">
   
   {/* Address with pin icon */}
   <a
-    href="https://maps.google.com/?q=2820+NE+214th+St+%231002,+Aventura,+FL+33180"
+    href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D"
     target="_blank"
     rel="noopener noreferrer"
     className="flex items-center gap-2 hover:text-[#C9A66B] transition"
@@ -52,7 +53,7 @@ export default function Home() {
 
   {/* Phone with phone icon */}
   <a
-    href="tel:3056766070"
+    href="tel:+13056766070"
     className="flex items-center gap-2 font-semibold hover:text-[#C9A66B] transition"
   >
     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
