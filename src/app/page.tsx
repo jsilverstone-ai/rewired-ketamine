@@ -5,29 +5,25 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
       
-      {/* ===== TOP BAR (Logo + Contact Info) ===== */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      {/* ===== TOP BAR ===== */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row items-center justify-between gap-4">
           
-          {/* Logo - larger */}
-          <Link href="/">
-<Image
-  src="/logo.png"
-  alt="Rewired Ketamine"
-  width={1263}
-  height={395}
-  className="h-16 md:h-20 w-auto"
-  priority
-/>
+          {/* Logo - larger and clear */}
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Rewired Ketamine"
+              width={1263}
+              height={395}
+              className="h-16 md:h-20 w-auto"
+              priority
+            />
           </Link>
 
-          {/* Contact Info */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#0B1D36]">
-            <div className="flex items-center gap-2">
-              <span className="font-medium">2820 NE 214th St #1002</span>
-              <span className="text-gray-400">|</span>
-              <span>Aventura, FL 33180</span>
-            </div>
+          {/* Contact Info - cleaner layout */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#0B1D36]">
+            <span>2820 NE 214th St #1002, Aventura, FL 33180</span>
             <a href="mailto:info@rewiredketamine.com" className="hover:text-[#C9A66B] transition">
               info@rewiredketamine.com
             </a>
@@ -38,7 +34,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ===== NAVIGATION BAR ===== */}
+      {/* ===== MAIN NAVIGATION BAR ===== */}
       <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           
@@ -48,6 +44,9 @@ export default function Home() {
             <Link href="#experience" className="hover:text-[#C9A66B] transition">The Experience</Link>
             <Link href="#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
           </nav>
+
+          {/* Mobile menu button placeholder */}
+          <div className="md:hidden text-sm">Menu</div>
 
           <a
             href="#contact"
@@ -172,8 +171,8 @@ export default function Home() {
           <Image
             src="/logo.png"
             alt="Rewired Ketamine"
-            width={1263}
-            height={395}
+            width={400}
+            height={120}
             className="h-12 w-auto mx-auto mb-8"
           />
           <p className="text-white/50 text-sm">
