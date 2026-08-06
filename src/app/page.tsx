@@ -11,12 +11,12 @@ export default function Home() {
           
           {/* Logo - larger and clear */}
           <Link href="/" className="flex-shrink-0">
-           <Image
+   <Image
   src="/logo.png"
   alt="Rewired Ketamine"
   width={600}
   height={180}
-  className="h-14 md:h-16 w-auto"
+  className="h-16 md:h-20 w-auto"
   priority
 />
           </Link>
