@@ -139,7 +139,7 @@ export default function Home() {
             Start Feeling Better Today
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6">
-            Fully guided ketamine therapy with real, hands-on support every step of the way
+            Offering fully guided ketamine therapy with real, hands-on support every step of the way
           </p>
           <p className="text-lg text-white/80 mb-12">
             The only local 5-star Google-reviewed ketamine clinic
@@ -176,7 +176,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
-              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Fully Guided Sessions</h3>
+              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Fully Guided Available</h3>
               <p className="text-[#555] leading-relaxed">
                 Every infusion is carefully supervised and guided by our clinical team so you feel safe and supported the entire time.
               </p>
