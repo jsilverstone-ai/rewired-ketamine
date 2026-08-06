@@ -208,10 +208,9 @@ export default function Home() {
     The only local 5-star Google-reviewed ketamine clinic
   </p>
 
-  <p className="text-[#C9A66B] font-medium text-lg mb-12">
-    ¡Hablamos Español!
-  </p>
-
+<p className="inline-block bg-[#C9A66B] text-[#0B1D36] font-semibold text-base md:text-lg px-5 py-2 rounded-full mb-12">
+  ¡Hablamos Español!
+</p>
   <div className="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="#contact" className="inline-flex items-center justify-center bg-[#C9A66B] text-[#0B1D36] font-semibold px-10 py-5 rounded-full text-lg hover:bg-white transition">
       Book Free Consultation
