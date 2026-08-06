@@ -191,32 +191,36 @@ export default function Home() {
   aria-label="Rewired Ketamine clinic in Aventura, Florida"
 >        <div className="absolute inset-0 bg-[#0B1D36]/75 z-0"></div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-<p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
-  Aventura • South Florida
-</p>
+<div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+  <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
+    Aventura • South Florida
+  </p>
 
-<h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8">
-  Fully Guided Ketamine Therapy in Aventura
-</h1>
+  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8">
+    Fully Guided Ketamine Therapy in Aventura
+  </h1>
 
-<p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6">
-  Rewired Ketamine is a leading ketamine clinic in Aventura offering fully guided IV therapy for depression, anxiety, PTSD, and chronic pain. Serving Miami, Fort Lauderdale, and South Florida.
-</p>
+  <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6">
+    Rewired Ketamine is a leading ketamine clinic in Aventura offering fully guided IV therapy for depression, anxiety, PTSD, and chronic pain. Serving Miami, Fort Lauderdale, and South Florida.
+  </p>
 
-<p className="text-lg text-white/80 mb-12">
-  The only local 5-star Google-reviewed ketamine clinic
-</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" className="inline-flex items-center justify-center bg-[#C9A66B] text-[#0B1D36] font-semibold px-10 py-5 rounded-full text-lg hover:bg-white transition">
-              Book Free Consultation
-            </a>
-            <a href="tel:3056766070" className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-10 py-5 rounded-full text-lg hover:bg-white hover:text-[#0B1D36] transition">
-              Call 305-676-6070
-            </a>
-          </div>
-        </div>
-      </section>
+  <p className="text-lg text-white/80 mb-3">
+    The only local 5-star Google-reviewed ketamine clinic
+  </p>
+
+  <p className="text-[#C9A66B] font-medium text-lg mb-12">
+    ¡Hablamos Español!
+  </p>
+
+  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="#contact" className="inline-flex items-center justify-center bg-[#C9A66B] text-[#0B1D36] font-semibold px-10 py-5 rounded-full text-lg hover:bg-white transition">
+      Book Free Consultation
+    </a>
+    <a href="tel:3056766070" className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-10 py-5 rounded-full text-lg hover:bg-white hover:text-[#0B1D36] transition">
+      Call 305-676-6070
+    </a>
+  </div>
+</div>      </section>
 
       {/* ===== TRUST BAR ===== */}
       <section className="bg-[#0B1D36] py-7">
