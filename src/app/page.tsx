@@ -119,38 +119,53 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ===== HERO ===== */}
-      <section className="pt-20 pb-24 md:pt-28 md:pb-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
-            Aventura • South Florida
-          </p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0B1D36] leading-[1.1] mb-8">
-            Start Feeling Better Today
-          </h1>
-          <p className="text-xl md:text-2xl text-[#444] max-w-3xl mx-auto mb-6">
-            Offering fully guided ketamine therapy with real, hands-on support every step of the way
-          </p>
-          <p className="text-lg text-[#666] mb-12">
-            The only local 5-star Google-reviewed ketamine clinic
-          </p>
+     {/* ===== HERO with clinic background ===== */}
+<section className="relative pt-28 pb-32 md:pt-36 md:pb-40 px-6 overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/clinic.jpeg"
+      alt="Rewired Ketamine clinic"
+      fill
+      className="object-cover"
+      priority
+      quality={90}
+    />
+    {/* Dark overlay so text stays readable */}
+    <div className="absolute inset-0 bg-[#0B1D36]/70"></div>
+  </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center bg-[#0B1D36] text-white font-semibold px-10 py-5 rounded-full text-lg hover:bg-[#C9A66B] transition"
-            >
-              Book Free Consultation
-            </a>
-            <a
-              href="tel:3056766070"
-              className="inline-flex items-center justify-center border-2 border-[#0B1D36] text-[#0B1D36] font-semibold px-10 py-5 rounded-full text-lg hover:bg-[#0B1D36] hover:text-white transition"
-            >
-              Call 305-676-6070
-            </a>
-          </div>
-        </div>
-      </section>
+  {/* Content */}
+  <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+    <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
+      Aventura • South Florida
+    </p>
+    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8">
+      Start Feeling Better Today
+    </h1>
+    <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6">
+      Fully guided ketamine therapy with real, hands-on support every step of the way
+    </p>
+    <p className="text-lg text-white/80 mb-12">
+      The only local 5-star Google-reviewed ketamine clinic
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="#contact"
+        className="inline-flex items-center justify-center bg-[#C9A66B] text-[#0B1D36] font-semibold px-10 py-5 rounded-full text-lg hover:bg-white transition"
+      >
+        Book Free Consultation
+      </a>
+      <a
+        href="tel:3056766070"
+        className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-10 py-5 rounded-full text-lg hover:bg-white hover:text-[#0B1D36] transition"
+      >
+        Call 305-676-6070
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* ===== TRUST BAR ===== */}
       <section className="bg-[#0B1D36] py-7">
@@ -165,17 +180,7 @@ export default function Home() {
 <section className="py-20 px-6 bg-[#F8F5F0]">
   <div className="max-w-6xl mx-auto">
     
-    {/* Clinic Image */}
-    <div className="mb-16 rounded-2xl overflow-hidden shadow-lg">
-      <Image
-        src="/clinic.jpg"
-        alt="Rewired Ketamine clinic in Aventura"
-        width={1200}
-        height={600}
-        className="w-full h-auto object-cover"
-        priority
-      />
-    </div>
+    
 
     {/* Google Reviews Widget */}
     <div className="text-center mb-10">
