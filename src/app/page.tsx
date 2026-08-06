@@ -262,7 +262,7 @@ export default function Home() {
 
     {/* Contact Form */}
     <form 
-      action="https://formspree.io/f/YOUR_FORM_ID" 
+      action="https://formspree.io/f/mkjwgjzj" 
       method="POST"
       className="bg-white rounded-2xl p-8 md:p-10 text-[#1a1a1a] shadow-xl"
     >
