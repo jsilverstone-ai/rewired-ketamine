@@ -258,8 +258,8 @@ export default function Home() {
             <div>
               <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Contact Us</h4>
               <ul className="space-y-3 text-white/80 text-sm">
-                <li>Open: Sunday - Friday</li>
-                <li>By Appointment</li>
+                <li>Open: Monday - Friday</li>
+                <li>9:00am - 5:00pm</li>
                 <li>
                   <a href="tel:+13056766070" className="hover:text-[#C9A66B] transition">Phone: (305) 676-6070</a>
                 </li>
