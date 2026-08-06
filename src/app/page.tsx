@@ -168,7 +168,7 @@ export default function Home() {
     {/* Clinic Image */}
     <div className="mb-16 rounded-2xl overflow-hidden shadow-lg">
       <Image
-        src="/clinic.jpg"
+        src="/clinic.jpeg"
         alt="Rewired Ketamine clinic in Aventura"
         width={1200}
         height={600}
