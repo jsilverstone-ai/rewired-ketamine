@@ -156,7 +156,7 @@ export default function Home() {
       <section className="bg-[#0B1D36] py-7">
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-4 text-white text-sm md:text-base font-medium text-center">
           <span>★ Only local 5-star Google-reviewed clinic</span>
-          <span>Fully guided sessions</span>
+          <span>Offering fully guided sessions</span>
           <span>Hands-on integration support</span>
           <span>South Florida’s trusted team</span>
         </div>
@@ -172,7 +172,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
-              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Fully Guided Sessions</h3>
+              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Guided Sessions Available</h3>
               <p className="text-[#555] leading-relaxed">
                 Every infusion is carefully supervised and guided by our clinical team so you feel safe and supported the entire time.
               </p>
