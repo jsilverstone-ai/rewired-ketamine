@@ -129,7 +129,7 @@ export default function Home() {
             Start Feeling Better Today
           </h1>
           <p className="text-xl md:text-2xl text-[#444] max-w-3xl mx-auto mb-6">
-            Fully guided ketamine therapy with real, hands-on support every step of the way
+            Offering fully guided ketamine therapy with real, hands-on support every step of the way
           </p>
           <p className="text-lg text-[#666] mb-12">
             The only local 5-star Google-reviewed ketamine clinic
