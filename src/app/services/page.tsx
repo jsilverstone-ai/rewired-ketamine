@@ -145,7 +145,8 @@ export default function ServicesPage() {
       />
     </div>
     <p className="text-center text-[#666] text-sm mt-4">
-      A quick look at the care we provide
+      Local Care Beats Corporate Clinics for Ketamine Therapy
+
     </p>
   </div>
 </section>      {/* ===== SERVICES GRID ===== */}
