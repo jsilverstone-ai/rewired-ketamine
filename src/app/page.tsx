@@ -240,26 +240,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FINAL CTA ===== */}
-      <section id="contact" className="py-28 px-6 bg-[#0B1D36] text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to take the first step?</h2>
-          <p className="text-xl text-white/80 mb-12">
-            Book a free consultation. No pressure — just honest answers and a clear path forward.
-          </p>
-          <a
-            href="tel:3056766070"
-            className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-12 py-5 rounded-full text-lg hover:bg-white transition"
-          >
-            Book Free Consultation
-          </a>
-          <p className="mt-10 text-lg text-white/70">
-            305-676-6070<br />
-            2820 NE 214th St #1002, Aventura, FL 33180
-          </p>
-        </div>
-      </section>
+{/* ===== FINAL CTA ===== */}
+<section id="contact" className="py-28 px-6 bg-[#0B1D36] text-white text-center">
+  <div className="max-w-3xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-bold mb-8">
+      Ready to take the first step?
+    </h2>
+    <p className="text-xl text-white/80 mb-12">
+      Book a free consultation. No pressure — just honest answers and a clear path forward.
+    </p>
 
+    <a
+      href="tel:+13056766070"
+      className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-12 py-5 rounded-full text-lg hover:bg-white transition mb-12"
+    >
+      Book Free Consultation
+    </a>
+
+    {/* Contact info with icons - same as header */}
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/90 text-lg">
+      
+      {/* Address */}
+      <a
+        href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu&g_ep=EgoyMDI2MDgwNC4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:text-[#C9A66B] transition"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        2820 NE 214th St #1002, Aventura, FL 33180
+      </a>
+
+      {/* Email */}
+      <a
+        href="mailto:info@rewiredketamine.com"
+        className="flex items-center gap-2 hover:text-[#C9A66B] transition"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        info@rewiredketamine.com
+      </a>
+
+      {/* Phone */}
+      <a
+        href="tel:+13056766070"
+        className="flex items-center gap-2 font-semibold hover:text-[#C9A66B] transition"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        (305) 676-6070
+      </a>
+    </div>
+  </div>
+</section>
       {/* ===== FOOTER ===== */}
       <footer className="bg-[#081525] py-14 text-white text-center">
         <div className="max-w-6xl mx-auto px-6">
