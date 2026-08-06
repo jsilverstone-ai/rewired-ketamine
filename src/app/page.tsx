@@ -208,10 +208,11 @@ export default function Home() {
     The only local 5-star Google-reviewed ketamine clinic
   </p>
 
-<p className="inline-block bg-[#C9A66B] text-[#0B1D36] font-semibold text-base md:text-lg px-5 py-2 rounded-full mb-12">
-  ¡Hablamos Español!
-</p>
-  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+<div className="mb-12">
+  <span className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold text-lg px-6 py-3 rounded-full shadow-md">
+    ¡Hablamos Español!
+  </span>
+</div>  <div className="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="#contact" className="inline-flex items-center justify-center bg-[#C9A66B] text-[#0B1D36] font-semibold px-10 py-5 rounded-full text-lg hover:bg-white transition">
       Book Free Consultation
     </a>
@@ -221,16 +222,15 @@ export default function Home() {
   </div>
 </div>      </section>
 
-      {/* ===== TRUST BAR ===== */}
-      <section className="bg-[#0B1D36] py-7">
-        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-4 text-white text-sm md:text-base font-medium text-center">
-          <span>★ Only local 5-star Google-reviewed clinic</span>
-          <span>Offering fully guided sessions</span>
-          <span>Hands-on integration support</span>
-          <span>South Florida’s trusted team</span>
-        </div>
-      </section>
-
+{/* ===== TRUST BAR ===== */}
+<section className="bg-[#0B1D36] py-7">
+  <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-10 gap-y-4 text-white text-sm md:text-base font-medium text-center">
+    <span>★ Only local 5-star Google-reviewed ketamine clinic</span>
+    <span>Fully guided sessions available</span>
+    <span>Aventura • Miami • South Florida</span>
+    <span>Hands-on integration support</span>
+  </div>
+</section>
 {/* ===== HOW WE HELP ===== */}
 <section id="how-we-help" className="py-24 px-6">
   <div className="max-w-6xl mx-auto">
