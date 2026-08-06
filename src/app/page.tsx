@@ -10,8 +10,42 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
-      
-      {/* Skip to content - ADA */}
+{/* LocalBusiness Schema for SEO */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": ["MedicalClinic", "LocalBusiness"],
+      "name": "Rewired Ketamine",
+      "image": "https://ketamine.vercel.app/logo.png",
+      "url": "https://ketamine.vercel.app",
+      "telephone": "+1-305-676-6070",
+      "email": "info@rewiredketamine.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2820 NE 214th St #1002",
+        "addressLocality": "Aventura",
+        "addressRegion": "FL",
+        "postalCode": "33180",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.9730993,
+        "longitude": -80.1449845
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "priceRange": "$$",
+      "description": "Rewired Ketamine offers fully guided ketamine infusion therapy in Aventura for depression, anxiety, PTSD, and chronic pain. Serving Miami, Fort Lauderdale, and South Florida."
+    })
+  }}
+/>      {/* Skip to content - ADA */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#C9A66B] focus:text-[#0B1D36] focus:px-4 focus:py-2 focus:rounded focus:font-semibold"
@@ -146,16 +180,16 @@ export default function Home() {
       </header>
 
       {/* ===== HERO ===== */}
-      <section 
-        id="main-content"
-        className="relative pt-28 pb-32 md:pt-36 md:pb-40 px-6 overflow-hidden"
-        style={{
-          backgroundImage: "url('/clinic.jpeg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#0B1D36]/75 z-0"></div>
+<section
+  id="main-content"
+  className="relative pt-28 pb-32 md:pt-36 md:pb-40 px-6 overflow-hidden"
+  style={{
+    backgroundImage: "url('/clinic.jpeg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+  aria-label="Rewired Ketamine clinic in Aventura, Florida"
+>        <div className="absolute inset-0 bg-[#0B1D36]/75 z-0"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
 <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
@@ -194,37 +228,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== HOW WE HELP ===== */}
-      <section id="how-we-help" className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0B1D36] mb-5">How We Help</h2>
-            <p className="text-xl text-[#555]">A complete, supportive approach designed around you</p>
-          </div>
+{/* ===== HOW WE HELP ===== */}
+<section id="how-we-help" className="py-24 px-6">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-[#0B1D36] mb-5">How We Help</h2>
+      <p className="text-xl text-[#555] max-w-3xl mx-auto">
+        At our Aventura ketamine clinic, we offer fully guided sessions designed to support lasting relief from depression, anxiety, PTSD, and chronic pain.
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
-              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Guided Sessions Available</h3>
-              <p className="text-[#555] leading-relaxed">
-                Every infusion is carefully supervised and guided by our clinical team so you feel safe and supported the entire time.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
-              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Hands-On Integration</h3>
-              <p className="text-[#555] leading-relaxed">
-                Our integration team works with you after each session to help you process insights and create lasting change.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
-              <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Personalized Care</h3>
-              <p className="text-[#555] leading-relaxed">
-                Treatment plans tailored to you — whether you’re seeking relief from depression, anxiety, PTSD, chronic pain, or other conditions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <div className="grid md:grid-cols-3 gap-8">
+      <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
+        <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Guided Sessions Available</h3>
+        <p className="text-[#555] leading-relaxed">
+          Every ketamine infusion is carefully supervised and guided by our clinical team so you feel safe and supported the entire time.
+        </p>
+      </div>
+      <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
+        <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Hands-On Integration</h3>
+        <p className="text-[#555] leading-relaxed">
+          Our integration team works with you after each session to help you process insights and create lasting change.
+        </p>
+      </div>
+      <div className="bg-white rounded-2xl p-10 shadow-sm border border-[#eee]">
+        <h3 className="text-2xl font-semibold text-[#0B1D36] mb-4">Personalized Care</h3>
+        <p className="text-[#555] leading-relaxed">
+          Treatment plans tailored to you — whether you’re seeking relief from depression, anxiety, PTSD, chronic pain, or other conditions in South Florida.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* ===== GOOGLE REVIEWS CAROUSEL ===== */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -248,20 +283,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EXPERIENCE ===== */}
-      <section id="experience" className="py-24 px-6 bg-[#F8F5F0]">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0B1D36] mb-8">The Experience</h2>
-          <p className="text-xl text-[#444] mb-8">Your comfort comes first.</p>
-          <p className="text-lg text-[#555] mb-6 leading-relaxed">
-            Every treatment space is thoughtfully designed so you can create the exact environment that helps you feel safe and at ease. Prefer soft natural light or complete darkness? Quiet stillness, gentle music, or a television? We offer every combination so the room truly becomes <em>your</em> personal space.
-          </p>
-          <p className="text-lg text-[#555] leading-relaxed">
-            Comfortable recliners, private rooms, and a caring team focused entirely on you. We fully guide every session and stay by your side through integration — so the benefits continue long after you leave.
-          </p>
-        </div>
-      </section>
-
+{/* ===== EXPERIENCE ===== */}
+<section id="experience" className="py-24 px-6 bg-[#F8F5F0]">
+  <div className="max-w-3xl mx-auto text-center">
+    <h2 className="text-4xl md:text-5xl font-bold text-[#0B1D36] mb-8">The Experience</h2>
+    <p className="text-xl text-[#444] mb-8">Your comfort comes first.</p>
+    <p className="text-lg text-[#555] mb-6 leading-relaxed">
+      Every treatment space at our Aventura ketamine clinic is thoughtfully designed so you can create the exact environment that helps you feel safe and at ease. Prefer soft natural light or complete darkness? Quiet stillness, gentle music, or a television? We offer every combination so the room truly becomes <em>your</em> personal space.
+    </p>
+    <p className="text-lg text-[#555] leading-relaxed">
+      Comfortable recliners, private rooms, and a caring team focused entirely on you. We offer fully guided sessions and stay by your side through integration — so the benefits continue long after you leave.
+    </p>
+  </div>
+</section>
       {/* ===== FINAL CTA + CONTACT FORM ===== */}
       <section id="contact" className="py-28 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto">
