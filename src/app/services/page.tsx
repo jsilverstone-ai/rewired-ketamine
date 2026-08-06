@@ -121,21 +121,27 @@ export default function ServicesPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Our Services
           </h1>
-          <p className="text-xl text-white/85 max-w-2xl mx-auto">
+          <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             Fully guided ketamine care and supportive services designed around you — with compassion, partnership, and lasting change in mind.
           </p>
+          <div>
+            <span className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold text-lg px-6 py-3 rounded-full shadow-md">
+              ¡Hablamos Español!
+            </span>
+          </div>
         </div>
       </section>
 
       {/* ===== SERVICES GRID ===== */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
+          
+          {/* First row – 3 cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            
             {/* 1. Ketamine Infusion */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee] flex flex-col">
               <div className="h-48 bg-[#e8e0d5] flex items-center justify-center text-[#888] text-sm">
-                {/* Image placeholder – warm Miami treatment room photo */}
                 Image Placeholder
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -155,7 +161,6 @@ export default function ServicesPage() {
             {/* 2. Home Ketamine */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee] flex flex-col">
               <div className="h-48 bg-[#e8e0d5] flex items-center justify-center text-[#888] text-sm">
-                {/* Image placeholder – warm at-home feel */}
                 Image Placeholder
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -175,7 +180,6 @@ export default function ServicesPage() {
             {/* 3. Functional Wellness */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee] flex flex-col">
               <div className="h-48 bg-[#e8e0d5] flex items-center justify-center text-[#888] text-sm">
-                {/* Image placeholder – wellness / lifestyle */}
                 Image Placeholder
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -191,11 +195,14 @@ export default function ServicesPage() {
                 </Link>
               </div>
             </div>
+          </div>
 
+          {/* Second row – 2 cards centered */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
             {/* 4. Medical Management */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee] flex flex-col">
               <div className="h-48 bg-[#e8e0d5] flex items-center justify-center text-[#888] text-sm">
-                {/* Image placeholder */}
                 Image Placeholder
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -215,7 +222,6 @@ export default function ServicesPage() {
             {/* 5. Talk Therapy */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee] flex flex-col">
               <div className="h-48 bg-[#e8e0d5] flex items-center justify-center text-[#888] text-sm">
-                {/* Image placeholder */}
                 Image Placeholder
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -231,7 +237,6 @@ export default function ServicesPage() {
                 </Link>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -252,7 +257,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ===== FOOTER (simplified) ===== */}
+      {/* ===== FOOTER ===== */}
       <footer className="bg-[#081525] text-white py-10">
         <div className="max-w-7xl mx-auto px-6 text-center text-white/60 text-sm">
           <p className="mb-2">© {new Date().getFullYear()} Rewired Ketamine · Aventura, Florida</p>
