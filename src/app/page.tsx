@@ -161,7 +161,40 @@ export default function Home() {
           <span>South Florida’s trusted team</span>
         </div>
       </section>
+{/* ===== CLINIC PHOTO + GOOGLE REVIEWS ===== */}
+<section className="py-20 px-6 bg-[#F8F5F0]">
+  <div className="max-w-6xl mx-auto">
+    
+    {/* Clinic Image */}
+    <div className="mb-16 rounded-2xl overflow-hidden shadow-lg">
+      <Image
+        src="/clinic.jpg"
+        alt="Rewired Ketamine clinic in Aventura"
+        width={1200}
+        height={600}
+        className="w-full h-auto object-cover"
+        priority
+      />
+    </div>
 
+    {/* Google Reviews Widget */}
+    <div className="text-center mb-10">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">
+        What Our Patients Say
+      </h2>
+      <p className="text-lg text-[#555]">
+        Real reviews from real patients
+      </p>
+    </div>
+
+    {/* Elfsight Google Reviews */}
+    <div className="w-full">
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2" data-elfsight-app-lazy></div>
+    </div>
+
+  </div>
+</section>
       {/* ===== HOW WE HELP ===== */}
       <section id="how-we-help" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
