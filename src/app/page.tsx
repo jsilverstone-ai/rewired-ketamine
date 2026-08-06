@@ -22,15 +22,45 @@ export default function Home() {
           </Link>
 
           {/* Contact Info - cleaner layout */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#0B1D36]">
-            <span>2820 NE 214th St #1002, Aventura, FL 33180</span>
-            <a href="mailto:info@rewiredketamine.com" className="hover:text-[#C9A66B] transition">
-              info@rewiredketamine.com
-            </a>
-            <a href="tel:3056766070" className="font-semibold hover:text-[#C9A66B] transition">
-              (305) 676-6070
-            </a>
-          </div>
+          {/* Contact Info with icons and working links */}
+<div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#0B1D36]">
+  
+  {/* Address with pin icon */}
+  <a
+    href="https://maps.google.com/?q=2820+NE+214th+St+%231002,+Aventura,+FL+33180"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 hover:text-[#C9A66B] transition"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+    2820 NE 214th St #1002, Aventura, FL 33180
+  </a>
+
+  {/* Email with envelope icon */}
+  <a
+    href="mailto:info@rewiredketamine.com"
+    className="flex items-center gap-2 hover:text-[#C9A66B] transition"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+    info@rewiredketamine.com
+  </a>
+
+  {/* Phone with phone icon */}
+  <a
+    href="tel:3056766070"
+    className="flex items-center gap-2 font-semibold hover:text-[#C9A66B] transition"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+    (305) 676-6070
+  </a>
+</div>
         </div>
       </div>
 
@@ -67,7 +97,7 @@ export default function Home() {
             Start Feeling Better Today
           </h1>
           <p className="text-xl md:text-2xl text-[#444] max-w-3xl mx-auto mb-6">
-            Fully guided ketamine therapy with real, hands-on support every step of the way
+            Avialable fully guided ketamine therapy with real, hands-on support every step of the way
           </p>
           <p className="text-lg text-[#666] mb-12">
             The only local 5-star Google-reviewed ketamine clinic
