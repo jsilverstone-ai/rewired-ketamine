@@ -124,11 +124,9 @@ export default function MedicalManagementPage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             Thoughtful clinical oversight throughout your care.
           </p>
-          <div>
-            <span className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold text-lg px-6 py-3 rounded-full shadow-md">
-              ¡Hablamos Español!
-            </span>
-          </div>
+<p className="text-[#C9A66B] font-bold text-lg md:text-xl">
+  ¡Hablamos Español!
+</p>
         </div>
       </section>
 
