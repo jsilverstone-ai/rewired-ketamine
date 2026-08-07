@@ -64,13 +64,11 @@ export default function TalkTherapyPage() {
       {/* ===== MAIN NAVIGATION ===== */}
       <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
-            <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
-            <Link href="/services" className="hover:text-[#C9A66B] transition">Our Services</Link>
-            <Link href="/#how-we-help" className="hover:text-[#C9A66B] transition">How We Help</Link>
-            <Link href="/#experience" className="hover:text-[#C9A66B] transition">The Experience</Link>
-            <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
-          </nav>
+<nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
+  <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
+  <Link href="/services" className="hover:text-[#C9A66B] transition">Our Services</Link>
+  <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
+</nav>
 
           <button
             className="md:hidden p-2"
@@ -88,30 +86,37 @@ export default function TalkTherapyPage() {
               </svg>
             )}
           </button>
+<div className="hidden md:flex items-center gap-5">
+  <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-6 py-2.5 rounded hover:bg-white transition">
+    FREE CONSULTATION
+  </Link>
+</div>
+</div>
 
-          <div className="hidden md:flex items-center gap-5">
-            <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-6 py-2.5 rounded hover:bg-white transition">
-              FREE CONSULTATION
-            </Link>
-          </div>
-        </div>
+{isMenuOpen && (
+  <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
+    <nav className="flex flex-col px-6 py-4 space-y-4">
+      <Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        Home
+      </Link>
+      <Link href="/services" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        Our Services
+      </Link>
+      <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        Contact
+      </Link>
 
-        {isMenuOpen && (
-          <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
-            <nav className="flex flex-col px-6 py-4 space-y-4">
-              <Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home</Link>
-              <Link href="/services" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Our Services</Link>
-              <Link href="/#how-we-help" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>How We Help</Link>
-              <Link href="/#experience" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>The Experience</Link>
-              <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-              <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={() => setIsMenuOpen(false)}>
-                FREE CONSULTATION
-              </Link>
-            </nav>
-          </div>
-        )}
-      </header>
-
+      <a
+        href="/#contact"
+        className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        FREE CONSULTATION
+      </a>
+    </nav>
+  </div>
+)}
+</header>     
       {/* ===== HERO ===== */}
       <section id="main-content" className="bg-[#0B1D36] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
