@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function TalkTherapyPage() {
+export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
@@ -140,17 +141,46 @@ export default function TalkTherapyPage() {
       <nav className="flex flex-col px-6 py-4 space-y-4">
         <Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home</Link>
 
-        <div className="space-y-3">
-          <p className="text-[#C9A66B] font-medium">Our Services</p>
-          <div className="pl-4 flex flex-col space-y-3 text-sm">
-            <Link href="/services" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>All Services</Link>
-            <Link href="/services/ketamine-infusion" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Ketamine Infusion</Link>
-            <Link href="/services/home-ketamine" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home Ketamine</Link>
-            <Link href="/services/functional-wellness" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link>
-            <Link href="/services/medical-management" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Medical Management</Link>
-            <Link href="/services/talk-therapy" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Talk Therapy</Link>
-          </div>
-        </div>
+{/* Mobile Services Accordion */}
+<div>
+  <button
+    onClick={() => setIsServicesOpen(!isServicesOpen)}
+    className="flex items-center justify-between w-full hover:text-[#C9A66B] transition"
+  >
+    <span>Our Services</span>
+    <svg
+      className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  {isServicesOpen && (
+    <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
+      <Link href="/services" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        All Services
+      </Link>
+      <Link href="/services/ketamine-infusion" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        Ketamine Infusion
+      </Link>
+      <Link href="/services/home-ketamine" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        Home Ketamine
+      </Link>
+      <Link href="/services/functional-wellness" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        Functional Wellness
+      </Link>
+      <Link href="/services/medical-management" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        Medical Management
+      </Link>
+      <Link href="/services/talk-therapy" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
+        Talk Therapy
+      </Link>
+    </div>
+  )}
+</div>
 
         <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
 
