@@ -6,8 +6,9 @@ import Script from "next/script";
 import { useState } from "react";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+ const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [isServicesOpen, setIsServicesOpen] = useState(false);
+const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
 
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
@@ -108,25 +109,31 @@ export default function Home() {
       <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
 
       {/* Our Services Dropdown */}
-      <div className="relative group">
-        <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
-          Our Services
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        <div className="absolute left-0 top-full mt-2 w-56 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <div className="py-2">
-            <Link href="/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Services</Link>
-            <Link href="/services/ketamine-infusion" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine Infusion</Link>
-            <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
-            <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
-            <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
-            <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
-          </div>
-        </div>
-      </div>
+{/* Treatments Dropdown */}
+<div className="relative group">
+  <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
+    Treatments
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div className="absolute left-0 top-full mt-2 w-64 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+    <div className="py-2 max-h-80 overflow-y-auto">
+      <Link href="/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Treatments</Link>
+      <Link href="/treatments/depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Depression</Link>
+      <Link href="/treatments/anxiety" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Anxiety</Link>
+      <Link href="/treatments/ptsd" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">PTSD</Link>
+      <Link href="/treatments/mental-fogginess" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Mental Fogginess</Link>
+      <Link href="/treatments/motivation" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Motivation</Link>
+      <Link href="/treatments/eating-disorder" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Eating Disorder</Link>
+      <Link href="/treatments/postpartum-depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Postpartum Depression</Link>
+      <Link href="/treatments/ocd" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">OCD</Link>
+      <Link href="/treatments/chronic-pain" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Chronic Pain</Link>
+      <Link href="/treatments/tension-headaches" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Tension Headaches</Link>
+      <Link href="/treatments/palliative-compassion-care" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Palliative & Compassion Care</Link>
+    </div>
+  </div>
+</div>
 
       <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
     </nav>
@@ -179,14 +186,15 @@ export default function Home() {
         <Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home</Link>
 
 {/* Mobile Services Accordion */}
+{/* Treatments Accordion */}
 <div>
   <button
-    onClick={() => setIsServicesOpen(!isServicesOpen)}
+    onClick={() => setIsTreatmentsOpen(!isTreatmentsOpen)}
     className="flex items-center justify-between w-full hover:text-[#C9A66B] transition"
   >
-    <span>Our Services</span>
+    <span>Treatments</span>
     <svg
-      className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
+      className={`w-4 h-4 transition-transform ${isTreatmentsOpen ? "rotate-180" : ""}`}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -195,26 +203,20 @@ export default function Home() {
     </svg>
   </button>
 
-  {isServicesOpen && (
+  {isTreatmentsOpen && (
     <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
-      <Link href="/services" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
-        All Services
-      </Link>
-      <Link href="/services/ketamine-infusion" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
-        Ketamine Infusion
-      </Link>
-      <Link href="/services/home-ketamine" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
-        Home Ketamine
-      </Link>
-      <Link href="/services/functional-wellness" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
-        Functional Wellness
-      </Link>
-      <Link href="/services/medical-management" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
-        Medical Management
-      </Link>
-      <Link href="/services/talk-therapy" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>
-        Talk Therapy
-      </Link>
+      <Link href="/treatments" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>All Treatments</Link>
+      <Link href="/treatments/depression" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Depression</Link>
+      <Link href="/treatments/anxiety" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Anxiety</Link>
+      <Link href="/treatments/ptsd" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>PTSD</Link>
+      <Link href="/treatments/mental-fogginess" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Mental Fogginess</Link>
+      <Link href="/treatments/motivation" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Motivation</Link>
+      <Link href="/treatments/eating-disorder" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Eating Disorder</Link>
+      <Link href="/treatments/postpartum-depression" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Postpartum Depression</Link>
+      <Link href="/treatments/ocd" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>OCD</Link>
+      <Link href="/treatments/chronic-pain" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Chronic Pain</Link>
+      <Link href="/treatments/tension-headaches" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Tension Headaches</Link>
+      <Link href="/treatments/palliative-compassion-care" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Palliative & Compassion Care</Link>
     </div>
   )}
 </div>
