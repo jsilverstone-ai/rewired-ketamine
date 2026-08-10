@@ -5,9 +5,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function MotivationPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [isServicesOpen, setIsServicesOpen] = useState(false);
+const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
+const [isContentOpen, setIsContentOpen] = useState(false);
 
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
@@ -45,6 +46,7 @@ export default function MotivationPage() {
     <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
       <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
 
+      {/* Services Dropdown */}
       <div className="relative group">
         <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
           Our Services
@@ -62,6 +64,7 @@ export default function MotivationPage() {
         </div>
       </div>
 
+      {/* Treatments Dropdown */}
       <div className="relative group">
         <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
           Treatments
@@ -86,7 +89,22 @@ export default function MotivationPage() {
       </div>
 
       <Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link>
-      <Link href="/content" className="hover:text-[#C9A66B] transition">Content</Link>
+
+      {/* Content Dropdown */}
+      <div className="relative group">
+        <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
+          Content
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <div className="absolute left-0 top-full mt-2 w-56 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div className="py-2">
+            <Link href="/content/blog" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Blog</Link>
+            <Link href="/content/videos" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Videos</Link>
+            <Link href="/content/ketamine-in-the-news" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine in the News</Link>
+          </div>
+        </div>
+      </div>
+
       <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
       <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
     </nav>
@@ -164,7 +182,21 @@ export default function MotivationPage() {
         </div>
 
         <Link href="/providers" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Providers</Link>
-        <Link href="/content" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Content</Link>
+
+        <div>
+          <button onClick={() => setIsContentOpen(!isContentOpen)} className="flex items-center justify-between w-full hover:text-[#C9A66B] transition">
+            <span>Content</span>
+            <svg className={`w-4 h-4 transition-transform ${isContentOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          {isContentOpen && (
+            <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
+              <Link href="/content/blog" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+              <Link href="/content/videos" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Videos</Link>
+              <Link href="/content/ketamine-in-the-news" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Ketamine in the News</Link>
+            </div>
+          )}
+        </div>
+
         <Link href="/location" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Location</Link>
         <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
 
