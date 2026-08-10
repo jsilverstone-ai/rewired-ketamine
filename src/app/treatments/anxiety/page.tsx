@@ -178,19 +178,57 @@ export default function AnxietyPage() {
         </div>
       </section>
 
-      {/* ===== CONTENT ===== */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
-            Warm photo placeholder
-          </div>
-          <div className="text-[#444] space-y-6 text-lg leading-relaxed">
-            <p>Anxiety can show up as constant worry, tension, racing thoughts, or a sense of unease that is hard to quiet. It can interfere with rest, focus, and everyday comfort.</p>
-            <p>Ketamine therapy may help support people with anxiety by interrupting rigid thought patterns and creating an opportunity for calm and reset. Changes are often felt more quickly than with many traditional approaches, and it can be helpful when other treatments have not provided enough relief.</p>
-            <p>Our Aventura clinic offers fully guided ketamine therapy for anxiety, with a focus on comfort, partnership, and lasting support. We serve patients across Miami and South Florida seeking a thoughtful approach to care.</p>
-          </div>
-        </div>
-      </section>
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
+      Frequently Asked Questions about Ketamine for Anxiety
+    </h2>
+    <div className="space-y-6">
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How quickly can ketamine therapy help with anxiety symptoms?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Many people notice supportive changes within hours to a few days after a session. This is often faster than the several weeks typically required for traditional anxiety medications to reach full effect.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Is ketamine used when other anxiety treatments have not worked?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. Ketamine is frequently considered for people who have not experienced enough relief from standard medications or therapy alone. It works through a different pathway in the brain than most daily treatments.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Are fully guided sessions available for anxiety treatment at your Aventura clinic?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. At Rewired Ketamine in Aventura, fully guided sessions are available in a calm, monitored clinical setting. Our team prioritizes safety, comfort, and partnership before, during, and after treatment.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Do you offer ketamine therapy for anxiety to patients outside Aventura?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. We serve patients from Miami, Fort Lauderdale, and across South Florida from our Aventura clinic. We also provide Spanish-language support and welcome individuals seeking thoughtful, clinically supervised care.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How is ketamine therapy for anxiety different from daily medications?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Most daily anxiety medications gradually influence specific neurotransmitter systems. Ketamine interacts with the glutamate system and is associated with more rapid changes in neuroplasticity. Sessions are intermittent and always medically supervised rather than taken as a daily pill.
+        </p>
+      </div>
+
+    </div>
 
       {/* ===== CTA ===== */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
