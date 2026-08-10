@@ -252,7 +252,7 @@ export default function DepressionPage() {
       Warm photo placeholder
     </div>
 
-    {/* Opening – Aventura first */}
+    {/* Opening */}
     <div className="text-[#444] space-y-6 text-lg leading-relaxed">
       <p>
         At our Aventura clinic, we offer fully guided ketamine therapy for people living with depression. Depression can affect mood, energy, sleep, motivation, and the ability to feel present in daily life. For many, traditional approaches such as standard antidepressants and talk therapy bring only partial relief — or take weeks to months before any change is felt.
@@ -279,7 +279,7 @@ export default function DepressionPage() {
     </h2>
     <div className="text-[#444] space-y-5 text-lg leading-relaxed">
       <p>
-        Every session is fully guided. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so the insights and shifts from each session can be carried into daily life.
+        Fully guided sessions are available. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so the insights and shifts from each session can be carried into daily life.
       </p>
       <p>
         We serve patients from Miami, Fort Lauderdale, and across South Florida who are looking for a calm, clinically supervised approach to ketamine therapy for depression.
@@ -330,10 +330,10 @@ export default function DepressionPage() {
 
       <div className="bg-white rounded-xl p-6 border border-[#eee]">
         <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-          Are ketamine sessions for depression fully guided at your Aventura clinic?
+          Are fully guided sessions available for depression treatment?
         </h3>
         <p className="text-[#555] leading-relaxed">
-          Yes. At Rewired Ketamine every session is fully guided in a calm, monitored clinical setting. Our team prioritizes safety, comfort, and partnership before, during, and after treatment.
+          Yes. At Rewired Ketamine, fully guided sessions are available in a calm, monitored clinical setting. Our team prioritizes safety, comfort, and partnership before, during, and after treatment.
         </p>
       </div>
 
@@ -358,7 +358,6 @@ export default function DepressionPage() {
     </div>
   </div>
 </section>
-
       {/* ===== CTA ===== */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto text-center">
