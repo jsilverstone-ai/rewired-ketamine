@@ -175,17 +175,118 @@ export default function PostpartumDepressionPage() {
         </div>
       </section>
 
-      {/* CONTENT */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">Warm photo placeholder</div>
-          <div className="text-[#444] space-y-6 text-lg leading-relaxed">
-            <p>Postpartum depression can bring profound sadness, anxiety, disconnection, or difficulty bonding after birth. It deserves compassionate and specialized attention.</p>
-            <p>Ketamine therapy is sometimes considered for postpartum depression when other approaches have not brought enough relief. Many people notice supportive changes more quickly than with traditional therapies alone. This quicker response may help create space for earlier bonding during a critical window of child development, always within a carefully guided setting.</p>
-            <p>We offer fully guided ketamine support in Aventura for those experiencing postpartum depression, serving families across Miami and South Florida with warmth and clinical care.</p>
-          </div>
-        </div>
-      </section>
+{/* ===== CONTENT ===== */}
+<section className="py-20 px-6">
+  <div className="max-w-3xl mx-auto">
+    
+    <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
+      Warm photo placeholder
+    </div>
+
+    <div className="text-[#444] space-y-6 text-lg leading-relaxed">
+      <p>
+        At our Aventura clinic, we offer fully guided ketamine therapy for people experiencing postpartum depression. Postpartum depression can bring profound sadness, anxiety, disconnection, or difficulty bonding after birth. It deserves compassionate and specialized attention. For many, traditional approaches bring only partial relief or take a long time to help.
+      </p>
+      <p>
+        Ketamine therapy works through pathways in the brain that are distinct from most daily medications. It is often considered when other treatments have not provided enough support. Many patients notice meaningful shifts more quickly than they experienced with traditional therapies. This quicker response may help create space for earlier bonding during a critical window of child development, always within a carefully guided setting.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      How ketamine may support people with postpartum depression
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        Postpartum depression can involve intense emotional shifts, low mood, and challenges with connection. Ketamine interacts with the glutamate system and is associated with rapid changes in neuroplasticity. In a carefully monitored setting, this may help create space for relief and greater emotional flexibility during a vulnerable time.
+      </p>
+      <p>
+        Because of this different mechanism, ketamine therapy for postpartum depression is frequently explored by people who have not found sufficient relief from traditional treatments or who need support that can begin working more quickly. Individual responses vary, and care is always personalized.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      What to expect at Rewired Ketamine in Aventura
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        Fully guided sessions are available. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so the insights and shifts from each session can be carried into daily life.
+      </p>
+      <p>
+        We serve patients from Miami, Fort Lauderdale, and across South Florida who are looking for a calm, clinically supervised approach to ketamine therapy for postpartum depression.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      Who ketamine therapy for postpartum depression may be right for
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        This approach is often considered by people experiencing postpartum depression who have not found enough relief from standard treatments, or who are looking for a carefully supervised option that may work more quickly. A free consultation at our Aventura location allows us to review your history, answer questions, and determine whether ketamine therapy is an appropriate next step for you.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      Ketamine therapy for postpartum depression in Aventura & South Florida
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        Rewired Ketamine is an Aventura-based clinic offering fully guided ketamine therapy for postpartum depression and related concerns. We welcome patients throughout Miami-Dade, Broward, and the greater South Florida area who are seeking a thoughtful, clinically supervised experience. ¡Hablamos Español!
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
+      Frequently Asked Questions about Ketamine for Postpartum Depression
+    </h2>
+    <div className="space-y-6">
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How quickly can ketamine therapy help with postpartum depression symptoms?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Many people notice supportive changes within hours to a few days after a session. This is often faster than the several weeks typically required for traditional treatments to reach full effect. A quicker response may also support earlier bonding during a critical developmental window.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Is ketamine used when other postpartum depression treatments have not worked?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. Ketamine is frequently considered for people who have not experienced enough relief from standard approaches. It works through a different pathway in the brain than most daily treatments.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Are fully guided sessions available for postpartum depression at your Aventura clinic?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. At Rewired Ketamine in Aventura, fully guided sessions are available in a calm, monitored clinical setting. Our team prioritizes safety, comfort, and partnership before, during, and after treatment.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Do you offer ketamine therapy for postpartum depression to patients outside Aventura?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. We serve patients from Miami, Fort Lauderdale, and across South Florida from our Aventura clinic. We also provide Spanish-language support and welcome individuals seeking thoughtful, clinically supervised care.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How is ketamine therapy for postpartum depression different from traditional treatments?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Most traditional treatments gradually influence specific systems over time. Ketamine interacts with the glutamate system and is associated with more rapid changes in neuroplasticity. Sessions are intermittent and always medically supervised.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
