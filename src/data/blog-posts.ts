@@ -6,7 +6,13 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
-  {
+{
+  title: "Why Is Ketamine Used for Treatment-Resistant Depression?",
+  slug: "ketamine-for-treatment-resistant-depression",
+  excerpt: "Understanding how ketamine may help when other treatments have not worked, from our locally owned Aventura clinic.",
+  date: "August 2026"
+},
+{
     title: "Who May Be a Good Candidate for Ketamine Therapy?",
     slug: "who-may-be-a-good-candidate-for-ketamine-therapy",
     excerpt: "Understanding who may benefit from ketamine therapy at our locally owned Aventura clinic.",
