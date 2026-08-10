@@ -176,17 +176,118 @@ export default function PalliativeCompassionCarePage() {
         </div>
       </section>
 
-      {/* CONTENT */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">Warm photo placeholder</div>
-          <div className="text-[#444] space-y-6 text-lg leading-relaxed">
-            <p>Palliative and compassion-focused care centers on comfort, dignity, and quality of life during serious or advanced illness.</p>
-            <p>Ketamine therapy may be considered in some palliative settings to help ease distress and support emotional comfort. It can offer support when other approaches have not been enough, and some people experience relief more quickly within a carefully guided context.</p>
-            <p>At our Aventura clinic, we offer carefully guided support for those exploring ketamine within a palliative or compassion-care context, serving families throughout South Florida.</p>
-          </div>
-        </div>
-      </section>
+{/* ===== CONTENT ===== */}
+<section className="py-20 px-6">
+  <div className="max-w-3xl mx-auto">
+    
+    <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
+      Warm photo placeholder
+    </div>
+
+    <div className="text-[#444] space-y-6 text-lg leading-relaxed">
+      <p>
+        At our Aventura clinic, we offer fully guided ketamine therapy within a palliative and compassion-care context. Palliative and compassion-focused care centers on comfort, dignity, and quality of life during serious or advanced illness. Support should always be gentle, respectful, and centered on the whole person.
+      </p>
+      <p>
+        Ketamine therapy works through pathways in the brain and nervous system that are distinct from many traditional approaches. It is sometimes considered when other treatments have not provided enough relief from distress. Many patients notice supportive changes more quickly than they experienced with traditional methods, always within a carefully guided setting.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      How ketamine may support people in palliative and compassion care
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        In palliative settings, the focus is often on easing emotional and physical distress. Ketamine interacts with the glutamate system and is associated with rapid changes that may help quiet intense distress and support greater emotional comfort. In a carefully monitored setting, this may create space for relief and a sense of ease.
+      </p>
+      <p>
+        Because of this different mechanism, ketamine is sometimes explored when traditional approaches have not provided enough comfort. Individual responses vary, and care is always personalized, collaborative, and grounded in respect.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      What to expect at Rewired Ketamine in Aventura
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        Fully guided sessions are available. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so any shifts can be carried forward with care.
+      </p>
+      <p>
+        We serve patients and families from Miami, Fort Lauderdale, and across South Florida who are looking for a calm, clinically supervised approach within a palliative or compassion-care context.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      Who ketamine therapy in palliative care may be right for
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        This approach is sometimes considered for people experiencing significant distress in the context of serious illness who have not found enough relief from standard treatments, or who are looking for a carefully supervised option that may work more quickly. A free consultation at our Aventura location allows us to review the situation, answer questions, and determine whether this approach is appropriate.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      Ketamine therapy for palliative & compassion care in Aventura & South Florida
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        Rewired Ketamine is an Aventura-based clinic offering fully guided ketamine support within a palliative and compassion-care context. We welcome patients and families throughout Miami-Dade, Broward, and the greater South Florida area who are seeking a thoughtful, clinically supervised experience. ¡Hablamos Español!
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
+      Frequently Asked Questions about Ketamine in Palliative & Compassion Care
+    </h2>
+    <div className="space-y-6">
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How quickly can ketamine therapy help with distress in a palliative setting?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Many people notice supportive changes within hours to a few days after a session. This is often faster than the longer timelines associated with many traditional approaches.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Is ketamine used when other treatments for distress have not worked?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. Ketamine is sometimes considered when standard approaches have not provided enough relief. It works through a different pathway in the brain and nervous system.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Are fully guided sessions available for palliative care at your Aventura clinic?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. At Rewired Ketamine in Aventura, fully guided sessions are available in a calm, monitored clinical setting. Our team prioritizes safety, comfort, dignity, and partnership.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Do you offer ketamine support in palliative care to patients outside Aventura?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. We serve patients and families from Miami, Fort Lauderdale, and across South Florida from our Aventura clinic. We also provide Spanish-language support and welcome those seeking thoughtful, clinically supervised care.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How is ketamine therapy in palliative care different from traditional approaches?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Most traditional approaches gradually influence specific systems over time. Ketamine interacts with the glutamate system and is associated with more rapid changes that may support comfort. Sessions are intermittent and always medically supervised.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
