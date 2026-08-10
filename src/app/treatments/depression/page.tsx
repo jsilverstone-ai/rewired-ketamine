@@ -244,26 +244,120 @@ export default function DepressionPage() {
         </div>
       </section>
 
-      {/* ===== CONTENT ===== */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
-            Warm photo placeholder
-          </div>
+{/* ===== CONTENT ===== */}
+<section className="py-20 px-6">
+  <div className="max-w-3xl mx-auto">
+    
+    <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
+      Warm photo placeholder
+    </div>
 
-          <div className="text-[#444] space-y-6 text-lg leading-relaxed">
-            <p>
-              Depression can affect mood, energy, sleep, and the ability to feel present in daily life. Many people continue to struggle even after trying traditional approaches.
-            </p>
-            <p>
-              Ketamine therapy is used to support people experiencing depression by working through different pathways in the brain than standard antidepressants. Many patients notice shifts more quickly than they experienced with traditional therapies. It can also be a meaningful option when other treatments have not brought enough relief.
-            </p>
-            <p>
-              At our Aventura ketamine clinic, we offer fully guided sessions designed to support those seeking relief from depression. Serving Miami, Fort Lauderdale, and South Florida, our approach emphasizes safety, compassion, and thoughtful integration.
-            </p>
-          </div>
-        </div>
-      </section>
+    {/* Opening – Aventura first */}
+    <div className="text-[#444] space-y-6 text-lg leading-relaxed">
+      <p>
+        At our Aventura clinic, we offer fully guided ketamine therapy for people living with depression. Depression can affect mood, energy, sleep, motivation, and the ability to feel present in daily life. For many, traditional approaches such as standard antidepressants and talk therapy bring only partial relief — or take weeks to months before any change is felt.
+      </p>
+      <p>
+        Ketamine therapy works through pathways in the brain that are distinct from most daily medications. It is often considered when other treatments have not provided enough support. Many patients notice meaningful shifts more quickly than they experienced with traditional therapies.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      How ketamine may support people with depression
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        Most standard antidepressants primarily influence serotonin or norepinephrine over a period of weeks. Ketamine interacts with the glutamate system and is associated with rapid changes in neuroplasticity — the brain’s ability to form new connections. In a carefully monitored setting, this may help create space for relief, greater emotional flexibility, and a clearer sense of possibility.
+      </p>
+      <p>
+        Because of this different mechanism, ketamine therapy for depression is frequently explored by people who have not found sufficient relief from traditional medications or who need support that can begin working more quickly. Individual responses vary, and care is always personalized.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      What to expect at Rewired Ketamine in Aventura
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        Every session is fully guided. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so the insights and shifts from each session can be carried into daily life.
+      </p>
+      <p>
+        We serve patients from Miami, Fort Lauderdale, and across South Florida who are looking for a calm, clinically supervised approach to ketamine therapy for depression.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      Who ketamine therapy for depression may be right for
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        This approach is often considered by people living with depression who have not experienced enough relief from standard treatments, or who are looking for a carefully supervised option that may work more quickly. A free consultation at our Aventura location allows us to review your history, answer questions, and determine whether ketamine therapy is an appropriate next step for you.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
+      Ketamine therapy for depression in Aventura & South Florida
+    </h2>
+    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
+      <p>
+        Rewired Ketamine is an Aventura-based clinic offering fully guided ketamine therapy for depression and related concerns. We welcome patients throughout Miami-Dade, Broward, and the greater South Florida area who are seeking a thoughtful, clinically supervised experience. ¡Hablamos Español!
+      </p>
+    </div>
+
+    {/* FAQ */}
+    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
+      Frequently Asked Questions about Ketamine for Depression
+    </h2>
+    <div className="space-y-6">
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How quickly can ketamine therapy help with depression symptoms?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Many people notice supportive changes within hours to a few days after a session. This is often faster than the four to eight weeks typically required for traditional oral antidepressants to reach full effect.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Is ketamine used when other depression treatments have not worked?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. Ketamine is frequently considered for people who have not experienced enough relief from standard antidepressants or therapy alone. It works through a different pathway in the brain than most daily medications.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Are ketamine sessions for depression fully guided at your Aventura clinic?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. At Rewired Ketamine every session is fully guided in a calm, monitored clinical setting. Our team prioritizes safety, comfort, and partnership before, during, and after treatment.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Do you offer ketamine therapy for depression to patients outside Aventura?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. We serve patients from Miami, Fort Lauderdale, and across South Florida. We also provide Spanish-language support and welcome individuals seeking thoughtful, clinically supervised care.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How is ketamine therapy for depression different from daily antidepressants?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Most daily antidepressants gradually influence serotonin or norepinephrine systems. Ketamine interacts with the glutamate system and is associated with more rapid changes in neuroplasticity. Sessions are intermittent and always medically supervised rather than taken as a daily pill.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* ===== CTA ===== */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
