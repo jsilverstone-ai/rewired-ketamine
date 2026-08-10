@@ -342,7 +342,7 @@ export default function DepressionPage() {
           Do you offer ketamine therapy for depression to patients outside Aventura?
         </h3>
         <p className="text-[#555] leading-relaxed">
-          Yes. We serve patients from Miami, Fort Lauderdale, and across South Florida. We also provide Spanish-language support and welcome individuals seeking thoughtful, clinically supervised care.
+          Yes. We serve patients from Aventura, Miami, Fort Lauderdale, and across South Florida. We also provide Spanish-language support and welcome individuals seeking thoughtful, clinically supervised care.
         </p>
       </div>
 
