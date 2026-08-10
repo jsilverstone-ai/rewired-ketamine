@@ -198,7 +198,7 @@ export default function ProvidersPage() {
               </div>
             </div>
 
-            {/* Jacob Silverstone – Medical Director */}
+            {/* Jacob Silverstone, DPM – Medical Director */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee]">
               <div className="h-72 bg-[#e8e0d5] flex items-center justify-center text-[#888]">
                 Photo placeholder
@@ -227,7 +227,7 @@ export default function ProvidersPage() {
           {/* Bottom row – equal cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            {/* Shlomo Slatus */}
+            {/* Shlomo Slatus, RCSWI */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee]">
               <div className="h-56 bg-[#e8e0d5] flex items-center justify-center text-[#888]">
                 Photo placeholder
