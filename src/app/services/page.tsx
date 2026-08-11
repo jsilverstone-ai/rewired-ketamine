@@ -283,10 +283,10 @@ const [isContentOpen, setIsContentOpen] = useState(false);
   </div>
 </section>     
 {/* Service Cards */}
-<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
   {/* Ketamine Infusion */}
-  <Link href="/services/ketamine-infusion" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+  <Link href="/services/ketamine-infusion" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition flex flex-col">
     <div className="aspect-[4/3] overflow-hidden">
       <Image
         src="/services/ketamine-infusion-aventura.jpg"
@@ -296,16 +296,16 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
       />
     </div>
-    <div className="p-6">
+    <div className="p-6 flex flex-col flex-grow">
       <h3 className="text-xl font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Ketamine Infusion</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
+      <p className="text-[#555] text-sm leading-relaxed flex-grow">
         Fully guided IV ketamine sessions in a calm, private setting at our Aventura clinic.
       </p>
     </div>
   </Link>
 
   {/* Home Ketamine */}
-  <Link href="/services/home-ketamine" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+  <Link href="/services/home-ketamine" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition flex flex-col">
     <div className="aspect-[4/3] overflow-hidden">
       <Image
         src="/services/home-ketamine-therapy-miami.jpg"
@@ -315,16 +315,16 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
       />
     </div>
-    <div className="p-6">
+    <div className="p-6 flex flex-col flex-grow">
       <h3 className="text-xl font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Home Ketamine</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
+      <p className="text-[#555] text-sm leading-relaxed flex-grow">
         Convenient at-home options including oral, nasal, and rectal modalities with professional guidance.
       </p>
     </div>
   </Link>
 
   {/* Functional Wellness */}
-  <Link href="/services/functional-wellness" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+  <Link href="/services/functional-wellness" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition flex flex-col">
     <div className="aspect-[4/3] overflow-hidden">
       <Image
         src="/services/functional-wellness-aventura.jpg"
@@ -334,16 +334,16 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
       />
     </div>
-    <div className="p-6">
+    <div className="p-6 flex flex-col flex-grow">
       <h3 className="text-xl font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Functional Wellness</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
+      <p className="text-[#555] text-sm leading-relaxed flex-grow">
         Custom vitamins and supportive wellness options integrated with your care plan.
       </p>
     </div>
   </Link>
 
   {/* Medical Management */}
-  <Link href="/services/medical-management" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+  <Link href="/services/medical-management" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition flex flex-col">
     <div className="aspect-[4/3] overflow-hidden">
       <Image
         src="/services/medical-management-south-florida.jpg"
@@ -353,16 +353,16 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
       />
     </div>
-    <div className="p-6">
+    <div className="p-6 flex flex-col flex-grow">
       <h3 className="text-xl font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Medical Management</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
+      <p className="text-[#555] text-sm leading-relaxed flex-grow">
         Thoughtful medication review and clinical support from our experienced team.
       </p>
     </div>
   </Link>
 
   {/* Talk Therapy */}
-  <Link href="/services/talk-therapy" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+  <Link href="/services/talk-therapy" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition flex flex-col">
     <div className="aspect-[4/3] overflow-hidden">
       <Image
         src="/services/talk-therapy-aventura-miami.jpg"
@@ -372,9 +372,9 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
       />
     </div>
-    <div className="p-6">
+    <div className="p-6 flex flex-col flex-grow">
       <h3 className="text-xl font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Talk Therapy</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
+      <p className="text-[#555] text-sm leading-relaxed flex-grow">
         In-house and referred specialists who understand psychedelics and neuroplasticity.
       </p>
     </div>
