@@ -334,6 +334,45 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     <span>Hands-on integration support</span>
   </div>
 </section>
+{/* ===== GOOGLE REVIEWS SECTION ===== */}
+<section className="py-20 px-6 bg-white">
+  <div className="max-w-6xl mx-auto">
+    
+    {/* Header */}
+    <div className="text-center mb-12">
+      <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-3">
+        Patient Experiences
+      </p>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">
+        What Our Patients Are Saying
+      </h2>
+      <p className="text-lg text-[#555] max-w-2xl mx-auto">
+        Real feedback from people who have chosen care at our locally owned Aventura clinic.
+      </p>
+    </div>
+
+    {/* Elfsight Widget */}
+    <div className="mb-10">
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2" data-elfsight-app-lazy></div>
+    </div>
+
+    {/* Bottom CTA */}
+    <div className="text-center">
+      <a
+        href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-[#0B1D36] font-semibold hover:text-[#C9A66B] transition"
+      >
+        View all Google reviews
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
 {/* ===== HOW WE HELP ===== */}
 <section id="how-we-help" className="py-24 px-6">
   <div className="max-w-6xl mx-auto">
