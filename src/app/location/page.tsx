@@ -246,10 +246,17 @@ const [isContentOpen, setIsContentOpen] = useState(false);
               <div className="space-y-6 text-[#444] text-lg leading-relaxed">
                 <div>
                   <h3 className="font-semibold text-[#0B1D36] mb-1">Address</h3>
-                  <p>
-                    2820 NE 214th Street, Suite 1002<br />
-                    Aventura, FL 33180
-                  </p>
+<p>
+  <a 
+    href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hover:text-[#C9A66B] transition"
+  >
+    2820 NE 214th St #1002<br />
+    Aventura, FL 33180
+  </a>
+</p>
                 </div>
 
                 <div>
