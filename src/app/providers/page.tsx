@@ -310,19 +310,30 @@ export default function ProvidersPage() {
 </div>
 
             {/* Sorelle Silverstone */}
-            <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
-              <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
-                <span className="text-[#999] text-sm">Photo Placeholder – Sorelle Silverstone</span>
-              </div>
-              <div className="p-8">
-                <h2 className="text-xl font-bold text-[#0B1D36] mb-3">Sorelle Silverstone</h2>
-                <p className="text-[#555] leading-relaxed">
-                  Sorelle Silverstone supports the patient experience at Rewired Ketamine. She helps create a welcoming and organized environment so individuals feel informed and supported from the first visit.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+<div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
+  <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
+    <span className="text-[#999] text-sm">Photo Placeholder – Sorelle Silverstone</span>
+  </div>
+  <div className="p-8">
+    <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Patient Experience</p>
+    <h2 className="text-xl font-bold text-[#0B1D36] mb-1">Sorelle Silverstone</h2>
+    <p className="text-[#666] text-sm mb-4">Life Coach & Integration Support</p>
+    
+    <p className="text-[#555] leading-relaxed mb-4">
+      Sorelle Silverstone is a life coach who integrates business experience, emotional intelligence, and holistic wellness to support clients in personal and professional growth. As a mother of five, she draws from real-life insight to help individuals navigate challenges such as work-life balance, resilience, and meaningful goal-setting.
+    </p>
+    
+    <p className="text-[#555] leading-relaxed mb-4">
+      Her approach combines strategic planning experience with empathetic coaching, mindfulness, and practical tools that support authentic self-alignment and lasting personal development.
+    </p>
+
+    <div className="border-t border-gray-100 pt-4 mt-4">
+      <p className="text-sm text-[#666]">
+        <span className="font-semibold text-[#0B1D36]">Education:</span> Bachelor of Science in Business Organization, Nyack University
+      </p>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* CLINICAL STANDARDS */}
