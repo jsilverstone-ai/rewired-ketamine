@@ -283,103 +283,110 @@ const [isContentOpen, setIsContentOpen] = useState(false);
   </div>
 </section>     
 {/* Service Cards */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+<div className="max-w-6xl mx-auto">
+  
+  {/* Top row - 3 cards */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+    
+    {/* Ketamine Infusion */}
+    <Link href="/services/ketamine-infusion" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
+      <div className="h-48 overflow-hidden">
+        <Image
+          src="/services/ketamine-infusion-aventura.jpg"
+          alt="Private ketamine infusion suite at Rewired Ketamine clinic in Aventura, Florida"
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Ketamine Infusion</h3>
+        <p className="text-[#555] text-sm leading-relaxed">
+          Fully guided IV ketamine sessions in a calm, private setting at our Aventura clinic.
+        </p>
+      </div>
+    </Link>
 
-  {/* Ketamine Infusion */}
-  <Link href="/services/ketamine-infusion" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-    <div className="h-48 overflow-hidden">
-      <Image
-        src="/services/ketamine-infusion-aventura.jpg"
-        alt="Private ketamine infusion suite at Rewired Ketamine clinic in Aventura, Florida"
-        width={600}
-        height={400}
-        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-      />
-    </div>
-    <div className="p-5 flex flex-col flex-grow">
-      <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Ketamine Infusion</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
-        Fully guided IV ketamine sessions in a calm, private setting at our Aventura clinic.
-      </p>
-    </div>
-  </Link>
+    {/* Home Ketamine */}
+    <Link href="/services/home-ketamine" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
+      <div className="h-48 overflow-hidden">
+        <Image
+          src="/services/home-ketamine-therapy-miami.jpg"
+          alt="Comfortable home setting for at-home ketamine therapy serving Miami and South Florida"
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Home Ketamine</h3>
+        <p className="text-[#555] text-sm leading-relaxed">
+          Convenient at-home options including oral, nasal, and rectal modalities with professional guidance.
+        </p>
+      </div>
+    </Link>
 
-  {/* Home Ketamine */}
-  <Link href="/services/home-ketamine" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-    <div className="h-48 overflow-hidden">
-      <Image
-        src="/services/home-ketamine-therapy-miami.jpg"
-        alt="Comfortable home setting for at-home ketamine therapy serving Miami and South Florida"
-        width={600}
-        height={400}
-        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-      />
-    </div>
-    <div className="p-5 flex flex-col flex-grow">
-      <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Home Ketamine</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
-        Convenient at-home options including oral, nasal, and rectal modalities with professional guidance.
-      </p>
-    </div>
-  </Link>
+    {/* Functional Wellness */}
+    <Link href="/services/functional-wellness" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
+      <div className="h-48 overflow-hidden">
+        <Image
+          src="/services/functional-wellness-aventura.jpg"
+          alt="Functional wellness and custom vitamin support at Rewired Ketamine in Aventura"
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Functional Wellness</h3>
+        <p className="text-[#555] text-sm leading-relaxed">
+          Custom vitamins and supportive wellness options integrated with your care plan.
+        </p>
+      </div>
+    </Link>
+  </div>
 
-  {/* Functional Wellness */}
-  <Link href="/services/functional-wellness" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-    <div className="h-48 overflow-hidden">
-      <Image
-        src="/services/functional-wellness-aventura.jpg"
-        alt="Functional wellness and custom vitamin support at Rewired Ketamine in Aventura"
-        width={600}
-        height={400}
-        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-      />
-    </div>
-    <div className="p-5 flex flex-col flex-grow">
-      <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Functional Wellness</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
-        Custom vitamins and supportive wellness options integrated with your care plan.
-      </p>
-    </div>
-  </Link>
+  {/* Bottom row - 2 cards centered */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+    
+    {/* Medical Management */}
+    <Link href="/services/medical-management" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
+      <div className="h-48 overflow-hidden">
+        <Image
+          src="/services/medical-management-south-florida.jpg"
+          alt="Personalized medical management consultation at our Aventura ketamine clinic"
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Medical Management</h3>
+        <p className="text-[#555] text-sm leading-relaxed">
+          Thoughtful medication review and clinical support from our experienced team.
+        </p>
+      </div>
+    </Link>
 
-  {/* Medical Management */}
-  <Link href="/services/medical-management" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-    <div className="h-48 overflow-hidden">
-      <Image
-        src="/services/medical-management-south-florida.jpg"
-        alt="Personalized medical management consultation at our Aventura ketamine clinic"
-        width={600}
-        height={400}
-        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-      />
-    </div>
-    <div className="p-5 flex flex-col flex-grow">
-      <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Medical Management</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
-        Thoughtful medication review and clinical support from our experienced team.
-      </p>
-    </div>
-  </Link>
-
-  {/* Talk Therapy */}
-  <Link href="/services/talk-therapy" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-    <div className="h-48 overflow-hidden">
-      <Image
-        src="/services/talk-therapy-aventura-miami.jpg"
-        alt="Supportive talk therapy space at Rewired Ketamine clinic in Aventura, Florida"
-        width={600}
-        height={400}
-        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-      />
-    </div>
-    <div className="p-5 flex flex-col flex-grow">
-      <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Talk Therapy</h3>
-      <p className="text-[#555] text-sm leading-relaxed">
-        In-house and referred specialists who understand psychedelics and neuroplasticity.
-      </p>
-    </div>
-  </Link>
-
+    {/* Talk Therapy */}
+    <Link href="/services/talk-therapy" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
+      <div className="h-48 overflow-hidden">
+        <Image
+          src="/services/talk-therapy-aventura-miami.jpg"
+          alt="Supportive talk therapy space at Rewired Ketamine clinic in Aventura, Florida"
+          width={600}
+          height={400}
+          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Talk Therapy</h3>
+        <p className="text-[#555] text-sm leading-relaxed">
+          In-house and referred specialists who understand psychedelics and neuroplasticity.
+        </p>
+      </div>
+    </Link>
+  </div>
 </div>
       {/* ===== CTA ===== */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
