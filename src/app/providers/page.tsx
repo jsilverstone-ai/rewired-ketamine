@@ -277,17 +277,37 @@ export default function ProvidersPage() {
           <div className="grid md:grid-cols-2 gap-10">
             
             {/* Shlomo Slatus, RCSWI */}
-            <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
-              <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
-                <span className="text-[#999] text-sm">Photo Placeholder – Shlomo Slatus</span>
-              </div>
-              <div className="p-8">
-                <h2 className="text-xl font-bold text-[#0B1D36] mb-3">Shlomo Slatus</h2>
-                <p className="text-[#555] leading-relaxed">
-                  Shlomo Slatus is part of the clinical support team at Rewired Ketamine. He contributes to a calm, professional environment focused on patient comfort and clear communication throughout the care experience.
-                </p>
-              </div>
-            </div>
+<div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
+  <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
+    <span className="text-[#999] text-sm">Photo Placeholder – Shlomo Slatus</span>
+  </div>
+  <div className="p-8">
+    <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Clinical Team</p>
+    <h2 className="text-xl font-bold text-[#0B1D36] mb-1">Shlomo Slatus, RCSWI</h2>
+    <p className="text-[#666] text-sm mb-4">Registered Clinical Social Worker Intern</p>
+    
+    <p className="text-[#555] leading-relaxed mb-4">
+      Shlomo Slatus, RCSWI is a Registered Clinical Social Worker Intern with a Master of Social Work from Yeshiva University’s Wurzweiler School of Social Work. He graduated as valedictorian of his MSW program with a specialty certification in Trauma-Informed Practice and was inducted into the Phi Alpha Honor Society for academic excellence.
+    </p>
+    
+    <p className="text-[#555] leading-relaxed mb-4">
+      Shlomo believes that expressing thoughts, feelings, and experiences in a safe and supportive environment can serve as a powerful catalyst for change. He is committed to building genuine therapeutic rapport and creating a confidential, nonjudgmental space where individuals can communicate openly and honestly.
+    </p>
+
+    <div className="border-t border-gray-100 pt-4 mt-4">
+      <p className="text-sm text-[#666] mb-2">
+        <span className="font-semibold text-[#0B1D36]">Areas of Focus:</span>
+      </p>
+      <ul className="text-sm text-[#555] space-y-1 list-disc list-inside">
+        <li>Addiction and substance misuse</li>
+        <li>Anxiety and panic concerns</li>
+        <li>Depression</li>
+        <li>Relationship challenges</li>
+        <li>Personal growth and self-esteem</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
             {/* Sorelle Silverstone */}
             <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
