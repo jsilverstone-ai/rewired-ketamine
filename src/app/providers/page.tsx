@@ -5,10 +5,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function ProvidersPage() {
-const [isMenuOpen, setIsMenuOpen] = useState(false);
-const [isServicesOpen, setIsServicesOpen] = useState(false);
-const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
-const [isContentOpen, setIsContentOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
+  const [isContentOpen, setIsContentOpen] = useState(false);
 
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
@@ -39,279 +39,282 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           </div>
         </div>
       </div>
-{/* MAIN NAVIGATION */}
-<header className="bg-[#0B1D36] text-white sticky top-0 z-50">
-  <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-    <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
-      <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
 
-      {/* Services Dropdown */}
-      <div className="relative group">
-        <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
-          Our Services
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-        </button>
-        <div className="absolute left-0 top-full mt-2 w-56 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <div className="py-2">
-            <Link href="/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Services</Link>
-            <Link href="/services/ketamine-infusion" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine Infusion</Link>
-            <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
-            <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
-            <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
-            <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
+      {/* MAIN NAVIGATION */}
+      <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
+            <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
+            <div className="relative group">
+              <button className="hover:text-[#C9A66B] transition flex items-center gap-1">Our Services
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div className="absolute left-0 top-full mt-2 w-56 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link href="/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Services</Link>
+                  <Link href="/services/ketamine-infusion" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine Infusion</Link>
+                  <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
+                  <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
+                  <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
+                  <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
+                </div>
+              </div>
+            </div>
+            <div className="relative group">
+              <button className="hover:text-[#C9A66B] transition flex items-center gap-1">Treatments
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div className="absolute left-0 top-full mt-2 w-64 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2 max-h-80 overflow-y-auto">
+                  <Link href="/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Treatments</Link>
+                  <Link href="/treatments/depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Depression</Link>
+                  <Link href="/treatments/anxiety" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Anxiety</Link>
+                  <Link href="/treatments/ptsd" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">PTSD</Link>
+                  <Link href="/treatments/mental-fogginess" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Mental Fogginess</Link>
+                  <Link href="/treatments/motivation" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Motivation</Link>
+                  <Link href="/treatments/eating-disorder" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Eating Disorder</Link>
+                  <Link href="/treatments/postpartum-depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Postpartum Depression</Link>
+                  <Link href="/treatments/ocd" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">OCD</Link>
+                  <Link href="/treatments/chronic-pain" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Chronic Pain</Link>
+                  <Link href="/treatments/tension-headaches" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Tension Headaches</Link>
+                  <Link href="/treatments/palliative-compassion-care" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Palliative & Compassion Care</Link>
+                </div>
+              </div>
+            </div>
+            <Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link>
+            <div className="relative group">
+              <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
+                Content
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div className="absolute left-0 top-full mt-2 w-56 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link href="/content/blog" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Blog</Link>
+                  <Link href="/content/videos" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Videos</Link>
+                  <Link href="/content/ketamine-in-the-news" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine in the News</Link>
+                </div>
+              </div>
+            </div>
+            <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
+            <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
+          </nav>
+
+          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMenuOpen}>
+            {isMenuOpen ? (
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            ) : (
+              <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+            )}
+          </button>
+
+          <div className="hidden md:flex items-center gap-5">
+            <a href="https://www.instagram.com/rewired_ketamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Instagram">
+              <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@RewiredKetamine" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="YouTube">
+              <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/RewiredKetamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Facebook">
+              <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/jacob-silverstone-98414547/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="LinkedIn">
+              <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-6 py-2.5 rounded hover:bg-white transition">FREE CONSULTATION</Link>
           </div>
         </div>
-      </div>
 
-      {/* Treatments Dropdown */}
-      <div className="relative group">
-        <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
-          Treatments
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-        </button>
-        <div className="absolute left-0 top-full mt-2 w-64 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <div className="py-2 max-h-80 overflow-y-auto">
-            <Link href="/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Treatments</Link>
-            <Link href="/treatments/depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Depression</Link>
-            <Link href="/treatments/anxiety" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Anxiety</Link>
-            <Link href="/treatments/ptsd" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">PTSD</Link>
-            <Link href="/treatments/mental-fogginess" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Mental Fogginess</Link>
-            <Link href="/treatments/motivation" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Motivation</Link>
-            <Link href="/treatments/eating-disorder" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Eating Disorder</Link>
-            <Link href="/treatments/postpartum-depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Postpartum Depression</Link>
-            <Link href="/treatments/ocd" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">OCD</Link>
-            <Link href="/treatments/chronic-pain" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Chronic Pain</Link>
-            <Link href="/treatments/tension-headaches" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Tension Headaches</Link>
-            <Link href="/treatments/palliative-compassion-care" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Palliative & Compassion Care</Link>
+        {isMenuOpen && (
+          <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
+            <nav className="flex flex-col px-6 py-4 space-y-4">
+              <Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <div>
+                <button onClick={() => setIsServicesOpen(!isServicesOpen)} className="flex items-center justify-between w-full hover:text-[#C9A66B] transition">
+                  <span>Our Services</span>
+                  <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                {isServicesOpen && (
+                  <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
+                    <Link href="/services" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>All Services</Link>
+                    <Link href="/services/ketamine-infusion" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Ketamine Infusion</Link>
+                    <Link href="/services/home-ketamine" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home Ketamine</Link>
+                    <Link href="/services/functional-wellness" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link>
+                    <Link href="/services/medical-management" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Medical Management</Link>
+                    <Link href="/services/talk-therapy" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Talk Therapy</Link>
+                  </div>
+                )}
+              </div>
+              <div>
+                <button onClick={() => setIsTreatmentsOpen(!isTreatmentsOpen)} className="flex items-center justify-between w-full hover:text-[#C9A66B] transition">
+                  <span>Treatments</span>
+                  <svg className={`w-4 h-4 transition-transform ${isTreatmentsOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                {isTreatmentsOpen && (
+                  <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
+                    <Link href="/treatments" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>All Treatments</Link>
+                    <Link href="/treatments/depression" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Depression</Link>
+                    <Link href="/treatments/anxiety" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Anxiety</Link>
+                    <Link href="/treatments/ptsd" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>PTSD</Link>
+                    <Link href="/treatments/mental-fogginess" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Mental Fogginess</Link>
+                    <Link href="/treatments/motivation" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Motivation</Link>
+                    <Link href="/treatments/eating-disorder" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Eating Disorder</Link>
+                    <Link href="/treatments/postpartum-depression" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Postpartum Depression</Link>
+                    <Link href="/treatments/ocd" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>OCD</Link>
+                    <Link href="/treatments/chronic-pain" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Chronic Pain</Link>
+                    <Link href="/treatments/tension-headaches" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Tension Headaches</Link>
+                    <Link href="/treatments/palliative-compassion-care" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Palliative & Compassion Care</Link>
+                  </div>
+                )}
+              </div>
+              <Link href="/providers" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Providers</Link>
+              <div>
+                <button onClick={() => setIsContentOpen(!isContentOpen)} className="flex items-center justify-between w-full hover:text-[#C9A66B] transition">
+                  <span>Content</span>
+                  <svg className={`w-4 h-4 transition-transform ${isContentOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                {isContentOpen && (
+                  <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
+                    <Link href="/content/blog" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+                    <Link href="/content/videos" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Videos</Link>
+                    <Link href="/content/ketamine-in-the-news" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Ketamine in the News</Link>
+                  </div>
+                )}
+              </div>
+              <Link href="/location" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Location</Link>
+              <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <a href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={() => setIsMenuOpen(false)}>FREE CONSULTATION</a>
+              <div className="flex items-center justify-center gap-6 pt-4 border-t border-white/10 mt-2">
+                <a href="https://www.instagram.com/rewired_ketamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Instagram"><svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                <a href="https://www.youtube.com/@RewiredKetamine" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="YouTube"><svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.facebook.com/RewiredKetamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Facebook"><svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://www.linkedin.com/in/jacob-silverstone-98414547/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="LinkedIn"><svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+              </div>
+            </nav>
           </div>
-        </div>
-      </div>
-
-      <Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link>
-
-      {/* Content Dropdown */}
-      <div className="relative group">
-        <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
-          Content
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-        </button>
-        <div className="absolute left-0 top-full mt-2 w-56 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <div className="py-2">
-            <Link href="/content/blog" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Blog</Link>
-            <Link href="/content/videos" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Videos</Link>
-            <Link href="/content/ketamine-in-the-news" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine in the News</Link>
-          </div>
-        </div>
-      </div>
-
-      <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
-      <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
-    </nav>
-
-    <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMenuOpen}>
-      {isMenuOpen ? (
-        <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-      ) : (
-        <svg aria-hidden="true" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
-      )}
-    </button>
-
-    <div className="hidden md:flex items-center gap-5">
-      <a href="https://www.instagram.com/rewired_ketamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Instagram">
-        <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@RewiredKetamine" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="YouTube">
-        <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-      <a href="https://www.facebook.com/RewiredKetamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Facebook">
-        <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/jacob-silverstone-98414547/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="LinkedIn">
-        <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-6 py-2.5 rounded hover:bg-white transition">
-        FREE CONSULTATION
-      </Link>
-    </div>
-  </div>
-
-  {isMenuOpen && (
-    <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
-      <nav className="flex flex-col px-6 py-4 space-y-4">
-        <Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home</Link>
-
-        <div>
-          <button onClick={() => setIsServicesOpen(!isServicesOpen)} className="flex items-center justify-between w-full hover:text-[#C9A66B] transition">
-            <span>Our Services</span>
-            <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-          </button>
-          {isServicesOpen && (
-            <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
-              <Link href="/services" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>All Services</Link>
-              <Link href="/services/ketamine-infusion" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Ketamine Infusion</Link>
-              <Link href="/services/home-ketamine" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home Ketamine</Link>
-              <Link href="/services/functional-wellness" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link>
-              <Link href="/services/medical-management" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Medical Management</Link>
-              <Link href="/services/talk-therapy" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Talk Therapy</Link>
-            </div>
-          )}
-        </div>
-
-        <div>
-          <button onClick={() => setIsTreatmentsOpen(!isTreatmentsOpen)} className="flex items-center justify-between w-full hover:text-[#C9A66B] transition">
-            <span>Treatments</span>
-            <svg className={`w-4 h-4 transition-transform ${isTreatmentsOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-          </button>
-          {isTreatmentsOpen && (
-            <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
-              <Link href="/treatments" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>All Treatments</Link>
-              <Link href="/treatments/depression" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Depression</Link>
-              <Link href="/treatments/anxiety" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Anxiety</Link>
-              <Link href="/treatments/ptsd" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>PTSD</Link>
-              <Link href="/treatments/mental-fogginess" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Mental Fogginess</Link>
-              <Link href="/treatments/motivation" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Motivation</Link>
-              <Link href="/treatments/eating-disorder" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Eating Disorder</Link>
-              <Link href="/treatments/postpartum-depression" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Postpartum Depression</Link>
-              <Link href="/treatments/ocd" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>OCD</Link>
-              <Link href="/treatments/chronic-pain" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Chronic Pain</Link>
-              <Link href="/treatments/tension-headaches" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Tension Headaches</Link>
-              <Link href="/treatments/palliative-compassion-care" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Palliative & Compassion Care</Link>
-            </div>
-          )}
-        </div>
-
-        <Link href="/providers" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Providers</Link>
-
-        <div>
-          <button onClick={() => setIsContentOpen(!isContentOpen)} className="flex items-center justify-between w-full hover:text-[#C9A66B] transition">
-            <span>Content</span>
-            <svg className={`w-4 h-4 transition-transform ${isContentOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-          </button>
-          {isContentOpen && (
-            <div className="pl-4 mt-3 flex flex-col space-y-3 text-sm">
-              <Link href="/content/blog" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Blog</Link>
-              <Link href="/content/videos" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Videos</Link>
-              <Link href="/content/ketamine-in-the-news" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Ketamine in the News</Link>
-            </div>
-          )}
-        </div>
-
-        <Link href="/location" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Location</Link>
-        <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-
-        <a href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={() => setIsMenuOpen(false)}>
-          FREE CONSULTATION
-        </a>
-
-        <div className="flex items-center justify-center gap-6 pt-4 border-t border-white/10 mt-2">
-          <a href="https://www.instagram.com/rewired_ketamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Instagram">
-            <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@RewiredKetamine" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="YouTube">
-            <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/RewiredKetamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Facebook">
-            <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/jacob-silverstone-98414547/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="LinkedIn">
-            <svg aria-hidden="true" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-        </div>
-      </nav>
-    </div>
-  )}
-</header>
-
+        )}
+      </header>
 
       {/* HERO */}
       <section id="main-content" className="bg-[#0B1D36] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">Aventura • South Florida</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Providers</h1>
-          <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
-            A dedicated clinical team focused on safety, partnership, and thoughtful care.
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Clinical Team</h1>
+          <p className="text-xl text-white/85 max-w-2xl mx-auto mb-6">
+            Experienced providers dedicated to thoughtful, medically supervised care at our locally owned Aventura clinic.
           </p>
           <p className="text-[#C9A66B] font-bold text-lg md:text-xl">¡Hablamos Español!</p>
         </div>
       </section>
 
-      {/* PROVIDERS GRID */}
+      {/* TRUST BAR */}
+      <section className="bg-white border-b border-gray-100 py-8">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <p className="text-[#0B1D36] font-medium">
+            Medically supervised care • Locally owned in Aventura • Fully guided sessions available • LegitScript certified
+          </p>
+        </div>
+      </section>
+
+      {/* PROVIDERS */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
 
-          {/* Top row – larger cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+          <div className="grid md:grid-cols-2 gap-10 mb-16">
             
-            {/* Kelsey Vivatson – Clinical Director */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee]">
-              <div className="h-72 bg-[#e8e0d5] flex items-center justify-center text-[#888]">
-                Photo placeholder
+            {/* Kelsey Vivatson, PMHNP-BC, APRN */}
+            <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
+              <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
+                <span className="text-[#999] text-sm">Photo Placeholder – Kelsey Vivatson</span>
               </div>
               <div className="p-8">
-                <p className="text-[#C9A66B] font-semibold text-sm tracking-wide uppercase mb-1">Clinical Director</p>
-                <h2 className="text-2xl font-bold text-[#0B1D36] mb-3">Kelsey Vivatson, PMHNP-BC, APRN</h2>
+                <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Clinical Director</p>
+                <h2 className="text-2xl font-bold text-[#0B1D36] mb-1">Kelsey Vivatson</h2>
+                <p className="text-[#666] text-sm mb-4">Clinical Director</p>
+                <p className="text-[#555] leading-relaxed mb-4">
+                  Kelsey Vivatson serves as Clinical Director at Rewired Ketamine. She oversees the clinical experience and works closely with patients to create individualized, supportive care plans. Her approach emphasizes clear communication, safety, and partnership throughout the treatment process.
+                </p>
                 <p className="text-[#555] leading-relaxed">
-                  Board-certified Psychiatric Mental Health Nurse Practitioner licensed in Florida. Kelsey Vivatson integrates medication management, psychotherapy, and collaborative care across the lifespan. She brings experience in diagnostic assessment, evidence-based prescribing, and personalized treatment planning for mood, anxiety, and related concerns.
+                  As part of a locally owned practice in Aventura, Kelsey is committed to providing thoughtful guidance for individuals exploring ketamine therapy in South Florida.
                 </p>
               </div>
             </div>
 
-            {/* Jacob Silverstone, DPM – Medical Director */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee]">
-              <div className="h-72 bg-[#e8e0d5] flex items-center justify-center text-[#888]">
-                Photo placeholder
+            {/* Jacob Silverstone, DPM */}
+            <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
+              <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
+                <span className="text-[#999] text-sm">Photo Placeholder – Jacob Silverstone, DPM</span>
               </div>
               <div className="p-8">
-                <p className="text-[#C9A66B] font-semibold text-sm tracking-wide uppercase mb-1">Medical Director</p>
-                <h2 className="text-2xl font-bold text-[#0B1D36] mb-3">Jacob Silverstone</h2>
+                <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Medical Director</p>
+                <h2 className="text-2xl font-bold text-[#0B1D36] mb-1">Jacob Silverstone, DPM</h2>
+                <p className="text-[#666] text-sm mb-4">Medical Director</p>
                 <p className="text-[#555] leading-relaxed mb-4">
-                  Founder of Rewired Ketamine with extensive training and expertise in ketamine therapy and pain management. His focus is collaborating with therapists and mental health providers to help patients reduce suffering, support neuroplasticity, and regain a greater sense of control over their lives.
+                  Jacob Silverstone, DPM, serves as Medical Director at Rewired Ketamine. He brings clinical insight and a deep interest in mental wellness, neuroplasticity, and supportive care approaches. He is also the author of <em>Chronically Misunderstood</em> and <em>Stuck in Reverse: Rewiring Your ADHD Brain</em>.
                 </p>
-                <p className="text-[#555] leading-relaxed mb-3">
-                  Author of <em>Chronically Misunderstood</em> and <em>Stuck in Reverse: Rewiring Your ADHD Brain</em>.
+                <p className="text-[#555] leading-relaxed mb-4">
+                  His work focuses on helping individuals better understand their mental health journey and explore options when traditional approaches have not provided enough relief.
                 </p>
                 <a 
                   href="https://a.co/d/0753tyCg" 
                   target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-block text-sm font-semibold text-[#0B1D36] bg-[#C9A66B] px-5 py-2.5 rounded hover:bg-[#0B1D36] hover:text-white transition"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#C9A66B] font-semibold hover:underline"
                 >
-                  Available on Amazon →
+                  View book on Amazon →
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Bottom row – equal cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-10">
             
             {/* Shlomo Slatus, RCSWI */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee]">
-              <div className="h-56 bg-[#e8e0d5] flex items-center justify-center text-[#888]">
-                Photo placeholder
+            <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
+              <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
+                <span className="text-[#999] text-sm">Photo Placeholder – Shlomo Slatus</span>
               </div>
-              <div className="p-7">
-                <h2 className="text-xl font-bold text-[#0B1D36] mb-2">Shlomo Slatus, RCSWI</h2>
-                <p className="text-[#555] leading-relaxed text-[15px]">
-                  Registered Clinical Social Worker with an MSW from Yeshiva University (valedictorian) and specialty certification in Trauma-Informed Practice. Shlomo Slatus creates a supportive, nonjudgmental space and works with anxiety, depression, addiction, relationship challenges, and personal growth.
+              <div className="p-8">
+                <h2 className="text-xl font-bold text-[#0B1D36] mb-3">Shlomo Slatus</h2>
+                <p className="text-[#555] leading-relaxed">
+                  Shlomo Slatus is part of the clinical support team at Rewired Ketamine. He contributes to a calm, professional environment focused on patient comfort and clear communication throughout the care experience.
                 </p>
               </div>
             </div>
 
             {/* Sorelle Silverstone */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eee]">
-              <div className="h-56 bg-[#e8e0d5] flex items-center justify-center text-[#888]">
-                Photo placeholder
+            <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
+              <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
+                <span className="text-[#999] text-sm">Photo Placeholder – Sorelle Silverstone</span>
               </div>
-              <div className="p-7">
-                <h2 className="text-xl font-bold text-[#0B1D36] mb-2">Sorelle Silverstone</h2>
-                <p className="text-[#555] leading-relaxed text-[15px]">
-                  Life coach and experienced trip sitter who integrates business acumen, emotional intelligence, and holistic wellness. As a mother of five, Sorelle Silverstone draws on real-life insight to support leadership, mindfulness, goal-setting, resilience, and work-life balance.
+              <div className="p-8">
+                <h2 className="text-xl font-bold text-[#0B1D36] mb-3">Sorelle Silverstone</h2>
+                <p className="text-[#555] leading-relaxed">
+                  Sorelle Silverstone supports the patient experience at Rewired Ketamine. She helps create a welcoming and organized environment so individuals feel informed and supported from the first visit.
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* CLINICAL STANDARDS */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mb-6">Our Clinical Standards</h2>
+          <div className="grid sm:grid-cols-3 gap-8 text-left">
+            <div>
+              <h3 className="font-semibold text-[#0B1D36] mb-2">Medically Supervised</h3>
+              <p className="text-[#555] text-sm leading-relaxed">Every session takes place under professional monitoring in a calm, private setting.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-[#0B1D36] mb-2">Fully Guided Options</h3>
+              <p className="text-[#555] text-sm leading-relaxed">Fully guided sessions are available for those who prefer additional support during treatment.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-[#0B1D36] mb-2">Locally Owned</h3>
+              <p className="text-[#555] text-sm leading-relaxed">We are a locally owned practice based in Aventura, serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español!</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -319,8 +322,10 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to take the next step?</h2>
-          <p className="text-xl text-white/80 mb-10">Book a free consultation. No pressure — just honest answers and a clear path forward.</p>
-          <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-10 py-4 rounded-full text-lg hover:bg-white transition">Book Free Consultation</Link>
+          <p className="text-xl text-white/80 mb-10">Book a free consultation at our locally owned Aventura clinic. No pressure — just honest answers and a clear path forward. ¡Hablamos Español!</p>
+          <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-10 py-4 rounded-full text-lg hover:bg-white transition">
+            Book Free Consultation
+          </Link>
         </div>
       </section>
 
@@ -351,8 +356,9 @@ const [isContentOpen, setIsContentOpen] = useState(false);
                 <li><Link href="/services" className="hover:text-[#C9A66B] transition">Our Services</Link></li>
                 <li><Link href="/treatments" className="hover:text-[#C9A66B] transition">Treatments</Link></li>
                 <li><Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link></li>
+                <li><Link href="/content/blog" className="hover:text-[#C9A66B] transition">Blog</Link></li>
+                <li><Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link></li>
                 <li><Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link></li>
-                <li><a href="/#contact" className="hover:text-[#C9A66B] transition">Free Consultation</a></li>
               </ul>
             </div>
           </div>
