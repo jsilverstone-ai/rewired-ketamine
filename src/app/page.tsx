@@ -405,28 +405,6 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     </div>
   </div>
 </section>
-      {/* ===== GOOGLE REVIEWS CAROUSEL ===== */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">
-              What Our Patients Say
-            </h2>
-            <p className="text-lg text-[#555]">
-              Real reviews from real patients
-            </p>
-          </div>
-
-          <Script
-            src="https://elfsightcdn.com/platform.js"
-            strategy="lazyOnload"
-          />
-          <div
-            className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2"
-            data-elfsight-app-lazy
-          />
-        </div>
-      </section>
 
 {/* ===== EXPERIENCE ===== */}
 <section id="experience" className="py-24 px-6 bg-[#F8F5F0]">
