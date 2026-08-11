@@ -222,22 +222,30 @@ export default function ProvidersPage() {
           <div className="grid md:grid-cols-2 gap-10 mb-16">
             
             {/* Kelsey Vivatson, PMHNP-BC, APRN */}
-            <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
-              <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
-                <span className="text-[#999] text-sm">Photo Placeholder – Kelsey Vivatson</span>
-              </div>
-              <div className="p-8">
-                <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Clinical Director</p>
-                <h2 className="text-2xl font-bold text-[#0B1D36] mb-1">Kelsey Vivatson</h2>
-                <p className="text-[#666] text-sm mb-4">Clinical Director</p>
-                <p className="text-[#555] leading-relaxed mb-4">
-                  Kelsey Vivatson serves as Clinical Director at Rewired Ketamine. She oversees the clinical experience and works closely with patients to create individualized, supportive care plans. Her approach emphasizes clear communication, safety, and partnership throughout the treatment process.
-                </p>
-                <p className="text-[#555] leading-relaxed">
-                  As part of a locally owned practice in Aventura, Kelsey is committed to providing thoughtful guidance for individuals exploring ketamine therapy in South Florida.
-                </p>
-              </div>
-            </div>
+<div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
+  <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
+    <span className="text-[#999] text-sm">Photo Placeholder – Kelsey Vivatson</span>
+  </div>
+  <div className="p-8">
+    <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Clinical Director</p>
+    <h2 className="text-2xl font-bold text-[#0B1D36] mb-1">Kelsey Vivatson, PMHNP-BC, APRN</h2>
+    <p className="text-[#666] text-sm mb-4">Board-Certified Psychiatric Mental Health Nurse Practitioner</p>
+    
+    <p className="text-[#555] leading-relaxed mb-4">
+      Kelsey Vivatson, PMHNP-BC, APRN is a board-certified Psychiatric Mental Health Nurse Practitioner licensed in Florida and North Dakota. She serves as Clinical Director at Rewired Ketamine in Aventura and focuses on thoughtful, individualized care that combines medication management, supportive therapy, and clear collaboration with patients and families.
+    </p>
+    
+    <p className="text-[#555] leading-relaxed mb-4">
+      Her approach blends diagnostic assessment, evidence-based prescribing, and personalized treatment planning to support individuals across the lifespan, including those navigating ADHD, mood concerns, and related challenges. She draws on experience in both behavioral health and broader clinical settings to adapt care thoughtfully.
+    </p>
+
+    <div className="border-t border-gray-100 pt-4 mt-4">
+      <p className="text-sm text-[#666]">
+        <span className="font-semibold text-[#0B1D36]">Education & Credentials:</span> MSN in Psychiatric Mental Health (Walden University) • BSN (University of Mary) • ANCC Board-Certified PMHNP • Licensed in Florida & North Dakota
+      </p>
+    </div>
+  </div>
+</div>
 
             {/* Jacob Silverstone, DPM */}
             <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
