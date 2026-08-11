@@ -234,40 +234,103 @@ export default function KetamineInTheNewsPage() {
         </div>
       </section>
 
-      {/* NEWS LIST */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto space-y-6">
+{/* News Articles */}
+<section className="py-20 px-6">
+  <div className="max-w-5xl mx-auto">
+    <div className="text-center mb-14">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">
+        Ketamine in the News
+      </h2>
+      <p className="text-lg text-[#555] max-w-2xl mx-auto">
+        Recent articles and stories highlighting the potential benefits of ketamine therapy.
+      </p>
+    </div>
 
-          {/* News item 1 – easy to copy/paste and update */}
-          <a href="#" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-xl p-6 border border-[#eee] hover:border-[#C9A66B] transition">
-            <p className="text-sm text-[#C9A66B] font-medium mb-1">Source · Date</p>
-            <h2 className="text-xl font-bold text-[#0B1D36] mb-2">Headline of the news article goes here</h2>
-            <p className="text-[#555] text-sm leading-relaxed">One or two sentences summarizing the article. Keep it soft and factual.</p>
-          </a>
+    <div className="grid gap-8">
+      
+      {/* Article 1 */}
+      <a 
+        href="https://www.cnn.com/2025/09/28/health/ketamine-therapy-depression-wellness" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+      >
+        <p className="text-sm text-[#C9A66B] font-semibold mb-2">CNN · September 2025</p>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+          Can the party drug ketamine be a mental health breakthrough? It was for me
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          A personal account of how ketamine therapy helped with long-standing anxiety and depression.
+        </p>
+      </a>
 
-          {/* News item 2 */}
-          <a href="#" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-xl p-6 border border-[#eee] hover:border-[#C9A66B] transition">
-            <p className="text-sm text-[#C9A66B] font-medium mb-1">Source · Date</p>
-            <h2 className="text-xl font-bold text-[#0B1D36] mb-2">Another recent ketamine news headline</h2>
-            <p className="text-[#555] text-sm leading-relaxed">Short summary of why this article is relevant for patients and families.</p>
-          </a>
+      {/* Article 2 */}
+      <a 
+        href="https://www.usmagazine.com/celebrity-news/news/what-celebrities-and-doctors-have-said-about-ketamine-use/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+      >
+        <p className="text-sm text-[#C9A66B] font-semibold mb-2">Us Weekly · 2026</p>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+          What Celebrities and Doctors Have Said About Ketamine Use
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Celebrities including Chrissy Teigen, Elon Musk, Molly O’Connell and others share their experiences with ketamine therapy.
+        </p>
+      </a>
 
-          {/* News item 3 */}
-          <a href="#" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-xl p-6 border border-[#eee] hover:border-[#C9A66B] transition">
-            <p className="text-sm text-[#C9A66B] font-medium mb-1">Source · Date</p>
-            <h2 className="text-xl font-bold text-[#0B1D36] mb-2">Third news item placeholder</h2>
-            <p className="text-[#555] text-sm leading-relaxed">You can replace these with real articles whenever you find good coverage.</p>
-          </a>
+      {/* Article 3 */}
+      <a 
+        href="https://www.dav.org/learn-more/news/2025/green-beret-turns-to-ketamine-to-heal-invisible-wounds/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+      >
+        <p className="text-sm text-[#C9A66B] font-semibold mb-2">DAV · 2025</p>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+          Green Beret turns to ketamine to heal invisible wounds
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          A Green Beret discusses how ketamine helped him recover from PTSD and reclaim daily life.
+        </p>
+      </a>
 
-          {/* News item 4 */}
-          <a href="#" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-xl p-6 border border-[#eee] hover:border-[#C9A66B] transition">
-            <p className="text-sm text-[#C9A66B] font-medium mb-1">Source · Date</p>
-            <h2 className="text-xl font-bold text-[#0B1D36] mb-2">Fourth news item placeholder</h2>
-            <p className="text-[#555] text-sm leading-relaxed">Add more cards by copying this block when new stories appear.</p>
-          </a>
+      {/* Article 4 */}
+      <a 
+        href="https://med.stanford.edu/news/all-news/2026/05/drug-ketamine-antisuicide-effects.html" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+      >
+        <p className="text-sm text-[#C9A66B] font-semibold mb-2">Stanford Medicine · May 2026</p>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+          Drug combo is the first to prolong ketamine’s antisuicide effects
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          New research from Stanford shows a promising way to extend ketamine’s anti-suicidal benefits.
+        </p>
+      </a>
 
-        </div>
-      </section>
+      {/* Article 5 */}
+      <a 
+        href="https://www.billboard.com/pro/grimes-melissa-etheridge-artists-psychedelic-therapy/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+      >
+        <p className="text-sm text-[#C9A66B] font-semibold mb-2">Billboard · July 2026</p>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+          Why Grimes, Melissa Etheridge & More Artists Push Psychedelic Therapy
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Musicians and artists openly discuss the potential of ketamine and other psychedelic-assisted therapies.
+        </p>
+      </a>
+
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
