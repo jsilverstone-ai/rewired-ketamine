@@ -146,12 +146,19 @@ export default function ProvidersPage() {
 <section className="py-20 px-6">
   <div className="max-w-6xl mx-auto">
 
+    {/* Top two */}
     <div className="grid md:grid-cols-2 gap-10 mb-16">
       
-      {/* Kelsey Vivatson PMHNP-BC, APRN*/}
+      {/* Kelsey Vivatson, PMHNP-BC, APRN */}
       <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
-        <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
-          <span className="text-[#999] text-sm">Photo Placeholder – Kelsey Vivatson</span>
+        <div className="aspect-[4/3] overflow-hidden">
+          <Image
+            src="/providers/kelsey-vivatson.jpg"
+            alt="Kelsey Vivatson, PMHNP-BC, APRN - Clinical Director at Rewired Ketamine in Aventura"
+            width={800}
+            height={600}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="p-8">
           <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Clinical Director</p>
@@ -173,8 +180,14 @@ export default function ProvidersPage() {
 
       {/* Jacob Silverstone, DPM */}
       <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
-        <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
-          <span className="text-[#999] text-sm">Photo Placeholder – Jacob Silverstone, DPM</span>
+        <div className="aspect-[4/3] overflow-hidden">
+          <Image
+            src="/providers/jacob-silverstone.jpg"
+            alt="Jacob Silverstone, DPM - Medical Director at Rewired Ketamine in Aventura"
+            width={800}
+            height={600}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="p-8">
           <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Medical Director</p>
@@ -186,23 +199,35 @@ export default function ProvidersPage() {
           <p className="text-[#555] leading-relaxed mb-4">
             His work focuses on helping individuals better understand their mental health journey and explore options when traditional approaches have not provided enough relief.
           </p>
-          <a href="https://a.co/d/0753tyCg" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#C9A66B] font-semibold hover:underline">
+          <a 
+            href="https://a.co/d/0753tyCg" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[#C9A66B] font-semibold hover:underline"
+          >
             View book on Amazon →
           </a>
         </div>
       </div>
     </div>
 
+    {/* Bottom two */}
     <div className="grid md:grid-cols-2 gap-10">
       
-      {/* Shlomo Slatus, RCSWI*/}
+      {/* Shlomo Slatus,  RCSWI */}
       <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
-        <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
-          <span className="text-[#999] text-sm">Photo Placeholder – Shlomo Slatus</span>
+        <div className="aspect-[4/3] overflow-hidden">
+          <Image
+            src="/providers/shlomo-slatus.jpg"
+            alt="Shlomo Slatus, RCSWI - Clinical Team at Rewired Ketamine in Aventura"
+            width={800}
+            height={600}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="p-8">
           <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Clinical Team</p>
-          <h2 className="text-xl font-bold text-[#0B1D36] mb-1">Shlomo Slatus, RCSWI</h2>
+          <h2 className="text-xl font-bold text-[#0B1D36] mb-1">Shlomo Slat us, RCSWI</h2>
           <p className="text-[#666] text-sm mb-4">Registered Clinical Social Worker Intern</p>
           <p className="text-[#555] leading-relaxed mb-4">
             Shlomo Slatus, RCSWI is a Registered Clinical Social Worker Intern with a Master of Social Work from Yeshiva University’s Wurzweiler School of Social Work. He graduated as valedictorian of his MSW program with a specialty certification in Trauma-Informed Practice and was inducted into the Phi Alpha Honor Society for academic excellence.
@@ -227,8 +252,14 @@ export default function ProvidersPage() {
 
       {/* Sorelle Silverstone */}
       <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
-        <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
-          <span className="text-[#999] text-sm">Photo Placeholder – Sorelle Silverstone</span>
+        <div className="aspect-[4/3] overflow-hidden">
+          <Image
+            src="/providers/sorelle-silverstone.jpg"
+            alt="Sorelle Silverstone - Life Coach & Integration Support at Rewired Ketamine in Aventura"
+            width={800}
+            height={600}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="p-8">
           <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Patient Experience</p>
