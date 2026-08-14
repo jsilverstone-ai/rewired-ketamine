@@ -232,64 +232,42 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         </div>
       </section>
 
-{/* ===== CONTENT ===== */}
-<section className="py-20 px-6">
-  <div className="max-w-3xl mx-auto">
-    
-    <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
-      Warm photo placeholder
-    </div>
+{/* Main Content */}
+<section className="py-16 px-6">
+  <div className="max-w-4xl mx-auto">
+    <div className="prose prose-lg max-w-none text-[#444]">
+      <p className="text-xl leading-relaxed mb-8">
+        Eating disorders can be complex and deeply personal. At our locally owned clinic in Aventura, we offer ketamine therapy as a supportive option for individuals seeking additional help alongside their broader care plan.
+      </p>
 
-    <div className="text-[#444] space-y-6 text-lg leading-relaxed">
-      <p>
-        At our Aventura clinic, we offer fully guided ketamine therapy for people navigating eating disorders. Eating disorders involve complex relationships with food, body, and control, and often carry deep emotional weight. Support should always be careful and non-judgmental. For many, traditional approaches bring only partial relief or take a long time to help.
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">How Ketamine May Support Recovery</h2>
+      <p className="mb-6">
+        Ketamine interacts with the glutamate system and may support neuroplasticity. Some individuals experience shifts in rigid thought patterns and emotional responses that can accompany disordered eating.
       </p>
-      <p>
-        Ketamine therapy works through pathways in the brain that are distinct from most daily medications. It is often considered when other treatments have not provided enough support. Many patients notice meaningful shifts more quickly than they experienced with traditional therapies.
+      <p className="mb-6">
+        Fully guided sessions are available for those who prefer additional support during treatment. Our focus is on creating a safe, respectful, and private environment.
       </p>
-    </div>
 
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      How ketamine may support people with eating disorders
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        Eating disorders are often rooted in rigid thought patterns and emotional distress. Ketamine interacts with the glutamate system and is associated with rapid changes in neuroplasticity. In a carefully monitored setting, this may help create space for new perspectives and reduced emotional intensity around food and body image.
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">When Traditional Approaches Have Not Been Enough</h2>
+      <p className="mb-6">
+        For some people, standard treatments provide limited relief. Ketamine therapy may be considered as part of a broader supportive plan when other approaches have not been sufficient. Changes are often noticed more quickly.
       </p>
-      <p>
-        Because of this different mechanism, ketamine therapy is frequently explored as part of a broader support plan when traditional approaches have not provided enough relief. Individual responses vary, and care is always personalized and collaborative.
+
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Care at Our Aventura Clinic</h2>
+      <p className="mb-6">
+        We are a locally owned practice serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español! We prioritize clear communication and medically supervised care.
       </p>
     </div>
 
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      What to expect at Rewired Ketamine in Aventura
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        Fully guided sessions are available. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so the insights and shifts from each session can be carried into daily life.
-      </p>
-      <p>
-        We serve patients from Miami, Fort Lauderdale, and across South Florida who are looking for a calm, clinically supervised approach to ketamine therapy in the context of eating disorders.
-      </p>
+    <div className="mt-14 bg-[#0B1D36] text-white rounded-2xl p-8 text-center">
+      <h3 className="text-2xl font-bold mb-4">Ready to take the next step?</h3>
+      <p className="text-white/80 mb-6">Book a free consultation at our Aventura clinic.</p>
+      <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-3 rounded-full hover:bg-white transition">
+        Book Free Consultation
+      </Link>
     </div>
+  
 
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      Who ketamine therapy for eating disorders may be right for
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        This approach is often considered by people living with eating disorders who have not found enough relief from standard treatments, or who are looking for a carefully supervised option that may work more quickly. A free consultation at our Aventura location allows us to review your history, answer questions, and determine whether ketamine therapy is an appropriate next step for you.
-      </p>
-    </div>
-
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      Ketamine therapy for eating disorders in Aventura & South Florida
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        Rewired Ketamine is an Aventura-based clinic offering fully guided ketamine therapy for eating disorders and related concerns. We welcome patients throughout Miami-Dade, Broward, and the greater South Florida area who are seeking a thoughtful, clinically supervised experience. ¡Hablamos Español!
-      </p>
-    </div>
 
     <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
       Frequently Asked Questions about Ketamine for Eating Disorders

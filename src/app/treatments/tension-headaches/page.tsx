@@ -232,46 +232,42 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         </div>
       </section>
 
-{/* ===== CONTENT ===== */}
-<section className="py-20 px-6">
-  <div className="max-w-3xl mx-auto">
-    
-    <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
-      Warm photo placeholder
-    </div>
+{/* Main Content */}
+<section className="py-16 px-6">
+  <div className="max-w-4xl mx-auto">
+    <div className="prose prose-lg max-w-none text-[#444]">
+      <p className="text-xl leading-relaxed mb-8">
+        Persistent tension headaches can interfere with focus, mood, and quality of life. At our locally owned clinic in Aventura, we offer ketamine therapy as a supportive option for individuals seeking relief.
+      </p>
 
-    <div className="text-[#444] space-y-6 text-lg leading-relaxed">
-      <p>
-        At our Aventura clinic, we offer fully guided ketamine therapy for people dealing with tension headaches. Frequent tension headaches can create ongoing discomfort, pressure, and fatigue that interfere with work, rest, and daily ease. For many, traditional approaches bring only partial relief or take a long time to help.
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">How Ketamine May Help with Tension Headaches</h2>
+      <p className="mb-6">
+        Ketamine may influence pain signaling pathways in the nervous system. Some individuals experience a reduction in the frequency or intensity of tension-related headaches.
       </p>
-      <p>
-        Ketamine therapy works through pathways in the nervous system that are distinct from most daily headache medications. It is often considered when other treatments have not provided enough support. Many patients notice meaningful shifts more quickly than they experienced with traditional approaches.
+      <p className="mb-6">
+        Fully guided sessions are available for those who prefer additional support during treatment. Our focus is on safety, comfort, and individualized care.
       </p>
-    </div>
 
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      How ketamine may support people with tension headaches
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        Tension headaches often involve persistent muscle tension and nervous system patterns that keep discomfort active. Ketamine interacts with the glutamate system and is associated with changes that may help quiet these pathways. In a carefully monitored setting, this may create space for greater comfort and relief.
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">When Other Approaches Have Not Been Enough</h2>
+      <p className="mb-6">
+        For people whose tension headaches continue despite other treatments, ketamine therapy may offer another path forward. Changes are often noticed more quickly than with conventional methods.
       </p>
-      <p>
-        Because of this different mechanism, ketamine therapy for tension headaches is frequently explored by people who have not found sufficient relief from traditional treatments or who need support that can begin working more quickly. Individual responses vary, and care is always personalized.
+
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Care at Our Aventura Clinic</h2>
+      <p className="mb-6">
+        We are a locally owned practice serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español! We prioritize clear communication and medically supervised care.
       </p>
     </div>
 
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      What to expect at Rewired Ketamine in Aventura
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        Fully guided sessions are available. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so the insights and shifts from each session can be carried into daily life.
-      </p>
-      <p>
-        We serve patients from Miami, Fort Lauderdale, and across South Florida who are looking for a calm, clinically supervised approach to ketamine therapy for tension headaches.
-      </p>
+    <div className="mt-14 bg-[#0B1D36] text-white rounded-2xl p-8 text-center">
+      <h3 className="text-2xl font-bold mb-4">Ready to take the next step?</h3>
+      <p className="text-white/80 mb-6">Book a free consultation at our Aventura clinic.</p>
+      <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-3 rounded-full hover:bg-white transition">
+        Book Free Consultation
+      </Link>
     </div>
+  </div>
+</section>
 
     <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
       Who ketamine therapy for tension headaches may be right for
@@ -342,8 +338,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       </div>
 
     </div>
-  </div>
-</section>
+
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">

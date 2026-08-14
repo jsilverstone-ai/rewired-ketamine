@@ -231,119 +231,70 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         </div>
       </section>
 
-{/* ===== CONTENT ===== */}
-<section className="py-20 px-6">
-  <div className="max-w-3xl mx-auto">
-    
-    <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
-      Warm photo placeholder
-    </div>
+{/* Main Content */}
+<section className="py-16 px-6">
+  <div className="max-w-4xl mx-auto">
+    <div className="prose prose-lg max-w-none text-[#444]">
+      <p className="text-xl leading-relaxed mb-8">
+        Mental fogginess can make it harder to focus, think clearly, and feel fully present. At our locally owned clinic in Aventura, we offer ketamine therapy as a supportive option for individuals seeking greater mental clarity.
+      </p>
 
-    <div className="text-[#444] space-y-6 text-lg leading-relaxed">
-      <p>
-        At our Aventura clinic, we offer fully guided ketamine therapy for people experiencing mental fogginess. Mental fogginess can feel like slowed thinking, difficulty concentrating, or a lack of mental clarity that makes daily tasks harder than they should be. For many, traditional approaches bring only partial relief or take a long time to help.
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">How Ketamine May Support Mental Clarity</h2>
+      <p className="mb-6">
+        Ketamine interacts with the brain’s glutamate system and may support neuroplasticity — the ability to form new neural connections. Some people notice improvements in focus, mental sharpness, and overall cognitive clarity.
       </p>
-      <p>
-        Ketamine therapy works through pathways in the brain that are distinct from most daily medications. It is often considered when other treatments have not provided enough support. Many patients notice meaningful shifts more quickly than they experienced with traditional therapies.
+      <p className="mb-6">
+        Fully guided sessions are available for those who prefer additional support during treatment. Our focus is on creating a safe, private, and calm environment.
       </p>
-    </div>
 
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      How ketamine may support people with mental fogginess
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        Mental fogginess often involves reduced mental clarity and difficulty with focus. Ketamine interacts with the glutamate system and is associated with rapid changes in neuroplasticity — the brain’s ability to form new connections. In a carefully monitored setting, this may help support clearer thinking and greater cognitive ease.
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">When Other Approaches Have Not Been Enough</h2>
+      <p className="mb-6">
+        For individuals who continue to experience mental fog despite other efforts, ketamine therapy may offer another avenue of support. Changes are often noticed more quickly than with traditional methods.
       </p>
-      <p>
-        Because of this different mechanism, ketamine therapy for mental fogginess is frequently explored by people who have not found sufficient relief from traditional approaches or who need support that can begin working more quickly. Individual responses vary, and care is always personalized.
+
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Care at Our Aventura Clinic</h2>
+      <p className="mb-6">
+        We are a locally owned practice serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español! Our team prioritizes clear communication and medically supervised care.
       </p>
     </div>
 
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      What to expect at Rewired Ketamine in Aventura
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        Fully guided sessions are available. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so the insights and shifts from each session can be carried into daily life.
-      </p>
-      <p>
-        We serve patients from Miami, Fort Lauderdale, and across South Florida who are looking for a calm, clinically supervised approach to ketamine therapy for mental fogginess.
-      </p>
-    </div>
-
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      Who ketamine therapy for mental fogginess may be right for
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        This approach is often considered by people experiencing mental fogginess who have not found enough relief from standard treatments, or who are looking for a carefully supervised option that may work more quickly. A free consultation at our Aventura location allows us to review your history, answer questions, and determine whether ketamine therapy is an appropriate next step for you.
-      </p>
-    </div>
-
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-      Ketamine therapy for mental fogginess in Aventura & South Florida
-    </h2>
-    <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-      <p>
-        Rewired Ketamine is an Aventura-based clinic offering fully guided ketamine therapy for mental fogginess and related concerns. We welcome patients throughout Miami-Dade, Broward, and the greater South Florida area who are seeking a thoughtful, clinically supervised experience. ¡Hablamos Español!
-      </p>
-    </div>
-
-    <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
-      Frequently Asked Questions about Ketamine for Mental Fogginess
-    </h2>
-    <div className="space-y-6">
-
-      <div className="bg-white rounded-xl p-6 border border-[#eee]">
-        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-          How quickly can ketamine therapy help with mental fogginess?
-        </h3>
-        <p className="text-[#555] leading-relaxed">
-          Many people notice supportive changes within hours to a few days after a session. This is often faster than the several weeks typically required for traditional approaches to reach full effect.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-xl p-6 border border-[#eee]">
-        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-          Is ketamine used when other treatments for mental fogginess have not worked?
-        </h3>
-        <p className="text-[#555] leading-relaxed">
-          Yes. Ketamine is frequently considered for people who have not experienced enough relief from standard approaches. It works through a different pathway in the brain than most daily treatments.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-xl p-6 border border-[#eee]">
-        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-          Are fully guided sessions available for mental fogginess at your Aventura clinic?
-        </h3>
-        <p className="text-[#555] leading-relaxed">
-          Yes. At Rewired Ketamine in Aventura, fully guided sessions are available in a calm, monitored clinical setting. Our team prioritizes safety, comfort, and partnership before, during, and after treatment.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-xl p-6 border border-[#eee]">
-        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-          Do you offer ketamine therapy for mental fogginess to patients outside Aventura?
-        </h3>
-        <p className="text-[#555] leading-relaxed">
-          Yes. We serve patients from Miami, Fort Lauderdale, and across South Florida from our Aventura clinic. We also provide Spanish-language support and welcome individuals seeking thoughtful, clinically supervised care.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-xl p-6 border border-[#eee]">
-        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-          How is ketamine therapy for mental fogginess different from traditional approaches?
-        </h3>
-        <p className="text-[#555] leading-relaxed">
-          Most traditional approaches gradually influence specific systems over time. Ketamine interacts with the glutamate system and is associated with more rapid changes in neuroplasticity. Sessions are intermittent and always medically supervised.
-        </p>
-      </div>
-
+    <div className="mt-14 bg-[#0B1D36] text-white rounded-2xl p-8 text-center">
+      <h3 className="text-2xl font-bold mb-4">Ready to take the next step?</h3>
+      <p className="text-white/80 mb-6">Book a free consultation at our Aventura clinic.</p>
+      <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-3 rounded-full hover:bg-white transition">
+        Book Free Consultation
+      </Link>
     </div>
   </div>
 </section>
+{/* FAQ */}
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-3xl font-bold text-[#0B1D36] mb-10 text-center">Frequently Asked Questions</h2>
+    
+    <div className="space-y-6">
+      <div className="bg-[#F8F5F0] rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Can ketamine help with mental fogginess or lack of clarity?</h3>
+        <p className="text-[#555] leading-relaxed">Some individuals explore ketamine therapy when they experience persistent mental fog and have not found enough relief with other approaches.</p>
+      </div>
 
+      <div className="bg-[#F8F5F0] rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Are fully guided sessions available for mental fogginess treatment at your Aventura clinic?</h3>
+        <p className="text-[#555] leading-relaxed">Yes. Fully guided sessions are available in a calm, private setting at our Aventura location.</p>
+      </div>
+
+      <div className="bg-[#F8F5F0] rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Do you see patients from outside Aventura for this concern?</h3>
+        <p className="text-[#555] leading-relaxed">Yes. We welcome patients from Miami, Fort Lauderdale, and across South Florida.</p>
+      </div>
+
+      <div className="bg-[#F8F5F0] rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">How is ketamine different from traditional approaches for mental clarity?</h3>
+        <p className="text-[#555] leading-relaxed">Ketamine interacts with the glutamate system and may support neuroplasticity, which some people find helpful for mental clarity when other methods have not been enough.</p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto text-center">

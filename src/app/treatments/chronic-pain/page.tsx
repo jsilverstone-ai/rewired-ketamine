@@ -235,64 +235,42 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         </div>
       </section>
 
-      {/* CONTENT */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          
-          <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
-            Warm photo placeholder
-          </div>
+{/* Main Content */}
+<section className="py-16 px-6">
+  <div className="max-w-4xl mx-auto">
+    <div className="prose prose-lg max-w-none text-[#444]">
+      <p className="text-xl leading-relaxed mb-8">
+        Chronic pain can affect every part of daily life. At our locally owned clinic in Aventura, we offer ketamine therapy as a supportive option for individuals seeking relief when other approaches have not been enough.
+      </p>
 
-          <div className="text-[#444] space-y-6 text-lg leading-relaxed">
-            <p>
-              At our Aventura clinic, we offer fully guided ketamine therapy for people living with chronic pain. Chronic pain affects far more than the body — it can impact mood, sleep, relationships, and overall quality of life. For many, traditional approaches bring only partial relief or take a long time to help.
-            </p>
-            <p>
-              Ketamine therapy works through pathways in the nervous system that are distinct from most daily pain medications. It is often considered when other treatments have not provided enough support. Many patients notice meaningful shifts more quickly than they experienced with traditional approaches.
-            </p>
-          </div>
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">How Ketamine May Help with Chronic Pain</h2>
+      <p className="mb-6">
+        Ketamine has been studied for its potential effects on pain pathways in the nervous system. Some individuals experience a reduction in pain intensity or a shift in how pain is processed.
+      </p>
+      <p className="mb-6">
+        Fully guided sessions are available for those who prefer additional support during treatment. We focus on creating a calm, private, and medically supervised environment.
+      </p>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-            How ketamine may support people with chronic pain
-          </h2>
-          <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-            <p>
-              Chronic pain often involves persistent signaling in the nervous system. Ketamine interacts with the glutamate system and is associated with changes that may help quiet pain pathways and support greater comfort. In a carefully monitored setting, this may create space for relief and improved quality of life.
-            </p>
-            <p>
-              Because of this different mechanism, ketamine therapy for chronic pain is frequently explored by people who have not found sufficient relief from traditional treatments or who need support that can begin working more quickly. Individual responses vary, and care is always personalized.
-            </p>
-          </div>
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">When Other Treatments Have Not Provided Enough Relief</h2>
+      <p className="mb-6">
+        For some people living with persistent pain, standard approaches offer limited help. Ketamine therapy may be considered as another supportive option. Results are often noticed more quickly than with traditional methods.
+      </p>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-            What to expect at Rewired Ketamine in Aventura
-          </h2>
-          <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-            <p>
-              Fully guided sessions are available. From the moment you arrive at our Aventura clinic, our focus is safety, comfort, and partnership. You are monitored throughout the experience, and we support you with thoughtful preparation and integration so the insights and shifts from each session can be carried into daily life.
-            </p>
-            <p>
-              We serve patients from Miami, Fort Lauderdale, and across South Florida who are looking for a calm, clinically supervised approach to ketamine therapy for chronic pain.
-            </p>
-          </div>
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Care at Our Aventura Clinic</h2>
+      <p className="mb-6">
+        As a locally owned practice serving Miami, Fort Lauderdale, and South Florida, we provide thoughtful, medically supervised care. ¡Hablamos Español!
+      </p>
+    </div>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-            Who ketamine therapy for chronic pain may be right for
-          </h2>
-          <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-            <p>
-              This approach is often considered by people living with chronic pain who have not found enough relief from standard treatments, or who are looking for a carefully supervised option that may work more quickly. A free consultation at our Aventura location allows us to review your history, answer questions, and determine whether ketamine therapy is an appropriate next step for you.
-            </p>
-          </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
-            Ketamine therapy for chronic pain in Aventura & South Florida
-          </h2>
-          <div className="text-[#444] space-y-5 text-lg leading-relaxed">
-            <p>
-              Rewired Ketamine is an Aventura-based clinic offering fully guided ketamine therapy for chronic pain and related concerns. We welcome patients throughout Miami-Dade, Broward, and the greater South Florida area who are seeking a thoughtful, clinically supervised experience. ¡Hablamos Español!
-            </p>
-          </div>
+    <div className="mt-14 bg-[#0B1D36] text-white rounded-2xl p-8 text-center">
+      <h3 className="text-2xl font-bold mb-4">Ready to explore support for chronic pain?</h3>
+      <p className="text-white/80 mb-6">Schedule a free consultation at our Aventura clinic.</p>
+      <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-3 rounded-full hover:bg-white transition">
+        Book Free Consultation
+      </Link>
+    </div>
+  </div>
+</section>
 
           {/* FAQ */}
           <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
@@ -346,8 +324,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
             </div>
 
           </div>
-        </div>
-      </section>
+
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
