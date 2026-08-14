@@ -214,7 +214,7 @@ export default function ProvidersPage() {
     {/* Bottom two */}
     <div className="grid md:grid-cols-2 gap-10">
       
-      {/* Shlomo Slatus,  RCSWI */}
+      {/* Shlomo Slatus, RCSWI */}
       <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
         <div className="aspect-[4/3] overflow-hidden">
           <Image
