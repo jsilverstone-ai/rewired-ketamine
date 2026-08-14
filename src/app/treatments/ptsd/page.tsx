@@ -230,6 +230,44 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           <p className="text-[#C9A66B] font-bold text-lg md:text-xl">¡Hablamos Español!</p>
         </div>
       </section>
+{/* Main Content */}
+<section className="py-16 px-6">
+  <div className="max-w-4xl mx-auto">
+    
+    <div className="prose prose-lg max-w-none text-[#444]">
+      <p className="text-xl leading-relaxed mb-8">
+        Living with PTSD can affect many parts of daily life. At our locally owned clinic in Aventura, we offer ketamine therapy as a supportive option for individuals who have not found enough relief through traditional approaches alone.
+      </p>
+
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">How Ketamine May Support Individuals with PTSD</h2>
+      <p className="mb-6">
+        Ketamine interacts with the brain’s glutamate system and may help support neuroplasticity — the brain’s ability to form new connections. Some people experience a shift in how traumatic memories and emotional responses are processed, often more quickly than with standard treatments.
+      </p>
+      <p className="mb-6">
+        Fully guided sessions are available for those who prefer additional support during the experience. Our focus is on creating a safe, private, and respectful environment.
+      </p>
+
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">When Other Treatments Have Not Provided Enough Relief</h2>
+      <p className="mb-6">
+        Many individuals try multiple approaches before exploring ketamine therapy. For those whose symptoms have remained persistent, ketamine may offer another avenue of support. Results are often noticed more rapidly than with traditional therapies.
+      </p>
+
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Thoughtful Care in Aventura</h2>
+      <p className="mb-6">
+        We are a locally owned clinic serving Miami, Fort Lauderdale, and the greater South Florida area. ¡Hablamos Español! Our team prioritizes clear communication, medical supervision, and a calm setting for every visit.
+      </p>
+    </div>
+
+    {/* CTA Box */}
+    <div className="mt-14 bg-[#0B1D36] text-white rounded-2xl p-8 text-center">
+      <h3 className="text-2xl font-bold mb-4">Ready to take the next step?</h3>
+      <p className="text-white/80 mb-6">Book a free consultation at our Aventura clinic. We’re here to answer your questions with care and clarity.</p>
+      <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-3 rounded-full hover:bg-white transition">
+        Book Free Consultation
+      </Link>
+    </div>
+  </div>
+</section>
 
     <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
       Frequently Asked Questions about Ketamine for Anxiety

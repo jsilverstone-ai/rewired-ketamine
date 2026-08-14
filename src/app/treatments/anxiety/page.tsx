@@ -203,7 +203,44 @@ export default function AnxietyPage() {
           <p className="text-[#C9A66B] font-bold text-lg md:text-xl">¡Hablamos Español!</p>
         </div>
       </section>
+{/* Main Content */}
+<section className="py-16 px-6">
+  <div className="max-w-4xl mx-auto">
+    
+    <div className="prose prose-lg max-w-none text-[#444]">
+      <p className="text-xl leading-relaxed mb-8">
+        Anxiety can feel overwhelming, persistent, and hard to manage with traditional approaches alone. At our locally owned clinic in Aventura, we offer ketamine therapy as a supportive option for individuals seeking relief when other treatments have not provided enough help.
+      </p>
 
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">How Ketamine May Help with Anxiety</h2>
+      <p className="mb-6">
+        Ketamine works differently from standard anti-anxiety medications. It interacts with the glutamate system in the brain and may support the growth of new neural connections. Many people notice a shift in how they experience anxiety, often more quickly than with traditional therapies.
+      </p>
+      <p className="mb-6">
+        Fully guided sessions are available for those who prefer additional support during treatment. Our approach focuses on safety, comfort, and individualized care in a calm private setting.
+      </p>
+
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">When Traditional Treatments Haven’t Been Enough</h2>
+      <p className="mb-6">
+        For some individuals, standard medications and talk therapy provide limited relief. Ketamine therapy may offer another path forward, particularly when anxiety has been persistent or treatment-resistant. Results are often noticed more quickly than with conventional approaches.
+      </p>
+
+      <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Care at Our Aventura Clinic</h2>
+      <p className="mb-6">
+        As a locally owned practice serving Miami, Fort Lauderdale, and South Florida, we prioritize a thoughtful, medically supervised experience. ¡Hablamos Español! We welcome patients seeking a calm and supportive environment for their care.
+      </p>
+    </div>
+
+    {/* CTA Box */}
+    <div className="mt-14 bg-[#0B1D36] text-white rounded-2xl p-8 text-center">
+      <h3 className="text-2xl font-bold mb-4">Ready to explore support for anxiety?</h3>
+      <p className="text-white/80 mb-6">Schedule a free consultation at our Aventura clinic. No pressure — just clear information and compassionate guidance.</p>
+      <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-3 rounded-full hover:bg-white transition">
+        Book Free Consultation
+      </Link>
+    </div>
+  </div>
+</section>
     <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
       Frequently Asked Questions about Ketamine for Anxiety
     </h2>
