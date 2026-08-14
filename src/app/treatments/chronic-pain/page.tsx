@@ -272,59 +272,52 @@ const [isContentOpen, setIsContentOpen] = useState(false);
   </div>
 </section>
 
-          {/* FAQ */}
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-16 mb-8">
-            Frequently Asked Questions about Ketamine for Chronic Pain
-          </h2>
-          <div className="space-y-6">
+{/* FAQ */}
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-3xl font-bold text-[#0B1D36] mb-10 text-center">
+      Frequently Asked Questions
+    </h2>
 
-            <div className="bg-white rounded-xl p-6 border border-[#eee]">
-              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-                How quickly can ketamine therapy help with chronic pain?
-              </h3>
-              <p className="text-[#555] leading-relaxed">
-                Many people notice supportive changes within hours to a few days after a session. This is often faster than the longer timelines associated with many traditional pain approaches.
-              </p>
-            </div>
+    <div className="space-y-6">
+      <div className="bg-[#F8F5F0] rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Is ketamine used when other treatments for chronic pain have not worked?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. Ketamine is frequently considered for people who have not experienced enough relief with traditional pain approaches.
+        </p>
+      </div>
 
-            <div className="bg-white rounded-xl p-6 border border-[#eee]">
-              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-                Is ketamine used when other chronic pain treatments have not worked?
-              </h3>
-              <p className="text-[#555] leading-relaxed">
-                Yes. Ketamine is frequently considered for people who have not experienced enough relief from standard pain treatments. It works through a different pathway in the nervous system.
-              </p>
-            </div>
+      <div className="bg-[#F8F5F0] rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Are fully guided sessions available for chronic pain treatment at your Aventura clinic?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. Fully guided sessions are available in a calm, private setting at our Aventura location.
+        </p>
+      </div>
 
-            <div className="bg-white rounded-xl p-6 border border-[#eee]">
-              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-                Are fully guided sessions available for chronic pain treatment at your Aventura clinic?
-              </h3>
-              <p className="text-[#555] leading-relaxed">
-                Yes. At Rewired Ketamine in Aventura, fully guided sessions are available in a calm, monitored clinical setting. Our team prioritizes safety, comfort, and partnership before, during, and after treatment.
-              </p>
-            </div>
+      <div className="bg-[#F8F5F0] rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Do you offer ketamine therapy for chronic pain to patients outside Aventura?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. We serve patients from Miami, Fort Lauderdale, and across South Florida.
+        </p>
+      </div>
 
-            <div className="bg-white rounded-xl p-6 border border-[#eee]">
-              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-                Do you offer ketamine therapy for chronic pain to patients outside Aventura?
-              </h3>
-              <p className="text-[#555] leading-relaxed">
-                Yes. We serve patients from Miami, Fort Lauderdale, and across South Florida from our Aventura clinic. We also provide Spanish-language support and welcome individuals seeking thoughtful, clinically supervised care.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-[#eee]">
-              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
-                How is ketamine therapy for chronic pain different from traditional pain treatments?
-              </h3>
-              <p className="text-[#555] leading-relaxed">
-                Most traditional pain treatments gradually influence specific systems over time. Ketamine interacts with the glutamate system and is associated with more rapid changes in pain signaling pathways. Sessions are intermittent and always medically supervised.
-              </p>
-            </div>
-
-          </div>
-
+      <div className="bg-[#F8F5F0] rounded-xl p-6 border border-[#eee]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          How is ketamine therapy for chronic pain different from traditional approaches?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Ketamine may influence pain signaling pathways in the nervous system in a different way than many standard treatments, and some people notice changes more quickly.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
