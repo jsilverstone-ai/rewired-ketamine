@@ -203,10 +203,15 @@ export default function ProvidersPage() {
             href="https://a.co/d/0753tyCg" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#C9A66B] font-semibold hover:underline"
+            className="inline-flex items-center gap-2 text-[#C9A66B] font-semibold hover:underline mb-4"
           >
             View book on Amazon →
           </a>
+          <div className="border-t border-gray-100 pt-4 mt-4">
+            <p className="text-sm text-[#666]">
+              <span className="font-semibold text-[#0B1D36]">Education & Training:</span> BA in Sociology, Hunter College (CUNY) • DPM, New York College of Podiatric Medicine • Foot & Ankle Reconstructive Surgery Residency, Long Island Jewish Medical Center at Hofstra School of Medicine
+            </p>
+          </div>
         </div>
       </div>
     </div>
