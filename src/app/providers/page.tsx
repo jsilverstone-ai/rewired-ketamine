@@ -232,7 +232,7 @@ export default function ProvidersPage() {
         </div>
         <div className="p-8">
           <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Clinical Team</p>
-          <h2 className="text-xl font-bold text-[#0B1D36] mb-1">Shlomo Slat us, RCSWI</h2>
+          <h2 className="text-xl font-bold text-[#0B1D36] mb-1">Shlomo Slatus, RCSWI</h2>
           <p className="text-[#666] text-sm mb-4">Registered Clinical Social Worker Intern</p>
           <p className="text-[#555] leading-relaxed mb-4">
             Shlomo Slatus, RCSWI is a Registered Clinical Social Worker Intern with a Master of Social Work from Yeshiva University’s Wurzweiler School of Social Work. He graduated as valedictorian of his MSW program with a specialty certification in Trauma-Informed Practice and was inducted into the Phi Alpha Honor Society for academic excellence.
