@@ -267,10 +267,21 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           
-          {/* Image Placeholder */}
-          <div className="h-64 md:h-80 bg-[#e8e0d5] rounded-2xl flex items-center justify-center text-[#888] mb-12">
-            Warm Miami treatment room photo placeholder
-          </div>
+{/* Service Image */}
+<section className="py-12 px-6">
+  <div className="max-w-4xl mx-auto">
+    <div className="rounded-2xl overflow-hidden shadow-sm border border-[#eee]">
+      <Image
+        src="/services/ketamine-infusion-aventura.jpg"
+        alt="Private ketamine infusion suite at Rewired Ketamine clinic in Aventura, Florida"
+        width={1200}
+        height={900}
+        className="w-full h-auto object-cover"
+        priority
+      />
+    </div>
+  </div>
+</section>
 
           <div className="prose prose-lg max-w-none text-[#444]">
             <p className="text-lg leading-relaxed mb-6">
