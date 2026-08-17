@@ -434,7 +434,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
             method="POST"
             className="bg-white rounded-2xl p-8 md:p-10 text-[#1a1a1a] shadow-xl"
           >
-            <input type="hidden" name="_next" value="https://rewiredketamine.com/thank-you" />
+            <input type="hidden" name="_next" value="https://rewired-ketamine-7b91.vercel.app/thank-you" />
             <div className="grid md:grid-cols-2 gap-5 mb-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-[#0B1D36] mb-1.5">Full Name *</label>
