@@ -17,12 +17,12 @@ const videos = [
   },
   {
     id: "WA-uAIWuAdU",
-    title: "Our Approach to Care",
-    description: "How we create individualized treatment plans focused on compassion, listening, and lasting support.",
+    title: "Patient Information",
+    description: "No you won't change, you'll just be a better form of you!",
   },
   {
     id: "YigR2tHYeRw",
-    title: "Ketamine Therapy at Rewired",
+    title: "Why Rewired Ketamine Is Different",
     description: "An overview of how ketamine therapy is offered at our Aventura clinic.",
   },
 ];
