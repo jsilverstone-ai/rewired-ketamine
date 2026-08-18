@@ -2,6 +2,15 @@
 
 import { useState, useEffect } from "react";
 
+type Priority = "high" | "medium" | "low";
+
+interface Todo {
+  id: number;
+  text: string;
+  done: boolean;
+  priority: Priority;
+}
+
 export default function SeoDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
@@ -10,20 +19,18 @@ export default function SeoDashboard() {
   const [checking, setChecking] = useState(true);
 
   // To-Do List state
-  const [todos, setTodos] = useState<{ id: number; text: string; done: boolean }[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState("");
+  const [newPriority, setNewPriority] = useState<Priority>("medium");
 
   useEffect(() => {
     setChecking(false);
-
-    // Load todos from localStorage
     const saved = localStorage.getItem("seo-todos");
     if (saved) {
       setTodos(JSON.parse(saved));
     }
   }, []);
 
-  // Save todos whenever they change
   useEffect(() => {
     localStorage.setItem("seo-todos", JSON.stringify(todos));
   }, [todos]);
@@ -66,9 +73,15 @@ export default function SeoDashboard() {
 
     setTodos([
       ...todos,
-      { id: Date.now(), text: newTodo.trim(), done: false },
+      {
+        id: Date.now(),
+        text: newTodo.trim(),
+        done: false,
+        priority: newPriority,
+      },
     ]);
     setNewTodo("");
+    setNewPriority("medium");
   };
 
   const toggleTodo = (id: number) => {
@@ -81,6 +94,19 @@ export default function SeoDashboard() {
 
   const deleteTodo = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  // Sort: High → Medium → Low, then unfinished first
+  const sortedTodos = [...todos].sort((a, b) => {
+    const priorityOrder = { high: 0, medium: 1, low: 2 };
+    if (a.done !== b.done) return a.done ? 1 : -1;
+    return priorityOrder[a.priority] - priorityOrder[b.priority];
+  });
+
+  const priorityColors = {
+    high: "bg-red-100 text-red-700",
+    medium: "bg-yellow-100 text-yellow-700",
+    low: "bg-blue-100 text-blue-700",
   };
 
   if (checking) {
@@ -137,7 +163,6 @@ export default function SeoDashboard() {
   // ========== DASHBOARD ==========
   return (
     <div className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
-      {/* Top Bar */}
       <header className="bg-[#0B1D36] text-white py-4 px-6 flex justify-between items-center shadow-md">
         <div className="font-semibold text-lg tracking-wide">
           Rewired Ketamine · SEO Control Center
@@ -168,7 +193,6 @@ export default function SeoDashboard() {
           </a>
         </div>
 
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {/* SITE HEALTH */}
@@ -177,43 +201,12 @@ export default function SeoDashboard() {
               <span>🔍</span> Site Health
             </h2>
             <p className="text-sm text-[#666] mb-5">Run free scans on your website</p>
-
             <div className="space-y-3">
-              <a
-                href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com"
-                target="_blank"
-                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-              >
-                PageSpeed Insights
-              </a>
-              <a
-                href="https://securityheaders.com/?q=https://www.rewiredketamine.com&followRedirects=on"
-                target="_blank"
-                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-              >
-                Security Headers Check
-              </a>
-              <a
-                href="https://search.google.com/test/rich-results?url=https://www.rewiredketamine.com"
-                target="_blank"
-                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-              >
-                Rich Results / Schema Test
-              </a>
-              <a
-                href="https://www.ssllabs.com/ssltest/analyze.html?d=www.rewiredketamine.com"
-                target="_blank"
-                className="block w-full text-center border border-[#0B1D36] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#0B1D36] hover:text-white transition"
-              >
-                SSL / HTTPS Grade
-              </a>
-              <a
-                href="https://search.google.com/search-console"
-                target="_blank"
-                className="block w-full text-center border border-[#C9A66B] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#C9A66B] transition"
-              >
-                Google Search Console
-              </a>
+              <a href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">PageSpeed Insights</a>
+              <a href="https://securityheaders.com/?q=https://www.rewiredketamine.com&followRedirects=on" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">Security Headers Check</a>
+              <a href="https://search.google.com/test/rich-results?url=https://www.rewiredketamine.com" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">Rich Results / Schema Test</a>
+              <a href="https://www.ssllabs.com/ssltest/analyze.html?d=www.rewiredketamine.com" target="_blank" className="block w-full text-center border border-[#0B1D36] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#0B1D36] hover:text-white transition">SSL / HTTPS Grade</a>
+              <a href="https://search.google.com/search-console" target="_blank" className="block w-full text-center border border-[#C9A66B] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#C9A66B] transition">Google Search Console</a>
             </div>
           </div>
 
@@ -223,7 +216,6 @@ export default function SeoDashboard() {
               <span>🎯</span> Keyword Tracker
             </h2>
             <p className="text-sm text-[#666] mb-4">Prioritized targets (July 2026 baseline)</p>
-
             <div className="space-y-4 text-sm">
               <div>
                 <p className="font-semibold text-[#0B1D36] mb-1">Tier 1 – Protect</p>
@@ -234,7 +226,6 @@ export default function SeoDashboard() {
                   <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine South Florida</li>
                 </ul>
               </div>
-
               <div>
                 <p className="font-semibold text-[#0B1D36] mb-1">Tier 2 – Push</p>
                 <ul className="space-y-1 text-[#333]">
@@ -245,7 +236,6 @@ export default function SeoDashboard() {
                   <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Fully guided ketamine therapy Aventura</li>
                 </ul>
               </div>
-
               <div>
                 <p className="font-semibold text-[#0B1D36] mb-1">Tier 3 – Opportunity</p>
                 <ul className="space-y-1 text-[#333]">
@@ -257,34 +247,45 @@ export default function SeoDashboard() {
             </div>
           </div>
 
-          {/* TO-DO LIST */}
+          {/* TO-DO LIST WITH PRIORITY */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
               <span>✅</span> SEO To-Do List
             </h2>
-            <p className="text-sm text-[#666] mb-4">Add tasks and check them off</p>
+            <p className="text-sm text-[#666] mb-4">Add tasks with priority</p>
 
-            <form onSubmit={addTodo} className="flex gap-2 mb-4">
+            <form onSubmit={addTodo} className="space-y-3 mb-4">
               <input
                 type="text"
                 value={newTodo}
                 onChange={(e) => setNewTodo(e.target.value)}
                 placeholder="Add a new task..."
-                className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A66B]"
+                className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A66B]"
               />
-              <button
-                type="submit"
-                className="bg-[#C9A66B] text-[#0B1D36] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#b8955a] transition"
-              >
-                Add
-              </button>
+              <div className="flex gap-2">
+                <select
+                  value={newPriority}
+                  onChange={(e) => setNewPriority(e.target.value as Priority)}
+                  className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A66B]"
+                >
+                  <option value="high">High Priority</option>
+                  <option value="medium">Medium Priority</option>
+                  <option value="low">Low Priority</option>
+                </select>
+                <button
+                  type="submit"
+                  className="bg-[#C9A66B] text-[#0B1D36] px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#b8955a] transition"
+                >
+                  Add
+                </button>
+              </div>
             </form>
 
-            <ul className="space-y-2 max-h-64 overflow-y-auto">
-              {todos.length === 0 && (
+            <ul className="space-y-2 max-h-72 overflow-y-auto">
+              {sortedTodos.length === 0 && (
                 <li className="text-sm text-[#888] italic">No tasks yet. Add one above.</li>
               )}
-              {todos.map((todo) => (
+              {sortedTodos.map((todo) => (
                 <li
                   key={todo.id}
                   className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 group"
@@ -301,6 +302,11 @@ export default function SeoDashboard() {
                     }`}
                   >
                     {todo.text}
+                  </span>
+                  <span
+                    className={`text-xs px-2 py-0.5 rounded-full font-medium ${priorityColors[todo.priority]}`}
+                  >
+                    {todo.priority}
                   </span>
                   <button
                     onClick={() => deleteTodo(todo.id)}
@@ -319,7 +325,6 @@ export default function SeoDashboard() {
               <span>🏆</span> Competitors
             </h2>
             <p className="text-sm text-[#666] mb-5">Local ketamine clinics to monitor</p>
-
             <div className="space-y-5">
               <div>
                 <p className="text-sm font-semibold text-[#0B1D36]">1. Nushama (Aventura)</p>
@@ -330,7 +335,6 @@ export default function SeoDashboard() {
                   <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
                 </div>
               </div>
-
               <div>
                 <p className="text-sm font-semibold text-[#0B1D36]">2. Ketamine Aventura</p>
                 <p className="text-xs text-[#666] mb-1">ketamineaventura.com</p>
@@ -340,10 +344,9 @@ export default function SeoDashboard() {
                   <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
                 </div>
               </div>
-
               <div>
                 <p className="text-sm font-semibold text-[#0B1D36]">3. One Mind Wellness</p>
-                <p className="text-xs text-[#666] mb-1">onemindketamine.com (Fort Lauderdale)</p>
+                <p className="text-xs text-[#666] mb-1">onemindketamine.com</p>
                 <div className="flex flex-wrap gap-2 mt-1">
                   <a href="https://onemindketamine.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
                   <a href="https://www.similarweb.com/website/onemindketamine.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
@@ -359,29 +362,10 @@ export default function SeoDashboard() {
               <span>📰</span> Industry News
             </h2>
             <p className="text-sm text-[#666] mb-5">Latest ketamine & mental health headlines</p>
-
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <a
-                href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en"
-                target="_blank"
-                className="block text-center border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-[#0B1D36] hover:border-[#C9A66B] hover:bg-[#FDF8F0] transition"
-              >
-                Ketamine Therapy
-              </a>
-              <a
-                href="https://news.google.com/search?q=ketamine%20depression%20treatment&hl=en-US&gl=US&ceid=US:en"
-                target="_blank"
-                className="block text-center border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-[#0B1D36] hover:border-[#C9A66B] hover:bg-[#FDF8F0] transition"
-              >
-                Depression Treatment
-              </a>
-              <a
-                href="https://news.google.com/search?q=mental%20health%20South%20Florida&hl=en-US&gl=US&ceid=US:en"
-                target="_blank"
-                className="block text-center border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-[#0B1D36] hover:border-[#C9A66B] hover:bg-[#FDF8F0] transition"
-              >
-                South Florida Mental Health
-              </a>
+              <a href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en" target="_blank" className="block text-center border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-[#0B1D36] hover:border-[#C9A66B] hover:bg-[#FDF8F0] transition">Ketamine Therapy</a>
+              <a href="https://news.google.com/search?q=ketamine%20depression%20treatment&hl=en-US&gl=US&ceid=US:en" target="_blank" className="block text-center border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-[#0B1D36] hover:border-[#C9A66B] hover:bg-[#FDF8F0] transition">Depression Treatment</a>
+              <a href="https://news.google.com/search?q=mental%20health%20South%20Florida&hl=en-US&gl=US&ceid=US:en" target="_blank" className="block text-center border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-[#0B1D36] hover:border-[#C9A66B] hover:bg-[#FDF8F0] transition">South Florida Mental Health</a>
             </div>
           </div>
 
@@ -391,28 +375,11 @@ export default function SeoDashboard() {
               <span>⚡</span> Quick Tools
             </h2>
             <p className="text-sm text-[#666] mb-5">Everyday free resources</p>
-
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <a href="https://search.google.com/search-console" target="_blank" className="text-[#C9A66B] hover:underline">
-                  Google Search Console
-                </a>
-              </li>
-              <li>
-                <a href="https://analytics.google.com" target="_blank" className="text-[#C9A66B] hover:underline">
-                  Google Analytics 4
-                </a>
-              </li>
-              <li>
-                <a href="https://pagespeed.web.dev/" target="_blank" className="text-[#C9A66B] hover:underline">
-                  PageSpeed Insights
-                </a>
-              </li>
-              <li>
-                <a href="https://ahrefs.com/free-seo-tools" target="_blank" className="text-[#C9A66B] hover:underline">
-                  Ahrefs Free Tools
-                </a>
-              </li>
+              <li><a href="https://search.google.com/search-console" target="_blank" className="text-[#C9A66B] hover:underline">Google Search Console</a></li>
+              <li><a href="https://analytics.google.com" target="_blank" className="text-[#C9A66B] hover:underline">Google Analytics 4</a></li>
+              <li><a href="https://pagespeed.web.dev/" target="_blank" className="text-[#C9A66B] hover:underline">PageSpeed Insights</a></li>
+              <li><a href="https://ahrefs.com/free-seo-tools" target="_blank" className="text-[#C9A66B] hover:underline">Ahrefs Free Tools</a></li>
             </ul>
           </div>
         </div>
