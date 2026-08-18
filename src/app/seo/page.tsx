@@ -148,13 +148,13 @@ export default function SeoDashboard() {
               >
                 PageSpeed Insights
               </a>
-              <a
-                href="https://search.google.com/test/mobile-friendly?url=https://www.rewiredketamine.com"
-                target="_blank"
-                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-              >
-                Mobile-Friendly Test
-              </a>
+<a
+  href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com&form_factor=mobile"
+  target="_blank"
+  className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+>
+  Mobile PageSpeed Test
+</a>
               <a
                 href="https://search.google.com/test/rich-results?url=https://www.rewiredketamine.com"
                 target="_blank"
