@@ -255,10 +255,13 @@ export default function SeoDashboard() {
             </ul>
           </div>
 
-          {/* Keyword Tracker */}
+          {/* Keyword Tracker - Updated */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>🎯</span> Keyword Tracker</h2>
-            <p className="text-sm text-[#666] mb-4">Prioritized targets</p>
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+              <span>🎯</span> Keyword Tracker
+            </h2>
+            <p className="text-sm text-[#666] mb-4">Weekly ranking check</p>
+
             <div className="space-y-3 text-sm">
               <div>
                 <p className="font-semibold text-[#0B1D36] mb-1">Tier 1 – Protect</p>
@@ -269,6 +272,7 @@ export default function SeoDashboard() {
                   <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine South Florida</li>
                 </ul>
               </div>
+
               <div>
                 <p className="font-semibold text-[#0B1D36] mb-1">Tier 2 – Push</p>
                 <ul className="space-y-1 text-[#333]">
@@ -278,6 +282,15 @@ export default function SeoDashboard() {
                   <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Fully guided ketamine therapy Aventura</li>
                 </ul>
               </div>
+            </div>
+
+            <div className="mt-5 pt-4 border-t border-gray-100">
+              <p className="text-xs text-[#666] mb-2 font-medium">Weekly process:</p>
+              <ol className="text-xs text-[#555] space-y-1 list-decimal list-inside">
+                <li>Open Search Console → Performance</li>
+                <li>Check positions for above keywords</li>
+                <li>Update your Google Sheet</li>
+              </ol>
             </div>
           </div>
         </div>
@@ -362,7 +375,7 @@ export default function SeoDashboard() {
             </a>
           </div>
 
-          {/* Industry News - Ketamine only */}
+          {/* Industry News */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>📰</span> Industry News</h2>
             <p className="text-sm text-[#666] mb-5">Latest ketamine headlines</p>
