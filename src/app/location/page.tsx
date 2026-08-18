@@ -377,7 +377,7 @@ export default function LocationPage() {
           </Link>
         </div>
       </section>
-      {/* Parking & Directions */}
+{/* Parking & Arrival Instructions */}
 <section className="py-16 px-6 bg-white">
   <div className="max-w-4xl mx-auto">
     <h2 className="text-3xl font-bold text-[#0B1D36] mb-8 text-center">
@@ -414,35 +414,12 @@ export default function LocationPage() {
 
       {/* Email Directions Button */}
       <div className="text-center">
-<a
-  href={`mailto:?subject=${encodeURIComponent("Rewired Ketamine – Parking & Directions")}&body=${encodeURIComponent(
-`Parking & Arrival Instructions – Rewired Ketamine
-
-We kindly ask that you arrive about 15 minutes early. This gives you time to park, complete any paperwork or payment, and settle in at a comfortable pace.
-
-Our Address:
-2820 NE 214th Street, Suite 1002
-Aventura, FL 33180
-
-Due to nearby construction, the area can be a bit confusing. Please look for the Serena Hotel Offices — not “Aventura Medical Center.” We are located in the office building attached to the Serena Hotel and share a parking garage with them.
-
-Parking Instructions:
-• Park on the 4th or 5th floor of the garage.
-• You will see two elevators: one marked Hotel and one marked Offices.
-• Take the Offices elevator to the 10th floor.
-• Turn right as you exit the elevator. Our suite is just down the hallway on the right-hand side.
-• Restrooms are available in the hallway if you need them before your appointment.
-
-We look forward to welcoming you.
-
-Rewired Ketamine
-(305) 676-6070
-info@rewiredketamine.com`
-  )}`}
-  className="inline-block bg-[#0B1D36] text-white font-bold px-8 py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0B1D36] transition"
->
-  Email These Directions to Myself
-</a>
+        <a
+          href="mailto:?subject=Rewired%20Ketamine%20-%20Parking%20%26%20Directions&body=We%20kindly%20ask%20that%20you%20arrive%20about%2015%20minutes%20early.%20This%20gives%20you%20time%20to%20park%2C%20complete%20any%20paperwork%20or%20payment%2C%20and%20settle%20in%20at%20a%20comfortable%20pace.%0A%0AOur%20Address%3A%0A2820%20NE%20214th%20Street%2C%20Suite%201002%0AAventura%2C%20FL%2033180%0A%0ADue%20to%20nearby%20construction%2C%20the%20area%20can%20be%20a%20bit%20confusing.%20Please%20look%20for%20the%20Serena%20Hotel%20Offices%20%E2%80%94%20not%20%E2%80%9CAventura%20Medical%20Center.%E2%80%9D%20We%20are%20located%20in%20the%20office%20building%20attached%20to%20the%20Serena%20Hotel%20and%20share%20a%20parking%20garage%20with%20them.%0A%0AParking%20Instructions%3A%0A%E2%80%A2%20Park%20on%20the%204th%20or%205th%20floor%20of%20the%20garage.%0A%E2%80%A2%20You%20will%20see%20two%20elevators%3A%20one%20marked%20Hotel%20and%20one%20marked%20Offices.%0A%E2%80%A2%20Take%20the%20Offices%20elevator%20to%20the%2010th%20floor.%0A%E2%80%A2%20Turn%20right%20as%20you%20exit%20the%20elevator.%20Our%20suite%20is%20just%20down%20the%20hallway%20on%20the%20right-hand%20side.%0A%E2%80%A2%20Restrooms%20are%20available%20in%20the%20hallway%20if%20you%20need%20them%20before%20your%20appointment.%0A%0AWe%20look%20forward%20to%20welcoming%20you.%0A%0ARewired%20Ketamine%0A(305)%20676-6070%0Ainfo%40rewiredketamine.com"
+          className="inline-block bg-[#0B1D36] text-white font-bold px-8 py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0B1D36] transition"
+        >
+          Email These Directions to Myself
+        </a>
       </div>
     </div>
   </div>
