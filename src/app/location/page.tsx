@@ -320,17 +320,6 @@ export default function LocationPage() {
     </div>
   </div>
 </section>
-
-      {/* CTA */}
-      <section className="py-20 px-6 bg-[#0B1D36] text-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to visit?</h2>
-          <p className="text-xl text-white/80 mb-10">Book a free consultation at our locally owned Aventura clinic. ¡Hablamos Español!</p>
-          <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-10 py-4 rounded-full text-lg hover:bg-white transition">
-            Book Free Consultation
-          </Link>
-        </div>
-      </section>
 {/* Parking & Arrival Instructions */}
 <section className="py-16 px-6 bg-white">
   <div className="max-w-4xl mx-auto">
@@ -406,6 +395,17 @@ info@rewiredketamine.com`;
         </div>   {/* closes the bg-[#F8F5F0] box */}
       </div>     {/* closes max-w-4xl */}
     </section>   {/* closes the Parking section */}{/* FOOTER */}
+
+      {/* CTA */}
+      <section className="py-20 px-6 bg-[#0B1D36] text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to visit?</h2>
+          <p className="text-xl text-white/80 mb-10">Book a free consultation at our locally owned Aventura clinic. ¡Hablamos Español!</p>
+          <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-10 py-4 rounded-full text-lg hover:bg-white transition">
+            Book Free Consultation
+          </Link>
+        </div>
+      </section>
 <footer className="bg-[#081525] text-white pt-16 pb-8">
   <div className="max-w-7xl mx-auto px-6">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
