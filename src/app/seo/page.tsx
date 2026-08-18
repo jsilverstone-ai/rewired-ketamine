@@ -133,52 +133,55 @@ export default function SeoDashboard() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          {/* SITE HEALTH */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>🔍</span> Site Health
-            </h2>
-            <p className="text-sm text-[#666] mb-5">Run free scans on your website</p>
+{/* SITE HEALTH */}
+<div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+  <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+    <span>🔍</span> Site Health
+  </h2>
+  <p className="text-sm text-[#666] mb-5">Run free scans on your website</p>
 
-            <div className="space-y-3">
-              <a
-                href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com"
-                target="_blank"
-                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-              >
-                PageSpeed Insights
-              </a>
-<a
-  href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com&form_factor=mobile"
-  target="_blank"
-  className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
->
-  Mobile PageSpeed Test
-</a>
-              <a
-                href="https://search.google.com/test/rich-results?url=https://www.rewiredketamine.com"
-                target="_blank"
-                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-              >
-                Rich Results Test
-              </a>
-              <a
-                href="https://securityheaders.com/?q=https://www.rewiredketamine.com"
-                target="_blank"
-                className="block w-full text-center border border-[#0B1D36] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#0B1D36] hover:text-white transition"
-              >
-                Security Headers
-              </a>
-              <a
-                href="https://search.google.com/search-console"
-                target="_blank"
-                className="block w-full text-center border border-[#C9A66B] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#C9A66B] transition"
-              >
-                Google Search Console
-              </a>
-            </div>
-          </div>
+  <div className="space-y-3">
+    <a
+      href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com"
+      target="_blank"
+      className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+    >
+      PageSpeed Insights
+    </a>
 
+    <a
+      href="https://securityheaders.com/?q=https://www.rewiredketamine.com&followRedirects=on"
+      target="_blank"
+      className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+    >
+      Security Headers Check
+    </a>
+
+    <a
+      href="https://search.google.com/test/rich-results?url=https://www.rewiredketamine.com"
+      target="_blank"
+      className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+    >
+      Rich Results / Schema Test
+    </a>
+
+    <a
+      href="https://www.ssllabs.com/ssltest/analyze.html?d=www.rewiredketamine.com"
+      target="_blank"
+      className="block w-full text-center border border-[#0B1D36] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#0B1D36] hover:text-white transition"
+    >
+      SSL / HTTPS Grade
+    </a>
+
+    <a
+      href="https://search.google.com/search-console"
+      target="_blank"
+      className="block w-full text-center border border-[#C9A66B] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#C9A66B] transition"
+    >
+      Google Search Console
+    </a>
+  </div>
+</div>
           {/* KEYWORD TRACKER */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
