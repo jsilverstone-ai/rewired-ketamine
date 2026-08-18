@@ -9,9 +9,24 @@ export default function SeoDashboard() {
   const [loading, setLoading] = useState(false);
   const [checking, setChecking] = useState(true);
 
+  // To-Do List state
+  const [todos, setTodos] = useState<{ id: number; text: string; done: boolean }[]>([]);
+  const [newTodo, setNewTodo] = useState("");
+
   useEffect(() => {
     setChecking(false);
+
+    // Load todos from localStorage
+    const saved = localStorage.getItem("seo-todos");
+    if (saved) {
+      setTodos(JSON.parse(saved));
+    }
   }, []);
+
+  // Save todos whenever they change
+  useEffect(() => {
+    localStorage.setItem("seo-todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,6 +58,29 @@ export default function SeoDashboard() {
   const handleLogout = () => {
     document.cookie = "seo_auth=; Max-Age=0; path=/";
     setIsAuthenticated(false);
+  };
+
+  const addTodo = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newTodo.trim()) return;
+
+    setTodos([
+      ...todos,
+      { id: Date.now(), text: newTodo.trim(), done: false },
+    ]);
+    setNewTodo("");
+  };
+
+  const toggleTodo = (id: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      )
+    );
+  };
+
+  const deleteTodo = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   if (checking) {
@@ -133,140 +171,188 @@ export default function SeoDashboard() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-{/* SITE HEALTH */}
-<div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-  <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-    <span>🔍</span> Site Health
-  </h2>
-  <p className="text-sm text-[#666] mb-5">Run free scans on your website</p>
+          {/* SITE HEALTH */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+              <span>🔍</span> Site Health
+            </h2>
+            <p className="text-sm text-[#666] mb-5">Run free scans on your website</p>
 
-  <div className="space-y-3">
-    <a
-      href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com"
-      target="_blank"
-      className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-    >
-      PageSpeed Insights
-    </a>
+            <div className="space-y-3">
+              <a
+                href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com"
+                target="_blank"
+                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+              >
+                PageSpeed Insights
+              </a>
+              <a
+                href="https://securityheaders.com/?q=https://www.rewiredketamine.com&followRedirects=on"
+                target="_blank"
+                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+              >
+                Security Headers Check
+              </a>
+              <a
+                href="https://search.google.com/test/rich-results?url=https://www.rewiredketamine.com"
+                target="_blank"
+                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+              >
+                Rich Results / Schema Test
+              </a>
+              <a
+                href="https://www.ssllabs.com/ssltest/analyze.html?d=www.rewiredketamine.com"
+                target="_blank"
+                className="block w-full text-center border border-[#0B1D36] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#0B1D36] hover:text-white transition"
+              >
+                SSL / HTTPS Grade
+              </a>
+              <a
+                href="https://search.google.com/search-console"
+                target="_blank"
+                className="block w-full text-center border border-[#C9A66B] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#C9A66B] transition"
+              >
+                Google Search Console
+              </a>
+            </div>
+          </div>
 
-    <a
-      href="https://securityheaders.com/?q=https://www.rewiredketamine.com&followRedirects=on"
-      target="_blank"
-      className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-    >
-      Security Headers Check
-    </a>
+          {/* KEYWORD TRACKER */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+              <span>🎯</span> Keyword Tracker
+            </h2>
+            <p className="text-sm text-[#666] mb-4">Prioritized targets (July 2026 baseline)</p>
 
-    <a
-      href="https://search.google.com/test/rich-results?url=https://www.rewiredketamine.com"
-      target="_blank"
-      className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-    >
-      Rich Results / Schema Test
-    </a>
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="font-semibold text-[#0B1D36] mb-1">Tier 1 – Protect</p>
+                <ul className="space-y-1 text-[#333]">
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine Aventura FL</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine therapy Aventura</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine Miami</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine South Florida</li>
+                </ul>
+              </div>
 
-    <a
-      href="https://www.ssllabs.com/ssltest/analyze.html?d=www.rewiredketamine.com"
-      target="_blank"
-      className="block w-full text-center border border-[#0B1D36] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#0B1D36] hover:text-white transition"
-    >
-      SSL / HTTPS Grade
-    </a>
+              <div>
+                <p className="font-semibold text-[#0B1D36] mb-1">Tier 2 – Push</p>
+                <ul className="space-y-1 text-[#333]">
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine infusion therapy Florida</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine clinic Florida</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine for depression Miami</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine for PTSD South Florida</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Fully guided ketamine therapy Aventura</li>
+                </ul>
+              </div>
 
-    <a
-      href="https://search.google.com/search-console"
-      target="_blank"
-      className="block w-full text-center border border-[#C9A66B] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#C9A66B] transition"
-    >
-      Google Search Console
-    </a>
-  </div>
-</div>
-{/* KEYWORD TRACKER */}
-<div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-  <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-    <span>🎯</span> Keyword Tracker
-  </h2>
-  <p className="text-sm text-[#666] mb-4">Prioritized targets (July 2026 baseline)</p>
+              <div>
+                <p className="font-semibold text-[#0B1D36] mb-1">Tier 3 – Opportunity</p>
+                <ul className="space-y-1 text-[#333]">
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Best ketamine clinic Aventura</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> At-home ketamine Florida</li>
+                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Ketamine assisted therapy Florida</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-  <div className="space-y-4 text-sm">
-    <div>
-      <p className="font-semibold text-[#0B1D36] mb-1">Tier 1 – Protect (#1–#5)</p>
-      <ul className="space-y-1 text-[#333]">
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine Aventura FL</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine therapy Aventura</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine Miami</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine South Florida</li>
-      </ul>
-    </div>
+          {/* TO-DO LIST */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+              <span>✅</span> SEO To-Do List
+            </h2>
+            <p className="text-sm text-[#666] mb-4">Add tasks and check them off</p>
 
-    <div>
-      <p className="font-semibold text-[#0B1D36] mb-1">Tier 2 – Push (Top 10–15 goal)</p>
-      <ul className="space-y-1 text-[#333]">
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine infusion therapy Florida</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine clinic Florida</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine for depression Miami</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine for PTSD South Florida</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Fully guided ketamine therapy Aventura</li>
-      </ul>
-    </div>
+            <form onSubmit={addTodo} className="flex gap-2 mb-4">
+              <input
+                type="text"
+                value={newTodo}
+                onChange={(e) => setNewTodo(e.target.value)}
+                placeholder="Add a new task..."
+                className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A66B]"
+              />
+              <button
+                type="submit"
+                className="bg-[#C9A66B] text-[#0B1D36] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#b8955a] transition"
+              >
+                Add
+              </button>
+            </form>
 
-    <div>
-      <p className="font-semibold text-[#0B1D36] mb-1">Tier 3 – Opportunity</p>
-      <ul className="space-y-1 text-[#333]">
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Best ketamine clinic Aventura</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> At-home ketamine Florida</li>
-        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Ketamine assisted therapy Florida</li>
-      </ul>
-    </div>
-  </div>
+            <ul className="space-y-2 max-h-64 overflow-y-auto">
+              {todos.length === 0 && (
+                <li className="text-sm text-[#888] italic">No tasks yet. Add one above.</li>
+              )}
+              {todos.map((todo) => (
+                <li
+                  key={todo.id}
+                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 group"
+                >
+                  <input
+                    type="checkbox"
+                    checked={todo.done}
+                    onChange={() => toggleTodo(todo.id)}
+                    className="w-4 h-4 accent-[#C9A66B] cursor-pointer"
+                  />
+                  <span
+                    className={`flex-1 text-sm ${
+                      todo.done ? "line-through text-gray-400" : "text-[#333]"
+                    }`}
+                  >
+                    {todo.text}
+                  </span>
+                  <button
+                    onClick={() => deleteTodo(todo.id)}
+                    className="text-red-400 opacity-0 group-hover:opacity-100 text-sm hover:text-red-600 transition"
+                  >
+                    ✕
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-  <p className="text-xs text-[#888] mt-5">
-    Next: Create 1 strong page or blog post per Tier 2 keyword.
-  </p>
-</div>
-{/* COMPETITORS */}
-<div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-  <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-    <span>🏆</span> Competitors
-  </h2>
-  <p className="text-sm text-[#666] mb-5">Local ketamine clinics to monitor</p>
+          {/* COMPETITORS */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+              <span>🏆</span> Competitors
+            </h2>
+            <p className="text-sm text-[#666] mb-5">Local ketamine clinics to monitor</p>
 
-  <div className="space-y-5">
-    {/* Competitor 1 */}
-    <div>
-      <p className="text-sm font-semibold text-[#0B1D36]">1. Nushama (Aventura)</p>
-      <p className="text-xs text-[#666] mb-1">nushama.com</p>
-      <div className="flex flex-wrap gap-2 mt-1">
-        <a href="https://nushama.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
-        <a href="https://www.similarweb.com/website/nushama.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
-        <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
-      </div>
-    </div>
+            <div className="space-y-5">
+              <div>
+                <p className="text-sm font-semibold text-[#0B1D36]">1. Nushama (Aventura)</p>
+                <p className="text-xs text-[#666] mb-1">nushama.com</p>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  <a href="https://nushama.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
+                  <a href="https://www.similarweb.com/website/nushama.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
+                  <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
+                </div>
+              </div>
 
-    {/* Competitor 2 */}
-    <div>
-      <p className="text-sm font-semibold text-[#0B1D36]">2. Ketamine Aventura</p>
-      <p className="text-xs text-[#666] mb-1">ketamineaventura.com</p>
-      <div className="flex flex-wrap gap-2 mt-1">
-        <a href="https://ketamineaventura.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
-        <a href="https://www.similarweb.com/website/ketamineaventura.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
-        <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
-      </div>
-    </div>
+              <div>
+                <p className="text-sm font-semibold text-[#0B1D36]">2. Ketamine Aventura</p>
+                <p className="text-xs text-[#666] mb-1">ketamineaventura.com</p>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  <a href="https://ketamineaventura.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
+                  <a href="https://www.similarweb.com/website/ketamineaventura.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
+                  <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
+                </div>
+              </div>
 
-    {/* Competitor 3 */}
-    <div>
-      <p className="text-sm font-semibold text-[#0B1D36]">3. One Mind Wellness</p>
-      <p className="text-xs text-[#666] mb-1">onemindketamine.com (Fort Lauderdale)</p>
-      <div className="flex flex-wrap gap-2 mt-1">
-        <a href="https://onemindketamine.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
-        <a href="https://www.similarweb.com/website/onemindketamine.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
-        <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
-      </div>
-    </div>
-  </div>
-</div>
+              <div>
+                <p className="text-sm font-semibold text-[#0B1D36]">3. One Mind Wellness</p>
+                <p className="text-xs text-[#666] mb-1">onemindketamine.com (Fort Lauderdale)</p>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  <a href="https://onemindketamine.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
+                  <a href="https://www.similarweb.com/website/onemindketamine.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
+                  <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* GOOGLE NEWS */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow md:col-span-2">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
@@ -325,11 +411,6 @@ export default function SeoDashboard() {
               <li>
                 <a href="https://ahrefs.com/free-seo-tools" target="_blank" className="text-[#C9A66B] hover:underline">
                   Ahrefs Free Tools
-                </a>
-              </li>
-              <li>
-                <a href="https://www.google.com/webmasters/tools/mobile-friendly" target="_blank" className="text-[#C9A66B] hover:underline">
-                  Mobile-Friendly Test
                 </a>
               </li>
             </ul>
