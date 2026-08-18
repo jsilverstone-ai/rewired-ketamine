@@ -253,72 +253,6 @@ export default function LocationPage() {
         </div>
       </section>
 
-      {/* LOCATION CONTENT */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            
-            {/* Left - Info */}
-            <div>
-              <h2 className="text-3xl font-bold text-[#0B1D36] mb-6">Visit Us in Aventura</h2>
-              
-              <div className="space-y-6 text-[#444] text-lg leading-relaxed">
-                <div>
-                  <h3 className="font-semibold text-[#0B1D36] mb-1">Address</h3>
-                  <p>
-                    <a 
-                      href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="hover:text-[#C9A66B] transition"
-                    >
-                      2820 NE 214th St #1002<br />
-                      Aventura, FL 33180
-                    </a>
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-[#0B1D36] mb-1">Phone</h3>
-                  <p>
-                    <a href="tel:+13056766070" className="hover:text-[#C9A66B] transition">(305) 676-6070</a>
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-[#0B1D36] mb-1">Email</h3>
-                  <p>
-                    <a href="mailto:info@rewiredketamine.com" className="hover:text-[#C9A66B] transition">info@rewiredketamine.com</a>
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-[#0B1D36] mb-1">Hours</h3>
-                  <p>Monday – Friday<br />9:00 AM – 5:00 PM</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right - Map placeholder */}
-            <div className="bg-white rounded-2xl border border-[#eee] overflow-hidden shadow-sm">
-              <div className="aspect-[4/3] bg-[#e8e4dc] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <p className="text-[#666] mb-4">Google Map Embed</p>
-                  <a 
-                    href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block bg-[#0B1D36] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#C9A66B] hover:text-[#0B1D36] transition"
-                  >
-                    Open in Google Maps
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto text-center">
@@ -329,6 +263,53 @@ export default function LocationPage() {
           </Link>
         </div>
       </section>
+      {/* Parking & Directions */}
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-3xl font-bold text-[#0B1D36] mb-8 text-center">
+      Parking & Arrival Instructions
+    </h2>
+
+    <div className="bg-[#F8F5F0] rounded-2xl p-8 border border-[#eee]">
+      <p className="text-[#555] leading-relaxed mb-6">
+        We kindly ask that you arrive about 15 minutes early. This gives you time to park, complete any paperwork or payment, and settle in at a comfortable pace. We want you to feel relaxed from the moment you arrive.
+      </p>
+
+      <h3 className="text-xl font-bold text-[#0B1D36] mb-3">Our Address</h3>
+      <p className="text-[#555] mb-6">
+        2820 NE 214th Street, Suite 1002<br />
+        Aventura, FL 33180
+      </p>
+
+      <p className="text-[#555] leading-relaxed mb-6">
+        Due to nearby construction, the area can be a bit confusing. Please look for the <strong>Serena Hotel Offices</strong> — not “Aventura Medical Center.” We are located in the office building attached to the Serena Hotel and share a parking garage with them.
+      </p>
+
+      <h3 className="text-xl font-bold text-[#0B1D36] mb-3">Parking Instructions</h3>
+      <ul className="list-disc list-inside text-[#555] space-y-2 mb-8">
+        <li>Park on the <strong>4th or 5th floor</strong> of the garage.</li>
+        <li>You will see two elevators: one marked <strong>Hotel</strong> and one marked <strong>Offices</strong>.</li>
+        <li>Take the <strong>Offices</strong> elevator to the <strong>10th floor</strong>.</li>
+        <li>Turn right as you exit the elevator. Our suite is just down the hallway on the right-hand side.</li>
+        <li>Restrooms are available in the hallway if you need them before your appointment.</li>
+      </ul>
+
+      <p className="text-[#555] mb-8">
+        We look forward to welcoming you.
+      </p>
+
+      {/* Email Directions Button */}
+      <div className="text-center">
+        <a
+          href="mailto:?subject=Parking & Directions – Rewired Ketamine&body=Parking & Arrival Instructions%0A%0AWe kindly ask that you arrive about 15 minutes early. This gives you time to park, complete any paperwork or payment, and settle in at a comfortable pace.%0A%0AOur Address:%0A2820 NE 214th Street, Suite 1002%0AAventura, FL 33180%0A%0APlease look for the Serena Hotel Offices — not “Aventura Medical Center.” We are in the office building attached to the Serena Hotel and share a parking garage with them.%0A%0AParking Instructions:%0A• Park on the 4th or 5th floor of the garage.%0A• Take the Offices elevator (not the Hotel elevator) to the 10th floor.%0A• Turn right as you exit the elevator. Our suite is just down the hallway on the right-hand side.%0A• Restrooms are available in the hallway.%0A%0AWe look forward to welcoming you.%0A%0ARewired Ketamine%0A(305) 676-6070"
+          className="inline-block bg-[#0B1D36] text-white font-bold px-8 py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0B1D36] transition"
+        >
+          Email These Directions to Myself
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 {/* FOOTER */}
 <footer className="bg-[#081525] text-white pt-16 pb-8">
