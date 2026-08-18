@@ -321,52 +321,6 @@ export default function LocationPage() {
   </div>
 </section>
 
-{/* Parking & Arrival Instructions */}
-<section className="py-16 px-6 bg-white">
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-3xl font-bold text-[#0B1D36] mb-8 text-center">
-      Parking & Arrival Instructions
-    </h2>
-
-    <div className="bg-[#F8F5F0] rounded-2xl p-8 border border-[#eee]">
-      <p className="text-[#555] leading-relaxed mb-6">
-        We kindly ask that you arrive about 15 minutes early. This gives you time to park, complete any paperwork or payment, and settle in at a comfortable pace. We want you to feel relaxed from the moment you arrive.
-      </p>
-
-      <h3 className="text-xl font-bold text-[#0B1D36] mb-3">Our Address</h3>
-      <p className="text-[#555] mb-6">
-        2820 NE 214th Street, Suite 1002<br />
-        Aventura, FL 33180
-      </p>
-
-      <p className="text-[#555] leading-relaxed mb-6">
-        Due to nearby construction, the area can be a bit confusing. Please look for the <strong>Serena Hotel Offices</strong> — not “Aventura Medical Center.” We are located in the office building attached to the Serena Hotel and share a parking garage with them.
-      </p>
-
-      <h3 className="text-xl font-bold text-[#0B1D36] mb-3">Parking Instructions</h3>
-      <ul className="list-disc list-inside text-[#555] space-y-2 mb-8">
-        <li>Park on the <strong>4th or 5th floor</strong> of the garage.</li>
-        <li>You will see two elevators: one marked <strong>Hotel</strong> and one marked <strong>Offices</strong>.</li>
-        <li>Take the <strong>Offices</strong> elevator to the <strong>10th floor</strong>.</li>
-        <li>Turn right as you exit the elevator. Our suite is just down the hallway on the right-hand side.</li>
-        <li>Restrooms are available in the hallway if you need them before your appointment.</li>
-      </ul>
-
-      <p className="text-[#555] mb-8">
-        We look forward to welcoming you.
-      </p>
-
-      <div className="text-center">
-        <a
-          href="mailto:?subject=Parking & Directions – Rewired Ketamine&body=Parking & Arrival Instructions%0A%0AWe kindly ask that you arrive about 15 minutes early.%0A%0AAddress:%0A2820 NE 214th Street, Suite 1002%0AAventura, FL 33180%0A%0ALook for the Serena Hotel Offices (not Aventura Medical Center).%0A%0AParking:%0A• Park on the 4th or 5th floor%0A• Take the Offices elevator to the 10th floor%0A• Turn right – we are just down the hallway on the right%0A%0ARewired Ketamine%0A(305) 676-6070"
-          className="inline-block bg-[#0B1D36] text-white font-bold px-8 py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0B1D36] transition"
-        >
-          Email These Directions to Myself
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto text-center">
