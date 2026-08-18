@@ -1,33 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 export default function SeoDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [checking, setChecking] = useState(true);
 
-  // Check if the cookie already exists
+  // On first load, we just show the login form.
+  // After a successful login the page will stay unlocked until you click Logout.
   useEffect(() => {
-    async function checkAuth() {
-      try {
-        const res = await fetch("/api/seo-login", {
-          method: "GET",
-        });
-        // We'll use a simple cookie check via document for client-side feel
-        // The real protection is the httpOnly cookie + the login API
-        const hasCookie = document.cookie.includes("seo_auth=authenticated");
-        setIsAuthenticated(hasCookie);
-      } catch {
-        setIsAuthenticated(false);
-      } finally {
-        setLoading(false);
-      }
-    }
-    checkAuth();
+    setChecking(false);
   }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -50,21 +35,20 @@ export default function SeoDashboard() {
       } else {
         setError(data.message || "Incorrect password");
       }
-    } catch {
+    } catch (err) {
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleLogout = async () => {
-    // Clear the cookie by setting it to expire
+  const handleLogout = () => {
+    // Clear the cookie
     document.cookie = "seo_auth=; Max-Age=0; path=/";
     setIsAuthenticated(false);
-    router.refresh();
   };
 
-  if (loading) {
+  if (checking) {
     return (
       <div className="min-h-screen bg-[#F8F5F0] flex items-center justify-center">
         <p className="text-[#0B1D36]">Loading...</p>
@@ -118,7 +102,6 @@ export default function SeoDashboard() {
   // ========== DASHBOARD ==========
   return (
     <div className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
-      {/* Header */}
       <header className="bg-[#0B1D36] text-white py-4 px-6 flex justify-between items-center">
         <div className="font-semibold text-lg">Rewired Ketamine · SEO Control</div>
         <button
@@ -130,7 +113,6 @@ export default function SeoDashboard() {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 py-10">
-        {/* Big Grok Button */}
         <div className="flex justify-center mb-12">
           <a
             href="https://grok.x.ai"
@@ -150,9 +132,7 @@ export default function SeoDashboard() {
           </a>
         </div>
 
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-          {/* Site Health */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-3">Site Health</h2>
             <ul className="space-y-2 text-sm text-[#444]">
@@ -163,20 +143,17 @@ export default function SeoDashboard() {
             </ul>
           </div>
 
-          {/* Keyword Tracker */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-3">Keyword Tracker</h2>
-            <p className="text-sm text-[#555] mb-3">Track your main terms here (or link a Google Sheet).</p>
+            <p className="text-sm text-[#555] mb-3">Track your main terms here.</p>
             <ul className="space-y-1 text-sm text-[#444]">
               <li>• ketamine therapy Aventura</li>
               <li>• ketamine clinic Miami</li>
               <li>• ketamine infusion South Florida</li>
               <li>• treatment resistant depression Aventura</li>
             </ul>
-            <p className="text-xs text-[#888] mt-4">Tip: Create a Google Sheet and paste the link here later.</p>
           </div>
 
-          {/* Competitors */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-3">Competitors</h2>
             <p className="text-sm text-[#555] mb-3">Add your main competitors below.</p>
@@ -187,38 +164,21 @@ export default function SeoDashboard() {
             </ul>
           </div>
 
-          {/* Google News */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 md:col-span-2">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-3">Google News · Ketamine & Mental Health</h2>
-            <p className="text-sm text-[#555] mb-4">
-              Latest headlines (open in new tab for full feed):
-            </p>
             <div className="space-y-2">
-              <a
-                href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en"
-                target="_blank"
-                className="block text-[#C9A66B] hover:underline text-sm"
-              >
+              <a href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en" target="_blank" className="block text-[#C9A66B] hover:underline text-sm">
                 → Ketamine therapy news
               </a>
-              <a
-                href="https://news.google.com/search?q=ketamine%20depression%20treatment&hl=en-US&gl=US&ceid=US:en"
-                target="_blank"
-                className="block text-[#C9A66B] hover:underline text-sm"
-              >
+              <a href="https://news.google.com/search?q=ketamine%20depression%20treatment&hl=en-US&gl=US&ceid=US:en" target="_blank" className="block text-[#C9A66B] hover:underline text-sm">
                 → Ketamine for depression
               </a>
-              <a
-                href="https://news.google.com/search?q=mental%20health%20South%20Florida&hl=en-US&gl=US&ceid=US:en"
-                target="_blank"
-                className="block text-[#C9A66B] hover:underline text-sm"
-              >
+              <a href="https://news.google.com/search?q=mental%20health%20South%20Florida&hl=en-US&gl=US&ceid=US:en" target="_blank" className="block text-[#C9A66B] hover:underline text-sm">
                 → Mental health South Florida
               </a>
             </div>
           </div>
 
-          {/* Quick Tools */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-3">Quick Tools</h2>
             <ul className="space-y-2 text-sm">
@@ -229,10 +189,6 @@ export default function SeoDashboard() {
             </ul>
           </div>
         </div>
-
-        <p className="text-center text-sm text-[#888] mt-12">
-          This is your private SEO control center. Edit the cards anytime by updating the code.
-        </p>
       </main>
     </div>
   );
