@@ -114,12 +114,12 @@ export default function SeoDashboard() {
 
       <main className="max-w-6xl mx-auto px-6 py-10">
         <div className="flex justify-center mb-12">
-          <a
-            href="https://grok.x.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative"
-          >
+<a
+  href="https://x.com/i/grok"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group relative"
+>
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-[#0B1D36] flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300 border-4 border-[#C9A66B]">
               <div className="text-center">
                 <div className="text-white text-2xl md:text-3xl font-bold mb-1">Grok</div>
