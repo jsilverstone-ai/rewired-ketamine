@@ -412,20 +412,46 @@ export default function LocationPage() {
         We look forward to welcoming you.
       </p>
 
-{/* Email Directions Button */}
+{/* Copy Directions Button */}
 <div className="text-center">
-  <a
-    href="mailto:?subject=Rewired%20Ketamine%20Parking%20Directions&body=Rewired%20Ketamine%20-%20Parking%20%26%20Arrival%20Instructions%0A%0APlease%20arrive%2015%20minutes%20early.%0A%0AAddress%3A%0A2820%20NE%20214th%20St%2C%20Suite%201002%0AAventura%2C%20FL%2033180%0A%0ALook%20for%20Serena%20Hotel%20Offices%20(not%20Aventura%20Medical%20Center).%0A%0AParking%3A%0A-%20Park%20on%204th%20or%205th%20floor%0A-%20Take%20Offices%20elevator%20to%2010th%20floor%0A-%20Turn%20right%20-%20we%20are%20down%20the%20hall%20on%20the%20right%0A%0ARewired%20Ketamine%0A(305)%20676-6070"
+  <button
+    onClick={() => {
+      const directions = `Rewired Ketamine – Parking & Arrival Instructions
+
+Please arrive about 15 minutes early. This gives you time to park, complete any paperwork or payment, and settle in at a comfortable pace.
+
+Our Address:
+2820 NE 214th Street, Suite 1002
+Aventura, FL 33180
+
+Due to nearby construction, the area can be a bit confusing. Please look for the Serena Hotel Offices — not “Aventura Medical Center.” We are located in the office building attached to the Serena Hotel and share a parking garage with them.
+
+Parking Instructions:
+• Park on the 4th or 5th floor of the garage.
+• You will see two elevators: one marked Hotel and one marked Offices.
+• Take the Offices elevator to the 10th floor.
+• Turn right as you exit the elevator. Our suite is just down the hallway on the right-hand side.
+• Restrooms are available in the hallway if you need them before your appointment.
+
+We look forward to welcoming you.
+
+Rewired Ketamine
+(305) 676-6070
+info@rewiredketamine.com`;
+
+      navigator.clipboard.writeText(directions).then(() => {
+        alert("Parking directions copied! You can now paste them into an email or notes.");
+      });
+    }}
     className="inline-block bg-[#0B1D36] text-white font-bold px-8 py-3 rounded-full hover:bg-[#C9A66B] hover:text-[#0B1D36] transition"
   >
-    Email These Directions to Myself
-  </a>
+    Copy Parking Directions
+  </button>
 </div>
-    </div>
-  </div>
-</section>
 
-{/* FOOTER */}
+        </div>   {/* closes the bg-[#F8F5F0] box */}
+      </div>     {/* closes max-w-4xl */}
+    </section>   {/* closes the Parking section */}{/* FOOTER */}
 <footer className="bg-[#081525] text-white pt-16 pb-8">
   <div className="max-w-7xl mx-auto px-6">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
