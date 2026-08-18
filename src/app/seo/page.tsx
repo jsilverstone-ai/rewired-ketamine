@@ -21,6 +21,7 @@ export default function SeoDashboard() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState("");
   const [newPriority, setNewPriority] = useState<Priority>("medium");
+  const [nextResetDate, setNextResetDate] = useState<string>("");
 
   const defaultTodos: Todo[] = [
     { id: 1, text: "Write 2 high-quality blog posts (Tier 2 keywords)", done: false, priority: "high" },
@@ -34,13 +35,70 @@ export default function SeoDashboard() {
     { id: 9, text: "Check backlinks & fix any broken ones", done: false, priority: "medium" },
   ];
 
+  // Calculate the next 1st Monday of the month
+  const getNextFirstMonday = () => {
+    const now = new Date();
+    let year = now.getFullYear();
+    let month = now.getMonth();
+
+    // Start from current month
+    let date = new Date(year, month, 1);
+
+    // Find the first Monday
+    while (date.getDay() !== 1) {
+      date.setDate(date.getDate() + 1);
+    }
+
+    // If that Monday has already passed this month, go to next month
+    if (date < now) {
+      month += 1;
+      if (month > 11) {
+        month = 0;
+        year += 1;
+      }
+      date = new Date(year, month, 1);
+      while (date.getDay() !== 1) {
+        date.setDate(date.getDate() + 1);
+      }
+    }
+
+    return date;
+  };
+
   useEffect(() => {
     setChecking(false);
+
     const saved = localStorage.getItem("seo-todos");
-    if (saved) {
+    const lastReset = localStorage.getItem("seo-todos-last-reset");
+    const nextMonday = getNextFirstMonday();
+    setNextResetDate(nextMonday.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }));
+
+    const shouldReset = () => {
+      if (!lastReset) return true;
+
+      const lastResetDate = new Date(lastReset);
+      const today = new Date();
+
+      // Check if today is the 1st Monday and we haven't reset yet this month
+      const isFirstMonday =
+        today.getDay() === 1 &&
+        today.getDate() <= 7;
+
+      const alreadyResetThisMonth =
+        lastResetDate.getMonth() === today.getMonth() &&
+        lastResetDate.getFullYear() === today.getFullYear();
+
+      return isFirstMonday && !alreadyResetThisMonth;
+    };
+
+    if (shouldReset()) {
+      setTodos(defaultTodos);
+      localStorage.setItem("seo-todos-last-reset", new Date().toISOString());
+    } else if (saved) {
       setTodos(JSON.parse(saved));
     } else {
       setTodos(defaultTodos);
+      localStorage.setItem("seo-todos-last-reset", new Date().toISOString());
     }
   }, []);
 
@@ -112,6 +170,7 @@ export default function SeoDashboard() {
   const resetToDefaults = () => {
     if (confirm("This will replace your current list with the default weekly + monthly tasks. Continue?")) {
       setTodos(defaultTodos);
+      localStorage.setItem("seo-todos-last-reset", new Date().toISOString());
     }
   };
 
@@ -263,7 +322,10 @@ export default function SeoDashboard() {
                 Reset defaults
               </button>
             </div>
-            <p className="text-sm text-[#666] mb-4">Weekly + Monthly high-priority tasks</p>
+            <p className="text-sm text-[#666] mb-1">Weekly + Monthly high-priority tasks</p>
+            <p className="text-xs text-[#888] mb-4">
+              Next auto-reset: {nextResetDate}
+            </p>
 
             <form onSubmit={addTodo} className="space-y-3 mb-4">
               <input
@@ -355,43 +417,31 @@ export default function SeoDashboard() {
             </div>
           </div>
 
-          {/* SOCIAL MEDIA - MUNCH STUDIO */}
+          {/* SOCIAL MEDIA */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
               <span>📱</span> Social Media
             </h2>
             <p className="text-sm text-[#666] mb-5">Manage all social posts</p>
             <div className="space-y-3">
-              <a
-                href="https://www.munchstudio.com/"
-                target="_blank"
-                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-              >
+              <a href="https://www.munchstudio.com/" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">
                 Open Munch Studio
               </a>
-              <p className="text-xs text-[#888] text-center">
-                Schedule & manage Instagram, Facebook, TikTok, etc.
-              </p>
+              <p className="text-xs text-[#888] text-center">Schedule & manage Instagram, Facebook, TikTok, etc.</p>
             </div>
           </div>
 
-          {/* AI VIDEO - HEYGEN */}
+          {/* AI VIDEO */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
               <span>🎬</span> AI Video
             </h2>
             <p className="text-sm text-[#666] mb-5">Generate weekly video content</p>
             <div className="space-y-3">
-              <a
-                href="https://www.heygen.com/"
-                target="_blank"
-                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
-              >
+              <a href="https://www.heygen.com/" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">
                 Open HeyGen
               </a>
-              <p className="text-xs text-[#888] text-center">
-                Create AI avatar videos for YouTube & social
-              </p>
+              <p className="text-xs text-[#888] text-center">Create AI avatar videos for YouTube & social</p>
             </div>
           </div>
 
