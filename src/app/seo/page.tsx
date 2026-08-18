@@ -217,51 +217,48 @@ export default function SeoDashboard() {
             </p>
           </div>
 
-          {/* COMPETITORS */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>🏆</span> Competitors
-            </h2>
-            <p className="text-sm text-[#666] mb-5">Quick free analysis links</p>
+{/* COMPETITORS */}
+<div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+  <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+    <span>🏆</span> Competitors
+  </h2>
+  <p className="text-sm text-[#666] mb-5">Local ketamine clinics to monitor</p>
 
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm font-medium text-[#333] mb-1">Competitor 1</p>
-                <a
-                  href="https://app.neilpatel.com/en/ubersuggest/overview?keyword=ketamine+therapy&lang=en&loc=2840"
-                  target="_blank"
-                  className="text-sm text-[#C9A66B] hover:underline"
-                >
-                  Analyze with Ubersuggest →
-                </a>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-[#333] mb-1">Competitor 2</p>
-                <a
-                  href="https://ahrefs.com/website-authority-checker"
-                  target="_blank"
-                  className="text-sm text-[#C9A66B] hover:underline"
-                >
-                  Check Authority (Ahrefs free) →
-                </a>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-[#333] mb-1">Competitor 3</p>
-                <a
-                  href="https://www.similarweb.com/"
-                  target="_blank"
-                  className="text-sm text-[#C9A66B] hover:underline"
-                >
-                  Traffic overview (Similarweb) →
-                </a>
-              </div>
-            </div>
+  <div className="space-y-5">
+    {/* Competitor 1 */}
+    <div>
+      <p className="text-sm font-semibold text-[#0B1D36]">1. Nushama (Aventura)</p>
+      <p className="text-xs text-[#666] mb-1">nushama.com</p>
+      <div className="flex flex-wrap gap-2 mt-1">
+        <a href="https://nushama.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
+        <a href="https://www.similarweb.com/website/nushama.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
+        <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
+      </div>
+    </div>
 
-            <p className="text-xs text-[#888] mt-5">
-              Replace with real competitor domains later.
-            </p>
-          </div>
+    {/* Competitor 2 */}
+    <div>
+      <p className="text-sm font-semibold text-[#0B1D36]">2. Ketamine Aventura</p>
+      <p className="text-xs text-[#666] mb-1">ketamineaventura.com</p>
+      <div className="flex flex-wrap gap-2 mt-1">
+        <a href="https://ketamineaventura.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
+        <a href="https://www.similarweb.com/website/ketamineaventura.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
+        <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
+      </div>
+    </div>
 
+    {/* Competitor 3 */}
+    <div>
+      <p className="text-sm font-semibold text-[#0B1D36]">3. One Mind Wellness</p>
+      <p className="text-xs text-[#666] mb-1">onemindketamine.com (Fort Lauderdale)</p>
+      <div className="flex flex-wrap gap-2 mt-1">
+        <a href="https://onemindketamine.com" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Website</a>
+        <a href="https://www.similarweb.com/website/onemindketamine.com/" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Traffic</a>
+        <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
+      </div>
+    </div>
+  </div>
+</div>
           {/* GOOGLE NEWS */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow md:col-span-2">
             <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
