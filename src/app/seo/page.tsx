@@ -18,16 +18,29 @@ export default function SeoDashboard() {
   const [loading, setLoading] = useState(false);
   const [checking, setChecking] = useState(true);
 
-  // To-Do List state
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState("");
   const [newPriority, setNewPriority] = useState<Priority>("medium");
+
+  const defaultTodos: Todo[] = [
+    { id: 1, text: "Write 2 high-quality blog posts (Tier 2 keywords)", done: false, priority: "high" },
+    { id: 2, text: "Publish 1 news / trend article", done: false, priority: "high" },
+    { id: 3, text: "Create & upload 1 new video (HeyGen)", done: false, priority: "high" },
+    { id: 4, text: "Optimize 1 existing page (title, H1, internal links)", done: false, priority: "high" },
+    { id: 5, text: "Check competitor rankings (Nushama + Ketamine Aventura)", done: false, priority: "high" },
+    { id: 6, text: "Update keyword ranking tracker in Google Sheets", done: false, priority: "high" },
+    { id: 7, text: "Review Google Search Console performance", done: false, priority: "high" },
+    { id: 8, text: "Audit top 5 landing pages for Core Web Vitals", done: false, priority: "medium" },
+    { id: 9, text: "Check backlinks & fix any broken ones", done: false, priority: "medium" },
+  ];
 
   useEffect(() => {
     setChecking(false);
     const saved = localStorage.getItem("seo-todos");
     if (saved) {
       setTodos(JSON.parse(saved));
+    } else {
+      setTodos(defaultTodos);
     }
   }, []);
 
@@ -96,7 +109,12 @@ export default function SeoDashboard() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  // Sort: High → Medium → Low, then unfinished first
+  const resetToDefaults = () => {
+    if (confirm("This will replace your current list with the default weekly + monthly tasks. Continue?")) {
+      setTodos(defaultTodos);
+    }
+  };
+
   const sortedTodos = [...todos].sort((a, b) => {
     const priorityOrder = { high: 0, medium: 1, low: 2 };
     if (a.done !== b.done) return a.done ? 1 : -1;
@@ -117,7 +135,6 @@ export default function SeoDashboard() {
     );
   }
 
-  // ========== PASSWORD SCREEN ==========
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-[#F8F5F0] flex items-center justify-center p-6">
@@ -129,9 +146,7 @@ export default function SeoDashboard() {
 
           <form onSubmit={handleLogin} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-[#1a1a1a] mb-1">
-                Password
-              </label>
+              <label className="block text-sm font-medium text-[#1a1a1a] mb-1">Password</label>
               <input
                 type="password"
                 value={password}
@@ -143,9 +158,7 @@ export default function SeoDashboard() {
               />
             </div>
 
-            {error && (
-              <p className="text-red-600 text-sm text-center">{error}</p>
-            )}
+            {error && <p className="text-red-600 text-sm text-center">{error}</p>}
 
             <button
               type="submit"
@@ -160,7 +173,6 @@ export default function SeoDashboard() {
     );
   }
 
-  // ========== DASHBOARD ==========
   return (
     <div className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
       <header className="bg-[#0B1D36] text-white py-4 px-6 flex justify-between items-center shadow-md">
@@ -176,14 +188,8 @@ export default function SeoDashboard() {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 py-10">
-        {/* Big Grok Button */}
         <div className="flex justify-center mb-14">
-          <a
-            href="https://x.com/i/grok"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative"
-          >
+          <a href="https://x.com/i/grok" target="_blank" rel="noopener noreferrer" className="group relative">
             <div className="w-52 h-52 md:w-60 md:h-60 rounded-full bg-[#0B1D36] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-300 border-4 border-[#C9A66B] group-hover:border-[#d4b57a]">
               <div className="text-center">
                 <div className="text-white text-3xl md:text-4xl font-bold mb-1">Grok</div>
@@ -247,12 +253,17 @@ export default function SeoDashboard() {
             </div>
           </div>
 
-          {/* TO-DO LIST WITH PRIORITY */}
+          {/* TO-DO LIST */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>✅</span> SEO To-Do List
-            </h2>
-            <p className="text-sm text-[#666] mb-4">Add tasks with priority</p>
+            <div className="flex justify-between items-center mb-1">
+              <h2 className="text-lg font-bold text-[#0B1D36] flex items-center gap-2">
+                <span>✅</span> SEO To-Do List
+              </h2>
+              <button onClick={resetToDefaults} className="text-xs text-[#C9A66B] hover:underline">
+                Reset defaults
+              </button>
+            </div>
+            <p className="text-sm text-[#666] mb-4">Weekly + Monthly high-priority tasks</p>
 
             <form onSubmit={addTodo} className="space-y-3 mb-4">
               <input
@@ -272,40 +283,28 @@ export default function SeoDashboard() {
                   <option value="medium">Medium Priority</option>
                   <option value="low">Low Priority</option>
                 </select>
-                <button
-                  type="submit"
-                  className="bg-[#C9A66B] text-[#0B1D36] px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#b8955a] transition"
-                >
+                <button type="submit" className="bg-[#C9A66B] text-[#0B1D36] px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#b8955a] transition">
                   Add
                 </button>
               </div>
             </form>
 
-            <ul className="space-y-2 max-h-72 overflow-y-auto">
+            <ul className="space-y-2 max-h-80 overflow-y-auto">
               {sortedTodos.length === 0 && (
-                <li className="text-sm text-[#888] italic">No tasks yet. Add one above.</li>
+                <li className="text-sm text-[#888] italic">No tasks yet.</li>
               )}
               {sortedTodos.map((todo) => (
-                <li
-                  key={todo.id}
-                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 group"
-                >
+                <li key={todo.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 group">
                   <input
                     type="checkbox"
                     checked={todo.done}
                     onChange={() => toggleTodo(todo.id)}
                     className="w-4 h-4 accent-[#C9A66B] cursor-pointer"
                   />
-                  <span
-                    className={`flex-1 text-sm ${
-                      todo.done ? "line-through text-gray-400" : "text-[#333]"
-                    }`}
-                  >
+                  <span className={`flex-1 text-sm ${todo.done ? "line-through text-gray-400" : "text-[#333]"}`}>
                     {todo.text}
                   </span>
-                  <span
-                    className={`text-xs px-2 py-0.5 rounded-full font-medium ${priorityColors[todo.priority]}`}
-                  >
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${priorityColors[todo.priority]}`}>
                     {todo.priority}
                   </span>
                   <button
@@ -353,6 +352,46 @@ export default function SeoDashboard() {
                   <a href="https://ahrefs.com/website-authority-checker" target="_blank" className="text-xs text-[#C9A66B] hover:underline">Authority</a>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* SOCIAL MEDIA - MUNCH STUDIO */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+              <span>📱</span> Social Media
+            </h2>
+            <p className="text-sm text-[#666] mb-5">Manage all social posts</p>
+            <div className="space-y-3">
+              <a
+                href="https://www.munchstudio.com/"
+                target="_blank"
+                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+              >
+                Open Munch Studio
+              </a>
+              <p className="text-xs text-[#888] text-center">
+                Schedule & manage Instagram, Facebook, TikTok, etc.
+              </p>
+            </div>
+          </div>
+
+          {/* AI VIDEO - HEYGEN */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+              <span>🎬</span> AI Video
+            </h2>
+            <p className="text-sm text-[#666] mb-5">Generate weekly video content</p>
+            <div className="space-y-3">
+              <a
+                href="https://www.heygen.com/"
+                target="_blank"
+                className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition"
+              >
+                Open HeyGen
+              </a>
+              <p className="text-xs text-[#888] text-center">
+                Create AI avatar videos for YouTube & social
+              </p>
             </div>
           </div>
 
