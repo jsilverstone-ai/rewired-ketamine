@@ -19,20 +19,44 @@ export default function ProvidersPage() {
 
 {/* TOP BAR */}
 <div className="bg-white border-b border-gray-200">
-  <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row items-center justify-between gap-4">
-    <Link href="/" className="flex-shrink-0">
-      <Image src="/logo.png" alt="Rewired Ketamine" width={600} height={180} className="h-16 md:h-20 w-auto" priority />
-    </Link>
-    <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#0B1D36]">
-      <a href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#C9A66B] transition">
-        2820 NE 214th St #1002, Aventura, FL 33180
-      </a>
-      <a href="mailto:info@rewiredketamine.com" className="flex items-center gap-2 hover:text-[#C9A66B] transition">
-        info@rewiredketamine.com
-      </a>
-      <a href="tel:+13056766070" className="flex items-center gap-2 font-semibold hover:text-[#C9A66B] transition">
-        (305) 676-6070
-      </a>
+  <div className="max-w-7xl mx-auto px-6 py-4">
+    <div className="flex flex-col items-center gap-3 lg:flex-row lg:justify-between">
+      
+      {/* Logo */}
+      <Link href="/" className="flex-shrink-0">
+        <Image
+          src="/logo.png"
+          alt="Rewired Ketamine"
+          width={600}
+          height={180}
+          className="h-16 md:h-20 w-auto"
+          priority
+        />
+      </Link>
+
+      {/* Contact Info - centered on mobile */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-2 text-sm text-[#0B1D36] text-center">
+        <a
+          href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-[#C9A66B] transition"
+        >
+          2820 NE 214th St #1002, Aventura, FL 33180
+        </a>
+        <a
+          href="mailto:info@rewiredketamine.com"
+          className="flex items-center gap-2 hover:text-[#C9A66B] transition"
+        >
+          info@rewiredketamine.com
+        </a>
+        <a
+          href="tel:+13056766070"
+          className="flex items-center gap-2 font-semibold hover:text-[#C9A66B] transition"
+        >
+          (305) 676-6070
+        </a>
+      </div>
     </div>
   </div>
 </div>
