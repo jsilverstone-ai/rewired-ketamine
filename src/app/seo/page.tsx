@@ -182,41 +182,49 @@ export default function SeoDashboard() {
     </a>
   </div>
 </div>
-          {/* KEYWORD TRACKER */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>🎯</span> Keyword Tracker
-            </h2>
-            <p className="text-sm text-[#666] mb-5">Main terms to monitor</p>
+{/* KEYWORD TRACKER */}
+<div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+  <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
+    <span>🎯</span> Keyword Tracker
+  </h2>
+  <p className="text-sm text-[#666] mb-4">Prioritized targets (July 2026 baseline)</p>
 
-            <ul className="space-y-2.5 text-sm text-[#333]">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#C9A66B]"></span>
-                ketamine therapy Aventura
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#C9A66B]"></span>
-                ketamine clinic Miami
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#C9A66B]"></span>
-                ketamine infusion South Florida
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#C9A66B]"></span>
-                treatment resistant depression Aventura
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#C9A66B]"></span>
-                ketamine for anxiety Fort Lauderdale
-              </li>
-            </ul>
+  <div className="space-y-4 text-sm">
+    <div>
+      <p className="font-semibold text-[#0B1D36] mb-1">Tier 1 – Protect (#1–#5)</p>
+      <ul className="space-y-1 text-[#333]">
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine Aventura FL</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine therapy Aventura</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine Miami</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine South Florida</li>
+      </ul>
+    </div>
 
-            <p className="text-xs text-[#888] mt-5">
-              Tip: Later we can connect a Google Sheet for live rankings.
-            </p>
-          </div>
+    <div>
+      <p className="font-semibold text-[#0B1D36] mb-1">Tier 2 – Push (Top 10–15 goal)</p>
+      <ul className="space-y-1 text-[#333]">
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine infusion therapy Florida</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine clinic Florida</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine for depression Miami</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine for PTSD South Florida</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Fully guided ketamine therapy Aventura</li>
+      </ul>
+    </div>
 
+    <div>
+      <p className="font-semibold text-[#0B1D36] mb-1">Tier 3 – Opportunity</p>
+      <ul className="space-y-1 text-[#333]">
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Best ketamine clinic Aventura</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> At-home ketamine Florida</li>
+        <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Ketamine assisted therapy Florida</li>
+      </ul>
+    </div>
+  </div>
+
+  <p className="text-xs text-[#888] mt-5">
+    Next: Create 1 strong page or blog post per Tier 2 keyword.
+  </p>
+</div>
 {/* COMPETITORS */}
 <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
   <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
