@@ -18,93 +18,75 @@ export default function SeoDashboard() {
   const [loading, setLoading] = useState(false);
   const [checking, setChecking] = useState(true);
 
-  const [todos, setTodos] = useState<Todo[]>([]);
+  // Weekly Tasks (reset every Sunday)
+  const [weeklyTodos, setWeeklyTodos] = useState<Todo[]>([]);
+  const [nextSunday, setNextSunday] = useState("");
+
+  // Personal Tasks (never auto-reset)
+  const [myTodos, setMyTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState("");
   const [newPriority, setNewPriority] = useState<Priority>("medium");
-  const [nextResetDate, setNextResetDate] = useState<string>("");
 
-  const defaultTodos: Todo[] = [
+  const defaultWeeklyTodos: Todo[] = [
     { id: 1, text: "Write 2 high-quality blog posts (Tier 2 keywords)", done: false, priority: "high" },
     { id: 2, text: "Publish 1 news / trend article", done: false, priority: "high" },
     { id: 3, text: "Create & upload 1 new video (HeyGen)", done: false, priority: "high" },
     { id: 4, text: "Optimize 1 existing page (title, H1, internal links)", done: false, priority: "high" },
     { id: 5, text: "Check competitor rankings (Nushama + Ketamine Aventura)", done: false, priority: "high" },
-    { id: 6, text: "Update keyword ranking tracker in Google Sheets", done: false, priority: "high" },
-    { id: 7, text: "Review Google Search Console performance", done: false, priority: "high" },
-    { id: 8, text: "Audit top 5 landing pages for Core Web Vitals", done: false, priority: "medium" },
-    { id: 9, text: "Check backlinks & fix any broken ones", done: false, priority: "medium" },
   ];
 
-  // Calculate the next 1st Monday of the month
-  const getNextFirstMonday = () => {
+  // Get next Sunday
+  const getNextSunday = () => {
     const now = new Date();
-    let year = now.getFullYear();
-    let month = now.getMonth();
-
-    // Start from current month
-    let date = new Date(year, month, 1);
-
-    // Find the first Monday
-    while (date.getDay() !== 1) {
-      date.setDate(date.getDate() + 1);
-    }
-
-    // If that Monday has already passed this month, go to next month
-    if (date < now) {
-      month += 1;
-      if (month > 11) {
-        month = 0;
-        year += 1;
-      }
-      date = new Date(year, month, 1);
-      while (date.getDay() !== 1) {
-        date.setDate(date.getDate() + 1);
-      }
-    }
-
-    return date;
+    const day = now.getDay(); // 0 = Sunday
+    const daysUntilSunday = day === 0 ? 7 : 7 - day;
+    const next = new Date(now);
+    next.setDate(now.getDate() + daysUntilSunday);
+    next.setHours(0, 0, 0, 0);
+    return next;
   };
 
   useEffect(() => {
     setChecking(false);
 
-    const saved = localStorage.getItem("seo-todos");
-    const lastReset = localStorage.getItem("seo-todos-last-reset");
-    const nextMonday = getNextFirstMonday();
-    setNextResetDate(nextMonday.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }));
+    // === Weekly Tasks Logic ===
+    const savedWeekly = localStorage.getItem("seo-weekly-todos");
+    const lastWeeklyReset = localStorage.getItem("seo-weekly-last-reset");
+    const nextSun = getNextSunday();
+    setNextSunday(nextSun.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }));
 
-    const shouldReset = () => {
-      if (!lastReset) return true;
-
-      const lastResetDate = new Date(lastReset);
+    const shouldResetWeekly = () => {
+      if (!lastWeeklyReset) return true;
+      const last = new Date(lastWeeklyReset);
       const today = new Date();
-
-      // Check if today is the 1st Monday and we haven't reset yet this month
-      const isFirstMonday =
-        today.getDay() === 1 &&
-        today.getDate() <= 7;
-
-      const alreadyResetThisMonth =
-        lastResetDate.getMonth() === today.getMonth() &&
-        lastResetDate.getFullYear() === today.getFullYear();
-
-      return isFirstMonday && !alreadyResetThisMonth;
+      // Reset if it's Sunday and we haven't reset today
+      return today.getDay() === 0 && last.toDateString() !== today.toDateString();
     };
 
-    if (shouldReset()) {
-      setTodos(defaultTodos);
-      localStorage.setItem("seo-todos-last-reset", new Date().toISOString());
-    } else if (saved) {
-      setTodos(JSON.parse(saved));
+    if (shouldResetWeekly()) {
+      setWeeklyTodos(defaultWeeklyTodos);
+      localStorage.setItem("seo-weekly-last-reset", new Date().toISOString());
+    } else if (savedWeekly) {
+      setWeeklyTodos(JSON.parse(savedWeekly));
     } else {
-      setTodos(defaultTodos);
-      localStorage.setItem("seo-todos-last-reset", new Date().toISOString());
+      setWeeklyTodos(defaultWeeklyTodos);
+      localStorage.setItem("seo-weekly-last-reset", new Date().toISOString());
+    }
+
+    // === Personal Tasks Logic ===
+    const savedMy = localStorage.getItem("seo-my-todos");
+    if (savedMy) {
+      setMyTodos(JSON.parse(savedMy));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("seo-todos", JSON.stringify(todos));
-  }, [todos]);
+    localStorage.setItem("seo-weekly-todos", JSON.stringify(weeklyTodos));
+  }, [weeklyTodos]);
+
+  useEffect(() => {
+    localStorage.setItem("seo-my-todos", JSON.stringify(myTodos));
+  }, [myTodos]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -138,46 +120,39 @@ export default function SeoDashboard() {
     setIsAuthenticated(false);
   };
 
-  const addTodo = (e: React.FormEvent) => {
+  // Weekly handlers
+  const toggleWeekly = (id: number) => {
+    setWeeklyTodos(weeklyTodos.map(t => t.id === id ? { ...t, done: !t.done } : t));
+  };
+
+  const resetWeekly = () => {
+    if (confirm("Reset weekly tasks to defaults?")) {
+      setWeeklyTodos(defaultWeeklyTodos);
+      localStorage.setItem("seo-weekly-last-reset", new Date().toISOString());
+    }
+  };
+
+  // Personal handlers
+  const addMyTodo = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newTodo.trim()) return;
-
-    setTodos([
-      ...todos,
-      {
-        id: Date.now(),
-        text: newTodo.trim(),
-        done: false,
-        priority: newPriority,
-      },
-    ]);
+    setMyTodos([...myTodos, { id: Date.now(), text: newTodo.trim(), done: false, priority: newPriority }]);
     setNewTodo("");
     setNewPriority("medium");
   };
 
-  const toggleTodo = (id: number) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo
-      )
-    );
+  const toggleMy = (id: number) => {
+    setMyTodos(myTodos.map(t => t.id === id ? { ...t, done: !t.done } : t));
   };
 
-  const deleteTodo = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  const deleteMy = (id: number) => {
+    setMyTodos(myTodos.filter(t => t.id !== id));
   };
 
-  const resetToDefaults = () => {
-    if (confirm("This will replace your current list with the default weekly + monthly tasks. Continue?")) {
-      setTodos(defaultTodos);
-      localStorage.setItem("seo-todos-last-reset", new Date().toISOString());
-    }
-  };
-
-  const sortedTodos = [...todos].sort((a, b) => {
-    const priorityOrder = { high: 0, medium: 1, low: 2 };
+  const sortedMyTodos = [...myTodos].sort((a, b) => {
+    const order = { high: 0, medium: 1, low: 2 };
     if (a.done !== b.done) return a.done ? 1 : -1;
-    return priorityOrder[a.priority] - priorityOrder[b.priority];
+    return order[a.priority] - order[b.priority];
   });
 
   const priorityColors = {
@@ -202,7 +177,6 @@ export default function SeoDashboard() {
             <h1 className="text-2xl font-bold text-[#0B1D36]">SEO Control Center</h1>
             <p className="text-[#555] mt-2">Protected area — enter password</p>
           </div>
-
           <form onSubmit={handleLogin} className="space-y-5">
             <div>
               <label className="block text-sm font-medium text-[#1a1a1a] mb-1">Password</label>
@@ -216,14 +190,8 @@ export default function SeoDashboard() {
                 disabled={loading}
               />
             </div>
-
             {error && <p className="text-red-600 text-sm text-center">{error}</p>}
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-[#C9A66B] hover:bg-[#b8955a] disabled:opacity-60 text-[#0B1D36] font-semibold py-3 px-6 rounded-lg transition"
-            >
+            <button type="submit" disabled={loading} className="w-full bg-[#C9A66B] hover:bg-[#b8955a] disabled:opacity-60 text-[#0B1D36] font-semibold py-3 px-6 rounded-lg transition">
               {loading ? "Checking..." : "Unlock Dashboard"}
             </button>
           </form>
@@ -235,13 +203,8 @@ export default function SeoDashboard() {
   return (
     <div className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
       <header className="bg-[#0B1D36] text-white py-4 px-6 flex justify-between items-center shadow-md">
-        <div className="font-semibold text-lg tracking-wide">
-          Rewired Ketamine · SEO Control Center
-        </div>
-        <button
-          onClick={handleLogout}
-          className="text-sm bg-[#C9A66B] text-[#0B1D36] px-4 py-1.5 rounded-md font-medium hover:bg-[#b8955a] transition"
-        >
+        <div className="font-semibold text-lg tracking-wide">Rewired Ketamine · SEO Control Center</div>
+        <button onClick={handleLogout} className="text-sm bg-[#C9A66B] text-[#0B1D36] px-4 py-1.5 rounded-md font-medium hover:bg-[#b8955a] transition">
           Logout
         </button>
       </header>
@@ -262,9 +225,7 @@ export default function SeoDashboard() {
 
           {/* SITE HEALTH */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>🔍</span> Site Health
-            </h2>
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>🔍</span> Site Health</h2>
             <p className="text-sm text-[#666] mb-5">Run free scans on your website</p>
             <div className="space-y-3">
               <a href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">PageSpeed Insights</a>
@@ -277,9 +238,7 @@ export default function SeoDashboard() {
 
           {/* KEYWORD TRACKER */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>🎯</span> Keyword Tracker
-            </h2>
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>🎯</span> Keyword Tracker</h2>
             <p className="text-sm text-[#666] mb-4">Prioritized targets (July 2026 baseline)</p>
             <div className="space-y-4 text-sm">
               <div>
@@ -312,27 +271,42 @@ export default function SeoDashboard() {
             </div>
           </div>
 
-          {/* TO-DO LIST */}
+          {/* WEEKLY TASKS */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
             <div className="flex justify-between items-center mb-1">
-              <h2 className="text-lg font-bold text-[#0B1D36] flex items-center gap-2">
-                <span>✅</span> SEO To-Do List
-              </h2>
-              <button onClick={resetToDefaults} className="text-xs text-[#C9A66B] hover:underline">
-                Reset defaults
-              </button>
+              <h2 className="text-lg font-bold text-[#0B1D36] flex items-center gap-2"><span>📅</span> Weekly Tasks</h2>
+              <button onClick={resetWeekly} className="text-xs text-[#C9A66B] hover:underline">Reset</button>
             </div>
-            <p className="text-sm text-[#666] mb-1">Weekly + Monthly high-priority tasks</p>
-            <p className="text-xs text-[#888] mb-4">
-              Next auto-reset: {nextResetDate}
-            </p>
+            <p className="text-xs text-[#888] mb-4">Resets every Sunday · Next: {nextSunday}</p>
 
-            <form onSubmit={addTodo} className="space-y-3 mb-4">
+            <ul className="space-y-2">
+              {weeklyTodos.map((todo) => (
+                <li key={todo.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50">
+                  <input
+                    type="checkbox"
+                    checked={todo.done}
+                    onChange={() => toggleWeekly(todo.id)}
+                    className="w-4 h-4 accent-[#C9A66B] cursor-pointer"
+                  />
+                  <span className={`flex-1 text-sm ${todo.done ? "line-through text-gray-400" : "text-[#333]"}`}>
+                    {todo.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* MY TASKS (Personal) */}
+          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>✅</span> My Tasks</h2>
+            <p className="text-sm text-[#666] mb-4">Personal list · never auto-resets</p>
+
+            <form onSubmit={addMyTodo} className="space-y-3 mb-4">
               <input
                 type="text"
                 value={newTodo}
                 onChange={(e) => setNewTodo(e.target.value)}
-                placeholder="Add a new task..."
+                placeholder="Add a personal task..."
                 className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A66B]"
               />
               <div className="flex gap-2">
@@ -341,9 +315,9 @@ export default function SeoDashboard() {
                   onChange={(e) => setNewPriority(e.target.value as Priority)}
                   className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A66B]"
                 >
-                  <option value="high">High Priority</option>
-                  <option value="medium">Medium Priority</option>
-                  <option value="low">Low Priority</option>
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
                 </select>
                 <button type="submit" className="bg-[#C9A66B] text-[#0B1D36] px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#b8955a] transition">
                   Add
@@ -351,16 +325,16 @@ export default function SeoDashboard() {
               </div>
             </form>
 
-            <ul className="space-y-2 max-h-80 overflow-y-auto">
-              {sortedTodos.length === 0 && (
-                <li className="text-sm text-[#888] italic">No tasks yet.</li>
+            <ul className="space-y-2 max-h-64 overflow-y-auto">
+              {sortedMyTodos.length === 0 && (
+                <li className="text-sm text-[#888] italic">No personal tasks yet.</li>
               )}
-              {sortedTodos.map((todo) => (
+              {sortedMyTodos.map((todo) => (
                 <li key={todo.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 group">
                   <input
                     type="checkbox"
                     checked={todo.done}
-                    onChange={() => toggleTodo(todo.id)}
+                    onChange={() => toggleMy(todo.id)}
                     className="w-4 h-4 accent-[#C9A66B] cursor-pointer"
                   />
                   <span className={`flex-1 text-sm ${todo.done ? "line-through text-gray-400" : "text-[#333]"}`}>
@@ -369,10 +343,7 @@ export default function SeoDashboard() {
                   <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${priorityColors[todo.priority]}`}>
                     {todo.priority}
                   </span>
-                  <button
-                    onClick={() => deleteTodo(todo.id)}
-                    className="text-red-400 opacity-0 group-hover:opacity-100 text-sm hover:text-red-600 transition"
-                  >
+                  <button onClick={() => deleteMy(todo.id)} className="text-red-400 opacity-0 group-hover:opacity-100 text-sm hover:text-red-600 transition">
                     ✕
                   </button>
                 </li>
@@ -382,9 +353,7 @@ export default function SeoDashboard() {
 
           {/* COMPETITORS */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>🏆</span> Competitors
-            </h2>
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>🏆</span> Competitors</h2>
             <p className="text-sm text-[#666] mb-5">Local ketamine clinics to monitor</p>
             <div className="space-y-5">
               <div>
@@ -419,37 +388,27 @@ export default function SeoDashboard() {
 
           {/* SOCIAL MEDIA */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>📱</span> Social Media
-            </h2>
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>📱</span> Social Media</h2>
             <p className="text-sm text-[#666] mb-5">Manage all social posts</p>
             <div className="space-y-3">
-              <a href="https://www.munchstudio.com/" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">
-                Open Munch Studio
-              </a>
+              <a href="https://www.munchstudio.com/" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">Open Munch Studio</a>
               <p className="text-xs text-[#888] text-center">Schedule & manage Instagram, Facebook, TikTok, etc.</p>
             </div>
           </div>
 
           {/* AI VIDEO */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>🎬</span> AI Video
-            </h2>
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>🎬</span> AI Video</h2>
             <p className="text-sm text-[#666] mb-5">Generate weekly video content</p>
             <div className="space-y-3">
-              <a href="https://www.heygen.com/" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">
-                Open HeyGen
-              </a>
+              <a href="https://www.heygen.com/" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">Open HeyGen</a>
               <p className="text-xs text-[#888] text-center">Create AI avatar videos for YouTube & social</p>
             </div>
           </div>
 
           {/* GOOGLE NEWS */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow md:col-span-2">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>📰</span> Industry News
-            </h2>
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>📰</span> Industry News</h2>
             <p className="text-sm text-[#666] mb-5">Latest ketamine & mental health headlines</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en" target="_blank" className="block text-center border border-gray-200 rounded-lg py-3 px-4 text-sm font-medium text-[#0B1D36] hover:border-[#C9A66B] hover:bg-[#FDF8F0] transition">Ketamine Therapy</a>
@@ -460,9 +419,7 @@ export default function SeoDashboard() {
 
           {/* QUICK TOOLS */}
           <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>⚡</span> Quick Tools
-            </h2>
+            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>⚡</span> Quick Tools</h2>
             <p className="text-sm text-[#666] mb-5">Everyday free resources</p>
             <ul className="space-y-2.5 text-sm">
               <li><a href="https://search.google.com/search-console" target="_blank" className="text-[#C9A66B] hover:underline">Google Search Console</a></li>
@@ -473,9 +430,7 @@ export default function SeoDashboard() {
           </div>
         </div>
 
-        <p className="text-center text-sm text-[#888] mt-12">
-          Private SEO Control Center · Rewired Ketamine
-        </p>
+        <p className="text-center text-sm text-[#888] mt-12">Private SEO Control Center · Rewired Ketamine</p>
       </main>
     </div>
   );
