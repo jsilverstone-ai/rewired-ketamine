@@ -6,6 +6,12 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+  title: "Can Ketamine Help with Chronic Fatigue? What a New Study Suggests for Patients in South Florida",
+  slug: "ketamine-chronic-fatigue-south-florida",
+  excerpt: "A recent Rutgers study explores whether ketamine may help reduce symptoms of chronic fatigue. Learn what this could mean for patients in Aventura and Miami.",
+  date: "August 2026"
+},
 {
   title: "What Is Ketamine Prescribed For?",
   slug: "what-is-ketamine-prescribed-for",

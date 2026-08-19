@@ -209,33 +209,30 @@ const posts = blogPosts;
         </div>
       </section>
 
-      {/* BLOG GRID */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
-              <Link 
-                key={post.slug} 
-                href={`/content/blog/${post.slug}`}
-                className="bg-white rounded-2xl border border-[#eee] overflow-hidden hover:shadow-lg transition group"
-              >
-                <div className="p-8">
-                  <p className="text-sm text-[#C9A66B] font-semibold mb-3">{post.date}</p>
-                  <h2 className="text-xl font-bold text-[#0B1D36] mb-4 group-hover:text-[#C9A66B] transition leading-snug">
-                    {post.title}
-                  </h2>
-                  <p className="text-[#555] leading-relaxed mb-6">
-                    {post.excerpt}
-                  </p>
-                  <span className="text-[#0B1D36] font-semibold text-sm group-hover:text-[#C9A66B] transition">
-                    Read more →
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+{/* Blog Posts Grid */}
+<section className="py-16 px-6">
+  <div className="max-w-6xl mx-auto">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {blogPosts.map((post) => (
+        <Link
+          key={post.slug}
+          href={`/content/blog/${post.slug}`}
+          className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+        >
+          <p className="text-sm text-[#C9A66B] font-semibold mb-2">
+            {post.date}
+          </p>
+          <h3 className="text-xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+            {post.title}
+          </h3>
+          <p className="text-[#555] leading-relaxed text-sm">
+            {post.excerpt}
+          </p>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
