@@ -1,74 +1,80 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 type Priority = "high" | "medium" | "low";
 
-interface Todo {
-  id: number;
+interface Task {
+  id: string;
   text: string;
-  done: boolean;
-  priority: Priority;
+  completed: boolean;
+  priority?: Priority;
 }
 
-export default function SeoDashboard() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+interface Keyword {
+  keyword: string;
+  rank: number | null;
+  previousRank: number | null;
+  searchVolume: number | null;
+  url: string | null;
+}
+
+const WEEKLY_DEFAULTS: Task[] = [
+  { id: "w1", text: "Check rankings in Mangools", completed: false },
+  { id: "w2", text: "Review Keyword Tracker card", completed: false },
+  { id: "w3", text: "Review Google Search Console", completed: false },
+  { id: "w4", text: "Run Screaming Frog crawl (or key pages)", completed: false },
+  { id: "w5", text: "Check Core Web Vitals (homepage + 2–3 service pages)", completed: false },
+  { id: "w6", text: "Pick 1–2 pages ranking 4–15 to improve", completed: false },
+  { id: "w7", text: "Add stronger internal links to improved pages", completed: false },
+];
+
+const priorityColors = {
+  high: "bg-red-500/20 text-red-300 border-red-500/50",
+  medium: "bg-yellow-500/20 text-yellow-300 border-yellow-500/50",
+  low: "bg-emerald-500/20 text-emerald-300 border-emerald-500/50",
+};
+
+export default function SEOPage() {
+  const [authenticated, setAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [checking, setChecking] = useState(true);
-
-  const [weeklyTodos, setWeeklyTodos] = useState<Todo[]>([]);
-  const [nextSunday, setNextSunday] = useState("");
-  const [myTodos, setMyTodos] = useState<Todo[]>([]);
-  const [newTodo, setNewTodo] = useState("");
+  const [weeklyTodos, setWeeklyTodos] = useState<Task[]>(WEEKLY_DEFAULTS);
+  const [myTodos, setMyTodos] = useState<Task[]>([]);
+  const [newTask, setNewTask] = useState("");
   const [newPriority, setNewPriority] = useState<Priority>("medium");
 
-  const defaultWeeklyTodos: Todo[] = [
-    { id: 1, text: "Write 2 high-quality blog posts (Tier 2 keywords)", done: false, priority: "high" },
-    { id: 2, text: "Publish 1 news / trend article", done: false, priority: "high" },
-    { id: 3, text: "Create & upload 1 new video (HeyGen)", done: false, priority: "high" },
-    { id: 4, text: "Optimize 1 existing page (title, H1, internal links)", done: false, priority: "high" },
-    { id: 5, text: "Check competitor rankings (Nushama + Ketamine Aventura)", done: false, priority: "high" },
-  ];
+  // Live data
+  const [keywords, setKeywords] = useState<Keyword[]>([]);
+  const [siteData, setSiteData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  const getNextSunday = () => {
-    const now = new Date();
-    const day = now.getDay();
-    const daysUntilSunday = day === 0 ? 7 : 7 - day;
-    const next = new Date(now);
-    next.setDate(now.getDate() + daysUntilSunday);
-    next.setHours(0, 0, 0, 0);
-    return next;
-  };
-
+  // Load todos + weekly reset
   useEffect(() => {
-    setChecking(false);
-
     const savedWeekly = localStorage.getItem("seo-weekly-todos");
-    const lastWeeklyReset = localStorage.getItem("seo-weekly-last-reset");
-    const nextSun = getNextSunday();
-    setNextSunday(nextSun.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }));
+    const savedMy = localStorage.getItem("seo-my-todos");
+    const lastReset = localStorage.getItem("seo-last-reset");
 
-    const shouldResetWeekly = () => {
-      if (!lastWeeklyReset) return true;
-      const last = new Date(lastWeeklyReset);
-      const today = new Date();
-      return today.getDay() === 0 && last.toDateString() !== today.toDateString();
-    };
+    const today = new Date();
+    const day = today.getDay();
+    const lastResetDate = lastReset ? new Date(lastReset) : null;
 
-    if (shouldResetWeekly()) {
-      setWeeklyTodos(defaultWeeklyTodos);
-      localStorage.setItem("seo-weekly-last-reset", new Date().toISOString());
+    const shouldReset =
+      day === 0 &&
+      (!lastResetDate || lastResetDate.toDateString() !== today.toDateString());
+
+    if (shouldReset) {
+      setWeeklyTodos(WEEKLY_DEFAULTS);
+      localStorage.setItem("seo-weekly-todos", JSON.stringify(WEEKLY_DEFAULTS));
+      localStorage.setItem("seo-last-reset", today.toISOString());
     } else if (savedWeekly) {
       setWeeklyTodos(JSON.parse(savedWeekly));
-    } else {
-      setWeeklyTodos(defaultWeeklyTodos);
-      localStorage.setItem("seo-weekly-last-reset", new Date().toISOString());
     }
 
-    const savedMy = localStorage.getItem("seo-my-todos");
-    if (savedMy) setMyTodos(JSON.parse(savedMy));
+    if (savedMy) {
+      setMyTodos(JSON.parse(savedMy));
+    }
   }, []);
 
   useEffect(() => {
@@ -79,314 +85,516 @@ export default function SeoDashboard() {
     localStorage.setItem("seo-my-todos", JSON.stringify(myTodos));
   }, [myTodos]);
 
+  // Fetch live Mangools data
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const [rankRes, siteRes] = await Promise.all([
+          fetch("/api/mangools/rankings"),
+          fetch("/api/mangools/site"),
+        ]);
+
+        const rankData = await rankRes.json();
+        const site = await siteRes.json();
+
+        if (rankData.success) {
+          setKeywords(rankData.keywords || []);
+        }
+        if (site.success) {
+          setSiteData(site);
+        }
+      } catch (err) {
+        console.error("Failed to load Mangools data", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (authenticated) {
+      loadData();
+    }
+  }, [authenticated]);
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    setLoading(true);
+
     try {
       const res = await fetch("/api/seo-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password }),
       });
-      const data = await res.json();
-      if (data.success) {
-        setIsAuthenticated(true);
-        setPassword("");
+
+      if (res.ok) {
+        setAuthenticated(true);
       } else {
-        setError(data.message || "Incorrect password");
+        setError("Incorrect password");
       }
     } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
+      setError("Login failed");
     }
   };
 
-  const handleLogout = () => {
-    document.cookie = "seo_auth=; Max-Age=0; path=/";
-    setIsAuthenticated(false);
+  const toggleWeekly = (id: string) => {
+    setWeeklyTodos((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
+    );
   };
 
-  const toggleWeekly = (id: number) => {
-    setWeeklyTodos(weeklyTodos.map(t => t.id === id ? { ...t, done: !t.done } : t));
+  const toggleMy = (id: string) => {
+    setMyTodos((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
+    );
   };
 
-  const resetWeekly = () => {
-    if (confirm("Reset weekly tasks to defaults?")) {
-      setWeeklyTodos(defaultWeeklyTodos);
-      localStorage.setItem("seo-weekly-last-reset", new Date().toISOString());
-    }
+  const deleteWeekly = (id: string) => {
+    setWeeklyTodos((prev) => prev.filter((t) => t.id !== id));
   };
 
-  const addMyTodo = (e: React.FormEvent) => {
+  const deleteMy = (id: string) => {
+    setMyTodos((prev) => prev.filter((t) => t.id !== id));
+  };
+
+  const addMyTask = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newTodo.trim()) return;
-    setMyTodos([...myTodos, { id: Date.now(), text: newTodo.trim(), done: false, priority: newPriority }]);
-    setNewTodo("");
-    setNewPriority("medium");
-  };
+    if (!newTask.trim()) return;
 
-  const toggleMy = (id: number) => {
-    setMyTodos(myTodos.map(t => t.id === id ? { ...t, done: !t.done } : t));
-  };
-
-  const deleteMy = (id: number) => {
-    setMyTodos(myTodos.filter(t => t.id !== id));
+    setMyTodos((prev) => [
+      ...prev,
+      {
+        id: Date.now().toString(),
+        text: newTask.trim(),
+        completed: false,
+        priority: newPriority,
+      },
+    ]);
+    setNewTask("");
   };
 
   const sortedMyTodos = [...myTodos].sort((a, b) => {
     const order = { high: 0, medium: 1, low: 2 };
-    if (a.done !== b.done) return a.done ? 1 : -1;
-    return order[a.priority] - order[b.priority];
+    return (order[a.priority || "medium"] || 1) - (order[b.priority || "medium"] || 1);
   });
 
-  const priorityColors = {
-    high: "bg-red-100 text-red-700",
-    medium: "bg-yellow-100 text-yellow-700",
-    low: "bg-blue-100 text-blue-700",
-  };
-
-  if (checking) {
+  // Login screen
+  if (!authenticated) {
     return (
-      <div className="min-h-screen bg-[#F8F5F0] flex items-center justify-center">
-        <p className="text-[#0B1D36] text-lg">Loading dashboard...</p>
-      </div>
-    );
-  }
-
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen bg-[#F8F5F0] flex items-center justify-center p-6">
-        <div className="bg-white rounded-2xl shadow-xl p-10 max-w-md w-full border border-gray-100">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-[#0B1D36]">SEO Control Center</h1>
-            <p className="text-[#555] mt-2">Protected area — enter password</p>
-          </div>
-          <form onSubmit={handleLogin} className="space-y-5">
-            <div>
-              <label className="block text-sm font-medium text-[#1a1a1a] mb-1">Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C9A66B] text-[#1a1a1a]"
-                placeholder="Enter password"
-                autoFocus
-                disabled={loading}
-              />
-            </div>
-            {error && <p className="text-red-600 text-sm text-center">{error}</p>}
-            <button type="submit" disabled={loading} className="w-full bg-[#C9A66B] hover:bg-[#b8955a] disabled:opacity-60 text-[#0B1D36] font-semibold py-3 px-6 rounded-lg transition">
-              {loading ? "Checking..." : "Unlock Dashboard"}
-            </button>
-          </form>
-        </div>
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4">
+        <form
+          onSubmit={handleLogin}
+          className="bg-slate-900 border border-slate-700 rounded-2xl p-8 w-full max-w-md shadow-2xl"
+        >
+          <h1 className="text-2xl font-bold text-white mb-6 text-center">
+            SEO Control Center
+          </h1>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter password"
+            className="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white mb-4 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+          />
+          {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
+          <button
+            type="submit"
+            className="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-3 rounded-lg transition"
+          >
+            Unlock Dashboard
+          </button>
+        </form>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
-      <header className="bg-[#0B1D36] text-white py-4 px-6 flex justify-between items-center shadow-md">
-        <div className="font-semibold text-lg tracking-wide">Rewired Ketamine · SEO Control Center</div>
-        <button onClick={handleLogout} className="text-sm bg-[#C9A66B] text-[#0B1D36] px-4 py-1.5 rounded-md font-medium hover:bg-[#b8955a] transition">
-          Logout
-        </button>
-      </header>
-
-      <main className="max-w-6xl mx-auto px-6 py-10">
-        {/* Grok Button */}
-        <div className="flex justify-center mb-12">
-          <a href="https://x.com/i/grok" target="_blank" rel="noopener noreferrer" className="group">
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-[#0B1D36] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-300 border-4 border-[#C9A66B] group-hover:border-[#d4b57a]">
-              <div className="text-center">
-                <div className="text-white text-3xl font-bold mb-1">Grok</div>
-                <div className="text-[#C9A66B] text-sm font-medium">Talk to me about SEO</div>
-              </div>
-            </div>
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      {/* Top bar with Home button */}
+      <div className="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Link
+              href="/"
+              className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+            >
+              ← Home
+            </Link>
+            <h1 className="text-lg font-semibold text-white hidden sm:block">
+              SEO Control Center
+            </h1>
+          </div>
+          <a
+            href="https://x.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg"
+          >
+            Talk to Grok
           </a>
         </div>
+      </div>
 
-        {/* ===== ROW 1 ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        {/* Main Grid - 3 equal columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          {/* ===== ROW 1 ===== */}
+
           {/* Weekly Tasks */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <div className="flex justify-between items-center mb-1">
-              <h2 className="text-lg font-bold text-[#0B1D36] flex items-center gap-2"><span>📅</span> Weekly Tasks</h2>
-              <button onClick={resetWeekly} className="text-xs text-[#C9A66B] hover:underline">Reset</button>
-            </div>
-            <p className="text-xs text-[#888] mb-4">Resets every Sunday · Next: {nextSunday}</p>
-            <ul className="space-y-2">
-              {weeklyTodos.map((todo) => (
-                <li key={todo.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50">
-                  <input type="checkbox" checked={todo.done} onChange={() => toggleWeekly(todo.id)} className="w-4 h-4 accent-[#C9A66B] cursor-pointer" />
-                  <span className={`flex-1 text-sm ${todo.done ? "line-through text-gray-400" : "text-[#333]"}`}>{todo.text}</span>
-                </li>
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5 flex flex-col">
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+              Weekly Tasks
+            </h2>
+            <div className="space-y-2 flex-1">
+              {weeklyTodos.map((task) => (
+                <div
+                  key={task.id}
+                  className="flex items-start gap-3 group bg-slate-800/50 hover:bg-slate-800 rounded-lg p-3"
+                >
+                  <input
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={() => toggleWeekly(task.id)}
+                    className="mt-1 w-4 h-4 accent-cyan-500"
+                  />
+                  <span
+                    className={`flex-1 text-sm ${
+                      task.completed ? "line-through text-slate-500" : "text-slate-200"
+                    }`}
+                  >
+                    {task.text}
+                  </span>
+                  <button
+                    onClick={() => deleteWeekly(task.id)}
+                    className="opacity-70 hover:opacity-100 text-red-400 hover:text-red-300 p-1.5 rounded-md hover:bg-red-500/20 transition text-lg leading-none"
+                    title="Delete"
+                  >
+                    ×
+                  </button>
+                </div>
               ))}
-            </ul>
+            </div>
+            <p className="text-xs text-slate-500 mt-4">Resets every Sunday</p>
           </div>
 
           {/* My Tasks */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>✅</span> My Tasks</h2>
-            <p className="text-sm text-[#666] mb-4">Personal list · never auto-resets</p>
-            <form onSubmit={addMyTodo} className="space-y-3 mb-4">
-              <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} placeholder="Add a personal task..." className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A66B]" />
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5 flex flex-col">
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-violet-400"></span>
+              My Tasks
+            </h2>
+
+            <form onSubmit={addMyTask} className="mb-4 space-y-2">
+              <input
+                type="text"
+                value={newTask}
+                onChange={(e) => setNewTask(e.target.value)}
+                placeholder="Add a task..."
+                className="w-full bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-violet-500"
+              />
               <div className="flex gap-2">
-                <select value={newPriority} onChange={(e) => setNewPriority(e.target.value as Priority)} className="flex-1 px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A66B]">
+                <select
+                  value={newPriority}
+                  onChange={(e) => setNewPriority(e.target.value as Priority)}
+                  className="bg-slate-800 border border-slate-600 rounded-lg px-2 py-2 text-sm text-white"
+                >
                   <option value="high">High</option>
                   <option value="medium">Medium</option>
                   <option value="low">Low</option>
                 </select>
-                <button type="submit" className="bg-[#C9A66B] text-[#0B1D36] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#b8955a] transition">Add</button>
+                <button
+                  type="submit"
+                  className="flex-1 bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium py-2 rounded-lg transition"
+                >
+                  Add
+                </button>
               </div>
             </form>
-            <ul className="space-y-2 max-h-52 overflow-y-auto">
-              {sortedMyTodos.length === 0 && <li className="text-sm text-[#888] italic">No personal tasks yet.</li>}
-              {sortedMyTodos.map((todo) => (
-                <li key={todo.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 group">
-                  <input type="checkbox" checked={todo.done} onChange={() => toggleMy(todo.id)} className="w-4 h-4 accent-[#C9A66B] cursor-pointer" />
-                  <span className={`flex-1 text-sm ${todo.done ? "line-through text-gray-400" : "text-[#333]"}`}>{todo.text}</span>
-                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${priorityColors[todo.priority]}`}>{todo.priority}</span>
-                  <button onClick={() => deleteMy(todo.id)} className="text-red-400 opacity-0 group-hover:opacity-100 text-sm hover:text-red-600">✕</button>
-                </li>
+
+            <div className="space-y-2 flex-1 overflow-y-auto max-h-80">
+              {sortedMyTodos.length === 0 && (
+                <p className="text-sm text-slate-500">No personal tasks yet</p>
+              )}
+              {sortedMyTodos.map((task) => (
+                <div
+                  key={task.id}
+                  className="flex items-start gap-3 group bg-slate-800/50 hover:bg-slate-800 rounded-lg p-3"
+                >
+                  <input
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={() => toggleMy(task.id)}
+                    className="mt-1 w-4 h-4 accent-violet-500"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <span
+                      className={`text-sm block ${
+                        task.completed ? "line-through text-slate-500" : "text-slate-200"
+                      }`}
+                    >
+                      {task.text}
+                    </span>
+                    {task.priority && (
+                      <span
+                        className={`inline-block mt-1 text-[10px] px-1.5 py-0.5 rounded border ${
+                          priorityColors[task.priority]
+                        }`}
+                      >
+                        {task.priority}
+                      </span>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => deleteMy(task.id)}
+                    className="opacity-70 hover:opacity-100 text-red-400 hover:text-red-300 p-1.5 rounded-md hover:bg-red-500/20 transition text-lg leading-none"
+                    title="Delete"
+                  >
+                    ×
+                  </button>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Keyword Tracker - Updated */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2">
-              <span>🎯</span> Keyword Tracker
+          {/* Keyword Tracker */}
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5 flex flex-col">
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              Keyword Tracker
             </h2>
-            <p className="text-sm text-[#666] mb-4">Weekly ranking check</p>
 
-            <div className="space-y-3 text-sm">
-              <div>
-                <p className="font-semibold text-[#0B1D36] mb-1">Tier 1 – Protect</p>
-                <ul className="space-y-1 text-[#333]">
-                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine Aventura FL</li>
-                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine therapy Aventura</li>
-                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine Miami</li>
-                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-500"></span> Ketamine South Florida</li>
-                </ul>
+            {loading ? (
+              <p className="text-sm text-slate-400">Loading rankings...</p>
+            ) : keywords.length === 0 ? (
+              <p className="text-sm text-slate-400">No keyword data yet</p>
+            ) : (
+              <div className="space-y-2 flex-1 overflow-y-auto max-h-96">
+                {keywords
+                  .filter((k) => k.keyword)
+                  .slice(0, 12)
+                  .map((k, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-between bg-slate-800/60 rounded-lg px-3 py-2 text-sm"
+                    >
+                      <span className="truncate pr-2 text-slate-200">{k.keyword}</span>
+                      <div className="flex items-center gap-3 shrink-0">
+                        <span className="text-slate-400 text-xs">
+                          {k.searchVolume ? `${k.searchVolume}` : "—"}
+                        </span>
+                        <span
+                          className={`font-mono font-semibold min-w-[2rem] text-right ${
+                            k.rank === null
+                              ? "text-slate-500"
+                              : k.rank <= 3
+                              ? "text-emerald-400"
+                              : k.rank <= 10
+                              ? "text-cyan-400"
+                              : "text-slate-300"
+                          }`}
+                        >
+                          {k.rank ?? "—"}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
               </div>
-
-              <div>
-                <p className="font-semibold text-[#0B1D36] mb-1">Tier 2 – Push</p>
-                <ul className="space-y-1 text-[#333]">
-                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine infusion therapy Florida</li>
-                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine clinic Florida</li>
-                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Ketamine for depression Miami</li>
-                  <li className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-yellow-500"></span> Fully guided ketamine therapy Aventura</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-5 pt-4 border-t border-gray-100">
-              <p className="text-xs text-[#666] mb-2 font-medium">Weekly process:</p>
-              <ol className="text-xs text-[#555] space-y-1 list-decimal list-inside">
-                <li>Open Search Console → Performance</li>
-                <li>Check positions for above keywords</li>
-                <li>Update your Google Sheet</li>
-              </ol>
-            </div>
+            )}
+            <a
+              href="https://app.mangools.com/serpwatcher"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 text-xs text-cyan-400 hover:text-cyan-300"
+            >
+              Open full Mangools report →
+            </a>
           </div>
-        </div>
 
-        {/* ===== ROW 2 ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {/* ===== ROW 2 ===== */}
+
           {/* Site Health */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>🔍</span> Site Health</h2>
-            <p className="text-sm text-[#666] mb-5">Run free scans</p>
-            <div className="space-y-3">
-              <a href="https://pagespeed.web.dev/analysis?url=https://www.rewiredketamine.com" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">PageSpeed Insights</a>
-              <a href="https://securityheaders.com/?q=https://www.rewiredketamine.com&followRedirects=on" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">Security Headers</a>
-              <a href="https://search.google.com/test/rich-results?url=https://www.rewiredketamine.com" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">Rich Results Test</a>
-              <a href="https://www.ssllabs.com/ssltest/analyze.html?d=www.rewiredketamine.com" target="_blank" className="block w-full text-center border border-[#0B1D36] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#0B1D36] hover:text-white transition">SSL Grade</a>
-              <a href="https://search.google.com/search-console" target="_blank" className="block w-full text-center border border-[#C9A66B] text-[#0B1D36] py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#C9A66B] transition">Search Console</a>
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5">
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+              Site Health
+            </h2>
+
+            {siteData ? (
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="bg-slate-800/60 rounded-lg p-3">
+                  <div className="text-slate-400 text-xs mb-1">Domain Authority</div>
+                  <div className="text-xl font-bold text-white">
+                    {siteData.domainAuthority ?? "—"}
+                  </div>
+                </div>
+                <div className="bg-slate-800/60 rounded-lg p-3">
+                  <div className="text-slate-400 text-xs mb-1">Page Authority</div>
+                  <div className="text-xl font-bold text-white">
+                    {siteData.pageAuthority ?? "—"}
+                  </div>
+                </div>
+                <div className="bg-slate-800/60 rounded-lg p-3">
+                  <div className="text-slate-400 text-xs mb-1">Citation Flow</div>
+                  <div className="text-xl font-bold text-white">
+                    {siteData.citationFlow ?? "—"}
+                  </div>
+                </div>
+                <div className="bg-slate-800/60 rounded-lg p-3">
+                  <div className="text-slate-400 text-xs mb-1">Trust Flow</div>
+                  <div className="text-xl font-bold text-white">
+                    {siteData.trustFlow ?? "—"}
+                  </div>
+                </div>
+                <div className="bg-slate-800/60 rounded-lg p-3 col-span-2">
+                  <div className="text-slate-400 text-xs mb-1">Referring IPs</div>
+                  <div className="text-xl font-bold text-white">
+                    {siteData.referringIPs ?? "—"}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <p className="text-sm text-slate-400">Loading site metrics...</p>
+            )}
+
+            <div className="mt-4 pt-4 border-t border-slate-700 space-y-2 text-sm">
+              <a
+                href="https://search.google.com/search-console"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-cyan-400 hover:text-cyan-300"
+              >
+                Google Search Console →
+              </a>
+              <a
+                href="https://pagespeed.web.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-cyan-400 hover:text-cyan-300"
+              >
+                PageSpeed Insights →
+              </a>
             </div>
           </div>
 
           {/* Competitors */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>🏆</span> Competitors</h2>
-            <p className="text-sm text-[#666] mb-5">Local clinics to monitor</p>
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm font-semibold text-[#0B1D36]">1. Nushama</p>
-                <p className="text-xs text-[#666] mb-1">nushama.com</p>
-                <div className="flex gap-3 text-xs">
-                  <a href="https://nushama.com" target="_blank" className="text-[#C9A66B] hover:underline">Website</a>
-                  <a href="https://www.similarweb.com/website/nushama.com/" target="_blank" className="text-[#C9A66B] hover:underline">Traffic</a>
-                </div>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-[#0B1D36]">2. Ketamine Aventura</p>
-                <p className="text-xs text-[#666] mb-1">ketamineaventura.com</p>
-                <div className="flex gap-3 text-xs">
-                  <a href="https://ketamineaventura.com" target="_blank" className="text-[#C9A66B] hover:underline">Website</a>
-                  <a href="https://www.similarweb.com/website/ketamineaventura.com/" target="_blank" className="text-[#C9A66B] hover:underline">Traffic</a>
-                </div>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-[#0B1D36]">3. One Mind Wellness</p>
-                <p className="text-xs text-[#666] mb-1">onemindketamine.com</p>
-                <div className="flex gap-3 text-xs">
-                  <a href="https://onemindketamine.com" target="_blank" className="text-[#C9A66B] hover:underline">Website</a>
-                  <a href="https://www.similarweb.com/website/onemindketamine.com/" target="_blank" className="text-[#C9A66B] hover:underline">Traffic</a>
-                </div>
-              </div>
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5">
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-rose-400"></span>
+              Competitors
+            </h2>
+            <div className="space-y-3 text-sm">
+              <a
+                href="https://app.mangools.com/siteprofiler?url=nushama.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-slate-800/60 hover:bg-slate-800 rounded-lg p-3 transition"
+              >
+                nushama.com
+              </a>
+              <a
+                href="https://app.mangools.com/siteprofiler"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-slate-800/60 hover:bg-slate-800 rounded-lg p-3 transition"
+              >
+                Add more competitors in Mangools →
+              </a>
             </div>
+            <p className="text-xs text-slate-500 mt-4">
+              Tip: Use SERP Analysis API later for deeper competitor insights.
+            </p>
           </div>
 
           {/* Quick Tools */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>⚡</span> Quick Tools</h2>
-            <p className="text-sm text-[#666] mb-5">Everyday free resources</p>
-            <ul className="space-y-3 text-sm">
-              <li><a href="https://search.google.com/search-console" target="_blank" className="text-[#C9A66B] hover:underline">Google Search Console</a></li>
-              <li><a href="https://analytics.google.com" target="_blank" className="text-[#C9A66B] hover:underline">Google Analytics 4</a></li>
-              <li><a href="https://pagespeed.web.dev/" target="_blank" className="text-[#C9A66B] hover:underline">PageSpeed Insights</a></li>
-              <li><a href="https://ahrefs.com/free-seo-tools" target="_blank" className="text-[#C9A66B] hover:underline">Ahrefs Free Tools</a></li>
-            </ul>
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5">
+            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-sky-400"></span>
+              Quick Tools
+            </h2>
+            <div className="space-y-2 text-sm">
+              <a
+                href="https://app.mangools.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-slate-800/60 hover:bg-slate-800 rounded-lg px-3 py-2.5 transition"
+              >
+                Mangools Dashboard
+              </a>
+              <a
+                href="https://search.google.com/search-console"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-slate-800/60 hover:bg-slate-800 rounded-lg px-3 py-2.5 transition"
+              >
+                Google Search Console
+              </a>
+              <a
+                href="https://www.screamingfrog.co.uk/seo-spider/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-slate-800/60 hover:bg-slate-800 rounded-lg px-3 py-2.5 transition"
+              >
+                Screaming Frog
+              </a>
+              <a
+                href="https://pagespeed.web.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-slate-800/60 hover:bg-slate-800 rounded-lg px-3 py-2.5 transition"
+              >
+                PageSpeed Insights
+              </a>
+            </div>
           </div>
-        </div>
 
-        {/* ===== ROW 3 ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Social Media */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>📱</span> Social Media</h2>
-            <p className="text-sm text-[#666] mb-5">Manage all social posts</p>
-            <a href="https://www.munchstudio.com/" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">
+          {/* ===== ROW 3 ===== */}
+
+          {/* Munch Studio */}
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5">
+            <h2 className="text-lg font-semibold mb-3">Social Media</h2>
+            <p className="text-sm text-slate-400 mb-4">Managed with Munch Studio</p>
+            <a
+              href="https://www.munchstudio.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition"
+            >
               Open Munch Studio
             </a>
           </div>
 
-          {/* AI Video */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>🎬</span> AI Video</h2>
-            <p className="text-sm text-[#666] mb-5">Generate weekly video content</p>
-            <a href="https://www.heygen.com/" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">
+          {/* HeyGen */}
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5">
+            <h2 className="text-lg font-semibold mb-3">AI Video</h2>
+            <p className="text-sm text-slate-400 mb-4">Create videos with HeyGen</p>
+            <a
+              href="https://www.heygen.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition"
+            >
               Open HeyGen
             </a>
           </div>
 
-          {/* Industry News */}
-          <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-            <h2 className="text-lg font-bold text-[#0B1D36] mb-1 flex items-center gap-2"><span>📰</span> Industry News</h2>
-            <p className="text-sm text-[#666] mb-5">Latest ketamine headlines</p>
-            <a href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en" target="_blank" className="block w-full text-center bg-[#0B1D36] text-white py-2.5 px-4 rounded-lg text-sm font-medium hover:bg-[#122a4a] transition">
-              Ketamine in the News
+          {/* News */}
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl p-5">
+            <h2 className="text-lg font-semibold mb-3">Ketamine in the News</h2>
+            <p className="text-sm text-slate-400 mb-4">
+              Latest industry news and research
+            </p>
+            <a
+              href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-rose-600 hover:bg-rose-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition"
+            >
+              View Ketamine News
             </a>
           </div>
         </div>
-
-        <p className="text-center text-sm text-[#888] mt-12">Private SEO Control Center · Rewired Ketamine</p>
-      </main>
+      </div>
     </div>
   );
 }
