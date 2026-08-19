@@ -328,6 +328,22 @@ export default function KetamineInTheNewsPage() {
         </p>
       </a>
 
+{/* Article 6 */}
+<a 
+  href="https://www.rutgers.edu/news/ketamine-may-fight-chronic-fatigue-study-suggests" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">Rutgers University · 2024</p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    Ketamine May Fight Chronic Fatigue, Study Suggests
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    New research from Rutgers suggests ketamine may help reduce symptoms of chronic fatigue.
+  </p>
+</a>
+
     </div>
   </div>
 </section>
