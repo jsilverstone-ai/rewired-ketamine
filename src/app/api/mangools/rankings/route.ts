@@ -14,42 +14,44 @@ export async function GET() {
   }
 
   try {
-    // Try the most common endpoints for tracked keywords / rankings
-    const endpoints = [
+    const res = await fetch(
       `${API_BASE}/serpwatcher/trackings/${TRACKING_ID}/tracked-keywords`,
-      `${API_BASE}/serpwatcher/trackings/${TRACKING_ID}/stats`,
-      `${API_BASE}/serpwatcher/trackings/${TRACKING_ID}`,
-      `${API_BASE}/serpwatcher/trackings/${TRACKING_ID}/detail`,
-    ];
-
-    let data = null;
-    let lastError = null;
-
-    for (const url of endpoints) {
-      const res = await fetch(url, {
+      {
         headers: {
           "x-access-token": apiKey,
           "Content-Type": "application/json",
         },
-        next: { revalidate: 3600 }, // cache for 1 hour
-      });
-
-      if (res.ok) {
-        data = await res.json();
-        break;
-      } else {
-        lastError = `Status ${res.status} on ${url}`;
+        next: { revalidate: 3600 }, // cache 1 hour
       }
-    }
+    );
 
-    if (!data) {
+    if (!res.ok) {
+      const errorText = await res.text();
       return NextResponse.json(
-        { error: "Could not fetch rankings", details: lastError },
+        { error: `Mangools error ${res.status}`, details: errorText },
         { status: 502 }
       );
     }
 
-    return NextResponse.json(data);
+    const raw = await res.json();
+
+    // Clean and shape the data for the dashboard
+    const keywords = (Array.isArray(raw) ? raw : raw.data || []).map((item: any) => ({
+      keyword: item.kw || item.keyword || "",
+      rank: item.rank ?? null,
+      previousRank: item.previous_rank ?? item.prev_rank ?? null,
+      searchVolume: item.sv ?? item.search_volume ?? null,
+      url: item.url || item.ranking_url || null,
+      lastChecked: item.last_checked || item.updated_at || null,
+    }));
+
+    return NextResponse.json({
+      success: true,
+      trackingId: TRACKING_ID,
+      count: keywords.length,
+      keywords,
+      fetchedAt: new Date().toISOString(),
+    });
   } catch (error: any) {
     return NextResponse.json(
       { error: "Failed to reach Mangools API", details: error.message },
