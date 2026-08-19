@@ -67,6 +67,7 @@ export default function SEOPage() {
   const [myTodos, setMyTodos] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState("");
   const [newPriority, setNewPriority] = useState<Priority>("medium");
+  const [showGuide, setShowGuide] = useState(true);
 
   const [keywords, setKeywords] = useState<Keyword[]>([]);
   const [siteData, setSiteData] = useState<any>(null);
@@ -225,42 +226,33 @@ export default function SEOPage() {
 
       <div className="max-w-7xl mx-auto px-5 pb-16">
 
-        {/* ===== 5 STEP CARDS (horizontal) ===== */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
-          {/* Step 1 */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+        {/* 5 STEP CARDS */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100">
             <div className="text-3xl mb-3">📊</div>
             <div className="text-xs font-bold text-teal-600 mb-1">STEP 1</div>
             <div className="font-semibold text-slate-800 text-sm mb-1">Rank Review</div>
             <div className="text-xs text-slate-500 leading-relaxed">Check Tier 1 keywords. Focus on positions 4–15.</div>
           </div>
-
-          {/* Step 2 */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100">
             <div className="text-3xl mb-3">👀</div>
             <div className="text-xs font-bold text-teal-600 mb-1">STEP 2</div>
             <div className="font-semibold text-slate-800 text-sm mb-1">Competitor Check</div>
             <div className="text-xs text-slate-500 leading-relaxed">See who ranks above you and what they’re doing.</div>
           </div>
-
-          {/* Step 3 */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100">
             <div className="text-3xl mb-3">🩺</div>
             <div className="text-xs font-bold text-teal-600 mb-1">STEP 3</div>
             <div className="font-semibold text-slate-800 text-sm mb-1">Site Health</div>
             <div className="text-xs text-slate-500 leading-relaxed">Search Console + PageSpeed on key pages.</div>
           </div>
-
-          {/* Step 4 */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100">
             <div className="text-3xl mb-3">🔗</div>
             <div className="text-xs font-bold text-teal-600 mb-1">STEP 4</div>
             <div className="font-semibold text-slate-800 text-sm mb-1">Technical + Links</div>
             <div className="text-xs text-slate-500 leading-relaxed">Screaming Frog + stronger internal links.</div>
           </div>
-
-          {/* Step 5 */}
-          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100">
             <div className="text-3xl mb-3">✨</div>
             <div className="text-xs font-bold text-teal-600 mb-1">STEP 5</div>
             <div className="font-semibold text-slate-800 text-sm mb-1">Optimize 1 Page</div>
@@ -268,7 +260,128 @@ export default function SEOPage() {
           </div>
         </div>
 
-        {/* ===== MAIN CARDS ===== */}
+        {/* ===== DETAILED GUIDE SECTION ===== */}
+        <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 mb-10">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <span>📋</span> How to Execute the Weekly Plan
+            </h2>
+            <button
+              onClick={() => setShowGuide(!showGuide)}
+              className="text-sm text-teal-600 hover:text-teal-500 font-medium"
+            >
+              {showGuide ? "Hide Guide" : "Show Guide"}
+            </button>
+          </div>
+
+          {showGuide && (
+            <div className="space-y-8 text-sm leading-relaxed">
+              {/* Step 1 */}
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                  Rank Review (10 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
+                  <li>Open Keyword Tracker on this dashboard + Mangools Rank Tracking</li>
+                  <li>Look only at <strong>Tier 1</strong> keywords</li>
+                  <li>Write down every keyword ranking between <strong>position 4 and 15</strong></li>
+                </ol>
+                <p className="mt-2 text-slate-500 text-xs bg-slate-50 rounded-xl p-3">
+                  Example: “ketamine clinic miami → #7” • “ketamine therapy near me → #11”
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                  Competitor Check (10 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
+                  <li>Take one keyword from Step 1</li>
+                  <li>Look at the Competitors card (live SERP) or search in Google</li>
+                  <li>Write down the top 2–3 sites ranking above you and what you notice</li>
+                </ol>
+              </div>
+
+              {/* Step 3 */}
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                  Site Health (8 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
+                  <li>Check the Site Health card on this dashboard</li>
+                  <li>Open Google Search Console → Coverage / Pages</li>
+                  <li>Run PageSpeed Insights on homepage + one service page</li>
+                </ol>
+              </div>
+
+              {/* Step 4 */}
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+                  Technical + Internal Links (15 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
+                  <li>Check for broken links or missing titles (Screaming Frog or manual)</li>
+                  <li>On the pages from Step 1, add 2–4 stronger internal links from related content</li>
+                </ol>
+                <p className="mt-2 text-slate-500 text-xs bg-slate-50 rounded-xl p-3">
+                  Example anchor text: “Learn more about our <strong>ketamine therapy in Aventura</strong>”
+                </p>
+              </div>
+
+              {/* Step 5 */}
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+                  Optimize 1 Page (20–25 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
+                  <li>Pick <strong>one</strong> page ranking between 4–15</li>
+                  <li>Improve Title Tag + Meta Description</li>
+                  <li>Strengthen content (keyword near top + FAQ if missing)</li>
+                  <li>Add the internal links from Step 4</li>
+                  <li>Publish the changes</li>
+                </ol>
+                <p className="mt-2 text-slate-500 text-xs bg-slate-50 rounded-xl p-3">
+                  Deploy command: <code className="bg-white px-1.5 py-0.5 rounded">git add . && git commit -m "Optimize page" && git push</code>
+                </p>
+              </div>
+
+              {/* Grok Prompt */}
+              <div className="border-t border-slate-100 pt-6">
+                <h3 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                  <span className="text-xl">🤖</span> After finishing Steps 1–5 → Ask Grok
+                </h3>
+                <p className="text-slate-600 mb-3">Copy this prompt and paste it into Grok with your notes:</p>
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-xs text-slate-700 font-mono leading-relaxed whitespace-pre-wrap">
+{`I’m working on SEO for rewiredketamine.com (ketamine clinic in Aventura / Miami).
+
+Here’s what I found this week:
+
+**Keywords ranking 4–15:**
+- [keyword] → position X
+- [keyword] → position X
+
+**Competitors ranking above me:**
+- [competitor] – [what I noticed]
+
+**Page I’m focusing on this week:**
+- [URL]
+- Current title: [title]
+- Main keyword: [keyword]
+
+Please give me a clear, practical action plan for this specific page. Tell me exactly what to change in the title, content, FAQs, and internal links.`}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* MAIN CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Weekly Tasks */}
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col">
@@ -358,9 +471,8 @@ export default function SEOPage() {
           </div>
         </div>
 
-        {/* ROW 2 continued */}
+        {/* Rest of the cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {/* Site Health */}
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-5 flex items-center gap-2">
               <span className="text-amber-500">🩺</span> Site Health
@@ -407,7 +519,6 @@ export default function SEOPage() {
             </div>
           </div>
 
-          {/* Competitors */}
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2">
               <span className="text-rose-500">👀</span> Competitors
@@ -430,7 +541,6 @@ export default function SEOPage() {
             )}
           </div>
 
-          {/* Quick Tools */}
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-5 flex items-center gap-2">
               <span className="text-sky-500">🛠</span> Quick Tools
@@ -444,7 +554,6 @@ export default function SEOPage() {
           </div>
         </div>
 
-        {/* ROW 3 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-2">📱 Social Media</h2>
@@ -453,7 +562,6 @@ export default function SEOPage() {
               Open Munch Studio
             </a>
           </div>
-
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-2">🎬 AI Video</h2>
             <p className="text-sm text-slate-500 mb-5">Create videos with HeyGen</p>
@@ -461,7 +569,6 @@ export default function SEOPage() {
               Open HeyGen
             </a>
           </div>
-
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-2">📰 Ketamine News</h2>
             <p className="text-sm text-slate-500 mb-5">Latest industry news</p>
