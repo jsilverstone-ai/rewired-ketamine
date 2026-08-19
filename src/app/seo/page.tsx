@@ -260,127 +260,140 @@ export default function SEOPage() {
           </div>
         </div>
 
-        {/* ===== DETAILED GUIDE SECTION ===== */}
-        <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 mb-10">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-              <span>📋</span> How to Execute the Weekly Plan
-            </h2>
-            <button
-              onClick={() => setShowGuide(!showGuide)}
-              className="text-sm text-teal-600 hover:text-teal-500 font-medium"
-            >
-              {showGuide ? "Hide Guide" : "Show Guide"}
-            </button>
-          </div>
+{/* ===== DETAILED GUIDE SECTION ===== */}
+<div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 mb-10">
+  <div className="flex items-center justify-between mb-6">
+    <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+      <span>📋</span> How to Execute the Weekly Plan
+    </h2>
+    <button
+      onClick={() => setShowGuide(!showGuide)}
+      className="text-sm text-teal-600 hover:text-teal-500 font-medium"
+    >
+      {showGuide ? "Hide Guide" : "Show Guide"}
+    </button>
+  </div>
 
-          {showGuide && (
-            <div className="space-y-8 text-sm leading-relaxed">
-              {/* Step 1 */}
-              <div>
-                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-                  Rank Review (10 min)
-                </h3>
-                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
-                  <li>Open Keyword Tracker on this dashboard + Mangools Rank Tracking</li>
-                  <li>Look only at <strong>Tier 1</strong> keywords</li>
-                  <li>Write down every keyword ranking between <strong>position 4 and 15</strong></li>
-                </ol>
-                <p className="mt-2 text-slate-500 text-xs bg-slate-50 rounded-xl p-3">
-                  Example: “ketamine clinic miami → #7” • “ketamine therapy near me → #11”
-                </p>
-              </div>
+  {showGuide && (
+    <div className="space-y-10 text-sm leading-relaxed">
 
-              {/* Step 2 */}
-              <div>
-                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                  Competitor Check (10 min)
-                </h3>
-                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
-                  <li>Take one keyword from Step 1</li>
-                  <li>Look at the Competitors card (live SERP) or search in Google</li>
-                  <li>Write down the top 2–3 sites ranking above you and what you notice</li>
-                </ol>
-              </div>
+      {/* STEP 1 */}
+      <div>
+        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+          Rank Review (10 min)
+        </h3>
+        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+          <li>Open Keyword Tracker + Mangools Rank Tracking</li>
+          <li>Look only at Tier 1 keywords</li>
+          <li>Write down every keyword ranking between position 4 and 15</li>
+        </ol>
+        <textarea
+          placeholder="Your notes for Step 1 (example: ketamine clinic miami → #7)"
+          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+        />
+      </div>
 
-              {/* Step 3 */}
-              <div>
-                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">3</span>
-                  Site Health (8 min)
-                </h3>
-                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
-                  <li>Check the Site Health card on this dashboard</li>
-                  <li>Open Google Search Console → Coverage / Pages</li>
-                  <li>Run PageSpeed Insights on homepage + one service page</li>
-                </ol>
-              </div>
+      {/* STEP 2 */}
+      <div>
+        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+          Competitor Check (10 min)
+        </h3>
+        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+          <li>Take one keyword from Step 1</li>
+          <li>Look at the Competitors card or search in Google</li>
+          <li>Note the top 2–3 sites ranking above you and what you notice</li>
+        </ol>
+        <textarea
+          placeholder="Your notes for Step 2 (who is ranking above you and why)"
+          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+        />
+      </div>
 
-              {/* Step 4 */}
-              <div>
-                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">4</span>
-                  Technical + Internal Links (15 min)
-                </h3>
-                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
-                  <li>Check for broken links or missing titles (Screaming Frog or manual)</li>
-                  <li>On the pages from Step 1, add 2–4 stronger internal links from related content</li>
-                </ol>
-                <p className="mt-2 text-slate-500 text-xs bg-slate-50 rounded-xl p-3">
-                  Example anchor text: “Learn more about our <strong>ketamine therapy in Aventura</strong>”
-                </p>
-              </div>
+      {/* STEP 3 */}
+      <div>
+        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+          Site Health (8 min)
+        </h3>
+        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+          <li>Check the Site Health card</li>
+          <li>Open Google Search Console → Coverage / Pages</li>
+          <li>Run PageSpeed Insights on homepage + one service page</li>
+        </ol>
+        <textarea
+          placeholder="Your notes for Step 3 (any errors, low scores, etc.)"
+          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+        />
+      </div>
 
-              {/* Step 5 */}
-              <div>
-                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">5</span>
-                  Optimize 1 Page (20–25 min)
-                </h3>
-                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2">
-                  <li>Pick <strong>one</strong> page ranking between 4–15</li>
-                  <li>Improve Title Tag + Meta Description</li>
-                  <li>Strengthen content (keyword near top + FAQ if missing)</li>
-                  <li>Add the internal links from Step 4</li>
-                  <li>Publish the changes</li>
-                </ol>
-                <p className="mt-2 text-slate-500 text-xs bg-slate-50 rounded-xl p-3">
-                  Deploy command: <code className="bg-white px-1.5 py-0.5 rounded">git add . && git commit -m "Optimize page" && git push</code>
-                </p>
-              </div>
+      {/* STEP 4 */}
+      <div>
+        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+          Technical + Internal Links (15 min)
+        </h3>
+        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+          <li>Check for broken links or missing titles</li>
+          <li>Add 2–4 stronger internal links to the pages from Step 1</li>
+        </ol>
+        <textarea
+          placeholder="Your notes for Step 4 (pages you linked from / to)"
+          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+        />
+      </div>
 
-              {/* Grok Prompt */}
-              <div className="border-t border-slate-100 pt-6">
-                <h3 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
-                  <span className="text-xl">🤖</span> After finishing Steps 1–5 → Ask Grok
-                </h3>
-                <p className="text-slate-600 mb-3">Copy this prompt and paste it into Grok with your notes:</p>
-                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-xs text-slate-700 font-mono leading-relaxed whitespace-pre-wrap">
+      {/* STEP 5 */}
+      <div>
+        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+          Optimize 1 Page (20–25 min)
+        </h3>
+        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+          <li>Pick one page ranking between 4–15</li>
+          <li>Improve Title + Meta Description</li>
+          <li>Strengthen content + add FAQ if needed</li>
+          <li>Publish the changes</li>
+        </ol>
+        <textarea
+          placeholder="Your notes for Step 5 (which page you chose and what you changed)"
+          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+        />
+      </div>
+
+      {/* Grok Prompt */}
+      <div className="border-t border-slate-100 pt-6">
+        <h3 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
+          <span className="text-xl">🤖</span> After finishing → Copy your notes into Grok
+        </h3>
+        <p className="text-slate-600 mb-3">Use this prompt and paste everything you wrote above:</p>
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-xs text-slate-700 font-mono leading-relaxed whitespace-pre-wrap">
 {`I’m working on SEO for rewiredketamine.com (ketamine clinic in Aventura / Miami).
 
 Here’s what I found this week:
 
-**Keywords ranking 4–15:**
-- [keyword] → position X
-- [keyword] → position X
+**Step 1 – Keywords ranking 4–15:**
+[paste your Step 1 notes]
 
-**Competitors ranking above me:**
-- [competitor] – [what I noticed]
+**Step 2 – Competitors:**
+[paste your Step 2 notes]
 
-**Page I’m focusing on this week:**
-- [URL]
-- Current title: [title]
-- Main keyword: [keyword]
+**Step 3 – Site Health:**
+[paste your Step 3 notes]
 
-Please give me a clear, practical action plan for this specific page. Tell me exactly what to change in the title, content, FAQs, and internal links.`}
-                </div>
-              </div>
-            </div>
-          )}
+**Step 4 – Technical + Links:**
+[paste your Step 4 notes]
+
+**Step 5 – Page I optimized:**
+[paste your Step 5 notes]
+
+Please give me a clear, practical action plan for the page I’m focusing on. Tell me exactly what else I should change.`}
         </div>
-
+      </div>
+    </div>
+  )}
+</div>
         {/* MAIN CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Weekly Tasks */}
