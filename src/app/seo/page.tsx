@@ -54,9 +54,9 @@ const TIER_2 = [
 ];
 
 const priorityColors = {
-  high: "bg-rose-500/20 text-rose-200 border-rose-400/40",
-  medium: "bg-amber-500/20 text-amber-200 border-amber-400/40",
-  low: "bg-teal-500/20 text-teal-200 border-teal-400/40",
+  high: "bg-rose-100 text-rose-700 border-rose-200",
+  medium: "bg-amber-100 text-amber-700 border-amber-200",
+  low: "bg-teal-100 text-teal-700 border-teal-200",
 };
 
 export default function SEOPage() {
@@ -179,17 +179,17 @@ export default function SEOPage() {
 
   if (!authenticated) {
     return (
-      <div className="min-h-screen bg-[#0c1222] flex items-center justify-center p-4">
-        <form onSubmit={handleLogin} className="bg-[#152038] border border-[#2a3a5c] rounded-3xl p-10 w-full max-w-md shadow-2xl">
-          <h1 className="text-2xl font-bold text-white mb-8 text-center">SEO Control Center</h1>
+      <div className="min-h-screen bg-[#f5f7fa] flex items-center justify-center p-4">
+        <form onSubmit={handleLogin} className="bg-white border border-slate-200 rounded-3xl p-10 w-full max-w-md shadow-xl">
+          <h1 className="text-2xl font-bold text-slate-800 mb-8 text-center">SEO Control Center</h1>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter password"
-            className="w-full bg-[#0c1222] border border-[#2a3a5c] rounded-2xl px-5 py-4 text-white mb-5 focus:outline-none focus:ring-2 focus:ring-teal-400/60"
+            className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-slate-800 mb-5 focus:outline-none focus:ring-2 focus:ring-teal-300"
           />
-          {error && <p className="text-rose-300 text-sm mb-4">{error}</p>}
+          {error && <p className="text-rose-500 text-sm mb-4">{error}</p>}
           <button type="submit" className="w-full bg-teal-500 hover:bg-teal-400 text-white font-semibold py-4 rounded-2xl transition">
             Unlock Dashboard
           </button>
@@ -199,214 +199,206 @@ export default function SEOPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0c1222] via-[#111827] to-[#0c1222] text-slate-100">
+    <div className="min-h-screen bg-[#f0f4f8] text-slate-700">
       {/* Top bar */}
-      <div className="border-b border-[#1e2d4a] bg-[#152038]/90 backdrop-blur-md sticky top-0 z-50">
+      <div className="bg-white/80 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 bg-[#1e2d4a] hover:bg-[#2a3a5c] text-white px-5 py-2.5 rounded-2xl text-sm font-medium transition">
+          <Link href="/" className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-2.5 rounded-2xl text-sm font-medium transition">
             ← Home
           </Link>
-          <h1 className="text-lg font-semibold text-white/90 hidden sm:block tracking-wide">SEO Control Center</h1>
+          <h1 className="text-lg font-semibold text-slate-700 hidden sm:block">SEO Control Center</h1>
           <div className="w-28" />
         </div>
       </div>
 
       {/* Large centered Grok button */}
-      <div className="flex justify-center py-12">
+      <div className="flex justify-center py-10">
         <a
           href="https://grok.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-36 h-36 rounded-full bg-gradient-to-br from-teal-400 via-cyan-400 to-blue-500 hover:from-teal-300 hover:to-blue-400 text-white flex items-center justify-center text-center font-bold text-lg shadow-[0_0_50px_rgba(45,212,191,0.4)] transition-all hover:scale-105"
+          className="w-32 h-32 rounded-full bg-gradient-to-br from-teal-400 to-cyan-500 hover:from-teal-300 hover:to-cyan-400 text-white flex items-center justify-center text-center font-bold text-base shadow-lg shadow-teal-200 transition-all hover:scale-105"
         >
           Talk to<br />Grok
         </a>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 pb-20">
-        {/* ROW 1 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-7">
-          {/* Battle Plan - clearer version */}
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl">
-            <h2 className="text-xl font-semibold mb-2 flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full bg-orange-400"></span>
-              Battle Plan
-            </h2>
-            <p className="text-sm text-slate-400 mb-6">Your 1-hour weekly routine</p>
+      <div className="max-w-7xl mx-auto px-5 pb-16">
 
-            <div className="space-y-5">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center font-bold text-sm">1</div>
-                <div>
-                  <div className="font-medium text-white">Rank Review</div>
-                  <div className="text-sm text-slate-400 mt-0.5">Look at Tier 1 keywords. Focus on anything ranking 4–15.</div>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center font-bold text-sm">2</div>
-                <div>
-                  <div className="font-medium text-white">Competitor Check</div>
-                  <div className="text-sm text-slate-400 mt-0.5">See who is ranking above you for your main keywords.</div>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center font-bold text-sm">3</div>
-                <div>
-                  <div className="font-medium text-white">Site Health</div>
-                  <div className="text-sm text-slate-400 mt-0.5">Check Search Console + PageSpeed on key pages.</div>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center font-bold text-sm">4</div>
-                <div>
-                  <div className="font-medium text-white">Technical + Links</div>
-                  <div className="text-sm text-slate-400 mt-0.5">Screaming Frog + add stronger internal links.</div>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500/20 text-orange-300 flex items-center justify-center font-bold text-sm">5</div>
-                <div>
-                  <div className="font-medium text-white">Optimize 1 Page</div>
-                  <div className="text-sm text-slate-400 mt-0.5">Improve one page that is ranking between 4–15.</div>
-                </div>
-              </div>
-            </div>
+        {/* ===== 5 STEP CARDS (horizontal) ===== */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
+          {/* Step 1 */}
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+            <div className="text-3xl mb-3">📊</div>
+            <div className="text-xs font-bold text-teal-600 mb-1">STEP 1</div>
+            <div className="font-semibold text-slate-800 text-sm mb-1">Rank Review</div>
+            <div className="text-xs text-slate-500 leading-relaxed">Check Tier 1 keywords. Focus on positions 4–15.</div>
           </div>
 
+          {/* Step 2 */}
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+            <div className="text-3xl mb-3">👀</div>
+            <div className="text-xs font-bold text-teal-600 mb-1">STEP 2</div>
+            <div className="font-semibold text-slate-800 text-sm mb-1">Competitor Check</div>
+            <div className="text-xs text-slate-500 leading-relaxed">See who ranks above you and what they’re doing.</div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+            <div className="text-3xl mb-3">🩺</div>
+            <div className="text-xs font-bold text-teal-600 mb-1">STEP 3</div>
+            <div className="font-semibold text-slate-800 text-sm mb-1">Site Health</div>
+            <div className="text-xs text-slate-500 leading-relaxed">Search Console + PageSpeed on key pages.</div>
+          </div>
+
+          {/* Step 4 */}
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+            <div className="text-3xl mb-3">🔗</div>
+            <div className="text-xs font-bold text-teal-600 mb-1">STEP 4</div>
+            <div className="font-semibold text-slate-800 text-sm mb-1">Technical + Links</div>
+            <div className="text-xs text-slate-500 leading-relaxed">Screaming Frog + stronger internal links.</div>
+          </div>
+
+          {/* Step 5 */}
+          <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 hover:shadow-md transition">
+            <div className="text-3xl mb-3">✨</div>
+            <div className="text-xs font-bold text-teal-600 mb-1">STEP 5</div>
+            <div className="font-semibold text-slate-800 text-sm mb-1">Optimize 1 Page</div>
+            <div className="text-xs text-slate-500 leading-relaxed">Improve one page ranking 4–15 and publish.</div>
+          </div>
+        </div>
+
+        {/* ===== MAIN CARDS ===== */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Weekly Tasks */}
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl flex flex-col">
-            <h2 className="text-xl font-semibold mb-5 flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full bg-teal-400"></span>
-              Weekly Tasks
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col">
+            <h2 className="text-lg font-semibold text-slate-800 mb-5 flex items-center gap-2">
+              <span className="text-teal-500">✓</span> Weekly Tasks
             </h2>
-            <div className="space-y-3 flex-1">
+            <div className="space-y-2.5 flex-1">
               {weeklyTodos.map((task) => (
-                <div key={task.id} className="flex items-start gap-3 bg-[#1e2d4a]/50 hover:bg-[#1e2d4a] rounded-2xl p-4 transition">
-                  <input type="checkbox" checked={task.completed} onChange={() => toggleWeekly(task.id)} className="mt-1 w-5 h-5 accent-teal-400" />
-                  <span className={`flex-1 text-sm leading-relaxed ${task.completed ? "line-through text-slate-500" : "text-slate-200"}`}>{task.text}</span>
-                  <button onClick={() => deleteWeekly(task.id)} className="text-rose-400/80 hover:text-rose-300 hover:bg-rose-500/20 p-1.5 rounded-xl transition text-2xl font-bold leading-none">×</button>
+                <div key={task.id} className="flex items-start gap-3 bg-slate-50 hover:bg-slate-100 rounded-2xl p-3.5 transition">
+                  <input type="checkbox" checked={task.completed} onChange={() => toggleWeekly(task.id)} className="mt-1 w-4 h-4 accent-teal-500" />
+                  <span className={`flex-1 text-sm ${task.completed ? "line-through text-slate-400" : "text-slate-700"}`}>{task.text}</span>
+                  <button onClick={() => deleteWeekly(task.id)} className="text-slate-400 hover:text-rose-500 p-1 rounded-lg transition text-xl font-bold leading-none">×</button>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-slate-500 mt-5">Resets every Sunday</p>
+            <p className="text-xs text-slate-400 mt-4">Resets every Sunday</p>
           </div>
 
           {/* My Tasks */}
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl flex flex-col">
-            <h2 className="text-xl font-semibold mb-5 flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full bg-violet-400"></span>
-              My Tasks
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col">
+            <h2 className="text-lg font-semibold text-slate-800 mb-5 flex items-center gap-2">
+              <span className="text-violet-500">✎</span> My Tasks
             </h2>
-            <form onSubmit={addMyTask} className="mb-5 space-y-3">
-              <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Add a task..." className="w-full bg-[#0c1222] border border-[#2a3a5c] rounded-2xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-violet-400/50" />
-              <div className="flex gap-3">
-                <select value={newPriority} onChange={(e) => setNewPriority(e.target.value as Priority)} className="bg-[#0c1222] border border-[#2a3a5c] rounded-2xl px-3 py-3 text-sm text-white">
+            <form onSubmit={addMyTask} className="mb-4 space-y-2.5">
+              <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Add a task..." className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-200" />
+              <div className="flex gap-2">
+                <select value={newPriority} onChange={(e) => setNewPriority(e.target.value as Priority)} className="bg-slate-50 border border-slate-200 rounded-2xl px-3 py-2.5 text-sm">
                   <option value="high">High</option>
                   <option value="medium">Medium</option>
                   <option value="low">Low</option>
                 </select>
-                <button type="submit" className="flex-1 bg-violet-500 hover:bg-violet-400 text-white text-sm font-medium py-3 rounded-2xl transition">Add</button>
+                <button type="submit" className="flex-1 bg-violet-500 hover:bg-violet-400 text-white text-sm font-medium py-2.5 rounded-2xl transition">Add</button>
               </div>
             </form>
-            <div className="space-y-3 flex-1 overflow-y-auto max-h-80">
-              {sortedMyTodos.length === 0 && <p className="text-sm text-slate-500">No personal tasks yet</p>}
+            <div className="space-y-2.5 flex-1 overflow-y-auto max-h-72">
+              {sortedMyTodos.length === 0 && <p className="text-sm text-slate-400">No personal tasks yet</p>}
               {sortedMyTodos.map((task) => (
-                <div key={task.id} className="flex items-start gap-3 bg-[#1e2d4a]/50 hover:bg-[#1e2d4a] rounded-2xl p-4 transition">
-                  <input type="checkbox" checked={task.completed} onChange={() => toggleMy(task.id)} className="mt-1 w-5 h-5 accent-violet-400" />
+                <div key={task.id} className="flex items-start gap-3 bg-slate-50 hover:bg-slate-100 rounded-2xl p-3.5 transition">
+                  <input type="checkbox" checked={task.completed} onChange={() => toggleMy(task.id)} className="mt-1 w-4 h-4 accent-violet-500" />
                   <div className="flex-1 min-w-0">
-                    <span className={`text-sm block ${task.completed ? "line-through text-slate-500" : "text-slate-200"}`}>{task.text}</span>
-                    {task.priority && <span className={`inline-block mt-1.5 text-[11px] px-2 py-0.5 rounded-lg border ${priorityColors[task.priority]}`}>{task.priority}</span>}
+                    <span className={`text-sm block ${task.completed ? "line-through text-slate-400" : "text-slate-700"}`}>{task.text}</span>
+                    {task.priority && <span className={`inline-block mt-1 text-[10px] px-2 py-0.5 rounded-lg border ${priorityColors[task.priority]}`}>{task.priority}</span>}
                   </div>
-                  <button onClick={() => deleteMy(task.id)} className="text-rose-400/80 hover:text-rose-300 hover:bg-rose-500/20 p-1.5 rounded-xl transition text-2xl font-bold leading-none">×</button>
+                  <button onClick={() => deleteMy(task.id)} className="text-slate-400 hover:text-rose-500 p-1 rounded-lg transition text-xl font-bold leading-none">×</button>
                 </div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* ROW 2 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-7">
           {/* Keyword Tracker */}
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl flex flex-col">
-            <h2 className="text-xl font-semibold mb-5 flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full bg-emerald-400"></span>
-              Keyword Tracker
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col">
+            <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2">
+              <span className="text-emerald-500">📈</span> Keyword Tracker
             </h2>
-            <p className="text-xs text-slate-400 mb-4">Open Mangools for full rankings (API limitation)</p>
+            <p className="text-xs text-slate-400 mb-4">Open Mangools for full rankings</p>
             {loading ? (
               <p className="text-sm text-slate-400">Loading...</p>
             ) : (
-              <div className="space-y-6 flex-1 overflow-y-auto max-h-[26rem]">
+              <div className="space-y-5 flex-1 overflow-y-auto max-h-80">
                 <div>
-                  <h3 className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-3">Tier 1 – High Priority</h3>
-                  <div className="space-y-2">
-                    {tier1Keywords.length === 0 ? <p className="text-xs text-slate-500">No matches yet</p> : tier1Keywords.map((k, i) => (
-                      <div key={i} className="flex items-center justify-between bg-[#1e2d4a]/60 rounded-2xl px-4 py-3 text-sm">
-                        <span className="truncate pr-3 text-slate-200">{k.keyword}</span>
-                        <span className="font-mono font-bold text-slate-400">{k.rank ?? "—"}</span>
+                  <h3 className="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-2">Tier 1</h3>
+                  <div className="space-y-1.5">
+                    {tier1Keywords.length === 0 ? <p className="text-xs text-slate-400">No matches yet</p> : tier1Keywords.map((k, i) => (
+                      <div key={i} className="flex items-center justify-between bg-slate-50 rounded-xl px-3 py-2 text-sm">
+                        <span className="truncate pr-2 text-slate-700">{k.keyword}</span>
+                        <span className="font-mono font-semibold text-slate-400">{k.rank ?? "—"}</span>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xs font-semibold text-sky-400 uppercase tracking-wider mb-3">Tier 2 – Supporting</h3>
-                  <div className="space-y-2">
-                    {tier2Keywords.length === 0 ? <p className="text-xs text-slate-500">No matches yet</p> : tier2Keywords.map((k, i) => (
-                      <div key={i} className="flex items-center justify-between bg-[#1e2d4a]/40 rounded-2xl px-4 py-2.5 text-sm">
-                        <span className="truncate pr-3 text-slate-300">{k.keyword}</span>
-                        <span className="font-mono font-semibold text-slate-500">{k.rank ?? "—"}</span>
+                  <h3 className="text-xs font-semibold text-sky-600 uppercase tracking-wider mb-2">Tier 2</h3>
+                  <div className="space-y-1.5">
+                    {tier2Keywords.length === 0 ? <p className="text-xs text-slate-400">No matches yet</p> : tier2Keywords.map((k, i) => (
+                      <div key={i} className="flex items-center justify-between bg-slate-50/70 rounded-xl px-3 py-2 text-sm">
+                        <span className="truncate pr-2 text-slate-600">{k.keyword}</span>
+                        <span className="font-mono text-slate-400">{k.rank ?? "—"}</span>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
             )}
-            <a href="https://app.mangools.com/serpwatcher" target="_blank" rel="noopener noreferrer" className="mt-5 text-sm text-teal-400 hover:text-teal-300">
-              Open full Rank Tracking in Mangools →
+            <a href="https://app.mangools.com/serpwatcher" target="_blank" rel="noopener noreferrer" className="mt-4 text-xs text-teal-600 hover:text-teal-500">
+              Open full Rank Tracking →
             </a>
           </div>
+        </div>
 
+        {/* ROW 2 continued */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Site Health */}
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl">
-            <h2 className="text-xl font-semibold mb-5 flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full bg-amber-400"></span>
-              Site Health
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+            <h2 className="text-lg font-semibold text-slate-800 mb-5 flex items-center gap-2">
+              <span className="text-amber-500">🩺</span> Site Health
             </h2>
             {siteData ? (
-              <div className="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div className="bg-[#1e2d4a]/70 rounded-2xl p-4">
+              <div className="grid grid-cols-2 gap-3 text-sm mb-5">
+                <div className="bg-slate-50 rounded-2xl p-4">
                   <div className="text-slate-400 text-xs mb-1">Domain Authority</div>
-                  <div className="text-3xl font-bold text-white">{siteData.domainAuthority ?? "—"}</div>
+                  <div className="text-2xl font-bold text-slate-800">{siteData.domainAuthority ?? "—"}</div>
                 </div>
-                <div className="bg-[#1e2d4a]/70 rounded-2xl p-4">
+                <div className="bg-slate-50 rounded-2xl p-4">
                   <div className="text-slate-400 text-xs mb-1">Page Authority</div>
-                  <div className="text-3xl font-bold text-white">{siteData.pageAuthority ?? "—"}</div>
+                  <div className="text-2xl font-bold text-slate-800">{siteData.pageAuthority ?? "—"}</div>
                 </div>
-                <div className="bg-[#1e2d4a]/70 rounded-2xl p-4">
+                <div className="bg-slate-50 rounded-2xl p-4">
                   <div className="text-slate-400 text-xs mb-1">Citation Flow</div>
-                  <div className="text-3xl font-bold text-white">{siteData.citationFlow ?? "—"}</div>
+                  <div className="text-2xl font-bold text-slate-800">{siteData.citationFlow ?? "—"}</div>
                 </div>
-                <div className="bg-[#1e2d4a]/70 rounded-2xl p-4">
+                <div className="bg-slate-50 rounded-2xl p-4">
                   <div className="text-slate-400 text-xs mb-1">Trust Flow</div>
-                  <div className="text-3xl font-bold text-white">{siteData.trustFlow ?? "—"}</div>
+                  <div className="text-2xl font-bold text-slate-800">{siteData.trustFlow ?? "—"}</div>
                 </div>
-                <div className="bg-[#1e2d4a]/70 rounded-2xl p-4 col-span-2">
+                <div className="bg-slate-50 rounded-2xl p-4 col-span-2">
                   <div className="text-slate-400 text-xs mb-1">Referring IPs</div>
-                  <div className="text-3xl font-bold text-white">{siteData.referringIPs ?? "—"}</div>
+                  <div className="text-2xl font-bold text-slate-800">{siteData.referringIPs ?? "—"}</div>
                 </div>
               </div>
             ) : (
               <p className="text-sm text-slate-400 mb-4">Loading metrics...</p>
             )}
-
-            <div className="border-t border-[#2a3a5c]/60 pt-5">
-              <h3 className="text-xs font-semibold text-amber-400/90 uppercase tracking-wider mb-3">Recent Backlinks</h3>
+            <div className="border-t border-slate-100 pt-4">
+              <h3 className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2">Recent Backlinks</h3>
               {backlinks.length === 0 ? (
-                <p className="text-xs text-slate-500">No backlink data yet</p>
+                <p className="text-xs text-slate-400">No backlink data yet</p>
               ) : (
-                <div className="space-y-2 max-h-36 overflow-y-auto">
+                <div className="space-y-1.5 max-h-32 overflow-y-auto">
                   {backlinks.slice(0, 5).map((link, i) => (
-                    <div key={i} className="text-xs bg-[#1e2d4a]/50 rounded-xl px-3 py-2 truncate">
+                    <div key={i} className="text-xs bg-slate-50 rounded-xl px-3 py-1.5 truncate text-slate-600">
                       {link.source?.replace("https://", "").replace("http://", "").split("/")[0] || "—"}
                     </div>
                   ))}
@@ -416,21 +408,20 @@ export default function SEOPage() {
           </div>
 
           {/* Competitors */}
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl">
-            <h2 className="text-xl font-semibold mb-5 flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full bg-rose-400"></span>
-              Competitors
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+            <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2">
+              <span className="text-rose-500">👀</span> Competitors
             </h2>
             <p className="text-xs text-slate-400 mb-4">Live SERP: ketamine clinic miami</p>
             {serpData?.organic?.length > 0 ? (
-              <div className="space-y-2.5 max-h-72 overflow-y-auto">
+              <div className="space-y-2 max-h-72 overflow-y-auto">
                 {serpData.organic.slice(0, 6).map((item: any, i: number) => (
-                  <div key={i} className="bg-[#1e2d4a]/60 rounded-2xl px-4 py-3 text-sm">
-                    <div className="flex items-center gap-3">
-                      <span className="text-rose-400 font-mono text-xs font-bold w-5">{item.position}</span>
-                      <span className="truncate text-slate-200">{item.title || item.domain || "—"}</span>
+                  <div key={i} className="bg-slate-50 rounded-2xl px-3.5 py-2.5 text-sm">
+                    <div className="flex items-center gap-2">
+                      <span className="text-rose-500 font-mono text-xs font-bold w-5">{item.position}</span>
+                      <span className="truncate text-slate-700">{item.title || item.domain || "—"}</span>
                     </div>
-                    <div className="text-xs text-slate-500 truncate mt-1 pl-8">{item.domain || item.url}</div>
+                    <div className="text-xs text-slate-400 truncate mt-0.5 pl-7">{item.domain || item.url}</div>
                   </div>
                 ))}
               </div>
@@ -438,45 +429,45 @@ export default function SEOPage() {
               <p className="text-sm text-slate-400">Loading SERP data...</p>
             )}
           </div>
+
+          {/* Quick Tools */}
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+            <h2 className="text-lg font-semibold text-slate-800 mb-5 flex items-center gap-2">
+              <span className="text-sky-500">🛠</span> Quick Tools
+            </h2>
+            <div className="space-y-2.5 text-sm">
+              <a href="https://app.mangools.com/" target="_blank" rel="noopener noreferrer" className="block bg-slate-50 hover:bg-slate-100 rounded-2xl px-4 py-3 transition">Mangools</a>
+              <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="block bg-slate-50 hover:bg-slate-100 rounded-2xl px-4 py-3 transition">Search Console</a>
+              <a href="https://www.screamingfrog.co.uk/seo-spider/" target="_blank" rel="noopener noreferrer" className="block bg-slate-50 hover:bg-slate-100 rounded-2xl px-4 py-3 transition">Screaming Frog</a>
+              <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer" className="block bg-slate-50 hover:bg-slate-100 rounded-2xl px-4 py-3 transition">PageSpeed</a>
+            </div>
+          </div>
         </div>
 
         {/* ROW 3 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-10">
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl">
-            <h2 className="text-xl font-semibold mb-3">Social Media</h2>
-            <p className="text-sm text-slate-400 mb-6">Managed with Munch Studio</p>
-            <a href="https://www.munchstudio.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-teal-500 hover:bg-teal-400 text-white text-sm font-medium px-6 py-3 rounded-2xl transition">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+            <h2 className="text-lg font-semibold text-slate-800 mb-2">📱 Social Media</h2>
+            <p className="text-sm text-slate-500 mb-5">Managed with Munch Studio</p>
+            <a href="https://www.munchstudio.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-teal-500 hover:bg-teal-400 text-white text-sm font-medium px-5 py-2.5 rounded-2xl transition">
               Open Munch Studio
             </a>
           </div>
 
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl">
-            <h2 className="text-xl font-semibold mb-3">AI Video</h2>
-            <p className="text-sm text-slate-400 mb-6">Create videos with HeyGen</p>
-            <a href="https://www.heygen.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-violet-500 hover:bg-violet-400 text-white text-sm font-medium px-6 py-3 rounded-2xl transition">
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+            <h2 className="text-lg font-semibold text-slate-800 mb-2">🎬 AI Video</h2>
+            <p className="text-sm text-slate-500 mb-5">Create videos with HeyGen</p>
+            <a href="https://www.heygen.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-violet-500 hover:bg-violet-400 text-white text-sm font-medium px-5 py-2.5 rounded-2xl transition">
               Open HeyGen
             </a>
           </div>
 
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-7 shadow-xl">
-            <h2 className="text-xl font-semibold mb-3">Ketamine in the News</h2>
-            <p className="text-sm text-slate-400 mb-6">Latest industry news</p>
-            <a href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en" target="_blank" rel="noopener noreferrer" className="inline-block bg-rose-500 hover:bg-rose-400 text-white text-sm font-medium px-6 py-3 rounded-2xl transition">
-              View Ketamine News
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+            <h2 className="text-lg font-semibold text-slate-800 mb-2">📰 Ketamine News</h2>
+            <p className="text-sm text-slate-500 mb-5">Latest industry news</p>
+            <a href="https://news.google.com/search?q=ketamine%20therapy&hl=en-US&gl=US&ceid=US:en" target="_blank" rel="noopener noreferrer" className="inline-block bg-rose-500 hover:bg-rose-400 text-white text-sm font-medium px-5 py-2.5 rounded-2xl transition">
+              View News
             </a>
-          </div>
-        </div>
-
-        {/* Centered Quick Tools */}
-        <div className="flex justify-center">
-          <div className="bg-[#152038]/95 border border-[#2a3a5c]/80 rounded-3xl p-8 shadow-xl max-w-3xl w-full">
-            <h2 className="text-xl font-semibold mb-6 text-center">Quick Tools</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-              <a href="https://app.mangools.com/" target="_blank" rel="noopener noreferrer" className="bg-[#1e2d4a]/80 hover:bg-[#1e2d4a] rounded-2xl px-4 py-4 text-center transition">Mangools</a>
-              <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="bg-[#1e2d4a]/80 hover:bg-[#1e2d4a] rounded-2xl px-4 py-4 text-center transition">Search Console</a>
-              <a href="https://www.screamingfrog.co.uk/seo-spider/" target="_blank" rel="noopener noreferrer" className="bg-[#1e2d4a]/80 hover:bg-[#1e2d4a] rounded-2xl px-4 py-4 text-center transition">Screaming Frog</a>
-              <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer" className="bg-[#1e2d4a]/80 hover:bg-[#1e2d4a] rounded-2xl px-4 py-4 text-center transition">PageSpeed</a>
-            </div>
           </div>
         </div>
       </div>
