@@ -7,13 +7,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Rewired Ketamine | Ketamine Therapy in Aventura, South Florida",
+    default: "Ketamine Therapy Miami | Guided IV Treatment in Aventura",
     template: "%s | Rewired Ketamine Aventura"
   },
-  description: "Locally owned ketamine clinic in Aventura, FL offering fully guided sessions for depression, anxiety, PTSD, chronic pain, and more. Serving Miami, Fort Lauderdale & South Florida. ¡Hablamos Español!",
+  description: "Looking for ketamine therapy in Miami? Our Aventura clinic offers fully guided IV ketamine treatment for depression, anxiety, and PTSD. Serving Miami, Fort Lauderdale & South Florida. ¡Hablamos Español!",
   keywords: [
-    "ketamine therapy Aventura",
+    "ketamine therapy Miami",
     "ketamine clinic Miami",
+    "ketamine therapy Aventura",
     "ketamine infusion South Florida",
     "treatment resistant depression Aventura",
     "ketamine for anxiety Fort Lauderdale",
