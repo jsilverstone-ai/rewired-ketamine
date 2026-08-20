@@ -422,7 +422,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           Is the treatment supervised?
         </h3>
         <p className="text-slate-600">
-          Yes. Every session at our Miami-area clinic is fully guided and medically supervised so you feel safe and supported throughout the experience.
+          Yes. Every session at our Miami-area clinic is available for fully guided and medically supervised so you feel safe and supported throughout the experience.
         </p>
       </div>
     </div>
