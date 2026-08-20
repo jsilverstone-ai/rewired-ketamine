@@ -290,6 +290,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
             <p className="text-lg leading-relaxed mb-6">
               Our guiding approach is rooted in compassion and true partnership. We walk alongside you with care and intention, creating the conditions for meaningful insight and lasting change. Each session is carefully supervised so you feel safe, supported, and never alone.
             </p>
+            Our team provides fully guided sessions at <Link href="/">our Miami ketamine clinic</Link> in Aventura.
           </div>
         </div>
       </section>

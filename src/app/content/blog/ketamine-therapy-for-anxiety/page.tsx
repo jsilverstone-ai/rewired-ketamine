@@ -229,6 +229,7 @@ export default function KetamineTherapyForAnxietyPage() {
             <p>
               Many people also notice that the temporary shift in perception during a session creates space to step back from racing thoughts or worry loops. Fully guided sessions are available for those who prefer additional support during this process.
             </p>
+            Learn more about <Link href="/">ketamine treatment in Aventura</Link> and how it may help with depression, anxiety, and PTSD.
           </div>
 
           <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">

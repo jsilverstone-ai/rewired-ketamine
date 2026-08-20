@@ -229,6 +229,9 @@ export default function WhoMayBeAGoodCandidatePage() {
             <p>
               Many people exploring ketamine treatment in Florida are looking for structured, clinically supervised care that can be tailored to their history and goals.
             </p>
+            <p>
+  Many patients who haven’t found relief with traditional antidepressants explore <Link href="/">ketamine therapy in Miami</Link> as a next step.
+</p>
           </div>
 
           <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
