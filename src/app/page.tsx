@@ -373,6 +373,61 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     </div>
   </div>
 </section>
+{/* FAQ Section */}
+<section className="py-16 bg-slate-50">
+  <div className="max-w-3xl mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-10">
+      Frequently Asked Questions
+    </h2>
+
+    <div className="space-y-6">
+      <div>
+        <h3 className="text-lg font-semibold mb-2">
+          Is ketamine therapy available in Miami?
+        </h3>
+        <p className="text-slate-600">
+          Yes. Rewired Ketamine is located in Aventura and serves patients throughout Miami, Fort Lauderdale, and South Florida. We offer fully guided IV ketamine therapy in a calm, private setting.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold mb-2">
+          How does ketamine treatment work?
+        </h3>
+        <p className="text-slate-600">
+          Ketamine works differently from traditional antidepressants. It targets the glutamate system in the brain and can produce rapid improvements in mood, often within hours to days rather than weeks.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold mb-2">
+          Who is a good candidate for ketamine therapy?
+        </h3>
+        <p className="text-slate-600">
+          Ketamine therapy may help adults struggling with treatment-resistant depression, anxiety, PTSD, or related conditions who have not found sufficient relief from other approaches. Every patient receives a thorough medical evaluation first.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold mb-2">
+          How quickly can I expect results?
+        </h3>
+        <p className="text-slate-600">
+          Many patients notice meaningful improvement after the first one or two sessions. Results vary, and our team provides guided support and integration to help the benefits last.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold mb-2">
+          Is the treatment supervised?
+        </h3>
+        <p className="text-slate-600">
+          Yes. Every session at our Miami-area clinic is fully guided and medically supervised so you feel safe and supported throughout the experience.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 {/* ===== HOW WE HELP ===== */}
 <section id="how-we-help" className="py-24 px-6">
   <div className="max-w-6xl mx-auto">
