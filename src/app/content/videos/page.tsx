@@ -25,6 +25,11 @@ const videos = [
     title: "Why Rewired Ketamine Is Different",
     description: "An overview of how ketamine therapy is offered at our Aventura clinic.",
   },
+  {
+  id: "IJ5N6Zh1mIk",
+  title: "Ketamine + Psychotherapy for Chronic Pain",
+  description: "New research explores combining ketamine with psychotherapy for chronic neuropathic pain — and what it could mean for patients in Miami and Aventura.",
+},
 ];
 
 export default function VideosPage() {
