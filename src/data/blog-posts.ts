@@ -7,6 +7,12 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "Ketamine and Psychotherapy: A Combined Approach for Chronic Pain",
+  slug: "ketamine-psychotherapy-chronic-pain-miami",
+  excerpt: "New research explores combining ketamine with psychotherapy for chronic neuropathic pain. What this could mean for patients seeking ketamine treatment in Miami and Aventura.",
+  date: "August 2026"
+},
+  {
   title: "Can Ketamine Help with Chronic Fatigue? What a New Study Suggests for Patients in South Florida",
   slug: "ketamine-chronic-fatigue-south-florida",
   excerpt: "A recent Rutgers study explores whether ketamine may help reduce symptoms of chronic fatigue. Learn what this could mean for patients in Aventura and Miami.",
