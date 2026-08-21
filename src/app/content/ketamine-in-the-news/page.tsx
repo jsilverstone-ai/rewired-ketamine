@@ -247,6 +247,21 @@ export default function KetamineInTheNewsPage() {
     </div>
 
     <div className="grid gap-8">
+      {/* Article 7 */}
+<a 
+  href="https://www.nature.com/articles/s41594-026-01839-y" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">Nature Structural & Molecular Biology · 2026</p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    New Insights into NMDA Receptor Structure and Function
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    A recent paper in Nature Structural & Molecular Biology advances our understanding of NMDA receptor biology — the same receptor system central to how ketamine works in the brain.
+  </p>
+</a>
       
       {/* Article 1 */}
       <a 
@@ -343,21 +358,7 @@ export default function KetamineInTheNewsPage() {
     New research from Rutgers suggests ketamine may help reduce symptoms of chronic fatigue.
   </p>
 </a>
-{/* Article 7 */}
-<a 
-  href="https://www.nature.com/articles/s41594-026-01839-y" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
->
-  <p className="text-sm text-[#C9A66B] font-semibold mb-2">Nature Structural & Molecular Biology · 2026</p>
-  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
-    New Insights into NMDA Receptor Structure and Function
-  </h3>
-  <p className="text-[#555] leading-relaxed">
-    A recent paper in Nature Structural & Molecular Biology advances our understanding of NMDA receptor biology — the same receptor system central to how ketamine works in the brain.
-  </p>
-</a>
+
     </div>
   </div>
 </section>
