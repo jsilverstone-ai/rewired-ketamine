@@ -7,6 +7,12 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "New Research: How Ketamine Activates Opioid Receptors",
+  slug: "new-research-how-ketamine-activates-opioid-receptors",
+  excerpt: "A 2026 Nature study shows ketamine can directly activate opioid receptors — insights for patients exploring ketamine Miami therapy.",
+  date: "August 2026"
+},
+  {
   title: "Ketamine and Psychotherapy: A Combined Approach for Chronic Pain",
   slug: "ketamine-psychotherapy-chronic-pain-miami",
   excerpt: "New research explores combining ketamine with psychotherapy for chronic neuropathic pain. What this could mean for patients seeking ketamine treatment in Miami and Aventura.",
