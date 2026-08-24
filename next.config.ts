@@ -92,7 +92,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // ===== NEW REDIRECTS (from old 404 list) =====
+      // NEW – from the 404 list
       {
         source: "/what-to-expect-during-your-first-ketamine-treatment-session",
         destination: "/content/videos",
