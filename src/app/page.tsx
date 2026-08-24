@@ -351,14 +351,15 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       </p>
     </div>
 
-    {/* Elfsight Widget */}
-    <div className="mb-10">
-      <script src="https://elfsightcdn.com/platform.js" async></script>
-      <div className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2" data-elfsight-app-lazy></div>
-    </div>
+    {/* Elfsight Google Reviews Widget - Lazy Loaded */}
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div
+      className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2"
+      data-elfsight-app-lazy="first-activity"
+    ></div>
 
     {/* Bottom CTA */}
-    <div className="text-center">
+    <div className="text-center mt-10">
       <a
         href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu"
         target="_blank"
@@ -371,6 +372,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         </svg>
       </a>
     </div>
+
   </div>
 </section>
 {/* FAQ Section */}
