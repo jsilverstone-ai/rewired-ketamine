@@ -21,14 +21,12 @@ interface Keyword {
 }
 
 const WEEKLY_DEFAULTS: Task[] = [
-  { id: "w1", text: "Check rankings in Mangools", completed: false },
-  { id: "w2", text: "Review Keyword Tracker card", completed: false },
-  { id: "w3", text: "Review Google Search Console – Pages (watch 404s)", completed: false },
-  { id: "w4", text: "Check GSC Performance (clicks & impressions)", completed: false },
-  { id: "w5", text: "Spot-check 1–2 old URLs for proper redirects", completed: false },
-  { id: "w6", text: "Run PageSpeed on homepage + 1–2 key pages", completed: false },
-  { id: "w7", text: "Pick 1 page ranking 4–15 and optimize it", completed: false },
-  { id: "w8", text: "Add stronger internal links to the optimized page", completed: false },
+  { id: "w1", text: "Run Steps 1–5 of the Weekly Plan", completed: false },
+  { id: "w2", text: "Review Google Search Console Pages (watch 404s)", completed: false },
+  { id: "w3", text: "Create 2 Blog posts", completed: false },
+  { id: "w4", text: "Set up / manage Social Media (Munch)", completed: false },
+  { id: "w5", text: "Create 1 Patient Review Video", completed: false },
+  { id: "w6", text: "Create 1 Instructional Video", completed: false },
 ];
 
 const TIER_1 = [
