@@ -290,6 +290,9 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       <p className="mb-6">
         As a locally owned practice serving Miami, Fort Lauderdale, and South Florida, we prioritize thoughtful, medically supervised care. ¡Hablamos Español!
       </p>
+      <p>
+  Many people searching for a <Link href="/" className="text-[#C9A66B] hover:underline">Miami ketamine clinic</Link> for treatment-resistant depression find their way to our locally owned practice in Aventura.
+</p>
     </div>
 
     <div className="mt-14 bg-[#0B1D36] text-white rounded-2xl p-8 text-center">

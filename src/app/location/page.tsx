@@ -328,6 +328,9 @@ export default function LocationPage() {
     </h2>
 
     <div className="bg-[#F8F5F0] rounded-2xl p-8 border border-[#eee]">
+      <p>
+  Rewired Ketamine is a <Link href="/" className="text-[#C9A66B] hover:underline">ketamine clinic in Aventura</Link> conveniently located for patients throughout Miami-Dade and South Florida.
+</p>
       <p className="text-[#555] leading-relaxed mb-6">
         We kindly ask that you arrive about 15 minutes early. This gives you time to park, complete any paperwork or payment, and settle in at a comfortable pace. We want you to feel relaxed from the moment you arrive.
       </p>

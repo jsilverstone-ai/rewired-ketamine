@@ -334,6 +334,9 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           <p className="text-center text-sm text-[#666] mt-8 max-w-2xl mx-auto">
             Many people explore ketamine when traditional approaches have not brought enough relief. Individual results vary, and care is always personalized.
           </p>
+          <p>
+  Looking for a <Link href="/" className="text-[#C9A66B] hover:underline">ketamine clinic Miami</Link> patients trust? Our Aventura location serves the greater Miami area with fully guided sessions.
+</p>
         </div>
       </section>
 
