@@ -91,13 +91,22 @@ export default function SEOPage() {
     const lastResetDate = lastReset ? new Date(lastReset) : null;
     const shouldReset = day === 0 && (!lastResetDate || lastResetDate.toDateString() !== today.toDateString());
 
-    if (shouldReset) {
-      setWeeklyTodos(WEEKLY_DEFAULTS);
-      localStorage.setItem("seo-weekly-todos", JSON.stringify(WEEKLY_DEFAULTS));
-      localStorage.setItem("seo-last-reset", today.toISOString());
-    } else if (savedWeekly) {
-      setWeeklyTodos(JSON.parse(savedWeekly));
-    }
+ if (shouldReset) {
+  setWeeklyTodos(WEEKLY_DEFAULTS);
+  localStorage.setItem("seo-weekly-todos", JSON.stringify(WEEKLY_DEFAULTS));
+  localStorage.setItem("seo-last-reset", today.toISOString());
+} else if (savedWeekly) {
+  const parsed = JSON.parse(savedWeekly);
+  // If the list is empty or missing the new tasks, reload defaults
+  if (!parsed || parsed.length === 0 || parsed.length < WEEKLY_DEFAULTS.length) {
+    setWeeklyTodos(WEEKLY_DEFAULTS);
+    localStorage.setItem("seo-weekly-todos", JSON.stringify(WEEKLY_DEFAULTS));
+  } else {
+    setWeeklyTodos(parsed);
+  }
+} else {
+  setWeeklyTodos(WEEKLY_DEFAULTS);
+}
     if (savedMy) setMyTodos(JSON.parse(savedMy));
 
     setNote1(localStorage.getItem("seo-note-1") || "");
