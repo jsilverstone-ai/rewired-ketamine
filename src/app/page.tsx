@@ -340,7 +340,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     
     {/* Header */}
     <div className="text-center mb-12">
-<p className="text-[#8B7355] font-semibold tracking-widest uppercase text-sm mb-3">
+<p className="text-[#7A6548] font-semibold tracking-widest uppercase text-sm mb-3">
   Patient Experiences
 </p>
       <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">
