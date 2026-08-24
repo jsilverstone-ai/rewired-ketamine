@@ -28,6 +28,16 @@ const nextConfig: NextConfig = {
         destination: "/treatments",
         permanent: true,
       },
+      {
+        source: "/conditions/ptsd-treatment",
+        destination: "/treatments/ptsd",
+        permanent: true,
+      },
+      {
+        source: "/conditions/ketamine-for-ocd",
+        destination: "/treatments/ocd",
+        permanent: true,
+      },
 
       // Contact
       {
@@ -79,6 +89,23 @@ const nextConfig: NextConfig = {
       {
         source: "/breakthrough-ketamine-treatment-for-depression-florida-fast-effective-relief",
         destination: "/treatments/depression",
+        permanent: true,
+      },
+
+      // ===== NEW REDIRECTS (from old 404 list) =====
+      {
+        source: "/what-to-expect-during-your-first-ketamine-treatment-session",
+        destination: "/content/videos",
+        permanent: true,
+      },
+      {
+        source: "/how-to-choose-a-safe-and-effective-ketamine-treatment-provider",
+        destination: "/providers",
+        permanent: true,
+      },
+      {
+        source: "/ritual-to-relief-ketamine-infusion-therapy-for-religious-scrupulosity-ocd-in-floridas-diverse-faith-communities",
+        destination: "/treatments/ocd",
         permanent: true,
       },
     ];
