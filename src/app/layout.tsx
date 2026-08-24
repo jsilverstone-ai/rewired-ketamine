@@ -22,6 +22,13 @@ export const metadata: Metadata = {
     "hablamos español ketamine"
   ],
   authors: [{ name: "Rewired Ketamine" }],
+    icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Rewired Ketamine | Ketamine Therapy in Aventura, South Florida",
     description: "Locally owned ketamine clinic in Aventura offering fully guided sessions for depression, anxiety, PTSD and chronic pain. Serving Miami & Fort Lauderdale. ¡Hablamos Español!",
