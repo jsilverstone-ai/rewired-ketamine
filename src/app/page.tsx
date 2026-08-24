@@ -340,9 +340,9 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     
     {/* Header */}
     <div className="text-center mb-12">
-      <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-3">
-        Patient Experiences
-      </p>
+<p className="text-[#8B7355] font-semibold tracking-widest uppercase text-sm mb-3">
+  Patient Experiences
+</p>
       <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">
         What Our Patients Are Saying
       </h2>
@@ -599,7 +599,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             
             <div>
-              <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Contact Us</h4>
+              <h3 className="font-semibold text-lg mb-5 text-[#C9A66B]">Contact Us</h3>
               <ul className="space-y-3 text-white/80 text-sm">
                 <li>Open: Monday - Friday</li>
                 <li>9:00AM - 5:00PM</li>
