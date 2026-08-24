@@ -301,22 +301,28 @@ const [isContentOpen, setIsContentOpen] = useState(false);
   {/* Dark overlay */}
   <div className="absolute inset-0 bg-[#0B1D36]/75 z-0"></div>
 
-  {/* Content */}
-  <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-    <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
-      Aventura • South Florida
-    </p>
+{/* Content */}
+<div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+  <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">
+    Aventura • South Florida
+  </p>
 
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-      Fully Guided Ketamine Therapy in Aventura – Serving Miami & South Florida
-    </h1>
+  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-tight mb-6">
+    Fully Guided Ketamine Therapy in Aventura
+    <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-semibold text-white/90">
+      Serving Miami & South Florida
+    </span>
+  </h1>
 
-    <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-      Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura and serving the greater Miami area. We offer fully guided sessions for treatment-resistant depression, anxiety, PTSD, and chronic pain. As a locally owned practice, we provide thoughtful, individualized care for patients throughout Miami-Dade, Fort Lauderdale, and South Florida. ¡Hablamos Español!
-    </p>
+  <p className="text-base md:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed mb-6">
+    Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura. 
+    Fully guided sessions available for treatment-resistant depression, anxiety, PTSD, and chronic pain.
+  </p>
 
-    {/* Keep your existing buttons / CTAs here */}
-  </div>
+  <p className="text-[#C9A66B] font-bold text-lg md:text-xl tracking-wide">
+    ¡Hablamos Español!
+  </p>
+</div>
 </section>
 
 {/* ===== TRUST BAR ===== */}
