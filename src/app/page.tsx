@@ -383,10 +383,19 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     <div className="space-y-6">
       <div>
         <h3 className="text-lg font-semibold mb-2">
-          Is ketamine therapy available in Miami?
+          Is there a ketamine clinic in Miami?
         </h3>
         <p className="text-slate-600">
-          Yes. Rewired Ketamine is located in Aventura and serves patients throughout Miami, Fort Lauderdale, and South Florida. We offer fully guided IV ketamine therapy in a calm, private setting.
+          Yes. Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura and serving the greater Miami area, Fort Lauderdale, and South Florida. We offer fully guided IV ketamine therapy in a calm, private setting.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold mb-2">
+          What makes Rewired Ketamine different for treatment-resistant depression?
+        </h3>
+        <p className="text-slate-600">
+          We are a locally owned, 5-star rated clinic in Aventura. Fully guided sessions are available, and every treatment plan is individualized for patients who have not found enough relief with traditional approaches.
         </p>
       </div>
 
@@ -422,7 +431,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           Is the treatment supervised?
         </h3>
         <p className="text-slate-600">
-          Yes. Every session at our Miami-area clinic is available for fully guided and medically supervised so you feel safe and supported throughout the experience.
+          Yes. Every session at our Miami-area clinic is available fully guided and medically supervised so you feel safe and supported throughout the experience.
         </p>
       </div>
     </div>
