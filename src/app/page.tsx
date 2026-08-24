@@ -300,13 +300,13 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     Aventura • South Florida
   </p>
 
-  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8">
-    Fully Guided Ketamine Therapy in Aventura
-  </h1>
+<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+  Fully Guided Ketamine Therapy in Aventura – Serving Miami & South Florida
+</h1>
 
-  <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-6">
-    Rewired Ketamine is a leading ketamine clinic in Aventura offering fully guided IV therapy for depression, anxiety, PTSD, and chronic pain. Serving Miami, Fort Lauderdale, and South Florida.
-  </p>
+<p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+  Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura and serving the greater Miami area. We offer fully guided sessions for treatment-resistant depression, anxiety, PTSD, and chronic pain. As a locally owned practice, we provide thoughtful, individualized care for patients throughout Miami-Dade, Fort Lauderdale, and South Florida. ¡Hablamos Español!
+</p>
 
   <p className="text-lg text-white/80 mb-3">
     The only local 5-star Google-reviewed ketamine clinic
