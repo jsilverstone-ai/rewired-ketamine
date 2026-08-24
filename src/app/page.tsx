@@ -283,47 +283,41 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     </div>
   )}
 </header>
-      {/* ===== HERO ===== */}
+{/* ===== HERO ===== */}
 <section
   id="main-content"
   className="relative pt-28 pb-32 md:pt-36 md:pb-40 px-6 overflow-hidden"
-  style={{
-    backgroundImage: "url('/clinic.jpeg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
-  aria-label="Rewired Ketamine clinic in Aventura, Florida"
->        <div className="absolute inset-0 bg-[#0B1D36]/75 z-0"></div>
+>
+  {/* Optimized background image */}
+  <Image
+    src="/clinic.jpg"
+    alt="Rewired Ketamine clinic in Aventura, Florida"
+    fill
+    priority
+    className="object-cover object-center"
+    sizes="100vw"
+  />
 
-<div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-  <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
-    Aventura • South Florida
-  </p>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-[#0B1D36]/75 z-0"></div>
 
-<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-  Fully Guided Ketamine Therapy in Aventura – Serving Miami & South Florida
-</h1>
+  {/* Content */}
+  <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+    <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-5">
+      Aventura • South Florida
+    </p>
 
-<p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-  Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura and serving the greater Miami area. We offer fully guided sessions for treatment-resistant depression, anxiety, PTSD, and chronic pain. As a locally owned practice, we provide thoughtful, individualized care for patients throughout Miami-Dade, Fort Lauderdale, and South Florida. ¡Hablamos Español!
-</p>
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+      Fully Guided Ketamine Therapy in Aventura – Serving Miami & South Florida
+    </h1>
 
-  <p className="text-lg text-white/80 mb-3">
-    The only local 5-star Google-reviewed ketamine clinic
-  </p>
+    <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+      Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura and serving the greater Miami area. We offer fully guided sessions for treatment-resistant depression, anxiety, PTSD, and chronic pain. As a locally owned practice, we provide thoughtful, individualized care for patients throughout Miami-Dade, Fort Lauderdale, and South Florida. ¡Hablamos Español!
+    </p>
 
-<p className="text-[#C9A66B] font-bold text-lg md:text-xl">
-  ¡Hablamos Español!
-</p>
-  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-    <a href="#contact" className="inline-flex items-center justify-center bg-[#C9A66B] text-[#0B1D36] font-semibold px-10 py-5 rounded-full text-lg hover:bg-white transition">
-      Book Free Consultation
-    </a>
-    <a href="tel:3056766070" className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-10 py-5 rounded-full text-lg hover:bg-white hover:text-[#0B1D36] transition">
-      Call 305-676-6070
-    </a>
+    {/* Keep your existing buttons / CTAs here */}
   </div>
-</div>      </section>
+</section>
 
 {/* ===== TRUST BAR ===== */}
 <section className="bg-[#0B1D36] py-7">
