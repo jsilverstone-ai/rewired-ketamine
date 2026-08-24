@@ -23,11 +23,12 @@ interface Keyword {
 const WEEKLY_DEFAULTS: Task[] = [
   { id: "w1", text: "Check rankings in Mangools", completed: false },
   { id: "w2", text: "Review Keyword Tracker card", completed: false },
-  { id: "w3", text: "Review Google Search Console", completed: false },
-  { id: "w4", text: "Run Screaming Frog crawl (or key pages)", completed: false },
-  { id: "w5", text: "Check Core Web Vitals (homepage + 2–3 service pages)", completed: false },
-  { id: "w6", text: "Pick 1–2 pages ranking 4–15 to improve", completed: false },
-  { id: "w7", text: "Add stronger internal links to improved pages", completed: false },
+  { id: "w3", text: "Review Google Search Console – Pages (watch 404s)", completed: false },
+  { id: "w4", text: "Check GSC Performance (clicks & impressions)", completed: false },
+  { id: "w5", text: "Spot-check 1–2 old URLs for proper redirects", completed: false },
+  { id: "w6", text: "Run PageSpeed on homepage + 1–2 key pages", completed: false },
+  { id: "w7", text: "Pick 1 page ranking 4–15 and optimize it", completed: false },
+  { id: "w8", text: "Add stronger internal links to the optimized page", completed: false },
 ];
 
 const TIER_1 = [
@@ -69,6 +70,12 @@ export default function SEOPage() {
   const [newPriority, setNewPriority] = useState<Priority>("medium");
   const [showGuide, setShowGuide] = useState(true);
 
+  const [note1, setNote1] = useState("");
+  const [note2, setNote2] = useState("");
+  const [note3, setNote3] = useState("");
+  const [note4, setNote4] = useState("");
+  const [note5, setNote5] = useState("");
+
   const [keywords, setKeywords] = useState<Keyword[]>([]);
   const [siteData, setSiteData] = useState<any>(null);
   const [backlinks, setBacklinks] = useState<any[]>([]);
@@ -92,6 +99,12 @@ export default function SEOPage() {
       setWeeklyTodos(JSON.parse(savedWeekly));
     }
     if (savedMy) setMyTodos(JSON.parse(savedMy));
+
+    setNote1(localStorage.getItem("seo-note-1") || "");
+    setNote2(localStorage.getItem("seo-note-2") || "");
+    setNote3(localStorage.getItem("seo-note-3") || "");
+    setNote4(localStorage.getItem("seo-note-4") || "");
+    setNote5(localStorage.getItem("seo-note-5") || "");
   }, []);
 
   useEffect(() => {
@@ -101,6 +114,12 @@ export default function SEOPage() {
   useEffect(() => {
     localStorage.setItem("seo-my-todos", JSON.stringify(myTodos));
   }, [myTodos]);
+
+  useEffect(() => { localStorage.setItem("seo-note-1", note1); }, [note1]);
+  useEffect(() => { localStorage.setItem("seo-note-2", note2); }, [note2]);
+  useEffect(() => { localStorage.setItem("seo-note-3", note3); }, [note3]);
+  useEffect(() => { localStorage.setItem("seo-note-4", note4); }, [note4]);
+  useEffect(() => { localStorage.setItem("seo-note-5", note5); }, [note5]);
 
   useEffect(() => {
     async function loadData() {
@@ -260,115 +279,118 @@ export default function SEOPage() {
           </div>
         </div>
 
-{/* ===== DETAILED GUIDE SECTION ===== */}
-<div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 mb-10">
-  <div className="flex items-center justify-between mb-6">
-    <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-      <span>📋</span> How to Execute the Weekly Plan
-    </h2>
-    <button
-      onClick={() => setShowGuide(!showGuide)}
-      className="text-sm text-teal-600 hover:text-teal-500 font-medium"
-    >
-      {showGuide ? "Hide Guide" : "Show Guide"}
-    </button>
-  </div>
+        {/* DETAILED GUIDE WITH NOTES */}
+        <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 mb-10">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <span>📋</span> How to Execute the Weekly Plan
+            </h2>
+            <button
+              onClick={() => setShowGuide(!showGuide)}
+              className="text-sm text-teal-600 hover:text-teal-500 font-medium"
+            >
+              {showGuide ? "Hide Guide" : "Show Guide"}
+            </button>
+          </div>
 
-  {showGuide && (
-    <div className="space-y-10 text-sm leading-relaxed">
+          {showGuide && (
+            <div className="space-y-10 text-sm leading-relaxed">
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                  Rank Review (10 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+                  <li>Open Keyword Tracker + Mangools Rank Tracking</li>
+                  <li>Look only at Tier 1 keywords</li>
+                  <li>Write down every keyword ranking between position 4 and 15</li>
+                </ol>
+                <textarea
+                  value={note1}
+                  onChange={(e) => setNote1(e.target.value)}
+                  placeholder="Your notes for Step 1 (example: ketamine clinic miami → #7)"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+                />
+              </div>
 
-      {/* STEP 1 */}
-      <div>
-        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-          Rank Review (10 min)
-        </h3>
-        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
-          <li>Open Keyword Tracker + Mangools Rank Tracking</li>
-          <li>Look only at Tier 1 keywords</li>
-          <li>Write down every keyword ranking between position 4 and 15</li>
-        </ol>
-        <textarea
-          placeholder="Your notes for Step 1 (example: ketamine clinic miami → #7)"
-          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
-        />
-      </div>
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                  Competitor Check (10 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+                  <li>Take one keyword from Step 1</li>
+                  <li>Look at the Competitors card or search in Google</li>
+                  <li>Note the top 2–3 sites ranking above you and what you notice</li>
+                </ol>
+                <textarea
+                  value={note2}
+                  onChange={(e) => setNote2(e.target.value)}
+                  placeholder="Your notes for Step 2 (who is ranking above you and why)"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+                />
+              </div>
 
-      {/* STEP 2 */}
-      <div>
-        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-          Competitor Check (10 min)
-        </h3>
-        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
-          <li>Take one keyword from Step 1</li>
-          <li>Look at the Competitors card or search in Google</li>
-          <li>Note the top 2–3 sites ranking above you and what you notice</li>
-        </ol>
-        <textarea
-          placeholder="Your notes for Step 2 (who is ranking above you and why)"
-          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
-        />
-      </div>
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                  Site Health (8 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+                  <li>Check the Site Health card</li>
+                  <li>Open Google Search Console → Coverage / Pages</li>
+                  <li>Run PageSpeed Insights on homepage + one service page</li>
+                </ol>
+                <textarea
+                  value={note3}
+                  onChange={(e) => setNote3(e.target.value)}
+                  placeholder="Your notes for Step 3 (any errors, low scores, etc.)"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+                />
+              </div>
 
-      {/* STEP 3 */}
-      <div>
-        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">3</span>
-          Site Health (8 min)
-        </h3>
-        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
-          <li>Check the Site Health card</li>
-          <li>Open Google Search Console → Coverage / Pages</li>
-          <li>Run PageSpeed Insights on homepage + one service page</li>
-        </ol>
-        <textarea
-          placeholder="Your notes for Step 3 (any errors, low scores, etc.)"
-          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
-        />
-      </div>
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">4</span>
+                  Technical + Internal Links (15 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+                  <li>Check for broken links or missing titles</li>
+                  <li>Add 2–4 stronger internal links to the pages from Step 1</li>
+                </ol>
+                <textarea
+                  value={note4}
+                  onChange={(e) => setNote4(e.target.value)}
+                  placeholder="Your notes for Step 4 (pages you linked from / to)"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+                />
+              </div>
 
-      {/* STEP 4 */}
-      <div>
-        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">4</span>
-          Technical + Internal Links (15 min)
-        </h3>
-        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
-          <li>Check for broken links or missing titles</li>
-          <li>Add 2–4 stronger internal links to the pages from Step 1</li>
-        </ol>
-        <textarea
-          placeholder="Your notes for Step 4 (pages you linked from / to)"
-          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
-        />
-      </div>
+              <div>
+                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                  <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">5</span>
+                  Optimize 1 Page (20–25 min)
+                </h3>
+                <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
+                  <li>Pick one page ranking between 4–15</li>
+                  <li>Improve Title + Meta Description</li>
+                  <li>Strengthen content + add FAQ if needed</li>
+                  <li>Publish the changes</li>
+                </ol>
+                <textarea
+                  value={note5}
+                  onChange={(e) => setNote5(e.target.value)}
+                  placeholder="Your notes for Step 5 (which page you chose and what you changed)"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
+                />
+              </div>
 
-      {/* STEP 5 */}
-      <div>
-        <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-          <span className="bg-teal-100 text-teal-700 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold">5</span>
-          Optimize 1 Page (20–25 min)
-        </h3>
-        <ol className="list-decimal list-inside space-y-1 text-slate-600 ml-2 mb-3">
-          <li>Pick one page ranking between 4–15</li>
-          <li>Improve Title + Meta Description</li>
-          <li>Strengthen content + add FAQ if needed</li>
-          <li>Publish the changes</li>
-        </ol>
-        <textarea
-          placeholder="Your notes for Step 5 (which page you chose and what you changed)"
-          className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[90px]"
-        />
-      </div>
-
-      {/* Grok Prompt */}
-      <div className="border-t border-slate-100 pt-6">
-        <h3 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
-          <span className="text-xl">🤖</span> After finishing → Copy your notes into Grok
-        </h3>
-        <p className="text-slate-600 mb-3">Use this prompt and paste everything you wrote above:</p>
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-xs text-slate-700 font-mono leading-relaxed whitespace-pre-wrap">
+              <div className="border-t border-slate-100 pt-6">
+                <h3 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                  <span className="text-xl">🤖</span> After finishing → Copy your notes into Grok
+                </h3>
+                <p className="text-slate-600 mb-3">Use this prompt and paste everything you wrote above:</p>
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-xs text-slate-700 font-mono leading-relaxed whitespace-pre-wrap">
 {`I’m working on SEO for rewiredketamine.com (ketamine clinic in Aventura / Miami).
 
 Here’s what I found this week:
@@ -389,12 +411,13 @@ Here’s what I found this week:
 [paste your Step 5 notes]
 
 Please give me a clear, practical action plan for the page I’m focusing on. Tell me exactly what else I should change.`}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-    </div>
-  )}
-</div>
-        {/* MAIN CARDS */}
+
+        {/* MAIN CARDS - Row 1 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Weekly Tasks */}
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col">
@@ -484,8 +507,9 @@ Please give me a clear, practical action plan for the page I’m focusing on. Te
           </div>
         </div>
 
-        {/* Rest of the cards */}
+        {/* MAIN CARDS - Row 2 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {/* Site Health */}
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-5 flex items-center gap-2">
               <span className="text-amber-500">🩺</span> Site Health
@@ -532,6 +556,43 @@ Please give me a clear, practical action plan for the page I’m focusing on. Te
             </div>
           </div>
 
+          {/* Google Search Console Monitoring */}
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+            <h2 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
+              <span className="text-blue-500">📊</span> Google Search Console
+            </h2>
+            <p className="text-sm text-slate-500 mb-4">Simple monitoring plan (next 2–4 weeks)</p>
+            <div className="space-y-3 text-sm text-slate-700">
+              <div className="bg-slate-50 rounded-2xl p-4">
+                <div className="font-medium mb-1">1. Pages / Coverage</div>
+                <div className="text-slate-500 text-xs leading-relaxed">
+                  Watch the “Not found (404)” number. It should start declining as old pages drop off.
+                </div>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-4">
+                <div className="font-medium mb-1">2. Performance Report</div>
+                <div className="text-slate-500 text-xs leading-relaxed">
+                  Check total clicks & impressions. A small temporary dip is normal after the site move.
+                </div>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-4">
+                <div className="font-medium mb-1">3. Spot-check old URLs</div>
+                <div className="text-slate-500 text-xs leading-relaxed">
+                  Test a few old links. They should redirect correctly to the new pages.
+                </div>
+              </div>
+            </div>
+            <a
+              href="https://search.google.com/search-console"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-5 text-sm text-blue-600 hover:text-blue-500 font-medium"
+            >
+              Open Google Search Console →
+            </a>
+          </div>
+
+          {/* Competitors */}
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2">
               <span className="text-rose-500">👀</span> Competitors
@@ -553,20 +614,9 @@ Please give me a clear, practical action plan for the page I’m focusing on. Te
               <p className="text-sm text-slate-400">Loading SERP data...</p>
             )}
           </div>
-
-          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
-            <h2 className="text-lg font-semibold text-slate-800 mb-5 flex items-center gap-2">
-              <span className="text-sky-500">🛠</span> Quick Tools
-            </h2>
-            <div className="space-y-2.5 text-sm">
-              <a href="https://app.mangools.com/" target="_blank" rel="noopener noreferrer" className="block bg-slate-50 hover:bg-slate-100 rounded-2xl px-4 py-3 transition">Mangools</a>
-              <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="block bg-slate-50 hover:bg-slate-100 rounded-2xl px-4 py-3 transition">Search Console</a>
-              <a href="https://www.screamingfrog.co.uk/seo-spider/" target="_blank" rel="noopener noreferrer" className="block bg-slate-50 hover:bg-slate-100 rounded-2xl px-4 py-3 transition">Screaming Frog</a>
-              <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer" className="block bg-slate-50 hover:bg-slate-100 rounded-2xl px-4 py-3 transition">PageSpeed</a>
-            </div>
-          </div>
         </div>
 
+        {/* Row 3 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
             <h2 className="text-lg font-semibold text-slate-800 mb-2">📱 Social Media</h2>
@@ -593,4 +643,4 @@ Please give me a clear, practical action plan for the page I’m focusing on. Te
       </div>
     </div>
   );
-}
+}v
