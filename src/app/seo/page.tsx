@@ -27,6 +27,7 @@ const WEEKLY_DEFAULTS: Task[] = [
   { id: "w4", text: "Set up / manage Social Media (Munch)", completed: false },
   { id: "w5", text: "Create 1 Patient Review Video", completed: false },
   { id: "w6", text: "Create 1 Instructional Video", completed: false },
+  { id: "w7", text: "Add 1 news article", completed:  false},
 ];
 
 const TIER_1 = [
@@ -251,6 +252,68 @@ export default function SEOPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-5 pb-16">
+        {/* MASTER CONTENT REQUESTS – EDITABLE */}
+<div className="max-w-7xl mx-auto px-5 mb-10">
+  <h2 className="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+    <span>📌</span> Master Content Requests
+  </h2>
+  <p className="text-sm text-slate-500 mb-6">
+    Fill these in, then copy the text and paste into the pinned Grok chat.
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+    
+    {/* Blog Card */}
+    <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col">
+      <div className="text-2xl mb-3">📝</div>
+      <h3 className="font-bold text-slate-800 mb-1">New Blog Post</h3>
+      <p className="text-xs text-slate-500 mb-4">Fill in → select all → copy</p>
+      <textarea
+        defaultValue={`NEW BLOG – USE MASTER TEMPLATE
+
+Topic: 
+Source: 
+Keywords: 
+Extra notes: `}
+        className="flex-1 w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[180px] resize-y font-mono"
+      />
+    </div>
+
+    {/* Video Card */}
+    <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col">
+      <div className="text-2xl mb-3">🎬</div>
+      <h3 className="font-bold text-slate-800 mb-1">New Video</h3>
+      <p className="text-xs text-slate-500 mb-4">Fill in → select all → copy</p>
+      <textarea
+        defaultValue={`NEW VIDEO – USE MASTER VIDEO TEMPLATE
+
+YouTube ID: 
+Title: 
+Description: 
+Extra notes: `}
+        className="flex-1 w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[180px] resize-y font-mono"
+      />
+    </div>
+
+    {/* News Card */}
+    <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col">
+      <div className="text-2xl mb-3">📰</div>
+      <h3 className="font-bold text-slate-800 mb-1">New News Article</h3>
+      <p className="text-xs text-slate-500 mb-4">Fill in → select all → copy</p>
+      <textarea
+        defaultValue={`NEW NEWS ARTICLE – USE MASTER NEWS TEMPLATE
+
+URL: 
+Source / Publication: 
+Date (or year): 
+Title: 
+Short description: `}
+        className="flex-1 w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs text-slate-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-teal-200 min-h-[180px] resize-y font-mono"
+      />
+    </div>
+
+  </div>
+</div>
 
         {/* 5 STEP CARDS */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
