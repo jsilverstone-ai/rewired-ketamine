@@ -30,6 +30,11 @@ const videos = [
   title: "Ketamine + Psychotherapy for Chronic Pain",
   description: "New research explores combining ketamine with psychotherapy for chronic neuropathic pain — and what it could mean for patients in Miami and Aventura.",
 },
+{
+  id: "wDy5-ShpLV4",
+  title: "The Evolution of Psychiatric Medication & the DSM",
+  description: "A clear look at how psychiatric diagnosis and medication have evolved — from early DSM editions and the rise of chlorpromazine to the DSM-III shift and the arrival of SSRIs.",
+},
 ];
 
 export default function VideosPage() {
