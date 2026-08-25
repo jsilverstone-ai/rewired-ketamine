@@ -7,6 +7,12 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "The Evolution of Psychiatric Medication & the DSM",
+  slug: "evolution-of-psychiatric-medication-dsm",
+  excerpt: "A clear look at how psychiatric diagnosis and medication have evolved — and what it means for patients exploring ketamine for depression in Miami and Aventura.",
+  date: "August 2026"
+},
+  {
   title: "Ketamine and Neuroplasticity in Female Brains",
   slug: "ketamine-neuroplasticity-microglia-female-brains",
   excerpt: "New research explores how ketamine may boost neuroplasticity through microglia. Insights for patients seeking ketamine for depression in Miami and Aventura.",
