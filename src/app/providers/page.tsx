@@ -298,42 +298,51 @@ export default function ProvidersPage() {
         </div>
       </div>
 
-      {/* Jacob Silverstone, DPM */}
-      <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
-        <div className="aspect-[4/3] overflow-hidden">
-          <Image
-            src="/providers/jacob-silverstone.jpg"
-            alt="Jacob Silverstone, DPM - Medical Director at Rewired Ketamine in Aventura"
-            width={800}
-            height={600}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="p-8">
-          <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Medical Director</p>
-          <h2 className="text-2xl font-bold text-[#0B1D36] mb-1">Jacob Silverstone, DPM</h2>
-          <p className="text-[#666] text-sm mb-4">Medical Director</p>
-          <p className="text-[#555] leading-relaxed mb-4">
-            Jacob Silverstone, DPM, serves as Medical Director at Rewired Ketamine. He brings clinical insight and a deep interest in mental wellness, neuroplasticity, and supportive care approaches. He is also the author of <em>Chronically Misunderstood</em> and <em>Stuck in Reverse: Rewiring Your ADHD Brain</em>.
-          </p>
-          <p className="text-[#555] leading-relaxed mb-4">
-            His work focuses on helping individuals better understand their mental health journey and explore options when traditional approaches have not provided enough relief.
-          </p>
-          <a 
-            href="https://a.co/d/0753tyCg" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#C9A66B] font-semibold hover:underline mb-4"
-          >
-            View book on Amazon →
-          </a>
-          <div className="border-t border-gray-100 pt-4 mt-4">
-            <p className="text-sm text-[#666]">
-              <span className="font-semibold text-[#0B1D36]">Education & Training:</span> BA in Sociology, Hunter College (CUNY) • DPM, New York College of Podiatric Medicine • Foot & Ankle Reconstructive Surgery Residency, Long Island Jewish Medical Center at Hofstra School of Medicine
-            </p>
-          </div>
-        </div>
-      </div>
+{/* Jacob Silverstone, DPM */}
+<div className="bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm">
+  <div className="aspect-[4/3] overflow-hidden">
+    <Image
+      src="/providers/jacob-silverstone.jpg"
+      alt="Jacob Silverstone, DPM - Medical Director at Rewired Ketamine in Aventura"
+      width={800}
+      height={600}
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="p-8">
+    <p className="text-[#C9A66B] font-semibold text-sm uppercase tracking-wide mb-1">Medical Director</p>
+    <h2 className="text-2xl font-bold text-[#0B1D36] mb-1">Jacob Silverstone, DPM</h2>
+    <p className="text-[#666] text-sm mb-4">Medical Director · Published Author</p>
+
+    <p className="text-[#555] leading-relaxed mb-4">
+      Jacob Silverstone, DPM, serves as Medical Director at Rewired Ketamine. A published sociologist and former Division Chief and Residency Director for Foot & Ankle at Mount Sinai Medical Center, he brings extensive clinical leadership and a deep interest in mental wellness, neuroplasticity, and supportive care approaches.
+    </p>
+
+    <p className="text-[#555] leading-relaxed mb-4">
+      He has served as primary investigator on numerous advanced pharmaceutical studies and procedural innovations. His work focuses on helping individuals better understand their mental health journey and explore options when traditional approaches have not provided enough relief.
+    </p>
+
+    <p className="text-[#555] leading-relaxed mb-5">
+      Dr. Silverstone is also the author of <em>Chronically Misunderstood</em> and <em>Stuck in Reverse: Rewiring Your ADHD Brain</em>.
+    </p>
+
+    {/* More prominent book link */}
+    <a 
+      href="https://a.co/d/0753tyCg" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 bg-[#C9A66B] text-[#0B1D36] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#0B1D36] hover:text-white transition mb-6"
+    >
+      View Book on Amazon →
+    </a>
+
+    <div className="border-t border-gray-100 pt-4">
+      <p className="text-sm text-[#666]">
+        <span className="font-semibold text-[#0B1D36]">Education & Training:</span> BA in Sociology, Hunter College (CUNY) · DPM, New York College of Podiatric Medicine · Foot & Ankle Reconstructive Surgery Residency, Long Island Jewish Medical Center at Hofstra School of Medicine
+      </p>
+    </div>
+  </div>
+</div>
     </div>
 
     {/* Bottom two */}
