@@ -7,6 +7,12 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "Ketamine and Neuroplasticity in Female Brains",
+  slug: "ketamine-neuroplasticity-microglia-female-brains",
+  excerpt: "New research explores how ketamine may boost neuroplasticity through microglia. Insights for patients seeking ketamine for depression in Miami and Aventura.",
+  date: "Aug 2026"
+},
+  {
   title: "New Research: How Ketamine Activates Opioid Receptors",
   slug: "new-research-how-ketamine-activates-opioid-receptors",
   excerpt: "A 2026 Nature study shows ketamine can directly activate opioid receptors — insights for patients exploring ketamine Miami therapy.",
