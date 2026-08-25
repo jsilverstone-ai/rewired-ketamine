@@ -358,6 +358,21 @@ export default function KetamineInTheNewsPage() {
     New research from Rutgers suggests ketamine may help reduce symptoms of chronic fatigue.
   </p>
 </a>
+{/* Article 7*/}
+<a 
+  href="https://www.news-medical.net/news/20260731/Ketamine-boosts-neuroplasticity-through-microglia-in-female-brains.aspx" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">News-Medical.net · July 2026</p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    Ketamine Boosts Neuroplasticity Through Microglia in Female Brains
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    New research shows ketamine may increase neuroplasticity in female brains by activating microglia, highlighting important sex differences that could help refine future depression treatments.
+  </p>
+</a>
 
     </div>
   </div>
