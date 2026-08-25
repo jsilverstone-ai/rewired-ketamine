@@ -328,7 +328,7 @@ export default function ProvidersPage() {
 
     {/* More prominent book link */}
     <a 
-      href="https://a.co/d/0753tyCg" 
+      href="https://a.co/d/07BECq33" 
       target="_blank" 
       rel="noopener noreferrer"
       className="inline-flex items-center gap-2 bg-[#C9A66B] text-[#0B1D36] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#0B1D36] hover:text-white transition mb-6"
