@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Who May Be A Good Candidate for Ketamine Therapy?",
-  description: "Learn who may benefit from ketamine therapy at our locally owned Aventura clinic. Fully guided sessions available. Serving Miami & South Florida. ¡Hablamos Español!",
+  title: "Who May Be A Good Candidate For Ketamine Therapy? | Aventura",
+  description: "Learn who may be a good candidate for ketamine therapy at our locally owned Aventura clinic serving Miami and South Florida. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
-    title: "Who May Be A Good Candidate for Ketamine Therapy? | Rewired Ketamine",
-    description: "Guidance on candidacy for ketamine therapy in Aventura, Florida.",
+    title: "Who May Be A Good Candidate For Ketamine Therapy? | Rewired Ketamine",
+    description: "An educational guide for patients considering ketamine treatment in Miami and Aventura.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/who-may-be-a-good-candidate-for-ketamine-therapy",
+    canonical: "https://www.rewiredketamine.com/content/blog/who-may-be-a-good-candidate-for-ketamine-therapy",
   },
 };
 

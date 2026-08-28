@@ -7,6 +7,42 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "Who May Be A Good Candidate For Ketamine Therapy?",
+  slug: "who-may-be-a-good-candidate-for-ketamine-therapy",
+  excerpt: "An educational look at who may be a good candidate for ketamine therapy at our locally owned Aventura clinic serving Miami and South Florida.",
+  date: "August 2026"
+},
+{
+  title: "What Is Ketamine-Assisted Therapy and How Does It Work?",
+  slug: "what-is-ketamine-assisted-therapy-and-how-does-it-work",
+  excerpt: "A clear explainer of ketamine-assisted therapy, how sessions may work, and what patients in Miami and Aventura can expect.",
+  date: "August 2026"
+},
+{
+  title: "What Is Ketamine Treatment For Depression?",
+  slug: "what-is-ketamine-treatment-for-depression",
+  excerpt: "Understanding ketamine treatment for depression, including treatment-resistant depression, at our Aventura clinic serving Miami.",
+  date: "August 2026"
+},
+{
+  title: "Can Ketamine Therapy Help Anxiety Disorders?",
+  slug: "can-ketamine-therapy-help-anxiety-disorders",
+  excerpt: "Exploring how ketamine therapy may support people living with anxiety disorders in Miami, Aventura, and South Florida.",
+  date: "August 2026"
+},
+{
+  title: "Common Myths About Ketamine Therapy For PTSD",
+  slug: "common-myths-about-ketamine-therapy-for-ptsd",
+  excerpt: "Clearing up common myths about ketamine therapy for PTSD with a calm, educational approach from our Aventura clinic.",
+  date: "August 2026"
+},
+{
+  title: "What Happens During Your First Visit To A Ketamine Clinic",
+  slug: "what-happens-during-your-first-visit-to-a-ketamine-clinic",
+  excerpt: "A practical walkthrough of your first visit to our locally owned ketamine clinic in Aventura, serving Miami and South Florida.",
+  date: "August 2026"
+},
+  {
   title: "The Evolution of Psychiatric Medication & the DSM",
   slug: "evolution-of-psychiatric-medication-dsm",
   excerpt: "A clear look at how psychiatric diagnosis and medication have evolved — and what it means for patients exploring ketamine for depression in Miami and Aventura.",
@@ -72,12 +108,6 @@ export const blogPosts: BlogPost[] = [
   excerpt: "Understanding how ketamine may help when other treatments have not worked, from our locally owned Aventura clinic.",
   date: "June2026"
 },
-{
-    title: "Who May Be a Good Candidate for Ketamine Therapy?",
-    slug: "who-may-be-a-good-candidate-for-ketamine-therapy",
-    excerpt: "Understanding who may benefit from ketamine therapy at our locally owned Aventura clinic.",
-    date: "June 2026"
-  },
   {
     title: "What Is Ketamine-Assisted Therapy and How Does It Work?",
     slug: "what-is-ketamine-assisted-therapy",
