@@ -48,7 +48,66 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       "description": "Rewired Ketamine offers fully guided ketamine infusion therapy in Aventura for depression, anxiety, PTSD, and chronic pain. Serving Miami, Fort Lauderdale, and South Florida."
     })
   }}
-/>      {/* Skip to content - ADA */}
+/>      
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is there a ketamine clinic in Miami?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura and serving the greater Miami area, Fort Lauderdale, and South Florida. We offer fully guided IV ketamine therapy in a calm, private setting.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What makes Rewired Ketamine different for treatment-resistant depression?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We are a locally owned, 5-star rated clinic in Aventura. Fully guided sessions are available, and every treatment plan is individualized for patients who have not found enough relief with traditional approaches.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does ketamine treatment work?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ketamine works differently from traditional antidepressants. It targets the glutamate system in the brain and can produce rapid improvements in mood, often within hours to days rather than weeks.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is a good candidate for ketamine therapy?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ketamine therapy may help adults struggling with treatment-resistant depression, anxiety, PTSD, or related conditions who have not found sufficient relief from other approaches. Every patient receives a thorough medical evaluation first.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How quickly can I expect results?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Many patients notice meaningful improvement after the first one or two sessions. Results vary, and our team provides guided support and integration to help the benefits last.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is the treatment supervised?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Every session at our Miami-area clinic is available fully guided and medically supervised so you feel safe and supported throughout the experience.",
+          },
+        },
+      ],
+    }),
+  }}
+/>{/* Skip to content - ADA */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#C9A66B] focus:text-[#0B1D36] focus:px-4 focus:py-2 focus:rounded focus:font-semibold"
