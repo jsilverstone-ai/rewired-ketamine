@@ -6,6 +6,42 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+ {
+  title: "How Ketamine Clinics Treat Treatment-Resistant Depression",
+  slug: "how-ketamine-clinics-treat-treatment-resistant-depression",
+  excerpt: "How a locally owned ketamine clinic in Aventura may support people living with treatment-resistant depression in Miami and South Florida.",
+  date: "August 2026"
+},
+{
+  title: "Is Ketamine Therapy Right For You?",
+  slug: "is-ketamine-therapy-right-for-you",
+  excerpt: "A calm, consult-focused look at whether ketamine therapy may be appropriate at our Aventura clinic serving Miami.",
+  date: "August 2026"
+},
+{
+  title: "Why Is Ketamine Used For Treatment-Resistant Depression?",
+  slug: "why-is-ketamine-used-for-treatment-resistant-depression",
+  excerpt: "An educational look at why ketamine is used for treatment-resistant depression and how it differs from traditional approaches.",
+  date: "August 2026"
+},
+{
+  title: "What Does Ketamine Therapy Feel Like? A Guide For First-Timers",
+  slug: "what-does-ketamine-therapy-feel-like-a-guide-for-first-timers",
+  excerpt: "A first-timer’s guide to what ketamine therapy may feel like at our locally owned clinic in Aventura.",
+  date: "August 2026"
+},
+{
+  title: "How Many Ketamine Sessions Are Needed For Depression Relief?",
+  slug: "how-many-ketamine-sessions-are-needed-for-depression-relief",
+  excerpt: "A careful look at how many ketamine sessions may be part of a depression care plan. Individual results vary.",
+  date: "August 2026"
+},
+{
+  title: "What Makes A Ketamine Clinic Trustworthy?",
+  slug: "what-makes-a-ketamine-clinic-trustworthy",
+  excerpt: "How to choose a safe ketamine clinic in Florida — and what to look for at a locally owned Aventura practice.",
+  date: "August 2026"
+},
   {
   title: "Who May Be A Good Candidate For Ketamine Therapy?",
   slug: "who-may-be-a-good-candidate-for-ketamine-therapy",
