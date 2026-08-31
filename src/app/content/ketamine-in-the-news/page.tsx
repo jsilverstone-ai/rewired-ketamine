@@ -373,6 +373,21 @@ export default function KetamineInTheNewsPage() {
     New research shows ketamine may increase neuroplasticity in female brains by activating microglia, highlighting important sex differences that could help refine future depression treatments.
   </p>
 </a>
+{/* Article 8*/}
+<a 
+  href="https://www.medscape.com/viewarticle/ketamine-and-psychotherapy-winning-combination-2026a1000umd" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">Medscape News Canada · August 2026</p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    Ketamine and Psychotherapy: A Winning Combination?
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    A small Toronto pilot study and the “Montreal model” explore pairing ketamine with weekly psychotherapy. Early findings suggest the combination may support neuropathic pain and help extend ketamine’s short-lived mental-health benefits.
+  </p>
+</a>
 
     </div>
   </div>
