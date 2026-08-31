@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
         destination: "/services/home-ketamine",
         permanent: true,
       },
+      {
+  source: "/tag/nushama-ketamine",
+  destination: "/",
+  permanent: true,
+},
 
       // Conditions → Treatments
       {
