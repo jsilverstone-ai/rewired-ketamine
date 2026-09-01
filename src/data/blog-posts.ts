@@ -6,6 +6,42 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+  title: "What Makes Ketamine Therapy Different From Traditional Talk Therapy?",
+  slug: "what-makes-ketamine-therapy-different-from-traditional-talk-therapy",
+  excerpt: "How ketamine-assisted therapy can work alongside talk therapy — not replace it — at our locally owned Aventura clinic.",
+  date: "September 2026"
+},
+{
+  title: "What Conditions Can Ketamine Therapy Help Treat?",
+  slug: "what-conditions-can-ketamine-therapy-help-treat",
+  excerpt: "An overview of conditions people explore ketamine for, including depression, anxiety, PTSD, OCD, and chronic pain in South Florida.",
+  date: "September 2026"
+},
+{
+  title: "What Makes Ketamine Different From Other Depression Treatments?",
+  slug: "what-makes-ketamine-different-from-other-depression-treatments",
+  excerpt: "How ketamine differs from many traditional antidepressants for people exploring care in Miami and Aventura.",
+  date: "September 2026"
+},
+{
+  title: "How To Prepare Mentally and Physically For Ketamine Therapy",
+  slug: "how-to-prepare-mentally-and-physically-for-ketamine-therapy",
+  excerpt: "Practical ways to prepare for your first ketamine session at our locally owned Aventura clinic.",
+  date: "September 2026"
+},
+{
+  title: "Is Ketamine Therapy Safe For Long-Term PTSD Management?",
+  slug: "is-ketamine-therapy-safe-for-long-term-ptsd-management",
+  excerpt: "A careful look at ketamine therapy for PTSD, safety, and long-term planning at our Aventura clinic serving Miami.",
+  date: "September 2026"
+},
+{
+  title: "Why Ketamine Is Being Explored As A Different Approach To Depression",
+  slug: "why-ketamine-is-a-breakthrough-in-depression-treatment",
+  excerpt: "An educational look at why ketamine is being explored for depression when traditional treatments have not provided enough relief.",
+  date: "September 2026"
+},
  {
   title: "How Ketamine Clinics Treat Treatment-Resistant Depression",
   slug: "how-ketamine-clinics-treat-treatment-resistant-depression",
