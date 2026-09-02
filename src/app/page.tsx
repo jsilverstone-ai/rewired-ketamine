@@ -163,7 +163,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
 {/* MAIN NAVIGATION */}
 <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
   <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-    <nav className="hidden lg:flexitems-center gap-8 text-[15px] font-medium">
+<nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
       <Link href="/" className="hover:text-[#C9A66B] transition">Home</Link>
 
       {/* Services Dropdown */}
