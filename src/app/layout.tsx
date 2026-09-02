@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -70,7 +74,7 @@ export default function RootLayout({
         </Script>
         {/* End Google Tag Manager */}
       </head>
-      <body className={inter.className}>
+   <body className={`${inter.className} ${playfair.variable}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

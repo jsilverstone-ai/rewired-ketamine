@@ -41,3 +41,73 @@ body {
   outline: 3px solid #C9A66B !important;
   outline-offset: 3px;
 }
+:root {
+  --navy: #0B1D36;
+  --gold: #C9A66B;
+  --gold-safe: #7A6548;
+  --cream: #F6F1E8;
+  --ink: #1a1a1a;
+}
+
+h1, h2, .font-serif {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.02em;
+}
+
+/* Quieter buttons */
+.btn-gold {
+  background: #C9A66B;
+  color: #0B1D36;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 2px;
+}
+
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  background: #ffffff;
+  color: #0B1D36;
+  outline: 2px solid #C9A66B;
+  outline-offset: 2px;
+}
+
+/* FAQ as editorial list instead of cards */
+.faq-list > div {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid #e6e0d6 !important;
+  padding: 1.5rem 0 !important;
+}
+
+/* How We Help columns */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #ddd4c6;
+  border-bottom: 1px solid #ddd4c6;
+}
+
+.help-grid > div {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-right: 1px solid #ddd4c6;
+  padding: 2rem 1.5rem;
+}
+
+.help-grid > div:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 768px) {
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+  .help-grid > div {
+    border-right: 0;
+    border-bottom: 1px solid #ddd4c6;
+  }
+}
