@@ -269,7 +269,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
     <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ paddingBottom: "56.25%" }}>
       <iframe
         className="absolute top-0 left-0 w-full h-full"
-        src="https://www.youtube.com/embed/Hm1IF7lZ2iY"
+        src="https://youtube.com/shorts/1eL6fOZefK4?autoplay=1&mute=1&loop=1&playlist=1eL6fOZefK4"
         title="Rewired Ketamine Services"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
