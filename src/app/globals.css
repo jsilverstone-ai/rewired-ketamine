@@ -111,3 +111,10 @@ h1, h2, .font-serif {
     border-bottom: 1px solid #ddd4c6;
   }
 }
+html, body {
+  overflow-x: hidden;
+}
+
+img, iframe, video {
+  max-width: 100%;
+}

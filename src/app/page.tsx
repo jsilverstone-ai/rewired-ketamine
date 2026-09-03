@@ -382,20 +382,20 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
  <p className="text-[#C9A66B] font-bold text-lg md:text-xl tracking-wide">
     ¡Hablamos Español!
   </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="/#contact"
-              className="inline-block bg-[#C9A66B] text-[#0B1D36] px-7 py-3 text-sm font-semibold tracking-wide"
-            >
-              Free Consultation
-            </Link>
-            <a
-              href="tel:+13056766070"
-              className="inline-block border border-white/70 text-white px-7 py-3 text-sm font-semibold tracking-wide hover:bg-white hover:text-[#0B1D36] transition"
-            >
-              Call or Text (305) 676-6070
-            </a>
-          </div>
+<div className="mt-8 w-full max-w-sm mx-auto flex flex-col gap-3">
+  <Link
+    href="/#contact"
+    className="block w-full text-center bg-[#C9A66B] text-[#0B1D36] px-6 py-3 text-sm font-semibold"
+  >
+    Free Consultation
+  </Link>
+  <a
+    href="tel:+13056766070"
+    className="block w-full text-center border border-white/70 text-white px-6 py-3 text-sm font-semibold"
+  >
+    Call or Text
+  </a>
+</div>
 </div>
 </section>
 
