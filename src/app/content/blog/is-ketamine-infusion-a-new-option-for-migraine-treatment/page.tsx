@@ -194,17 +194,7 @@ export default function KetamineMigrainesEffectivenessPage() {
         )}
       </header>
 
-      {/* HERO */}
-      <section id="main-content" className="bg-[#0B1D36] text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">Aventura • South Florida</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Can Ketamine Therapy Help Anxiety Disorders?</h1>
-          <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
-            Exploring this option at our locally owned Aventura clinic.
-          </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl">¡Hablamos Español!</p>
-        </div>
-      </section>
+
 
       {/* CONTENT */}
 <section id="main-content" className="bg-[#0B1D36] text-white py-20 px-6">
