@@ -466,9 +466,9 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
 
     <ul className="space-y-4 text-[#444] text-lg leading-relaxed">
       <li className="border-b border-[#eee] pb-4">Have you tried traditional treatment and still do not feel enough relief, or are you looking for alternative care?</li>
-      <li className="border-b border-[#eee] pb-4">Is Depression, anxiety, PTSD, or related symptoms affecting your quality of life?</li>
-      <li className="border-b border-[#eee] pb-4"> Do You want medically supervised care, not a one-size-fits-all program?</li>
-      <li className="border-b border-[#eee] pb-4"> AreFully guided sessions appealing to you, or do you want that option?</li>
+      <li className="border-b border-[#eee] pb-4">Is depression, anxiety, PTSD, or related symptoms affecting your quality of life?</li>
+      <li className="border-b border-[#eee] pb-4"> Do you want medically supervised care, not a one-size-fits-all program?</li>
+      <li className="border-b border-[#eee] pb-4"> Are fully guided sessions appealing to you, or do you want that option?</li>
       <li className="pb-2">Do you prefer a locally owned clinic in Aventura serving Miami and South Florida?</li>
     </ul>
 
