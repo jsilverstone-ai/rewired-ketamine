@@ -7,6 +7,42 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "Migraine and Mental Health: Is There A Connection?",
+  slug: "migraine-and-mental-health-is-there-a-connection",
+  excerpt: "How migraines and mental health can overlap — and what patients in Aventura and Miami may want to know.",
+  date: "September 2026"
+},
+{
+  title: "Is Ketamine Infusion A New Option For Migraine Treatment?",
+  slug: "is-ketamine-infusion-a-new-option-for-migraine-treatment",
+  excerpt: "A careful look at ketamine infusion for migraines at our locally owned Aventura clinic serving South Florida.",
+  date: "September 2026"
+},
+{
+  title: "Ketamine Infusion Therapy For Migraines: Is It Effective?",
+  slug: "ketamine-infusion-therapy-for-migraines-is-it-effective",
+  excerpt: "What we can say carefully about ketamine for migraines and chronic migraine care in Florida.",
+  date: "September 2026"
+},
+{
+  title: "Is Ketamine Infusion Therapy A Breakthrough Or Just A Trend?",
+  slug: "is-ketamine-infusion-therapy-a-breakthrough-or-just-a-trend",
+  excerpt: "A trust-focused look at whether ketamine infusion therapy is legitimate care or temporary hype.",
+  date: "September 2026"
+},
+{
+  title: "Top Benefits Of Ketamine Treatment For PTSD Patients",
+  slug: "top-benefits-of-ketamine-treatment-for-ptsd-patients",
+  excerpt: "A careful overview of why some people explore ketamine therapy for PTSD at our Aventura clinic serving Miami.",
+  date: "September 2026"
+},
+{
+  title: "How Ketamine Therapy Differs From Traditional Antidepressants",
+  slug: "how-ketamine-therapy-differs-from-traditional-antidepressants",
+  excerpt: "A clear comparison of ketamine vs traditional antidepressants for people exploring treatment-resistant depression.",
+  date: "September 2026"
+},
+  {
   title: "What Makes Ketamine Therapy Different From Traditional Talk Therapy?",
   slug: "what-makes-ketamine-therapy-different-from-traditional-talk-therapy",
   excerpt: "How ketamine-assisted therapy can work alongside talk therapy — not replace it — at our locally owned Aventura clinic.",
