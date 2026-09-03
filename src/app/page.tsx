@@ -10,9 +10,11 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
 const [isServicesOpen, setIsServicesOpen] = useState(false);
 const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
 const [isContentOpen, setIsContentOpen] = useState(false);
+const [openExpect, setOpenExpect] = useState<string | null>("before");
+
 
   return (
-    <main className="min-h-screen bg-[#F6F1E8] text-[#1a1a1a]">
+   <main className="min-h-screen bg-[#F6F1E8] text-[#1a1a1a] pb-24 lg:pb-0">
 {/* LocalBusiness Schema for SEO */}
 <script
   type="application/ld+json"
@@ -380,16 +382,31 @@ const [isContentOpen, setIsContentOpen] = useState(false);
  <p className="text-[#C9A66B] font-bold text-lg md:text-xl tracking-wide">
     ¡Hablamos Español!
   </p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/#contact"
+              className="inline-block bg-[#C9A66B] text-[#0B1D36] px-7 py-3 text-sm font-semibold tracking-wide"
+            >
+              Free Consultation
+            </Link>
+            <a
+              href="tel:+13056766070"
+              className="inline-block border border-white/70 text-white px-7 py-3 text-sm font-semibold tracking-wide hover:bg-white hover:text-[#0B1D36] transition"
+            >
+              Call or Text (305) 676-6070
+            </a>
+          </div>
 </div>
 </section>
 
 {/* ===== TRUST BAR ===== */}
-<section className="bg-[#0B1D36] py-7">
-  <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-10 gap-y-4 text-white text-sm md:text-base font-medium text-center">
-    <span>★ Only local 5-star Google-reviewed ketamine clinic</span>
+<section className="bg-[#0B1D36] py-6">
+  <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-10 gap-y-3 text-center text-white/90 text-sm md:text-base">
+    <span>Locally owned Aventura clinic</span>
     <span>Fully guided sessions available</span>
-    <span>Aventura • Miami • South Florida</span>
-    <span>Hands-on integration support</span>
+    <span>5-star Google-reviewed</span>
+    <span>Serving Miami & South Florida</span>
+    <span>¡Hablamos Español!</span>
   </div>
 </section>
 {/* ===== GOOGLE REVIEWS SECTION ===== */}
@@ -431,6 +448,119 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       </a>
     </div>
 
+  </div>
+</section>
+{/* Am I a candidate */}
+<section className="py-20 px-6 bg-white">
+  <div className="max-w-3xl mx-auto">
+    <p className="text-[#C9A66B] text-sm font-semibold tracking-widest uppercase mb-3 text-center">
+      A simple starting point
+    </p>
+    <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#0B1D36] text-center mb-6">
+      Is ketamine therapy worth exploring?
+    </h2>
+    <p className="text-[#555] text-center max-w-2xl mx-auto mb-10 leading-relaxed">
+      This is not a diagnosis. It is a quiet checklist many people use before booking a free consultation at our Aventura clinic.
+    </p>
+
+    <ul className="space-y-4 text-[#444] text-lg leading-relaxed">
+      <li className="border-b border-[#eee] pb-4">You have tried traditional treatment and still do not feel enough relief.</li>
+      <li className="border-b border-[#eee] pb-4">Depression, anxiety, PTSD, or related symptoms are affecting daily life.</li>
+      <li className="border-b border-[#eee] pb-4">You want medically supervised care, not a one-size-fits-all program.</li>
+      <li className="border-b border-[#eee] pb-4">Fully guided sessions appeal to you, or you want that option available.</li>
+      <li className="pb-2">You prefer a locally owned clinic in Aventura serving Miami and South Florida.</li>
+    </ul>
+
+    <div className="text-center mt-10">
+      <Link
+        href="/#contact"
+        className="inline-block bg-[#C9A66B] text-[#0B1D36] px-8 py-3 text-sm font-semibold"
+      >
+        Book a Free Consultation
+      </Link>
+      <p className="text-sm text-[#777] mt-4">
+        Or call/text <a href="tel:+13056766070" className="text-[#0B1D36] underline">(305) 676-6070</a>
+      </p>
+    </div>
+  </div>
+</section>
+{/* Am I a candidate */}
+<section className="py-20 px-6 bg-white">
+  <div className="max-w-3xl mx-auto">
+    <p className="text-[#C9A66B] text-sm font-semibold tracking-widest uppercase mb-3 text-center">
+      A simple starting point
+    </p>
+    <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#0B1D36] text-center mb-6">
+      Is ketamine therapy worth exploring?
+    </h2>
+    <p className="text-[#555] text-center max-w-2xl mx-auto mb-10 leading-relaxed">
+      This is not a diagnosis. It is a quiet checklist many people use before booking a free consultation at our Aventura clinic.
+    </p>
+
+    <ul className="space-y-4 text-[#444] text-lg leading-relaxed">
+      <li className="border-b border-[#eee] pb-4">You have tried traditional treatment and still do not feel enough relief.</li>
+      <li className="border-b border-[#eee] pb-4">Depression, anxiety, PTSD, or related symptoms are affecting daily life.</li>
+      <li className="border-b border-[#eee] pb-4">You want medically supervised care, not a one-size-fits-all program.</li>
+      <li className="border-b border-[#eee] pb-4">Fully guided sessions appeal to you, or you want that option available.</li>
+      <li className="pb-2">You prefer a locally owned clinic in Aventura serving Miami and South Florida.</li>
+    </ul>
+
+    <div className="text-center mt-10">
+      <Link
+        href="/#contact"
+        className="inline-block bg-[#C9A66B] text-[#0B1D36] px-8 py-3 text-sm font-semibold"
+      >
+        Book a Free Consultation
+      </Link>
+      <p className="text-sm text-[#777] mt-4">
+        Or call/text <a href="tel:+13056766070" className="text-[#0B1D36] underline">(305) 676-6070</a>
+      </p>
+    </div>
+  </div>
+</section>
+{/* What to expect */}
+<section className="py-20 px-6 bg-[#F6F1E8]">
+  <div className="max-w-3xl mx-auto">
+    <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#0B1D36] text-center mb-10">
+      What to expect
+    </h2>
+
+    <div className="divide-y divide-[#e6e0d6] border-y border-[#e6e0d6]">
+      {[
+        {
+          id: "before",
+          title: "Before your visit",
+          body: "We start with a conversation and clinical review. Arrive about 15 minutes early so you can park, check in, and settle in without rushing. Fully guided sessions are available if you want extra support.",
+        },
+        {
+          id: "during",
+          title: "During a session",
+          body: "Sessions are monitored in a private, calm setting. Rooms can be adjusted for light, sound, and comfort. Your plan is individualized — there is not one standard experience for every person.",
+        },
+        {
+          id: "after",
+          title: "After a session",
+          body: "Plan time to rest and reorient before leaving. Some people notice shifts quickly; others need more time. We stay available with clear next steps and integration support when helpful.",
+        },
+      ].map((item) => (
+        <div key={item.id}>
+          <button
+            type="button"
+            className="w-full flex items-center justify-between py-5 text-left"
+            onClick={() => setOpenExpect(openExpect === item.id ? null : item.id)}
+            aria-expanded={openExpect === item.id}
+          >
+            <span className="font-serif text-xl text-[#0B1D36]">{item.title}</span>
+            <span className="text-[#C9A66B] text-2xl leading-none">
+              {openExpect === item.id ? "−" : "+"}
+            </span>
+          </button>
+          {openExpect === item.id && (
+            <p className="pb-5 text-[#555] leading-relaxed">{item.body}</p>
+          )}
+        </div>
+      ))}
+    </div>
   </div>
 </section>
 {/* FAQ Section */}
@@ -735,6 +865,23 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           </div>
         </div>
       </footer>
+      {/* Sticky mobile CTA */}
+<div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden border-t border-[#e6e0d6] bg-[#F6F1E8]/90 backdrop-blur-sm">
+  <div className="max-w-lg mx-auto px-4 py-3 grid grid-cols-2 gap-3">
+    <a
+      href="tel:+13056766070"
+      className="text-center border border-[#0B1D36] text-[#0B1D36] py-3 text-sm font-semibold"
+    >
+      Call or Text
+    </a>
+    <Link
+      href="/#contact"
+      className="text-center bg-[#C9A66B] text-[#0B1D36] py-3 text-sm font-semibold"
+    >
+      Free Consultation
+    </Link>
+  </div>
+</div>
     </main>
   );
 }
