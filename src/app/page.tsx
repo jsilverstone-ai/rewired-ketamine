@@ -450,6 +450,7 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
 
   </div>
 </section>
+
 {/* Am I a candidate */}
 <section className="py-20 px-6 bg-white">
   <div className="max-w-3xl mx-auto">
@@ -460,49 +461,15 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
       Is ketamine therapy worth exploring?
     </h2>
     <p className="text-[#555] text-center max-w-2xl mx-auto mb-10 leading-relaxed">
-      This is not a diagnosis. It is a quiet checklist many people use before booking a free consultation at our Aventura clinic.
+      This is not intended as a diagnosis. Use this as a checklist to help you book a free consultation at our Aventura clinic.
     </p>
 
     <ul className="space-y-4 text-[#444] text-lg leading-relaxed">
-      <li className="border-b border-[#eee] pb-4">You have tried traditional treatment and still do not feel enough relief.</li>
-      <li className="border-b border-[#eee] pb-4">Depression, anxiety, PTSD, or related symptoms are affecting daily life.</li>
-      <li className="border-b border-[#eee] pb-4">You want medically supervised care, not a one-size-fits-all program.</li>
-      <li className="border-b border-[#eee] pb-4">Fully guided sessions appeal to you, or you want that option available.</li>
-      <li className="pb-2">You prefer a locally owned clinic in Aventura serving Miami and South Florida.</li>
-    </ul>
-
-    <div className="text-center mt-10">
-      <Link
-        href="/#contact"
-        className="inline-block bg-[#C9A66B] text-[#0B1D36] px-8 py-3 text-sm font-semibold"
-      >
-        Book a Free Consultation
-      </Link>
-      <p className="text-sm text-[#777] mt-4">
-        Or call/text <a href="tel:+13056766070" className="text-[#0B1D36] underline">(305) 676-6070</a>
-      </p>
-    </div>
-  </div>
-</section>
-{/* Am I a candidate */}
-<section className="py-20 px-6 bg-white">
-  <div className="max-w-3xl mx-auto">
-    <p className="text-[#C9A66B] text-sm font-semibold tracking-widest uppercase mb-3 text-center">
-      A simple starting point
-    </p>
-    <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#0B1D36] text-center mb-6">
-      Is ketamine therapy worth exploring?
-    </h2>
-    <p className="text-[#555] text-center max-w-2xl mx-auto mb-10 leading-relaxed">
-      This is not a diagnosis. It is a quiet checklist many people use before booking a free consultation at our Aventura clinic.
-    </p>
-
-    <ul className="space-y-4 text-[#444] text-lg leading-relaxed">
-      <li className="border-b border-[#eee] pb-4">You have tried traditional treatment and still do not feel enough relief.</li>
-      <li className="border-b border-[#eee] pb-4">Depression, anxiety, PTSD, or related symptoms are affecting daily life.</li>
-      <li className="border-b border-[#eee] pb-4">You want medically supervised care, not a one-size-fits-all program.</li>
-      <li className="border-b border-[#eee] pb-4">Fully guided sessions appeal to you, or you want that option available.</li>
-      <li className="pb-2">You prefer a locally owned clinic in Aventura serving Miami and South Florida.</li>
+      <li className="border-b border-[#eee] pb-4">Have you tried traditional treatment and still do not feel enough relief, or are you looking for alternative care?.</li>
+      <li className="border-b border-[#eee] pb-4">Is Depression, anxiety, PTSD, or related symptoms are affecting daily life?</li>
+      <li className="border-b border-[#eee] pb-4"> Do You want medically supervised care, not a one-size-fits-all program?</li>
+      <li className="border-b border-[#eee] pb-4">Is Fully guided sessions appealing to you, or do you want that option?</li>
+      <li className="pb-2">Do you prefer a locally owned clinic in Aventura serving Miami and South Florida?</li>
     </ul>
 
     <div className="text-center mt-10">
