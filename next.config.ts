@@ -4,6 +4,31 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+  source: "/ketamine-therapy-florida",
+  destination: "/",
+  permanent: true,
+},
+{
+  source: "/our-advisory-board",
+  destination: "/providers",
+  permanent: true,
+},
+{
+  source: "/conditions/anxiety-treatment",
+  destination: "/treatments/anxiety",
+  permanent: true,
+},
+{
+  source: "/how-to-choose-the-right-provider-of-ketamine-therapy-for-ptsd",
+  destination: "/treatments/ptsd",
+  permanent: true,
+},
+{
+  source: "/our-team",
+  destination: "/providers",
+  permanent: true,
+},
+      {
   source: "/privacy-policy",
   destination: "/",
   permanent: true,
