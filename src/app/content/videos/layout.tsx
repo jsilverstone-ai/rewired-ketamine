@@ -4,8 +4,8 @@ export const metadata: Metadata = {
   title: "Videos | Ketamine Therapy Education | Aventura",
   description: "Watch educational videos about ketamine therapy, what to expect, and mental wellness from our locally owned Aventura clinic. ¡Hablamos Español!",
   openGraph: {
-    title: "Videos | Rewired Ketamine Aventura",
-    description: "Educational videos on ketamine therapy and care at our South Florida clinic.",
+title: "Videos | What to Expect at Rewired Ketamine",
+description: "Watch videos about visits, care, and education from our locally owned ketamine clinic in Aventura.",
   },
   alternates: {
     canonical: "https://rewiredketamine.com/content/videos",
