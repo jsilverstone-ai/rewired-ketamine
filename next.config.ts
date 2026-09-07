@@ -3,6 +3,56 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      {
+  source: "/privacy-policy",
+  destination: "/",
+  permanent: true,
+},
+{
+  source: "/ketamine-infusions",
+  destination: "/services",
+  permanent: true,
+},
+{
+  source: "/is-ketamine-therapy-safe-for-ptsd-patients",
+  destination: "/treatments/ptsd",
+  permanent: true,
+},
+{
+  source: "/how-ketamine-therapy-differs-from-traditional-psychotherapy",
+  destination: "/content/blog",
+  permanent: true,
+},
+{
+  source: "/key-factors-to-consider-before-trying-ketamine-infusion-therapy",
+  destination: "/services",
+  permanent: true,
+},
+{
+  source: "/can-ketamine-therapy-improve-sleep-and-mood",
+  destination: "/treatments/depression",
+  permanent: true,
+},
+{
+  source: "/when-to-consider-ketamine-therapy-for-suicidal-ideation",
+  destination: "/treatments/depression",
+  permanent: true,
+},
+{
+  source: "/ketamine-treatment-for-chronic-pain-in-fort-lauderdale-a-breakthrough-solution-for-lasting-relief",
+  destination: "/treatments",
+  permanent: true,
+},
+{
+  source: "/ketamine-assisted-therapy-rewired-ketamines-integrated-approach-to-breakthrough-mental-health-treatment",
+  destination: "/content/blog",
+  permanent: true,
+},
+{
+  source: "/ketamine-therapy-side-effects-rewired-ketamines-expert-management-and-patient-education-guide",
+  destination: "/content/blog",
+  permanent: true,
+},
       // Team / Providers
       {
         source: "/our-team",
