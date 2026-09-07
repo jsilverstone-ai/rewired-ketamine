@@ -202,9 +202,13 @@ const posts = blogPosts;
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">Aventura • South Florida</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Blog</h1>
-          <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
-            Insights on ketamine therapy, mental wellness, and care from our locally owned Aventura clinic.
-          </p>
+<p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
+  Articles from{" "}
+  <Link href="/" className="text-[#C9A66B] underline underline-offset-2 hover:text-white">
+    Rewired Ketamine, a ketamine clinic in Aventura
+  </Link>{" "}
+  serving Miami and South Florida.
+</p>
           <p className="text-[#C9A66B] font-bold text-lg md:text-xl">¡Hablamos Español!</p>
         </div>
       </section>

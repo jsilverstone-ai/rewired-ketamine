@@ -279,6 +279,13 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           </div>
         </div>
       </section>
+      <p>
+  All treatments are offered at{" "}
+  <Link href="/" className="text-[#C9A66B] underline underline-offset-2">
+    our ketamine clinic in Aventura
+  </Link>
+  .
+</p>
 
       {/* ===== COMPARISON CHART ===== */}
       <section className="py-16 px-6">

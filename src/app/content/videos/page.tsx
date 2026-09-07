@@ -269,9 +269,13 @@ export default function VideosPage() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">Aventura • South Florida</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Videos</h1>
-          <p className="text-xl text-white/85 max-w-2xl mx-auto">
-            Learn more about our approach, what to expect, and how we care for patients at our locally owned Aventura clinic.
-          </p>
+<p className="text-center text-lg text-[#1a1a1a]/80 max-w-3xl mx-auto mb-10">
+  These videos explain what to expect at{" "}
+  <Link href="/" className="text-[#C9A66B] underline underline-offset-2 hover:text-[#1a1a1a]">
+    our ketamine clinic in Aventura
+  </Link>
+  , serving Miami and South Florida. For clinic details, treatments, and to book a visit, start on the homepage.
+</p>
         </div>
       </section>
 
