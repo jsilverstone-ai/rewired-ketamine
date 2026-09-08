@@ -392,7 +392,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         <Link href="/services/talk-therapy" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
           <div className="h-48 overflow-hidden">
             <Image
-              src="/services/talk-therapy.jpg"
+              src="/services/talk-therapy-aventura-miami.jpg"
               alt="Talk therapy and integration support at Rewired Ketamine in Aventura"
               width={600}
               height={400}
