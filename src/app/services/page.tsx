@@ -316,7 +316,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         <Link href="/services/home-ketamine" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
           <div className="h-48 overflow-hidden">
             <Image
-              src="/services/home-ketamine.jpg"
+              src="/services/home-ketamine-therapy-miami.jpg"
               alt="At-home ketamine treatment options from Rewired Ketamine in Aventura"
               width={600}
               height={400}
@@ -340,7 +340,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         <Link href="/services/functional-wellness" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
           <div className="h-48 overflow-hidden">
             <Image
-              src="/services/functional-wellness.jpg"
+              src="/services/functional-wellness-aventura.jpg"
               alt="Functional wellness support at Rewired Ketamine in Aventura"
               width={600}
               height={400}
@@ -368,7 +368,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         <Link href="/services/medical-management" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
           <div className="h-48 overflow-hidden">
             <Image
-              src="/services/medical-management.jpg"
+              src="/services/medical-management-south-florida.jpg"
               alt="Medical management at Rewired Ketamine in Aventura"
               width={600}
               height={400}
