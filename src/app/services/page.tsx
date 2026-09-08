@@ -255,9 +255,9 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Our Services
           </h1>
-          <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
-            Fully guided ketamine care and supportive services designed around you — with compassion, partnership, and lasting change in mind.
-          </p>
+<p className="text-xl text-white/85 max-w-3xl mx-auto mb-6 leading-relaxed">
+  Rewired Ketamine is a locally owned ketamine clinic in Aventura serving Miami, Fort Lauderdale, and South Florida. Patients looking for ketamine therapy Miami and ketamine infusion Miami options can start here: in-clinic IV sessions, at-home modalities, and fully guided sessions available. Care is individualized. Results vary.
+</p>
 <p className="text-[#C9A66B] font-bold text-lg md:text-xl">
   ¡Hablamos Español!
 </p>
@@ -288,106 +288,197 @@ const [isContentOpen, setIsContentOpen] = useState(false);
   {/* Top row - 3 cards */}
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
     
-    {/* Ketamine Infusion */}
-    <Link href="/services/ketamine-infusion" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-      <div className="h-48 overflow-hidden">
-        <Image
-          src="/services/ketamine-infusion-aventura.jpg"
-          alt="Private ketamine infusion suite at Rewired Ketamine clinic in Aventura, Florida"
-          width={600}
-          height={400}
-          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-        />
-      </div>
-      <div className="p-5">
-        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Ketamine Infusion</h3>
-        <p className="text-[#555] text-sm leading-relaxed">
-          Fully guided IV ketamine sessions in a calm, private setting at our Aventura clinic.
-        </p>
-      </div>
-    </Link>
+        {/* Ketamine Infusion */}
+        <Link href="/services/ketamine-infusion" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+          <div className="h-48 overflow-hidden">
+            <Image
+              src="/services/ketamine-infusion-aventura.jpg"
+              alt="Private ketamine infusion suite at Rewired Ketamine clinic in Aventura, Florida"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div className="p-5">
+            <h3 className="text-2xl font-semibold text-[#0B1D36] mb-3">
+              Ketamine Infusion in Aventura
+            </h3>
+            <p className="text-[#555] leading-relaxed mb-4">
+              IV ketamine therapy in a private, monitored setting. Fully guided sessions available.
+            </p>
+            <p className="text-[#C9A66B] font-semibold">
+              ketamine infusion Miami
+            </p>
+          </div>
+        </Link>
 
-    {/* Home Ketamine */}
-    <Link href="/services/home-ketamine" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-      <div className="h-48 overflow-hidden">
-        <Image
-          src="/services/home-ketamine-therapy-miami.jpg"
-          alt="Comfortable home setting for at-home ketamine therapy serving Miami and South Florida"
-          width={600}
-          height={400}
-          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-        />
-      </div>
-      <div className="p-5">
-        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Home Ketamine</h3>
-        <p className="text-[#555] text-sm leading-relaxed">
-          Convenient at-home options including oral, nasal, and rectal modalities with professional guidance.
-        </p>
-      </div>
-    </Link>
+        {/* Home Ketamine */}
+        <Link href="/services/home-ketamine" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+          <div className="h-48 overflow-hidden">
+            <Image
+              src="/services/home-ketamine.jpg"
+              alt="At-home ketamine treatment options from Rewired Ketamine in Aventura"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div className="p-5">
+            <h3 className="text-2xl font-semibold text-[#0B1D36] mb-3">
+              At-Home Ketamine Treatment in Florida
+            </h3>
+            <p className="text-[#555] leading-relaxed mb-4">
+              Oral, nasal, and rectal options with clinical guidance — often more affordable than many Spravato copays.
+            </p>
+            <p className="text-[#C9A66B] font-semibold">
+              at home ketamine treatment
+            </p>
+          </div>
+        </Link>
 
-    {/* Functional Wellness */}
-    <Link href="/services/functional-wellness" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-      <div className="h-48 overflow-hidden">
-        <Image
-          src="/services/functional-wellness-aventura.jpg"
-          alt="Functional wellness and custom vitamin support at Rewired Ketamine in Aventura"
-          width={600}
-          height={400}
-          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-        />
-      </div>
-      <div className="p-5">
-        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Functional Wellness</h3>
-        <p className="text-[#555] text-sm leading-relaxed">
-          Custom vitamins and supportive wellness options integrated with your care plan.
-        </p>
-      </div>
-    </Link>
+        {/* Functional Wellness */}
+        <Link href="/services/functional-wellness" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+          <div className="h-48 overflow-hidden">
+            <Image
+              src="/services/functional-wellness.jpg"
+              alt="Functional wellness support at Rewired Ketamine in Aventura"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div className="p-5">
+            <h3 className="text-2xl font-semibold text-[#0B1D36] mb-3">
+              Functional Wellness Support
+            </h3>
+            <p className="text-[#555] leading-relaxed mb-4">
+              Custom vitamins can be included with infusions when appropriate.
+            </p>
+            <p className="text-[#C9A66B] font-semibold">
+              Learn more
+            </p>
+          </div>
+        </Link>
   </div>
 
-  {/* Bottom row - 2 cards centered */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {/* Bottom row - 2 cards centered */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
     
-    {/* Medical Management */}
-    <Link href="/services/medical-management" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-      <div className="h-48 overflow-hidden">
-        <Image
-          src="/services/medical-management-south-florida.jpg"
-          alt="Personalized medical management consultation at our Aventura ketamine clinic"
-          width={600}
-          height={400}
-          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-        />
-      </div>
-      <div className="p-5">
-        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Medical Management</h3>
-        <p className="text-[#555] text-sm leading-relaxed">
-          Thoughtful medication review and clinical support from our experienced team.
-        </p>
-      </div>
-    </Link>
+        {/* Medical Management */}
+        <Link href="/services/medical-management" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+          <div className="h-48 overflow-hidden">
+            <Image
+              src="/services/medical-management.jpg"
+              alt="Medical management at Rewired Ketamine in Aventura"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div className="p-5">
+            <h3 className="text-2xl font-semibold text-[#0B1D36] mb-3">
+              Medical Management
+            </h3>
+            <p className="text-[#555] leading-relaxed mb-4">
+              Our clinical team can review older diagnoses and current medications.
+            </p>
+            <p className="text-[#C9A66B] font-semibold">
+              Learn more
+            </p>
+          </div>
+        </Link>
 
-    {/* Talk Therapy */}
-    <Link href="/services/talk-therapy" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-md transition flex flex-col h-full">
-      <div className="h-48 overflow-hidden">
-        <Image
-          src="/services/talk-therapy-aventura-miami.jpg"
-          alt="Supportive talk therapy space at Rewired Ketamine clinic in Aventura, Florida"
-          width={600}
-          height={400}
-          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-        />
+        {/* Talk Therapy */}
+        <Link href="/services/talk-therapy" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
+          <div className="h-48 overflow-hidden">
+            <Image
+              src="/services/talk-therapy.jpg"
+              alt="Talk therapy and integration support at Rewired Ketamine in Aventura"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+          </div>
+          <div className="p-5">
+            <h3 className="text-2xl font-semibold text-[#0B1D36] mb-3">
+              Talk Therapy & Integration
+            </h3>
+            <p className="text-[#555] leading-relaxed mb-4">
+              In-house or referred specialists who understand psychedelics and neuroplasticity.
+            </p>
+            <p className="text-[#C9A66B] font-semibold">
+              talk therapy
+            </p>
+          </div>
+          </Link>
       </div>
-      <div className="p-5">
-        <h3 className="text-lg font-bold text-[#0B1D36] mb-2 group-hover:text-[#C9A66B] transition">Talk Therapy</h3>
-        <p className="text-[#555] text-sm leading-relaxed">
-          In-house and referred specialists who understand psychedelics and neuroplasticity.
+    </div>
+{/* Local service context */}
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-3xl mx-auto text-[#444] space-y-5 text-lg leading-relaxed">
+    <p>
+      If you are searching for a{" "}
+      <Link href="/" className="text-[#C9A66B] hover:underline">
+        ketamine clinic Miami
+      </Link>{" "}
+      patients can reach in Aventura, this page is the starting point. In-clinic{" "}
+      <Link href="/services/ketamine-infusion" className="text-[#C9A66B] hover:underline">
+        ketamine infusion Miami
+      </Link>{" "}
+      care,{" "}
+      <Link href="/services/home-ketamine" className="text-[#C9A66B] hover:underline">
+        at home ketamine treatment
+      </Link>
+      , and supportive services are all available after evaluation.
+    </p>
+    <p>
+      Many people come in after traditional care has not been enough, including those exploring{" "}
+      <Link href="/treatments/depression" className="text-[#C9A66B] hover:underline">
+        ketamine for depression Miami
+      </Link>
+      . Fully guided sessions are available. ¡Hablamos Español!
+    </p>
+  </div>
+</section>
+
+{/* FAQ */}
+<section className="py-16 px-6 bg-[#F6F1E8]">
+  <div className="max-w-3xl mx-auto">
+    <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#0B1D36] text-center mb-10">
+      Frequently Asked Questions
+    </h2>
+
+    <div className="faq-list space-y-0">
+      <div className="py-6 border-b border-[#e6e0d6]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Is there a ketamine clinic in Miami?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. Rewired Ketamine is located in Aventura and serves Miami, Fort Lauderdale, and South Florida.
         </p>
       </div>
-    </Link>
+
+      <div className="py-6 border-b border-[#e6e0d6]">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Do you offer ketamine infusion in Miami and Aventura?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. IV ketamine infusion is offered at our Aventura clinic. Fully guided sessions are available.
+        </p>
+      </div>
+
+      <div className="py-6">
+        <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">
+          Do you offer at-home ketamine in Florida?
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Yes. After evaluation, home options may include oral, nasal, and rectal modalities with clinical guidance.
+        </p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
       {/* ===== CTA ===== */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto text-center">
