@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+  source: "/locations",
+  destination: "/location",
+  permanent: true,
+},
+      {
   source: "/ketamine-therapy-florida",
   destination: "/",
   permanent: true,
