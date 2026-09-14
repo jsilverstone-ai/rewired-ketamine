@@ -10,11 +10,14 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.rewiredketamine.com"),
   title: {
     default: "Ketamine Clinic Miami & Aventura | Guided IV Therapy | Rewired Ketamine",
-    template: "%s | Rewired Ketamine Aventura"
+    template: "%s | Rewired Ketamine Aventura",
   },
-  description: "Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura. Fully guided sessions available for treatment-resistant depression, anxiety, PTSD, and chronic pain. Serving Miami, Fort Lauderdale & South Florida. ¡Hablamos Español!",  keywords: [
+  description:
+    "Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura. Fully guided sessions available for treatment-resistant depression, anxiety, PTSD, and chronic pain. Serving Miami, Fort Lauderdale & South Florida. ¡Hablamos Español!",
+  keywords: [
     "ketamine therapy Miami",
     "ketamine clinic Miami",
     "ketamine therapy Aventura",
@@ -22,10 +25,10 @@ export const metadata: Metadata = {
     "treatment resistant depression Aventura",
     "ketamine for anxiety Fort Lauderdale",
     "locally owned ketamine clinic",
-    "hablamos español ketamine"
+    "hablamos español ketamine",
   ],
   authors: [{ name: "Rewired Ketamine" }],
-    icons: {
+  icons: {
     icon: [
       { url: "/favicon.ico" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
@@ -34,8 +37,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Rewired Ketamine | Ketamine Therapy in Aventura, South Florida",
-    description: "Locally owned ketamine clinic in Aventura offering fully guided sessions for depression, anxiety, PTSD and chronic pain. Serving Miami & Fort Lauderdale. ¡Hablamos Español!",
-    url: "https://rewiredketamine.com",
+    description:
+      "Locally owned ketamine clinic in Aventura offering fully guided sessions for depression, anxiety, PTSD and chronic pain. Serving Miami & Fort Lauderdale. ¡Hablamos Español!",
+    url: "https://www.rewiredketamine.com",
     siteName: "Rewired Ketamine",
     locale: "en_US",
     type: "website",
@@ -43,14 +47,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rewired Ketamine | Ketamine Therapy in Aventura",
-    description: "Locally owned ketamine clinic in Aventura, FL. Fully guided sessions available. ¡Hablamos Español!",
+    description:
+      "Locally owned ketamine clinic in Aventura, FL. Fully guided sessions available. ¡Hablamos Español!",
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: "https://rewiredketamine.com",
+    canonical: "https://www.rewiredketamine.com",
   },
 };
 
