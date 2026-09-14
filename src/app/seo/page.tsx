@@ -89,16 +89,14 @@ export default function SEOPage() {
   useEffect(() => {
     const savedWeekly = localStorage.getItem("seo-weekly-todos");
     const savedMy = localStorage.getItem("seo-my-todos");
-    const lastReset = localStorage.getItem("seo-last-reset");
-    const today = new Date();
-    const day = today.getDay();
-    const lastResetDate = lastReset ? new Date(lastReset) : null;
-    const shouldReset = day === 0 && (!lastResetDate || lastResetDate.toDateString() !== today.toDateString());
+    const weekId = getWeekId();
+    const savedWeek = localStorage.getItem("seo-weekly-week-id");
+    const shouldReset = savedWeek !== weekId;
 
  if (shouldReset) {
   setWeeklyTodos(WEEKLY_DEFAULTS);
   localStorage.setItem("seo-weekly-todos", JSON.stringify(WEEKLY_DEFAULTS));
-  localStorage.setItem("seo-last-reset", today.toISOString());
+      localStorage.setItem("seo-weekly-week-id", weekId);
 } else if (savedWeekly) {
   const parsed = JSON.parse(savedWeekly);
   // If the list is empty or missing the new tasks, reload defaults
@@ -138,10 +136,10 @@ export default function SEOPage() {
     async function loadData() {
       try {
         const [rankRes, siteRes, backRes, serpRes] = await Promise.all([
-          fetch("/api/mangools/rankings"),
-          fetch("/api/mangools/site"),
-          fetch("/api/mangools/backlinks"),
-          fetch("/api/mangools/serp?kw=ketamine%20clinic%20miami"),
+          fetch("/api/mangools/rankings", { cache: "no-store" }),
+          fetch("/api/mangools/site", { cache: "no-store" }),
+          fetch("/api/mangools/backlinks", { cache: "no-store" }),
+          fetch("/api/mangools/serp?kw=ketamine%20clinic%20miami", { cache: "no-store" }),
         ]);
 
         const rankData = await rankRes.json();

@@ -15,13 +15,13 @@ export async function GET(request: NextRequest) {
   const locationId = searchParams.get("location_id") || DEFAULT_LOCATION_ID;
 
   try {
-    const res = await fetch(
-      `${API_BASE}/serpchecker/serps?kw=${encodeURIComponent(keyword)}&location_id=${locationId}`,
-      {
-        headers: { "x-access-token": apiKey },
-        next: { revalidate: 3600 },
-      }
-    );
+        const res = await fetch(url, {
+          headers: {
+            "x-access-token": apiKey,
+            "Content-Type": "application/json",
+          },
+          cache: "no-store",
+        });
 
     if (!res.ok) {
       return NextResponse.json(

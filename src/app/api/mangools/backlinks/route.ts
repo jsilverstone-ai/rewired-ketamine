@@ -10,21 +10,14 @@ export async function GET() {
   }
 
   try {
-    const res = await fetch(
-      `${API_BASE}/linkminer/links?url=${DOMAIN}&source=0&page=0&links_per_domain=1`,
-      {
-        headers: { "x-access-token": apiKey },
-        next: { revalidate: 86400 },
-      }
-    );
-
-    if (!res.ok) {
-      return NextResponse.json(
-        { error: `Mangools error ${res.status}`, details: await res.text() },
-        { status: 502 }
-      );
-    }
-
+        const url = `${API_BASE}/siteprofiler?url=${DOMAIN}`;
+        const res = await fetch(url, {
+          headers: {
+            "x-access-token": apiKey,
+            "Content-Type": "application/json",
+          },
+          cache: "no-store",
+        });
     const data = await res.json();
 
     const links = (data.links || []).slice(0, 15).map((link: any) => ({

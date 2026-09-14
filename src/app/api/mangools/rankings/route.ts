@@ -23,13 +23,13 @@ export async function GET() {
     let usedEndpoint = "";
 
     for (const url of endpoints) {
-      const res = await fetch(url, {
-        headers: {
-          "x-access-token": apiKey,
-          "Content-Type": "application/json",
-        },
-        next: { revalidate: 1800 },
-      });
+        const res = await fetch(url, {
+          headers: {
+            "x-access-token": apiKey,
+            "Content-Type": "application/json",
+          },
+          cache: "no-store",
+        });
 
       if (res.ok) {
         raw = await res.json();

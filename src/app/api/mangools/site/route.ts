@@ -10,21 +10,14 @@ export async function GET() {
   }
 
   try {
-    const res = await fetch(
-      `${API_BASE}/siteprofiler/overview?url=${DOMAIN}`,
-      {
-        headers: { "x-access-token": apiKey },
-        next: { revalidate: 86400 },
-      }
-    );
-
-    if (!res.ok) {
-      return NextResponse.json(
-        { error: `Mangools error ${res.status}`, details: await res.text() },
-        { status: 502 }
-      );
-    }
-
+        const url = `${API_BASE}/siteprofiler?url=${DOMAIN}`;
+        const res = await fetch(url, {
+          headers: {
+            "x-access-token": apiKey,
+            "Content-Type": "application/json",
+          },
+          cache: "no-store",
+        });
     const data = await res.json();
     const moz = data.moz || {};
     const majestic = data.majestic || {};
