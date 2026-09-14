@@ -388,6 +388,23 @@ export default function KetamineInTheNewsPage() {
     A small Toronto pilot study and the “Montreal model” explore pairing ketamine with weekly psychotherapy. Early findings suggest the combination may support neuropathic pain and help extend ketamine’s short-lived mental-health benefits.
   </p>
 </a>
+{/* Article — Texas A&M / Futurity coverage */}
+<a
+  href="https://stories.tamu.edu/news/2026/09/11/study-explores-how-ketamine-reshapes-brain-activity-in-older-adults/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">
+    Futurity · Texas A&M University · September 2026
+  </p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    How Ketamine Reshapes Brain Activity in Older Adults
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    Texas A&M researchers found time-specific brain-activity patterns after ketamine in older adults with treatment-resistant depression. Different information-organization patterns appeared at 1 hour, 24 hours, and 7 days. Greater brain-wide information sharing at 24 hours was linked to better symptom improvement at day 7. The work is aimed at possible biomarkers of response in late-life depression — not a guarantee of outcome.
+  </p>
+</a>
 
     </div>
   </div>
