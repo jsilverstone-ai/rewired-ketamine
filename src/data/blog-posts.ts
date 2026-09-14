@@ -7,6 +7,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "Ketamine Clinic in Miami vs Aventura: How to Choose a Local Provider",
+  slug: "ketamine-clinic-miami-vs-aventura",
+  excerpt: "What “ketamine clinic Miami” usually means, when Aventura is the right drive, and how to choose a locally owned provider.",
+  date: "September 2026"
+},
+{
+  title: "Ketamine Infusion in Miami: What Treatment Looks Like at Our Aventura Clinic",
+  slug: "ketamine-infusion-in-miami-aventura-clinic",
+  excerpt: "A clear look at IV ketamine infusion for Miami-area patients treated at our Aventura clinic.",
+  date: "September 2026"
+},
+  {
   title: "Migraine and Mental Health: Is There A Connection?",
   slug: "migraine-and-mental-health-is-there-a-connection",
   excerpt: "How migraines and mental health can overlap — and what patients in Aventura and Miami may want to know.",
