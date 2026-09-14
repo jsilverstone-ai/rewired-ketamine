@@ -10,7 +10,8 @@ export async function GET() {
   }
 
   try {
-        const url = `${API_BASE}/siteprofiler?url=${DOMAIN}`;
+
+    const url = `${API_BASE}/linkminer?url=${DOMAIN}`;
         const res = await fetch(url, {
           headers: {
             "x-access-token": apiKey,
