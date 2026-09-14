@@ -58,7 +58,12 @@ const priorityColors = {
   medium: "bg-amber-100 text-amber-700 border-amber-200",
   low: "bg-teal-100 text-teal-700 border-teal-200",
 };
-
+function getWeekId(d = new Date()) {
+  const start = new Date(d);
+  start.setDate(d.getDate() - d.getDay());
+  start.setHours(0, 0, 0, 0);
+  return start.toISOString().slice(0, 10);
+}
 export default function SEOPage() {
   const [authenticated, setAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
