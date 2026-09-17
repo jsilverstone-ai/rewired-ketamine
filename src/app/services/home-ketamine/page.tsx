@@ -347,24 +347,26 @@ const [isContentOpen, setIsContentOpen] = useState(false);
                 </p>
               </div>
             </div>
-                    {/* Subcutaneous */}
-        <div className="bg-white rounded-2xl p-8 border border-[#eee] text-center">
-          <h3 className="text-xl font-semibold text-[#0B1D36] mb-2">
-            Subcutaneous
-          </h3>
-          <p className="text-sm text-[#888] mb-2">Starts at</p>
-          <p className="text-4xl font-bold text-[#0B1D36] mb-3">$600</p>
-          <p className="text-[#555] leading-relaxed mb-6">
-            Multiple doses with clinical guidance and support
-          </p>
-          <a
-            href="https://www.youtube.com/watch?v=jOiU_C-ng6A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-[#C9A66B] font-semibold hover:underline"
-          >
-            Information video — click here
-          </a>
+        {/* Subcutaneous */}
+        <div className="bg-white rounded-2xl overflow-hidden border border-[#eee] text-center">
+          <div className="bg-[#0B1D36] text-white py-4 px-6">
+            <h3 className="text-xl font-semibold">Subcutaneous</h3>
+          </div>
+          <div className="p-8">
+            <p className="text-sm text-[#888] mb-2">Starts at</p>
+            <p className="text-4xl font-bold text-[#0B1D36] mb-3">$600</p>
+            <p className="text-[#555] leading-relaxed mb-6">
+              Multiple doses with clinical guidance and support
+            </p>
+            <a
+              href="https://www.youtube.com/watch?v=jOiU_C-ng6A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-[#C9A66B] font-semibold hover:underline"
+            >
+              Information video — click here
+            </a>
+          </div>
         </div>
 
           </div>
