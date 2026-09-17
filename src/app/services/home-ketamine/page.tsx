@@ -285,7 +285,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
 
           <div className="prose prose-lg max-w-none text-[#444]">
             <p className="text-lg leading-relaxed mb-6">
-              For those who prefer treatment at home, we offer a thoughtfully structured home ketamine program with clear clinical guidance and ongoing support. We provide different at-home modalities — including oral (RDTs), nasal, and rectal options — chosen to support improved bioavailability and comfort.
+              For those who prefer treatment at home, we offer a thoughtfully structured home ketamine program with clear clinical guidance and ongoing support. We provide different at-home modalities — including oral (RDTs), nasal, rectal, and subcutaneous options — chosen to support improved bioavailability and comfort.
             </p>
             <p className="text-lg leading-relaxed mb-6">
               In many cases, these approaches can also be more accessible than typical Spravato copays. You’ll receive the same careful oversight and integration focus, just in a setting that feels familiar and private.
@@ -304,7 +304,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
             Multiple dose options — starts at the prices below
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
 
             {/* Oral */}
             <div className="border border-[#ddd] rounded-2xl overflow-hidden text-center">
@@ -347,6 +347,25 @@ const [isContentOpen, setIsContentOpen] = useState(false);
                 </p>
               </div>
             </div>
+                    {/* Subcutaneous */}
+        <div className="bg-white rounded-2xl p-8 border border-[#eee] text-center">
+          <h3 className="text-xl font-semibold text-[#0B1D36] mb-2">
+            Subcutaneous
+          </h3>
+          <p className="text-sm text-[#888] mb-2">Starts at</p>
+          <p className="text-4xl font-bold text-[#0B1D36] mb-3">$600</p>
+          <p className="text-[#555] leading-relaxed mb-6">
+            Multiple doses with clinical guidance and support
+          </p>
+          <a
+            href="https://www.youtube.com/watch?v=jOiU_C-ng6A"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-[#C9A66B] font-semibold hover:underline"
+          >
+            Information video — click here
+          </a>
+        </div>
 
           </div>
 
