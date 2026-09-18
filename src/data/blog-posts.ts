@@ -6,7 +6,14 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  
   {
+  title: "Don’t Wait on Schedule I: What Trump’s Psychedelic Push Actually Means",
+  slug: "dont-wait-on-schedule-i-psychedelic-push",
+  excerpt: "Most classic psychedelics are still Schedule I. Ketamine and esketamine are already used in clinics serving Miami, Aventura, and North Miami.",
+  date: "September 2026"
+},
+{
   title: "Ketamine Clinic in Miami vs Aventura: How to Choose a Local Provider",
   slug: "ketamine-clinic-miami-vs-aventura",
   excerpt: "What “ketamine clinic Miami” usually means, when Aventura is the right drive, and how to choose a locally owned provider.",
