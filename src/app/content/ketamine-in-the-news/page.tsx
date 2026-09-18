@@ -405,6 +405,23 @@ export default function KetamineInTheNewsPage() {
     Texas A&M researchers found time-specific brain-activity patterns after ketamine in older adults with treatment-resistant depression. Different information-organization patterns appeared at 1 hour, 24 hours, and 7 days. Greater brain-wide information sharing at 24 hours was linked to better symptom improvement at day 7. The work is aimed at possible biomarkers of response in late-life depression — not a guarantee of outcome.
   </p>
 </a>
+{/* Article — Reuters */}
+<a
+  href="https://www.reuters.com/business/healthcare-pharmaceuticals/what-know-about-psychedelic-therapies-cited-by-trump-2026-09-15/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">
+    Reuters · September 15, 2026
+  </p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    Psychedelic Therapies Cited by Trump: What You Need to Know
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    Reuters reviews the clinical and regulatory landscape after an FDA public meeting on psychedelic therapies. Most remain Schedule I in the U.S. Trials are furthest along for severe depression and PTSD. The piece also notes Spravato (esketamine) is FDA-approved for treatment-resistant depression, and that ketamine is authorized as an anesthetic and sometimes used off-label for depression. Research is moving quickly; results and access still vary.
+  </p>
+</a>
 
     </div>
   </div>
