@@ -349,14 +349,15 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
   className="relative pt-28 pb-32 md:pt-36 md:pb-40 px-6 overflow-hidden"
 >
   {/* Optimized background image */}
-  <Image
-    src="/clinic.jpg"
-    alt="Rewired Ketamine clinic in Aventura, Florida"
-    fill
-    priority
-    className="object-cover object-center"
-    sizes="100vw"
-  />
+          <Image
+            src="/clinic.jpg"
+            alt="Rewired Ketamine clinic in Aventura, Florida"
+            fill
+            priority
+            fetchPriority="high"
+            className="object-cover object-center"
+            sizes="100vw"
+          />
 
   {/* Dark overlay */}
   <div className="absolute inset-0 bg-[#0B1D36]/75 z-0"></div>
