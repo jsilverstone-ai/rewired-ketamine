@@ -358,33 +358,16 @@ const [isContentOpen, setIsContentOpen] = useState(false);
                 <p className="text-sm text-[#555] mb-4">
                   Multiple doses with clinical guidance and support
                 </p>
-            <a
-              href="#subcutaneous-video"
-              className="text-sm text-[#C9A66B] font-semibold hover:underline"
-            >
-              Information video — click here
-            </a>
+              <Link
+                href="/content/videos#jOiU_C-ng6A"
+                className="text-sm text-[#C9A66B] font-semibold hover:underline"
+              >
+                Information video — click here
+              </Link>
               </div>
             </div>
-
-          </div>
-
+            </div>
           <p className="text-center text-[#666] text-sm mt-10">
-                    <div id="subcutaneous-video" className="max-w-3xl mx-auto mt-12">
-          <h3 className="text-xl font-semibold text-[#0B1D36] text-center mb-4">
-            Subcutaneous Ketamine for Depression
-          </h3>
-          <div className="relative w-full overflow-hidden rounded-2xl" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/jOiU_C-ng6A"
-              title="Subcutaneous Ketamine for Depression"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
             Includes consultation, medication, and follow-up care. Ask us about available options.
           </p>
         </div>
