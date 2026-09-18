@@ -5,12 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const videos = [
-    {
-    id: "jOiU_C-ng6A",
-    title: "Subcutaneous Ketamine for Depression",
-    description: "An overview of subcutaneous ketamine as an alternative to in-clinic IV infusions, with clinical guidance available.",
-  },
-  {
+ {
     id: "ydaLQuytZUI",
     title: "Welcome to Rewired Ketamine",
     description: "A warm introduction to our locally owned Aventura clinic and the care we provide.",
@@ -29,6 +24,11 @@ const videos = [
     id: "YigR2tHYeRw",
     title: "Why Rewired Ketamine Is Different",
     description: "An overview of how ketamine therapy is offered at our Aventura clinic.",
+  },
+      {
+    id: "jOiU_C-ng6A",
+    title: "Subcutaneous Ketamine for Depression",
+    description: "An overview of subcutaneous ketamine as an alternative to in-clinic IV infusions, with clinical guidance available.",
   },
   {
   id: "IJ5N6Zh1mIk",
