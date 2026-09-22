@@ -203,6 +203,37 @@ const nextConfig: NextConfig = {
         destination: "/treatments/ocd",
         permanent: true,
       },
+      // Locations
+{ source: "/keystone-islands", destination: "/location", permanent: true },
+{ source: "/north-miami-beach", destination: "/location", permanent: true },
+
+// Hubs
+{ source: "/florida-ketamine-clinic", destination: "/", permanent: true },
+{ source: "/conditions/postpartum-depression", destination: "/treatments/postpartum-depression", permanent: true },
+
+// Categories / author / dates
+{ source: "/category/:slug*", destination: "/content/blog", permanent: true },
+{ source: "/author/:slug*", destination: "/", permanent: true },
+{ source: "/2026/:month", destination: "/content/blog", permanent: true },
+
+// Strong old posts → closest new page
+{ source: "/the-rise-of-at-home-ketamine-treatment-in-florida-what-patients-need-to-know", destination: "/services/home-ketamine", permanent: true },
+{ source: "/home-healing-the-emerging-potential-of-at-home-ketamine-treatment-in-florida-for-alcoholism-recovery", destination: "/services/home-ketamine", permanent: true },
+{ source: "/common-myths-about-ketamine-therapy-for-ptsd", destination: "/treatments/ptsd", permanent: true },
+{ source: "/top-benefits-of-ketamine-treatment-for-ptsd-patients", destination: "/treatments/ptsd", permanent: true },
+{ source: "/ketamine-therapy-for-ptsd-serving-miami-florida-myths-vs-reality", destination: "/treatments/ptsd", permanent: true },
+{ source: "/role-of-ketamine-treatment-for-chronic-pain-in-fort-lauderdale", destination: "/treatments/chronic-pain", permanent: true },
+{ source: "/why-ketamine-is-a-breakthrough-in-depression-treatment", destination: "/treatments/depression", permanent: true },
+{ source: "/when-to-consider-ketamine-therapy-for-suicidal-ideation", destination: "/treatments/depression", permanent: true },
+{ source: "/a-simple-guide-to-ketamine-treatment-for-mental-health", destination: "/", permanent: true },
+{ source: "/is-ketamine-therapy-safe-myths-vs-facts", destination: "/", permanent: true },
+{ source: "/does-ketamine-therapy-get-you-high-rewired-ketamines-professional-approach-to-therapeutic-effects", destination: "/", permanent: true },
+{ source: "/how-ketamine-therapy-is-helping-people-reconnect-with-joy", destination: "/content/blog", permanent: true },
+{ source: "/why-more-professionals-are-talking-about-ketamine-therapy", destination: "/content/blog", permanent: true },
+{ source: "/the-luxury-difference-how-rewired-ketamines-premium-infusion-therapy-changes-the-florida-treatment-experience", destination: "/services", permanent: true },
+{ source: "/beyond-the-binary-ketamine-infusion-therapy-for-cyclothymia-and-subthreshold-mood-disorders", destination: "/services", permanent: true },
+{ source: "/rewiring-recovery-how-ketamine-infusion-therapy-in-florida-is-changing-the-landscape-of-drug-addiction-treatment", destination: "/services", permanent: true },
+{ source: "/healing-horizons-exploring-the-benefits-of-ketamine-treatment-in-floridas-alcoholism-recovery", destination: "/services/home-ketamine", permanent: true },
     ];
   },
 };
