@@ -400,6 +400,16 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
 </div>
 </section>
 
+<section className="py-8 px-6 bg-[#F8F5F0]">
+        <p className="text-base md:text-lg text-[#444] leading-relaxed max-w-3xl mx-auto text-center">
+          Patients searching <strong>ketamine Miami</strong> are usually looking for a clinic in the Aventura / North Miami metro — not only a downtown ZIP code.{" "}
+          <Link href="/location" className="text-[#C9A66B] font-semibold hover:underline">
+            Here’s how to get here
+          </Link>
+          .
+        </p>
+      </section>
+      
 {/* ===== TRUST BAR ===== */}
 <section className="bg-[#0B1D36] py-6">
   <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-10 gap-y-3 text-center text-white/90 text-sm md:text-base">

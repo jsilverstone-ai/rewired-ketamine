@@ -293,6 +293,13 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       <p>
   Many people searching for a <Link href="/" className="text-[#C9A66B] hover:underline">Miami ketamine clinic</Link> for treatment-resistant depression find their way to our locally owned practice in Aventura.
 </p>
+        <p className="text-lg text-[#444] leading-relaxed mb-6">
+          People searching <strong>ketamine treatment Miami</strong> often mean care for treatment-resistant depression at a South Florida clinic. See our{" "}
+          <Link href="/" className="text-[#C9A66B] hover:underline">homepage</Link>{" "}
+          and{" "}
+          <Link href="/services" className="text-[#C9A66B] hover:underline">services</Link>{" "}
+          for how visits are structured.
+        </p>
     </div>
 
     <div className="mt-14 bg-[#0B1D36] text-white rounded-2xl p-8 text-center">

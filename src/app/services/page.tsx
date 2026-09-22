@@ -416,6 +416,9 @@ const [isContentOpen, setIsContentOpen] = useState(false);
 {/* Local service context */}
 <section className="py-16 px-6 bg-white">
   <div className="max-w-3xl mx-auto text-[#444] space-y-5 text-lg leading-relaxed">
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">
+              Ketamine infusion in Miami
+            </h2>
     <p>
       If you are searching for a{" "}
       <Link href="/" className="text-[#C9A66B] hover:underline">
@@ -438,6 +441,14 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       </Link>
       . Fully guided sessions are available. ¡Hablamos Español!
     </p>
+                <p className="text-lg text-[#444] leading-relaxed">
+              <Link
+                href="/content/blog/ketamine-infusion-in-miami-aventura-clinic"
+                className="text-[#C9A66B] font-semibold hover:underline"
+              >
+                What ketamine infusion looks like at our Aventura clinic →
+              </Link>
+            </p>
   </div>
 </section>
 
