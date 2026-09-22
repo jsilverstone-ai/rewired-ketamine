@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const TRACKING_ID = "6a85bf233ecfef48782cb181";
+const TRACKING_ID = "6a9ef04c556f519f568cba28";
 const API_BASE = "https://api.mangools.com/v3";
 
 export async function GET() {
@@ -13,9 +13,7 @@ export async function GET() {
   try {
     // Try multiple endpoints until we get real rank data
     const endpoints = [
-      `${API_BASE}/serpwatcher/trackings/${TRACKING_ID}/stats`,
       `${API_BASE}/serpwatcher/trackings/${TRACKING_ID}/detail`,
-      `${API_BASE}/serpwatcher/trackings/${TRACKING_ID}`,
       `${API_BASE}/serpwatcher/trackings/${TRACKING_ID}/tracked-keywords`,
     ];
 
