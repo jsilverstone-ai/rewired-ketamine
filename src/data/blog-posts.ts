@@ -14,6 +14,12 @@ export const blogPosts: BlogPost[] = [
   date: "September 2026"
 },
 {
+  title: "Scientists Discover a Brain Signal Linked to Ketamine’s Antidepressant Effects",
+  slug: "brain-signal-ketamine-antidepressant-effects",
+  excerpt: "Texas A&M EEG research after one ketamine infusion in older veterans — early clues about response, not a clinic promise.",
+  date: "September 2026"
+},
+{
   title: "Ketamine Clinic in Miami vs Aventura: How to Choose a Local Provider",
   slug: "ketamine-clinic-miami-vs-aventura",
   excerpt: "What “ketamine clinic Miami” usually means, when Aventura is the right drive, and how to choose a locally owned provider.",
