@@ -247,6 +247,23 @@ export default function KetamineInTheNewsPage() {
     </div>
 
     <div className="grid gap-8">
+      {/* Article — SciTechDaily / Texas A&M */}
+<a
+  href="https://scitechdaily.com/scientists-discover-a-brain-signal-linked-to-ketamines-antidepressant-effects/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">
+    SciTechDaily · September 21, 2026
+  </p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    Scientists Discover a Brain Signal Linked to Ketamine’s Antidepressant Effects
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    SciTechDaily covers Texas A&amp;M research in Translational Psychiatry. Veterans over 55 received a single ketamine infusion. EEG patterns kept changing over the following week. Greater information-sharing in brain signals at 24 hours was linked to more symptom relief by day seven. Early work on possible response markers — not a clinic treatment claim.
+  </p>
+</a>
       {/* Article — Reuters */}
 <a
   href="https://www.reuters.com/business/healthcare-pharmaceuticals/what-know-about-psychedelic-therapies-cited-by-trump-2026-09-15/"
