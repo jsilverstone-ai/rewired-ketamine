@@ -57,59 +57,77 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
     __html: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: [
+      "mainEntity": [
         {
           "@type": "Question",
-          name: "Is there a ketamine clinic in Miami?",
-          acceptedAnswer: {
+          "name": "What is ketamine therapy at Rewired Ketamine in Aventura?",
+          "acceptedAnswer": {
             "@type": "Answer",
-            text: "Yes. Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura and serving the greater Miami area, Fort Lauderdale, and South Florida. We offer fully guided IV ketamine therapy in a calm, private setting.",
-          },
+            "text": "Rewired Ketamine is a locally owned clinic in Aventura offering fully guided ketamine sessions for people who have not gotten enough relief from usual treatments. Care is in person, with a clinical team present for the session—not a mail-order protocol."
+          }
         },
         {
           "@type": "Question",
-          name: "What makes Rewired Ketamine different for treatment-resistant depression?",
-          acceptedAnswer: {
+          "name": "Do you treat patients from Miami and Fort Lauderdale?",
+          "acceptedAnswer": {
             "@type": "Answer",
-            text: "We are a locally owned, 5-star rated clinic in Aventura. Fully guided sessions are available, and every treatment plan is individualized for patients who have not found enough relief with traditional approaches.",
-          },
+            "text": "Yes. The clinic is in Aventura and regularly sees people from Miami, North Miami Beach, Fort Lauderdale, and the rest of South Florida. If you searched “ketamine Miami” or “ketamine near me,” this is the office those searches should lead to."
+          }
         },
         {
           "@type": "Question",
-          name: "How does ketamine treatment work?",
-          acceptedAnswer: {
+          "name": "Who is ketamine therapy for?",
+          "acceptedAnswer": {
             "@type": "Answer",
-            text: "Ketamine works differently from traditional antidepressants. It targets the glutamate system in the brain and can produce rapid improvements in mood, often within hours to days rather than weeks.",
-          },
+            "text": "People often come to us for treatment-resistant depression, anxiety, PTSD, OCD, chronic pain, and related concerns when usual care has not been enough. A consult and medical screening decide whether ketamine is appropriate. It is not a first-line option for everyone."
+          }
         },
         {
           "@type": "Question",
-          name: "Who is a good candidate for ketamine therapy?",
-          acceptedAnswer: {
+          "name": "What happens during a guided infusion session?",
+          "acceptedAnswer": {
             "@type": "Answer",
-            text: "Ketamine therapy may help adults struggling with treatment-resistant depression, anxiety, PTSD, or related conditions who have not found sufficient relief from other approaches. Every patient receives a thorough medical evaluation first.",
-          },
+            "text": "You are in a private treatment room with monitoring and staff nearby. Sessions are typically about an hour, with time afterward to settle before you leave with a driver. We talk through the plan before the first visit so nothing is a surprise."
+          }
         },
         {
           "@type": "Question",
-          name: "How quickly can I expect results?",
-          acceptedAnswer: {
+          "name": "How is this different from at-home or unsupervised ketamine?",
+          "acceptedAnswer": {
             "@type": "Answer",
-            text: "Many patients notice meaningful improvement after the first one or two sessions. Results vary, and our team provides guided support and integration to help the benefits last.",
-          },
+            "text": "In-clinic care means dosing, monitoring, and support happen in the same room. We also offer structured at-home options when they are a fit—still with screening and follow-up, not an anonymous kit. The goal is a guided medical process."
+          }
         },
         {
           "@type": "Question",
-          name: "Is the treatment supervised?",
-          acceptedAnswer: {
+          "name": "How do I start?",
+          "acceptedAnswer": {
             "@type": "Answer",
-            text: "Yes. Every session at our Miami-area clinic is available fully guided and medically supervised so you feel safe and supported throughout the experience.",
-          },
+            "text": "Book a free consult. We review history, medications, and goals, explain off-label use and possible dissociation, and only then schedule treatment if you are a candidate. ¡Hablamos Español!"
+          }
         },
-      ],
-    }),
+        {
+          "@type": "Question",
+          "name": "What safety monitoring do you use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sessions include monitoring and a staffed recovery window. We screen for issues such as uncontrolled blood pressure, active psychosis, or unstable substance use before anyone starts. Exact steps are covered in consent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many sessions do people typically need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many people begin with a short series over a few weeks, then decide on boosters based on how they actually feel—not a fixed product calendar. Your clinician will set the plan after the consult."
+          }
+        }
+      ]
+    })
   }}
-/>{/* Skip to content - ADA */}
+/>
+
+{/* Skip to content - ADA */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#C9A66B] focus:text-[#0B1D36] focus:px-4 focus:py-2 focus:rounded focus:font-semibold"
@@ -541,70 +559,89 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
     </div>
   </div>
 </section>
-{/* FAQ Section */}
-<section className="py-16 bg-[#F6F1E8]">
-  <div className="max-w-3xl mx-auto px-4">
-<h2 className="text-3xl font-bold text-center mb-10">
-      Frequently Asked Questions
-    </h2>
+      {/* FAQ Section */}
+      <section className="py-16 bg-[#F6F1E8]">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Frequently Asked Questions
+          </h2>
 
-<div className="faq-list space-y-0">
-      <div>
-        <h3 className="text-lg font-semibold mb-2">
-          Is there a ketamine clinic in Miami?
-        </h3>
-        <p className="text-slate-600">
-          Yes. Rewired Ketamine is a leading ketamine clinic Miami patients trust, located in Aventura and serving the greater Miami area, Fort Lauderdale, and South Florida. We offer fully guided IV ketamine therapy in a calm, private setting.
-        </p>
-      </div>
+          <div className="faq-list space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">
+                What is ketamine therapy at Rewired Ketamine in Aventura?
+              </h3>
+              <p className="text-slate-600">
+                Rewired Ketamine is a locally owned clinic in Aventura offering fully guided ketamine sessions for people who have not gotten enough relief from usual treatments. Care is in person, with a clinical team present for the session—not a mail-order protocol.
+              </p>
+            </div>
 
-      <div>
-        <h3 className="text-lg font-semibold mb-2">
-          What makes Rewired Ketamine different for treatment-resistant depression?
-        </h3>
-        <p className="text-slate-600">
-          We are a locally owned, 5-star rated clinic in Aventura. Fully guided sessions are available, and every treatment plan is individualized for patients who have not found enough relief with traditional approaches.
-        </p>
-      </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">
+                Do you treat patients from Miami and Fort Lauderdale?
+              </h3>
+              <p className="text-slate-600">
+                Yes. The clinic is in Aventura and regularly sees people from Miami, North Miami Beach, Fort Lauderdale, and the rest of South Florida. If you searched “ketamine Miami” or “ketamine near me,” this is the office those searches should lead to.
+              </p>
+            </div>
 
-      <div>
-        <h3 className="text-lg font-semibold mb-2">
-          How does ketamine treatment work?
-        </h3>
-        <p className="text-slate-600">
-          Ketamine works differently from traditional antidepressants. It targets the glutamate system in the brain and can produce rapid improvements in mood, often within hours to days rather than weeks.
-        </p>
-      </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">
+                Who is ketamine therapy for?
+              </h3>
+              <p className="text-slate-600">
+                People often come to us for treatment-resistant depression, anxiety, PTSD, OCD, chronic pain, and related concerns when usual care has not been enough. A consult and medical screening decide whether ketamine is appropriate. It is not a first-line option for everyone.
+              </p>
+            </div>
 
-      <div>
-        <h3 className="text-lg font-semibold mb-2">
-          Who is a good candidate for ketamine therapy?
-        </h3>
-        <p className="text-slate-600">
-          Ketamine therapy may help adults struggling with treatment-resistant depression, anxiety, PTSD, or related conditions who have not found sufficient relief from other approaches. Every patient receives a thorough medical evaluation first.
-        </p>
-      </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">
+                What happens during a guided infusion session?
+              </h3>
+              <p className="text-slate-600">
+                You are in a private treatment room with monitoring and staff nearby. Sessions are typically about an hour, with time afterward to settle before you leave with a driver. We talk through the plan before the first visit so nothing is a surprise.
+              </p>
+            </div>
 
-      <div>
-        <h3 className="text-lg font-semibold mb-2">
-          How quickly can I expect results?
-        </h3>
-        <p className="text-slate-600">
-          Many patients notice meaningful improvement after the first one or two sessions. Results vary, and our team provides guided support and integration to help the benefits last.
-        </p>
-      </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">
+                How is this different from at-home or unsupervised ketamine?
+              </h3>
+              <p className="text-slate-600">
+                In-clinic care means dosing, monitoring, and support happen in the same room. We also offer structured at-home options when they are a fit—still with screening and follow-up, not an anonymous kit. The goal is a guided medical process.
+              </p>
+            </div>
 
-      <div>
-        <h3 className="text-lg font-semibold mb-2">
-          Is the treatment supervised?
-        </h3>
-        <p className="text-slate-600">
-          Yes. Every session at our Miami-area clinic is available fully guided and medically supervised so you feel safe and supported throughout the experience.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">
+                How do I start?
+              </h3>
+              <p className="text-slate-600">
+                Book a free consult. We review history, medications, and goals, explain off-label use and possible dissociation, and only then schedule treatment if you are a candidate. ¡Hablamos Español!
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">
+                What safety monitoring do you use?
+              </h3>
+              <p className="text-slate-600">
+                Sessions include monitoring and a staffed recovery window. We screen for issues such as uncontrolled blood pressure, active psychosis, or unstable substance use before anyone starts. Exact steps are covered in consent.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-2">
+                How many sessions do people typically need?
+              </h3>
+              <p className="text-slate-600">
+                Many people begin with a short series over a few weeks, then decide on boosters based on how they actually feel—not a fixed product calendar. Your clinician will set the plan after the consult.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
 {/* ===== HOW WE HELP ===== */}
 <section id="how-we-help" className="py-24 px-6">
   <div className="max-w-6xl mx-auto">
