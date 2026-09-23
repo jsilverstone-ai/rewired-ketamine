@@ -207,19 +207,6 @@ export default function DontWaitOnScheduleIPsychedelicPushPage() {
       </section>
 
       {/* CONTENT */}
-<section id="main-content" className="bg-[#0B1D36] text-white py-20 px-6">
-  <div className="max-w-4xl mx-auto text-center">
-    <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">Aventura • South Florida</p>
-    <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-      Don’t Wait on Schedule I: What Trump’s Psychedelic Push Actually Means
-    </h1>
-    <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
-      Policy headlines are moving. For patients looking at ketamine Miami and Aventura care, one option is already in clinic.
-    </p>
-    <p className="text-[#C9A66B] font-semibold text-lg md:text-xl">¡Hablamos Español!</p>
-  </div>
-</section>
-
 <section className="py-20 px-6">
   <div className="max-w-3xl mx-auto">
     <div className="text-[#444] space-y-6 text-lg leading-relaxed">

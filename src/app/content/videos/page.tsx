@@ -25,6 +25,11 @@ const videos = [
     title: "Why Rewired Ketamine Is Different",
     description: "An overview of how ketamine therapy is offered at our Aventura clinic.",
   },
+    {
+    id: "mEh9RNfyepo",
+    title: "Psychedelic Pipeline vs Ketamine Solutions",
+    description: "Most classic psychedelics are still Schedule I. Ketamine is already used in clinics — context for patients comparing ketamine therapy in Miami and Aventura.",
+  },
       {
     id: "jOiU_C-ng6A",
     title: "Subcutaneous Ketamine for Depression",
