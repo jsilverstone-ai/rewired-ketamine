@@ -23,8 +23,8 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
       "@context": "https://schema.org",
       "@type": ["MedicalClinic", "LocalBusiness"],
       "name": "Rewired Ketamine",
-      "image": "https://ketamine.vercel.app/logo.png",
-      "url": "https://ketamine.vercel.app",
+"url": "https://www.rewiredketamine.com",
+"image": "https://www.rewiredketamine.com/logo.png",
       "telephone": "+1-305-676-6070",
       "email": "info@rewiredketamine.com",
       "address": {
