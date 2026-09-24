@@ -18,11 +18,6 @@ const nextConfig: NextConfig = {
   destination: "/location",
   permanent: true,
 },
-      {
-  source: "/ketamine-therapy-florida",
-  destination: "/",
-  permanent: true,
-},
 {
   source: "/our-advisory-board",
   destination: "/providers",
