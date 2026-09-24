@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Personalized ketamine support for a wide range of mental health and pain conditions in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments",
+    canonical: "https://www.rewiredketamine.com/treatments",
   },
 };
 

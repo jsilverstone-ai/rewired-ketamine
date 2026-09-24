@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Support for depression when traditional treatments have not provided enough relief.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/depression",
+    canonical: "https://www.rewiredketamine.com/treatments/depression",
   },
 };
 

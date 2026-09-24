@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Exploring ketamine as part of a plan for mental clarity and focus.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/mental-fogginess",
+    canonical: "https://www.rewiredketamine.com/treatments/mental-fogginess",
   },
 };
 

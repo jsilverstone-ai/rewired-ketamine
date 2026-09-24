@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Professional IV ketamine infusions in a calm, private setting. Fully guided sessions available.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/services/ketamine-infusion",
+    canonical: "https://www.rewiredketamine.com/services/ketamine-infusion",
   },
 };
 

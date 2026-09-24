@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Supportive care for individuals seeking help with motivation and drive.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/motivation",
+    canonical: "https://www.rewiredketamine.com/treatments/motivation",
   },
 };
 

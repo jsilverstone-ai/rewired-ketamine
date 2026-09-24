@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Exploring ketamine as part of care for persistent tension headaches.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/tension-headaches",
+    canonical: "https://www.rewiredketamine.com/treatments/tension-headaches",
   },
 };
 

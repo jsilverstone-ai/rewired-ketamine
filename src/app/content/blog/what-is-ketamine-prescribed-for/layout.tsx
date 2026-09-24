@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Conditions commonly explored with ketamine therapy in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/what-is-ketamine-prescribed-for",
+    canonical: "https://www.rewiredketamine.com/content/blog/what-is-ketamine-prescribed-for",
   },
 };
 

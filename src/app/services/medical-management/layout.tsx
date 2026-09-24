@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Thoughtful medical management and medication assessment as part of comprehensive care.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/services/medical-management",
+    canonical: "https://www.rewiredketamine.com/services/medical-management",
   },
 };
 

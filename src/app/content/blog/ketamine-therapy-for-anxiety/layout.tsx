@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Supportive ketamine options for anxiety in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/ketamine-therapy-for-anxiety",
+    canonical: "https://www.rewiredketamine.com/content/blog/ketamine-therapy-for-anxiety",
   },
 };
 

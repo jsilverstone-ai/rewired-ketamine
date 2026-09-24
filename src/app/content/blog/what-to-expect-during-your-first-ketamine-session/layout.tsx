@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "What happens before, during, and after your first visit.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/what-to-expect-during-your-first-ketamine-session",
+    canonical: "https://www.rewiredketamine.com/content/blog/what-to-expect-during-your-first-ketamine-session",
   },
 };
 

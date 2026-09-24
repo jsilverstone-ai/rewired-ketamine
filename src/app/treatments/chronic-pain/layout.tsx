@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Supportive care for individuals living with chronic pain.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/chronic-pain",
+    canonical: "https://www.rewiredketamine.com/treatments/chronic-pain",
   },
 };
 

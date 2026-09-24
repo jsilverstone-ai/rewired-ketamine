@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Conveniently located in Aventura, Florida. Easy access for patients from Miami and Fort Lauderdale.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/location",
+    canonical: "https://www.rewiredketamine.com/location",
   },
 };
 

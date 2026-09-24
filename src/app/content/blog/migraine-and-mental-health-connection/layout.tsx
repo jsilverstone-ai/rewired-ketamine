@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Exploring the relationship between migraines and mental wellness.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/migraine-and-mental-health-connection",
+    canonical: "https://www.rewiredketamine.com/content/blog/migraine-and-mental-health-connection",
   },
 };
 

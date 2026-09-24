@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Exploring ketamine as part of a broader plan for OCD.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/ocd",
+    canonical: "https://www.rewiredketamine.com/treatments/ocd",
   },
 };
 

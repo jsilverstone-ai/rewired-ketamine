@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Understanding ketamine-assisted therapy and the process at our South Florida clinic.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/what-is-ketamine-assisted-therapy",
+    canonical: "https://www.rewiredketamine.com/content/blog/what-is-ketamine-assisted-therapy",
   },
 };
 

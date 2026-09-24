@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Compassionate, clinically supervised support in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/eating-disorder",
+    canonical: "https://www.rewiredketamine.com/treatments/eating-disorder",
   },
 };
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "What to expect during a ketamine therapy session in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/what-does-ketamine-therapy-feel-like",
+    canonical: "https://www.rewiredketamine.com/content/blog/what-does-ketamine-therapy-feel-like",
   },
 };
 

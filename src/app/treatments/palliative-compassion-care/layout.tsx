@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Thoughtful, supportive care focused on comfort and quality of life.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/palliative-compassion-care",
+    canonical: "https://www.rewiredketamine.com/treatments/palliative-compassion-care",
   },
 };
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Current news and research related to ketamine therapy.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/ketamine-in-the-news",
+    canonical: "https://www.rewiredketamine.com/content/ketamine-in-the-news",
   },
 };
 

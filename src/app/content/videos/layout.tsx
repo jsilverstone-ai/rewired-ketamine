@@ -8,7 +8,7 @@ title: "Videos | What to Expect at Rewired Ketamine",
 description: "Watch videos about visits, care, and education from our locally owned ketamine clinic in Aventura.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/videos",
+    canonical: "https://www.rewiredketamine.com/content/videos",
   },
 };
 

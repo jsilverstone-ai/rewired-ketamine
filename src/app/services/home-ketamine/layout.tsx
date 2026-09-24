@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Convenient at-home ketamine modalities with professional guidance from our Aventura clinic.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/services/home-ketamine",
+    canonical: "https://www.rewiredketamine.com/services/home-ketamine",
   },
 };
 

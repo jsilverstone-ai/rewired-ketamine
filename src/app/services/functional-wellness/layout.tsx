@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Personalized functional wellness and custom vitamin support alongside ketamine care.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/services/functional-wellness",
+    canonical: "https://www.rewiredketamine.com/services/functional-wellness",
   },
 };
 

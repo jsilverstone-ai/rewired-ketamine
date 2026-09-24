@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Experienced clinical and medical leadership at our locally owned ketamine clinic in Aventura, Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/providers",
+    canonical: "https://www.rewiredketamine.com/providers",
   },
 };
 

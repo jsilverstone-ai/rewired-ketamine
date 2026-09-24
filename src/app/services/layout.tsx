@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Ketamine clinic in Aventura serving Miami and South Florida. IV ketamine infusion, at-home options, and fully guided sessions available. ¡Hablamos Español!",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/services",
+    canonical: "https://www.rewiredketamine.com/services",
   },
 };
 

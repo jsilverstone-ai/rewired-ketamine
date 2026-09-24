@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Blog, videos, and news about ketamine therapy from our South Florida clinic.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content",
+    canonical: "https://www.rewiredketamine.com/content",
   },
 };
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Thoughtful ketamine support for individuals living with PTSD in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/ptsd",
+    canonical: "https://www.rewiredketamine.com/treatments/ptsd",
   },
 };
 

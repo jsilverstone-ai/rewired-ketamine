@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Thoughtful care during a critical time for new mothers in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/postpartum-depression",
+    canonical: "https://www.rewiredketamine.com/treatments/postpartum-depression",
   },
 };
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Psychedelic-informed talk therapy and integration support in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/services/talk-therapy",
+    canonical: "https://www.rewiredketamine.com/services/talk-therapy",
   },
 };
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Exploring ketamine as a supportive option for anxiety when other approaches have not been enough.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/treatments/anxiety",
+    canonical: "https://www.rewiredketamine.com/treatments/anxiety",
   },
 };
 
