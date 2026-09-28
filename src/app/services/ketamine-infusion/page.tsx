@@ -288,9 +288,19 @@ const [isContentOpen, setIsContentOpen] = useState(false);
               We offer fully guided ketamine infusion therapy in a calm, private setting designed around you. Every room can be adjusted to hold space in the way that feels right — lighting, sound, temperature, and atmosphere are all flexible so the environment supports your process.
             </p>
             <p className="text-lg leading-relaxed mb-6">
+              Patients looking for <strong>ketamine infusion Miami</strong> care are usually coming from the city and nearby neighborhoods to our Aventura clinic — the same rooms, the same team. If you want the wider menu of IV and at-home options, start with{" "}
+              <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">
+                our services
+              </Link>
+              {" "}or the{" "}
+              <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">
+                homepage
+              </Link>
+              . Fully guided sessions are available.
+            </p>
+            <p className="text-lg leading-relaxed mb-6">
               Our guiding approach is rooted in compassion and true partnership. We walk alongside you with care and intention, creating the conditions for meaningful insight and lasting change. Each session is carefully supervised so you feel safe, supported, and never alone.
             </p>
-            Our team provides fully guided sessions at <Link href="/">our Miami ketamine clinic</Link> in Aventura.
           </div>
         </div>
       </section>
