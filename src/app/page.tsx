@@ -418,9 +418,13 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
 </div>
 </section>
 
-<section className="py-8 px-6 bg-[#F8F5F0]">
+      <section className="py-8 px-6 bg-[#F8F5F0]">
         <p className="text-base md:text-lg text-[#444] leading-relaxed max-w-3xl mx-auto text-center">
-          Patients searching <strong>ketamine Miami</strong> are usually looking for a clinic in the Aventura / North Miami metro — not only a downtown ZIP code.{" "}
+          Rewired Ketamine is an Aventura clinic for patients coming from Miami and Fort Lauderdale. If you searched <strong>ketamine Miami</strong>, this is the North Miami metro office —{" "}
+          <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">
+            ketamine infusion in Miami
+          </Link>{" "}
+          is done here.{" "}
           <Link href="/location" className="text-[#C9A66B] font-semibold hover:underline">
             Here’s how to get here
           </Link>
