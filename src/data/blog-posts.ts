@@ -6,6 +6,12 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+  title: "Ketamine and Opioid-Induced Hyperalgesia: What a New Review Actually Says",
+  slug: "ketamine-opioid-induced-hyperalgesia",
+  excerpt: "A 2026 narrative review on the NMDA receptor, opioid-related pain sensitivity, and where ketamine fits — not a treatment promise.",
+  date: "October 2026"
+},
   
   {
   title: "Don’t Wait on Schedule I: What Trump’s Psychedelic Push Actually Means",
