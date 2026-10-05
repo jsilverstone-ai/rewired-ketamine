@@ -247,6 +247,23 @@ export default function KetamineInTheNewsPage() {
     </div>
 
     <div className="grid gap-8">
+      {/* Article — Revista Veritas */}
+<a
+  href="https://www.revistaveritas.org/index.php/veritas/article/view/1828"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">
+    Revista Veritas · September 30, 2026
+  </p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    The NMDA Receptor in Opioid-Induced Hyperalgesia
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    A narrative review of how opioid exposure can increase pain sensitivity, and why ketamine and magnesium are the agents most directly tied to the NMDA receptor in perioperative research. It supports an opioid-sparing role in acute surgical pain. It is not a depression-treatment claim.
+  </p>
+</a>
       {/* Article — SciTechDaily / Texas A&M */}
 <a
   href="https://scitechdaily.com/scientists-discover-a-brain-signal-linked-to-ketamines-antidepressant-effects/"
