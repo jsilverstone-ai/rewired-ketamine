@@ -77,9 +77,10 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-NLD85SC9');
           `}
         </Script>
-           <script
+        <script
           defer
-          src="https://pulse.clickguard.com/s/acczNAeLbdZ5F/astJamlAqlGye"
+          type="application/javascript"
+          src="https://pulse.clickguard.com/s/acczNAeLbdZ5F/astJamLAqIGye"
         />
         {/* End Google Tag Manager */}
       </head>
