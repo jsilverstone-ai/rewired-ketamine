@@ -310,7 +310,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           </div>
           <div className="p-5">
             <h3 className="text-2xl font-semibold text-[#0B1D36] mb-3">Spravato</h3>
-            <p className="text-[#555] leading-relaxed mb-4">FDA-approved esketamine nasal spray for adults with treatment-resistant depression. REMS-certified clinic. Prior authorization required.</p>
+            <p className="text-[#555] leading-relaxed mb-4">FDA-approved esketamine nasal spray for adults now available. REMS-certified clinic. Covered by most insurance plans.</p>
             <p className="text-[#C9A66B] font-semibold">Learn more</p>
           </div>
         </Link>

@@ -266,17 +266,17 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           <div className="relative w-full overflow-hidden rounded-2xl border border-[#eee] bg-[#F8F5F0] aspect-video flex items-center justify-center">
             <p className="text-[#0B1D36] font-semibold text-center px-6">Video coming soon — FDA approval, the visit, and monitoring.</p>
           </div>
-          <p className="text-sm text-[#666] text-center mt-4">Spravato is self-administered under observation. It is not taken home.</p>
+          <p className="text-sm text-[#666] text-center mt-4">Spravato is comfortably administered in our REMS-certified clinic.</p>
         </div>
       </section>
 
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto text-[#444] text-lg leading-relaxed space-y-6">
           <p>
-            Spravato is the brand name for esketamine nasal spray, made by Johnson &amp; Johnson. It is not the same visit as an IV ketamine infusion. Prescribing at this clinic is led by Kelsey Vivatson, PMHNP-BC, APRN. The office is REMS-certified, which is required before anyone can receive a dose.
+            Spravato is the brand name for esketamine nasal spray, made by Johnson &amp; Johnson. It is not the same visit as an IV ketamine infusion. Prescribing at this clinic is led by our mental healthcare team. The office is REMS-certified, which is required before anyone can receive a dose.
           </p>
           <p>
-            We are locally owned in Aventura. A consult comes first. Spravato is scheduled only if it fits the approved use and your plan allows it. Results vary.
+            We are locally owned in Aventura. Our initial consult is always free. Spravato approval is dependant on your medical evaluation, chart review and insurance authorization.
           </p>
         </div>
       </section>
@@ -308,7 +308,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-[#666] mt-4">Spravato is not approved for children. A better mood after a dose does not replace hospital care if that is needed.</p>
+          <p className="text-sm text-[#666] mt-4">Spravato is not approved for children.</p>
         </div>
       </section>
 
@@ -329,17 +329,17 @@ const [isContentOpen, setIsContentOpen] = useState(false);
                 <tr className="border-t border-[#eee]">
                   <td className="px-4 py-4">Weeks 1–4</td>
                   <td className="px-4 py-4">Twice a week</td>
-                  <td className="px-4 py-4">Nasal spray under observation, then at least 2 hours of monitoring, including pulse oximetry.</td>
+                  <td className="px-4 py-4">Nasal spray under observation, then at least 2 hours of monitoring. We can customize the treatment plan based on your needs.</td>
                 </tr>
                 <tr className="border-t border-[#eee] bg-[#F8F5F0]">
                   <td className="px-4 py-4">Weeks 5–8</td>
                   <td className="px-4 py-4">Once a week</td>
-                  <td className="px-4 py-4">Same observation and monitoring. You need a ride home.</td>
+                  <td className="px-4 py-4">Same observation and monitoring.</td>
                 </tr>
                 <tr className="border-t border-[#eee]">
                   <td className="px-4 py-4">Week 9 on</td>
                   <td className="px-4 py-4">Every 1–2 weeks</td>
-                  <td className="px-4 py-4">Continued only if it is still appropriate. The spray is never dispensed for home use.</td>
+                  <td className="px-4 py-4">Continued only if it is still appropriate. Spravato is not approved for home use.</td>
                 </tr>
               </tbody>
             </table>
@@ -369,27 +369,27 @@ const [isContentOpen, setIsContentOpen] = useState(false);
                 </tr>
                 <tr className="border-t border-[#eee]">
                   <td className="px-4 py-4 align-top">3. Prior authorization</td>
-                  <td className="px-4 py-4">We submit to the plan. Approval is not guaranteed. Timing depends on the insurer.</td>
+                  <td className="px-4 py-4">We submit to the plan. Approval is not guaranteed. Unfortunately, timing depends on the insurer.</td>
                 </tr>
                 <tr className="border-t border-[#eee] bg-[#F8F5F0]">
                   <td className="px-4 py-4 align-top">4. First visit</td>
-                  <td className="px-4 py-4">Only after authorization, in this certified setting, with a driver arranged.</td>
+                  <td className="px-4 py-4">Only after authorization, in this certified setting.</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="text-[#444] mt-6 leading-relaxed">
-            We currently submit Spravato authorizations for Cigna, UnitedHealthcare, and Aetna. Blue Cross Blue Shield is out of network. There is no posted cash price. Medicare and other plans can be reviewed at the consult. Coverage, copays, and deductibles are set by your policy, not by the clinic.
+            We currently submit Spravato authorizations for Cigna, UnitedHealthcare, and Aetna and Blue Cross Blue Shield out of network. Other plans can be reviewed at the consult. Coverage, copays, and deductibles are set by your policy, not by the clinic.
           </p>
         </div>
       </section>
 
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Start with a consult</h2>
+          <h2 className="text-3xl font-bold mb-6">Start with a free consult</h2>
           <p className="text-xl text-white/80 mb-10">We will tell you if Spravato is an option and what your plan needs. ¡Hablamos Español!</p>
           <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-10 py-4 rounded-full text-lg hover:bg-white transition">
-            Book Free Consultation
+            BookFree Consultation
           </Link>
         </div>
       </section>
@@ -399,7 +399,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to take the next step?</h2>
           <p className="text-xl text-white/80 mb-10">
-            Book a free consultation. No pressure — just honest answers and a clear path forward.
+            Book a free consultation. No pressure — just honest answers with industry-leading expertise. We will tell you if Spravato is an option and what your plan needs. ¡Hablamos Español!
           </p>
           <Link
             href="/#contact"
