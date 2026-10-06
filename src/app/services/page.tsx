@@ -290,7 +290,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         <Link href="/services/ketamine-infusion" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
           <div className="h-48 overflow-hidden">
             <Image
-              src="/services/ketamine-infusion-therapy-aventura.jpg"
+              src="/services/ketamine-infusion-aventura.jpg"
               alt="Ketamine infusion therapy room at Rewired Ketamine in Aventura"
               width={600}
               height={400}
