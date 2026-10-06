@@ -264,14 +264,19 @@ const [isContentOpen, setIsContentOpen] = useState(false);
 
       <section className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl font-bold text-[#0B1D36] text-center mb-6">How Spravato is given</h2>
-          <div className="relative w-full overflow-hidden rounded-2xl border border-[#eee] bg-[#F8F5F0] aspect-video flex items-center justify-center">
-            <p className="text-[#0B1D36] font-semibold text-center px-6">Video coming soon — FDA approval, the visit, and monitoring.</p>
+          <h2 className="font-serif text-3xl font-bold text-[#0B1D36] text-center mb-6">What is Spravato?</h2>
+          <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/lUwX9q-Mu-0"
+              title="Spravato at Rewired Ketamine in Aventura"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
-          <p className="text-sm text-[#666] text-center mt-4">Spravato is comfortably administered in our REMS-certified clinic.</p>
+          <p className="text-sm text-[#666] text-center mt-4">Spravato is self-administered under observation. It is not taken home.</p>
         </div>
       </section>
-
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto text-[#444] text-lg leading-relaxed space-y-6">
           <p>
