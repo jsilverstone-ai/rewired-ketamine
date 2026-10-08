@@ -292,8 +292,8 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         <Link href="/services/ketamine-infusion" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
           <div className="h-48 overflow-hidden">
             <Image
-              src="/services/spravato-aventura.jpg"
-              alt="Spravato consult office at Rewired Ketamine in Aventura, Florida"
+              src="/services/ketamine-infusion-aventura.jpg"
+              alt="Ketamine infusion session at Rewired Ketamine in Aventura, Florida"
               width={1200}
               height={800}
               className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
@@ -307,12 +307,20 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         </Link>
 
         <Link href="/services/spravato" className="group bg-white rounded-2xl overflow-hidden border border-[#eee] shadow-sm hover:shadow-lg transition">
-          <div className="h-48 bg-[#0B1D36] flex items-center justify-center">
-            <span className="text-[#C9A66B] font-semibold tracking-wide">Spravato</span>
+          <div className="h-48 overflow-hidden">
+            <Image
+              src="/services/spravato-aventura.jpg"
+              alt="Spravato consult office at Rewired Ketamine in Aventura, Florida"
+              width={1200}
+              height={800}
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
           </div>
           <div className="p-5">
             <h3 className="text-2xl font-semibold text-[#0B1D36] mb-3">Spravato</h3>
-            <p className="text-[#555] leading-relaxed mb-4">FDA-approved esketamine nasal spray for adults now available. REMS-certified clinic. Covered by most insurance plans.</p>
+            <p className="text-[#555] leading-relaxed mb-4">
+              FDA-approved esketamine nasal spray for adults now available. REMS-certified clinic. Covered by most insurance plans.
+            </p>
             <p className="text-[#C9A66B] font-semibold">Learn more</p>
           </div>
         </Link>
