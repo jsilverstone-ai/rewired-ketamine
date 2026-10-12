@@ -12,6 +12,12 @@ export const blogPosts: BlogPost[] = [
   excerpt: "A 2025 review of intranasal esketamine for treatment-resistant depression, and how in-clinic Spravato visits work at our Aventura clinic.",
   date: "October 2026"
 },
+{
+  title: "Ketamine for Anxiety in Miami and Aventura: What a 2026 Review Found",
+  slug: "ketamine-for-anxiety-miami-aventura",
+  excerpt: "A 2026 review linked ketamine with reduced anxiety in anxiety disorders and treatment-resistant depression. How guided care works at our Aventura clinic.",
+  date: "October 2026"
+},
   {
   title: "Ketamine and Opioid-Induced Hyperalgesia: What a New Review Actually Says",
   slug: "ketamine-opioid-induced-hyperalgesia",
