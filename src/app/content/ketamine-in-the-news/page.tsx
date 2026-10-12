@@ -249,6 +249,21 @@ export default function KetamineInTheNewsPage() {
     </div>
 
     <div className="grid gap-8">
+            {/* Article: Spravato 2025 review */}
+      <a 
+        href="https://www.dovepress.com/spravato-for-treatment-resistant-depression-efficacy-and-sexual-side-e-peer-reviewed-fulltext-article-NDT" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+      >
+        <p className="text-sm text-[#C9A66B] font-semibold mb-2">Neuropsychiatric Disease and Treatment · September 2025</p>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+          Spravato for Treatment-Resistant Depression: A 2025 Review
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Raza and colleagues reviewed intranasal esketamine (Spravato) for major depression and treatment-resistant depression. Trials such as TRANSFORM-2, SUSTAIN-1, and ASPIRE are cited for rapid antidepressant effects, often within hours, through NMDA receptor antagonism. Spravato is given in clinic under REMS. Reported effects include dissociation and blood pressure changes. A 2025 review reported lower rates of sexual side effects than many SSRIs; individual results vary. This is a research summary, not a treatment claim.
+        </p>
+      </a>
       {/* Article — Revista Veritas */}
 <a
   href="https://www.revistaveritas.org/index.php/veritas/article/view/1828"
