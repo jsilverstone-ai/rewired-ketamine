@@ -6,7 +6,7 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
-  {
+{
   title: "Spravato for Treatment-Resistant Depression: What a 2025 Review Found",
   slug: "spravato-for-treatment-resistant-depression",
   excerpt: "A 2025 review of intranasal esketamine for treatment-resistant depression, and how in-clinic Spravato visits work at our Aventura clinic.",
