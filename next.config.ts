@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      { source: "/ptsd-guide", destination: "/treatments/ptsd", permanent: true },
+{ source: "/migraine", destination: "/treatments/tension-headaches", permanent: true },
+{ source: "/ocd-florida", destination: "/treatments/ocd", permanent: true },
+{ source: "/at-home-alcoholism", destination: "/services/home-ketamine", permanent: true },
       {
   source: "/free-consultation",
   destination: "/#contact",
