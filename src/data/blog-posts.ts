@@ -7,6 +7,12 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "Spravato for Treatment-Resistant Depression: What a 2025 Review Found",
+  slug: "spravato-for-treatment-resistant-depression",
+  excerpt: "A 2025 review of intranasal esketamine for treatment-resistant depression, and how in-clinic Spravato visits work at our Aventura clinic.",
+  date: "October 2026"
+},
+  {
   title: "Ketamine and Opioid-Induced Hyperalgesia: What a New Review Actually Says",
   slug: "ketamine-opioid-induced-hyperalgesia",
   excerpt: "A 2026 narrative review on the NMDA receptor, opioid-related pain sensitivity, and where ketamine fits — not a treatment promise.",
