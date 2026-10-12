@@ -617,6 +617,18 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
                 In-clinic care means dosing, monitoring, and support happen in the same room. We also offer structured at-home options when they are a fit—still with screening and follow-up, not an anonymous kit. The goal is a guided medical process.
               </p>
             </div>
+                        <div>
+              <h3 className="text-lg font-semibold mb-2">
+                Do you offer Spravato?
+              </h3>
+              <p className="text-slate-600">
+                Yes. Rewired Ketamine is a REMS-certified clinic in Aventura offering Spravato (esketamine nasal spray) for treatment-resistant depression. It is given in the office under observation and is different from IV ketamine. See{" "}
+                <Link href="/services/spravato" className="text-[#C9A66B] font-semibold hover:underline">
+                  Spravato
+                </Link>{" "}
+                for how visits and insurance work. ¡Hablamos Español!
+              </p>
+            </div>
 
             <div>
               <h3 className="text-lg font-semibold mb-2">

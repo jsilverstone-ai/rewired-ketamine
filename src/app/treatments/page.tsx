@@ -265,6 +265,13 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           </p>
         </div>
       </section>
+      <p className="text-lg leading-relaxed mb-6">
+  People searching <strong>ketamine treatment Miami</strong> are usually looking for in-person care in the Aventura / North Miami metro. That care is at{" "}
+  <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">our clinic</Link>
+  {" "}and listed under{" "}
+  <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">services</Link>.
+  Fully guided sessions are available.
+</p>
 
       {/* ===== VIDEO ===== */}
       <section className="py-16 px-6 bg-white">
