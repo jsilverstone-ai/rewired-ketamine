@@ -249,6 +249,37 @@ export default function KetamineInTheNewsPage() {
     </div>
 
     <div className="grid gap-8">
+            {/* Article: IB Journal */}
+      <a 
+        href="https://ibjournal.net/ketamine-clinic-in-aventura-reports-3000-infusions-and-85-success-rate-for-treatment-resistant-conditions/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+      >
+        <p className="text-sm text-[#C9A66B] font-semibold mb-2">International Business Journal · October 15, 2026</p>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+          Ketamine Clinic in Aventura Reports 3,000 Infusions and 85% Success Rate for Treatment-Resistant Conditions
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          International Business Journal profiled Rewired Ketamine’s Aventura clinic, noting more than 3,000 guided infusions and the clinic’s reported outcomes for patients who had not found relief with standard treatments. Locally owned, Spanish-speaking, in-clinic care.
+        </p>
+      </a>
+
+      {/* Article: Woman’s Week */}
+      <a 
+        href="https://womansweek.net/rewired-ketamine-racks-up-3000-infusions-earned-rems-status/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+      >
+        <p className="text-sm text-[#C9A66B] font-semibold mb-2">Woman’s Week · October 15, 2026</p>
+        <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+          Rewired Ketamine Racks Up 3,000 Infusions, Earned REMS Status
+        </h3>
+        <p className="text-[#555] leading-relaxed">
+          Woman’s Week covered Rewired Ketamine’s Aventura practice, highlighting 3,000+ infusions and REMS certification for Spravato. The piece notes in-clinic IV ketamine and esketamine options with integration support.
+        </p>
+      </a>
             {/* Article: Spravato 2025 review */}
       <a 
         href="https://www.dovepress.com/spravato-for-treatment-resistant-depression-efficacy-and-sexual-side-e-peer-reviewed-fulltext-article-NDT" 
