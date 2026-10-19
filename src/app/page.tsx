@@ -565,6 +565,24 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
     </div>
   </div>
 </section>
+      <section className="py-12 px-6 bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-lg text-[#444] leading-relaxed mb-4">
+            Guided ketamine therapy in Aventura for patients from Miami and Fort Lauderdale. In-clinic IV ketamine and Spravato (REMS) at our Aventura office. Fully guided sessions are available. ¡Hablamos Español!
+          </p>
+          <p className="text-lg text-[#444] leading-relaxed">
+            See{" "}
+            <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">
+              our services
+            </Link>{" "}
+            or{" "}
+            <Link href="/location" className="text-[#C9A66B] font-semibold hover:underline">
+              location and parking
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
       {/* FAQ Section */}
       <section className="py-16 bg-[#F6F1E8]">
         <div className="max-w-3xl mx-auto px-4">

@@ -265,6 +265,20 @@ const [isContentOpen, setIsContentOpen] = useState(false);
 </p>
         </div>
       </section>
+            <section className="py-10 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mb-4">
+            Ketamine infusion in Miami
+          </h2>
+          <p className="text-lg text-[#444] leading-relaxed">
+            IV ketamine infusions are done in the Aventura clinic. Patients come from Miami, North Miami, and Fort Lauderdale. Fully guided sessions are available. See the{" "}
+            <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">
+              homepage
+            </Link>{" "}
+            for how care starts.
+          </p>
+        </div>
+      </section>
 {/* ===== VIDEO ===== */}
 <section className="py-16 px-6 bg-white">
   <div className="max-w-3xl mx-auto">
