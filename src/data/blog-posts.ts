@@ -7,6 +7,12 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+  title: "Ketamine Integration in Aventura: Application After the Session",
+  slug: "ketamine-integration-aventura",
+  excerpt: "Integration is the shorter, focused step of applying what came up in a ketamine session to daily life. It is not the same as therapy.",
+  date: "October 2026"
+},
+  {
   title: "Spravato REMS vs IV Ketamine: How In-Clinic Esketamine Works",
   slug: "spravato-rems-vs-iv-ketamine",
   excerpt: "How Spravato (esketamine) is given under REMS at our Aventura clinic, and how it differs from IV ketamine.",
