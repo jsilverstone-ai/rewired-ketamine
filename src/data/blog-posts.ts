@@ -6,6 +6,12 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+  title: "Spravato REMS vs IV Ketamine: How In-Clinic Esketamine Works",
+  slug: "spravato-rems-vs-iv-ketamine",
+  excerpt: "How Spravato (esketamine) is given under REMS at our Aventura clinic, and how it differs from IV ketamine.",
+  date: "October 2026"
+},
 {
   title: "Spravato for Treatment-Resistant Depression: What a 2025 Review Found",
   slug: "spravato-for-treatment-resistant-depression",
