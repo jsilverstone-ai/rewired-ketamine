@@ -32,11 +32,14 @@ export default async function FAQPage({
               <p className="text-[#555] leading-relaxed">{item.answer}</p>
             </div>
           ))}
-          <p className="mt-10">
-            <Link href="/faq" className="text-[#C9A66B] font-semibold hover:underline">
-              ← All FAQs
-            </Link>
-          </p>
+<p className="mt-10">
+  Learn more about our <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">ketamine clinic in Aventura serving Miami</Link>.
+</p>
+<p className="mt-6">
+  <Link href="/faq" className="text-[#C9A66B] font-semibold hover:underline">
+    ← All FAQs
+  </Link>
+</p>
         </div>
       </section>
     </main>
