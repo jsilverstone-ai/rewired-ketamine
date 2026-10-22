@@ -2,6 +2,12 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { faqs } from "../../../data/faqs";
 
+export function generateStaticParams() {
+  return faqs.map((page) => ({
+    slug: page.slug,
+  }));
+}
+
 export default function FAQPage({ params }: { params: { slug: string } }) {
   const page = faqs.find((f) => f.slug === params.slug);
   if (!page) return notFound();
