@@ -85,8 +85,8 @@ export default function FAQIndexPage() {
               </div>
             </div>
             <Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link>
-            <li><Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link></li>
-            <li><Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link></li>
+            <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
+            <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link>
             <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
           </nav>
           <div className="hidden md:flex items-center gap-4">
@@ -215,8 +215,8 @@ export default function FAQIndexPage() {
                 <li><Link href="/treatments" className="hover:text-[#C9A66B] transition">Treatments</Link></li>
                 <li><Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link></li>
                 <li><Link href="/content/blog" className="hover:text-[#C9A66B] transition">Blog</Link></li>
-                <li><li><Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link></li>
-            <li><Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link></li></li>
+                <li><Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
+            <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link></li>
                 <li><Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link></li>
               </ul>
             </div>
