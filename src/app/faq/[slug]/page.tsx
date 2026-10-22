@@ -8,8 +8,13 @@ export function generateStaticParams() {
   }));
 }
 
-export default function FAQPage({ params }: { params: { slug: string } }) {
-  const page = faqs.find((f) => f.slug === params.slug);
+export default async function FAQPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const page = faqs.find((f) => f.slug === slug);
   if (!page) return notFound();
 
   return (
