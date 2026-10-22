@@ -130,6 +130,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
       </div>
 
       <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
+            <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link>
       <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
     </nav>
 
@@ -223,6 +224,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         </div>
 
         <Link href="/location" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Location</Link>
+              <Link href="/faq" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
         <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
 
         <a href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={() => setIsMenuOpen(false)}>

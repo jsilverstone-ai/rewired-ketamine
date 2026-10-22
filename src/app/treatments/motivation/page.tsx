@@ -93,6 +93,7 @@ export default function MotivationPage() {
               </div>
             </div>
             <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
+            <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link>
             <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
           </nav>
 
@@ -115,6 +116,7 @@ export default function MotivationPage() {
               <Link href="/" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Home</Link>
               <Link href="/providers" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Providers</Link>
               <Link href="/location" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Location</Link>
+              <Link href="/faq" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
               <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
               <a href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={() => setIsMenuOpen(false)}>FREE CONSULTATION</a>
             </nav>
@@ -225,7 +227,8 @@ export default function MotivationPage() {
                 <li><Link href="/services" className="hover:text-[#C9A66B] transition">Our Services</Link></li>
                 <li><Link href="/treatments" className="hover:text-[#C9A66B] transition">Treatments</Link></li>
                 <li><Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link></li>
-                <li><Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link></li>
+                <li><Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
+            <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link></li>
                 <li><Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link></li>
               </ul>
             </div>

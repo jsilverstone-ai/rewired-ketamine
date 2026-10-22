@@ -247,6 +247,7 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
       </div>
 
       <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
+            <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link>
       <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
     </nav>
 
@@ -340,6 +341,7 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
         </div>
 
         <Link href="/location" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Location</Link>
+              <Link href="/faq" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
         <Link href="/#contact" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Contact</Link>
 
 <a href="/#contact" className="btn-gold text-center mt-2" onClick={() => setIsMenuOpen(false)}>
