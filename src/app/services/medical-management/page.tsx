@@ -130,8 +130,8 @@ const [isContentOpen, setIsContentOpen] = useState(false);
         </div>
       </div>
 
-      <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
-            <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link>
+      <li><Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link></li>
+            <li><Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link></li>
       <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
     </nav>
 
