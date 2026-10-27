@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { faqs } from "../../../data/faqs";
 
-const strongSlugs = ["treatment-resistant-depression"];
+const strongSlugs = [
+  "treatment-resistant-depression",
+  "generalized-anxiety",
+  "ptsd",
+  "ocd",
+  "chronic-pain",
+  "spravato",
+];
 
 export async function generateMetadata({
   params,
