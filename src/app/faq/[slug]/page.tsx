@@ -18,12 +18,20 @@ export default function FAQPage() {
 
   if (!page) return notFound();
 
-  return (
-    <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#C9A66B] focus:text-[#0B1D36] focus:px-4 focus:py-2 focus:rounded focus:font-semibold">
-        Skip to main content
-      </a>
+  const strongSlugs = [
+    "treatment-resistant-depression",
+    // add 3–4 more strong ones here once they’re fully written
+  ];
 
+  const isThin = !strongSlugs.includes(slug);
+
+  return (
+    <>
+      {isThin && <meta name="robots" content="noindex, follow" />}
+      <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a]">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#C9A66B] focus:text-[#0B1D36] focus:px-4 focus:py-2 focus:rounded focus:font-semibold">
+          Skip to main content
+        </a>
       {/* TOP BAR */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -286,5 +294,6 @@ export default function FAQPage() {
         </div>
       </footer>
     </main>
+    </>
   );
 }
