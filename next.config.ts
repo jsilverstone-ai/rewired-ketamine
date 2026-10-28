@@ -23,6 +23,26 @@ const nextConfig: NextConfig = {
   permanent: true,
 },
 {
+  source: "/a-complete-guide-to-ketamine-infusion-therapy-in-florida-what-you-need-to-know",
+  destination: "/services/ketamine-infusion",
+  permanent: true,
+},
+{
+  source: "/recovery-within-reach-the-promise-and-practice-of-at-home-ketamine-treatment-in-florida-for-drug-addiction",
+  destination: "/services/home-ketamine",
+  permanent: true,
+},
+{
+  source: "/conditions/anxiety-treatment",
+  destination: "/treatments/anxiety",
+  permanent: true,
+},
+{
+  source: "/content/blog/what-is-ketamine-treatment-for-depression",
+  destination: "/treatments/depression",
+  permanent: true,
+},
+{
   source: "/our-advisory-board",
   destination: "/providers",
   permanent: true,
