@@ -25,6 +25,11 @@ const videos = [
     title: "Why Rewired Ketamine Is Different",
     description: "An overview of how ketamine therapy is offered at our Aventura clinic.",
   },
+  {
+  id: "K2Gkqcccs00",
+  title: "Dr. Jacob Silverstone on Ketamine Therapy and Trauma Healing",
+  description: "A short conversation on guided ketamine care and trauma healing at our Aventura clinic. Serving Miami and South Florida. ¡Hablamos Español!",
+},
     {
     id: "mEh9RNfyepo",
     title: "Psychedelic Pipeline vs Ketamine Solutions",
