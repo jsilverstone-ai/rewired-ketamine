@@ -7,7 +7,13 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-  title: "Ketamine Integration in Aventura: Application After the Session",
+  title: "Dr. Jacob Silverstone on Ketamine Therapy and Trauma Healing",
+  slug: "dr-jacob-silverstone-ketamine-therapy-trauma-healing",
+  excerpt: "Dr. Jacob Silverstone discusses ketamine therapy and trauma healing at our locally owned Aventura clinic. Serving Miami and South Florida. ¡Hablamos Español!",
+  date: "November 2026"
+},
+
+{title: "Ketamine Integration in Aventura: Application After the Session",
   slug: "ketamine-integration-aventura",
   excerpt: "Integration is the shorter, focused step of applying what came up in a ketamine session to daily life. It is not the same as therapy.",
   date: "October 2026"
