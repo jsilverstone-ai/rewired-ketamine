@@ -251,6 +251,21 @@ export default function KetamineInTheNewsPage() {
         Recent articles and stories highlighting the potential benefits of ketamine therapy.
       </p>
     </div>
+    {/* Article */}
+<a 
+  href="https://hfbpodcast.com/dr-jacob-silverstone-ketamine-therapy-trauma-healing/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="block bg-white rounded-2xl p-8 border border-[#eee] hover:shadow-lg transition group"
+>
+  <p className="text-sm text-[#C9A66B] font-semibold mb-2">HFB Podcast · 2026</p>
+  <h3 className="text-xl md:text-2xl font-bold text-[#0B1D36] mb-3 group-hover:text-[#C9A66B] transition">
+    Dr. Jacob Silverstone on Ketamine Therapy and Trauma Healing
+  </h3>
+  <p className="text-[#555] leading-relaxed">
+    Dr. Jacob Silverstone discusses ketamine therapy, trauma healing, and the approach at Rewired Ketamine in Aventura.
+  </p>
+</a>
 
     <div className="grid gap-8">
             {/* Article: IB Journal */}
