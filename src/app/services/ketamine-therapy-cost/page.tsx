@@ -51,8 +51,7 @@ export default function KetamineTherapyCostPage() {
                   <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
                   <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
                   <Link href="/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
-<Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
-                  <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
+                 <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
                   <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
@@ -145,42 +144,80 @@ export default function KetamineTherapyCostPage() {
         <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
       </section>
 
-      <section id="main-content" className="py-16 px-6 bg-white">
-        <div className="max-w-3xl mx-auto prose prose-lg text-[#444]">
-          <h2 className="text-2xl font-bold text-[#0B1D36] mb-4">Ketamine Therapy Cost in Aventura</h2>
-          <p>
-            IV ketamine at Rewired Ketamine is usually cash-pay. Pricing is individualized and reviewed during a free consult. Fully guided sessions are available.
-          </p>
-          <p>
-            Spravato (esketamine) may be covered by some insurance plans when REMS criteria are met. Coverage is not guaranteed. The consult reviews options for patients from Miami, Fort Lauderdale, and South Florida.
-          </p>
-          <p>
-            All sessions take place at our Aventura office (2820 NE 214th St Suite 1002). You are in a private room with monitoring and staff present. A driver is required. Integration is the shorter step of applying what came up; it is not the same as ongoing therapy.
-          </p>
+ <section id="main-content" className="py-16 px-6 bg-white">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-3xl font-bold text-center text-[#0B1D36] mb-12">Pricing</h2>
 
-          <h2 className="text-2xl font-bold text-[#0B1D36] mb-4 mt-10">How to compare</h2>
-          <ul>
-            <li>In-clinic care with monitoring (not a mail-order option)</li>
-            <li>Fully guided sessions available</li>
-            <li>IV ketamine usually cash-pay; Spravato may be covered when REMS criteria are met</li>
-            <li>Private treatment room at the Aventura office</li>
-            <li>Driver required after sessions</li>
-            <li>Integration is available and is not the same as ongoing therapy</li>
-          </ul>
-
-          <div className="mt-12 text-center">
-            <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-4 rounded hover:bg-[#0B1D36] hover:text-white transition">
-              Book a Free Consult
-            </Link>
-            <p className="mt-4 text-sm">Call or text (305) 676-6070 · Aventura, FL</p>
-          </div>
-
-          <p className="mt-10">
-            See also: <Link href="/services/iv-ketamine-vs-spravato" className="text-[#C9A66B] font-semibold hover:underline">IV Ketamine vs Spravato</Link> · <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">All Services</Link> · <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">Homepage</Link>
-          </p>
+    <div className="grid md:grid-cols-2 gap-8 mb-10">
+      {/* Mental Health */}
+      <div className="border border-gray-200 rounded-2xl overflow-hidden">
+        <div className="bg-[#0B1D36] text-white text-center py-5">
+          <h3 className="text-xl font-semibold">Mental Health Protocol</h3>
+          <p className="text-sm text-white/70">1 Hour IV Ketamine Infusion</p>
         </div>
-      </section>
+        <div className="p-6 space-y-4">
+          <div className="flex justify-between border-b pb-3"><span>Single Session</span><span className="font-semibold">$440</span></div>
+          <div className="flex justify-between border-b pb-3"><span>Package of 3</span><span className="font-semibold">$1,200</span></div>
+          <div className="flex justify-between"><span>Package of 6</span><span className="font-semibold">$2,300</span></div>
+        </div>
+      </div>
 
+      {/* Chronic Pain */}
+      <div className="border border-gray-200 rounded-2xl overflow-hidden">
+        <div className="bg-[#0B1D36] text-white text-center py-5">
+          <h3 className="text-xl font-semibold">Chronic Pain Protocol</h3>
+          <p className="text-sm text-white/70">2 Hour IV Ketamine Infusion</p>
+        </div>
+        <div className="p-6 space-y-4">
+          <div className="flex justify-between border-b pb-3"><span>Single Session</span><span className="font-semibold">$590</span></div>
+          <div className="flex justify-between border-b pb-3"><span>Package of 3</span><span className="font-semibold">$1,700</span></div>
+          <div className="flex justify-between"><span>Package of 6</span><span className="font-semibold">$3,200</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8 mb-10">
+      {/* Guided 1 Hour */}
+      <div className="border border-gray-200 rounded-2xl overflow-hidden">
+        <div className="bg-[#0B1D36] text-white text-center py-5">
+          <h3 className="text-xl font-semibold">Guided Sessions</h3>
+          <p className="text-sm text-white/70">1 Hour IV + Guide</p>
+        </div>
+        <div className="p-6 space-y-4">
+          <div className="flex justify-between border-b pb-3"><span>Single Session</span><span className="font-semibold">$590</span></div>
+          <div className="flex justify-between border-b pb-3"><span>Package of 3</span><span className="font-semibold">$1,500</span></div>
+          <div className="flex justify-between"><span>Package of 6</span><span className="font-semibold">$2,900</span></div>
+        </div>
+      </div>
+
+      {/* Guided 2 Hour */}
+      <div className="border border-gray-200 rounded-2xl overflow-hidden">
+        <div className="bg-[#0B1D36] text-white text-center py-5">
+          <h3 className="text-xl font-semibold">Guided Sessions</h3>
+          <p className="text-sm text-white/70">2 Hour IV + Guide</p>
+        </div>
+        <div className="p-6 space-y-4">
+          <div className="flex justify-between border-b pb-3"><span>Single Session</span><span className="font-semibold">$690</span></div>
+          <div className="flex justify-between border-b pb-3"><span>Package of 3</span><span className="font-semibold">$1,925</span></div>
+          <div className="flex justify-between"><span>Package of 6</span><span className="font-semibold">$4,000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p className="text-center text-sm text-[#555] mb-10">Ask us about available discounts. Consultation required.</p>
+
+    <div className="max-w-2xl mx-auto text-center">
+      <p className="mb-6">IV ketamine is usually cash-pay. Spravato (esketamine) may be covered by some insurance plans when REMS criteria are met. Coverage is not guaranteed.</p>
+      <Link href="/services/iv-ketamine-vs-spravato" className="text-[#C9A66B] font-semibold hover:underline">See IV Ketamine vs Spravato</Link>
+    </div>
+
+    <div className="mt-12 text-center">
+      <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-4 rounded hover:bg-[#0B1D36] hover:text-white transition">
+        Book a Free Consult
+      </Link>
+    </div>
+  </div>
+</section>
       <footer className="bg-[#081525] text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
