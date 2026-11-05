@@ -12,6 +12,18 @@ export const blogPosts: BlogPost[] = [
   excerpt: "Dr. Jacob Silverstone discusses ketamine therapy and trauma healing at our locally owned Aventura clinic. Serving Miami and South Florida. ¡Hablamos Español!",
   date: "November 2026"
 },
+{
+  title: "What Does a Full Course of IV Ketamine Cost in Aventura and Miami?",
+  slug: "what-does-a-full-course-of-iv-ketamine-cost-in-aventura",
+  excerpt: "Typical induction is 6 sessions. See real package pricing and what is included at our Aventura clinic.",
+  date: "November 2026"
+},
+{
+  title: "How Many Ketamine Sessions Do Most People Need?",
+  slug: "how-many-ketamine-sessions-do-most-people-need",
+  excerpt: "Most people begin with a 6-session induction. See why packages exist and how boosters are decided.",
+  date: "November 2026"
+},
 
 {title: "Ketamine Integration in Aventura: Application After the Session",
   slug: "ketamine-integration-aventura",
