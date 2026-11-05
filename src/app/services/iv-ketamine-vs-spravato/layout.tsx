@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "IV Ketamine vs Spravato | Rewired Ketamine Aventura",
-  description: "Clinical comparison of IV ketamine and Spravato (esketamine) at our Aventura clinic. Serving Miami, Fort Lauderdale & South Florida. Fully guided sessions available. ¡Hablamos Español!",
+  title: "IV Ketamine vs Spravato in Aventura and Miami | Rewired Ketamine",
+  description: "Compare IV ketamine and Spravato (esketamine) at Rewired Ketamine in Aventura. Learn the differences in route, setting, monitoring, insurance, and who each option may fit. Free consultation.",
   openGraph: {
-    title: "IV Ketamine vs Spravato | Rewired Ketamine Aventura",
-    description: "Short clinical comparison of IV ketamine and Spravato at our South Florida clinic.",
+    title: "IV Ketamine vs Spravato in Aventura and Miami",
+    description: "Compare IV ketamine and Spravato at our Aventura clinic. Serving Miami and South Florida.",
   },
   alternates: {
     canonical: "https://www.rewiredketamine.com/services/iv-ketamine-vs-spravato",
