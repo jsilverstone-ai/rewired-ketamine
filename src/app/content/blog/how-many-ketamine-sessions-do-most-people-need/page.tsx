@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function HowManyKetamineSessionsDoMostPeopleNeed() {
+export default function HowManyKetamineSessionsPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
@@ -134,6 +134,14 @@ export default function HowManyKetamineSessionsDoMostPeopleNeed() {
           </div>
         )}
       </header>
+      <section className="bg-[#0B1D36] text-white py-20 px-6 text-center">
+  <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
+  <h1 className="text-3xl md:text-5xl font-bold mb-6">How Many Ketamine Sessions Do Most People Need?</h1>
+  <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
+    Most people begin with a 6-session induction. See why packages exist and how boosters are decided at our Aventura clinic.
+  </p>
+  <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
+</section>
 
 <section id="main-content" className="py-16 px-6 bg-white">
   <div className="max-w-3xl mx-auto prose prose-lg text-[#444]">
