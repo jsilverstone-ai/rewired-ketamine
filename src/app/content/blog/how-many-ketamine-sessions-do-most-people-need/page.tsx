@@ -135,24 +135,37 @@ export default function HowManyKetamineSessionsDoMostPeopleNeed() {
         )}
       </header>
 
-      <section className="bg-[#0B1D36] text-white py-20 px-6 text-center">
-        <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">How Many Ketamine Sessions Do Most People Need?</h1>
-        <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
-          Typical induction is 6 sessions. See real package pricing at our Aventura clinic. Serving Miami and South Florida.
-        </p>
-        <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
-      </section>
 <section id="main-content" className="py-16 px-6 bg-white">
   <div className="max-w-3xl mx-auto prose prose-lg text-[#444]">
-    <p>Most people at Rewired Ketamine begin with a short induction series of about 6 sessions over a few weeks. There is no fixed calendar for everyone. The plan is set after the free consult.</p>
+    <p>
+      There is no single number that fits everyone, but there is a common starting structure. Most people at Rewired Ketamine in Aventura begin with an induction series of about six IV sessions over two to three weeks. The plan is set after a free consult. Fully guided sessions are available.
+    </p>
+
+    <h2>Why six sessions is the usual starting point</h2>
+    <p>
+      Clinical literature and clinic protocols for IV ketamine in treatment-resistant depression and related concerns often describe an initial series of six infusions spaced over two to three weeks. The reason is practical: a single session can produce a short lift, but the effect often fades. Repeated sessions are meant to build a stronger, more durable response. Some people notice a shift after the first or second infusion; others need most of the series before the change feels clear. A portion of patients do not respond even after a full induction. That is why we screen carefully and review progress along the way.
+    </p>
+    <p>
+      After the induction, many people move to occasional boosters—sometimes every few weeks, sometimes less often—based on how they feel. There is no fixed product calendar. Your clinician adjusts the plan with you.
+    </p>
+
     <h2>Why packages exist</h2>
-    <p>Packages make the total cost of a typical series clearer. Mental-health IV packages start at $2,300 for six sessions. Guided options are listed separately. Fully guided sessions are available.</p>
-    <h2>Boosters later</h2>
-    <p>After the initial series, some people schedule occasional boosters based on how they feel. That is decided with the clinical team, not on a set product schedule.</p>
-    <p>See the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link> and <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">all services</Link>.</p>
+    <p>
+      Packages make the total cost of a typical series clearer. At our Aventura clinic, mental-health IV packages start at $2,300 for six sessions. Guided options are listed separately so you can see the full number before you start. A single-session price can look lower, but six separate visits usually cost more overall and are harder to budget.
+    </p>
+
+    <h2>What happens after the first series</h2>
+    <p>
+      Some people hold the gains for weeks or longer and schedule a booster only when symptoms return. Others need more frequent support in the first few months. Integration visits—shorter conversations about applying what came up—are available and are not the same as ongoing therapy. The goal is a guided medical process, not a lifetime membership.
+    </p>
+
+    <p>
+      See the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link> for package pricing and <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">all services</Link> for how care is structured at our Aventura office. Patients from Miami, Fort Lauderdale, and South Florida are welcome. ¡Hablamos Español!
+    </p>
+
     <div className="mt-10 text-center">
       <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-4 rounded hover:bg-[#0B1D36] hover:text-white transition">Book a Free Consult</Link>
+      <p className="mt-4 text-sm">Call or text (305) 676-6070</p>
     </div>
   </div>
 </section>

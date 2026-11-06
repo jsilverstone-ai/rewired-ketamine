@@ -135,28 +135,46 @@ export default function FullCourseIVKetamineCostPage() {
         )}
       </header>
 
-      <section className="bg-[#0B1D36] text-white py-20 px-6 text-center">
-        <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">What Does a Full Course of IV Ketamine Cost in Aventura and Miami?</h1>
-        <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
-          Typical induction is 6 sessions. See real package pricing at our Aventura clinic. Serving Miami and South Florida.
-        </p>
-        <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
-      </section>
+<section id="main-content" className="py-16 px-6 bg-white">
+  <div className="max-w-3xl mx-auto prose prose-lg text-[#444]">
+    <p>
+      When people in Miami or Fort Lauderdale ask what a full course of IV ketamine costs, they usually mean the first series—not a single session. At Rewired Ketamine in Aventura, a typical mental-health induction is built around six sessions. The package price for that series starts at $2,300. Guided options are higher so the full cost is clear before you start. Fully guided sessions are available.
+    </p>
 
-      <section id="main-content" className="py-16 px-6 bg-white">
-        <div className="max-w-3xl mx-auto prose prose-lg text-[#444]">
-          <p>A typical induction series at Rewired Ketamine is 6 sessions. Mental-health IV packages start at $2,300 for six sessions. Guided options are higher so you can see the full cost up front. Fully guided sessions are available.</p>
-          <h2>What is included</h2>
-          <p>The base package covers the infusion in a private room with monitoring and staff present at our Aventura office (2820 NE 214th St Suite 1002). A guide, longer sessions, and integration are listed separately so you can compare total cost instead of only the per-session price.</p>
-          <h2>How to compare total cost</h2>
-          <p>Look at the full series, not just one session. Ask what is included and what is extra. Then compare that to other options such as Spravato, which may be covered by insurance when REMS criteria are met.</p>
-          <p>See the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link>, <Link href="/services/iv-ketamine-vs-spravato" className="text-[#C9A66B] font-semibold hover:underline">IV vs Spravato</Link>, and <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">all services</Link>.</p>
-          <div className="mt-10 text-center">
-            <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-4 rounded hover:bg-[#0B1D36] hover:text-white transition">Book a Free Consult</Link>
-          </div>
-        </div>
-      </section>
+    <h2>What “a full course” usually means</h2>
+    <p>
+      Most clinics that offer IV ketamine for mood and related concerns start with an induction series of about six sessions over two to three weeks. The idea is that each session can build on the last. A single infusion may feel helpful for a short time; the series is meant to give the brain a more sustained window of change. After that, many people move to occasional boosters based on how they actually feel, not a fixed calendar.
+    </p>
+    <p>
+      At our Aventura office, the base mental-health package covers the infusions themselves in a private room with monitoring and staff present. Longer sessions, a guide in the room, and integration visits are listed separately so you can compare the real total, not just the per-session number.
+    </p>
+
+    <h2>What is included vs. what is extra</h2>
+    <ul>
+      <li>Base package: the six infusions, private room, continuous monitoring, and clinical staff on site</li>
+      <li>Guided sessions: available if you want someone present for the experience itself (priced separately)</li>
+      <li>Integration: a shorter follow-up to talk about what came up and how to use it day to day — not the same as ongoing therapy</li>
+      <li>Driver required after every session</li>
+    </ul>
+
+    <h2>How to compare total cost</h2>
+    <p>
+      Look at the full series, not the single-session price. A package that starts at $2,300 for six sessions is easier to budget than six separate invoices. Then ask what is included and what is extra. Finally, compare that cash-pay total with other options. Spravato (esketamine) may be covered by some insurance plans when REMS criteria are met; coverage is not guaranteed and prior authorization is usually required.
+    </p>
+    <p>
+      Nationally, published cash-pay ranges for a six-session IV series often fall between roughly $2,400 and $5,000 or more, depending on the clinic, city, and what is bundled. Our Aventura pricing is listed clearly on the cost page so you can see the numbers for mental-health and guided options side by side.
+    </p>
+
+    <p>
+      See the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link>, <Link href="/services/iv-ketamine-vs-spravato" className="text-[#C9A66B] font-semibold hover:underline">IV ketamine vs Spravato</Link>, and <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">all services</Link>.
+    </p>
+
+    <div className="mt-10 text-center">
+      <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-4 rounded hover:bg-[#0B1D36] hover:text-white transition">Book a Free Consult</Link>
+      <p className="mt-4 text-sm">Call or text (305) 676-6070 · Aventura, FL · ¡Hablamos Español!</p>
+    </div>
+  </div>
+</section>
 
       <footer className="bg-[#081525] text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
