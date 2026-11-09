@@ -13,6 +13,18 @@ export const blogPosts: BlogPost[] = [
   date: "November 2026"
 },
 {
+  title: "At-Home Ketamine Treatment in Florida: Options, Safety, and Cost",
+  slug: "at-home-ketamine-treatment-in-florida",
+  excerpt: "Oral, nasal, and rectal options with starting prices and screening requirements from our Aventura clinic.",
+  date: "November 2026"
+},
+{
+  title: "Ketamine Infusion Near Me: Aventura Clinic Serving North Miami and Miami",
+  slug: "ketamine-infusion-near-me-aventura-north-miami",
+  excerpt: "Fully guided IV sessions at our Aventura office for patients from North Miami, Miami, and Fort Lauderdale.",
+  date: "November 2026"
+},
+{
   title: "What Does a Full Course of IV Ketamine Cost in Aventura and Miami?",
   slug: "what-does-a-full-course-of-iv-ketamine-cost-in-aventura",
   excerpt: "Typical induction is 6 sessions. See real package pricing and what is included at our Aventura clinic.",
