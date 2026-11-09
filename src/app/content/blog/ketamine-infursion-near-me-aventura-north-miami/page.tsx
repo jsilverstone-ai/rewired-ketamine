@@ -229,6 +229,9 @@ export default function SpravatoREMSvsIVKetamine() {
       <li>Please arrive about 15 minutes early so you have time to park and settle in.</li>
     </ul>
     <p>
+  Patients searching for <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">ketamine infusion miami</Link> are usually looking for a clinic in the Aventura / North Miami area. That is exactly where we are.
+</p>
+    <p>
       Full directions, a map, and the option to email the parking instructions to yourself are on the <Link href="/location" className="text-[#C9A66B] font-semibold hover:underline">location page</Link>.
     </p>
 

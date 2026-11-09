@@ -284,6 +284,9 @@ const [isContentOpen, setIsContentOpen] = useState(false);
             </Link>{" "}
             for how care starts.
           </p>
+          <p className="mt-4">
+  Looking for <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">ketamine infusion miami</Link>? Our Aventura clinic provides fully guided IV sessions for patients from Miami and North Miami.
+</p>
         </div>
       </section>
 {/* ===== VIDEO ===== */}

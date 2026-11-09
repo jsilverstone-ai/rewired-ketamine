@@ -251,6 +251,9 @@ export default function KetamineLongTermPTSDPage() {
       <p>
         Adults sometimes explore ketamine therapy Miami care for treatment-resistant depression, anxiety, or PTSD when traditional approaches have not been enough. It is not a cure, and it is not right for everyone. A clinical evaluation comes first. Fully guided sessions are available.
       </p>
+      <p>
+  If you searched <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">iv ketamine near me</Link>, our Aventura clinic is a short drive from North Miami and Miami.
+</p>
     </div>
 
     <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">

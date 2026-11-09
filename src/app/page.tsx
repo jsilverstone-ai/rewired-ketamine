@@ -728,6 +728,9 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
     <p className="text-lg text-[#555] leading-relaxed">
       Comfortable recliners, private rooms, and a caring team focused entirely on you. We offer fully guided sessions and stay by your side through integration — so the benefits continue long after you leave.
     </p>
+    <p>
+  Rewired Ketamine is a <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">ketamine miami</Link> clinic located in Aventura, serving patients throughout the greater Miami area.
+</p>
   </div>
 </section>
       {/* ===== FINAL CTA + CONTACT FORM ===== */}

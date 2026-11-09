@@ -226,6 +226,9 @@ export default function KetamineClinicMiamiVsAventuraPage() {
         <Link href="/" className="text-[#C9A66B] hover:underline">ketamine clinic Miami</Link> homepage and{" "}
         <Link href="/location" className="text-[#C9A66B] hover:underline">Aventura location</Link>.
       </p>
+      <p>
+  We are a locally owned <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">ketamine clinic south florida</Link> serving Aventura, Miami, and Fort Lauderdale.
+</p>
     </div>
 
     <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">
