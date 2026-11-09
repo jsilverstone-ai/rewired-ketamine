@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function SpravatoREMSvsIVKetamine() {
+export default function KetamineInfusionNearMePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
@@ -202,7 +202,7 @@ export default function SpravatoREMSvsIVKetamine() {
         )}
       </header>
 
-      {/* HERO */}
+ {/* HERO */}
 <section className="bg-[#0B1D36] text-white py-20 px-6 text-center">
   <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
   <h1 className="text-3xl md:text-5xl font-bold mb-6">Ketamine Infusion Near Me: Aventura Clinic Serving North Miami and Miami</h1>
@@ -229,32 +229,25 @@ export default function SpravatoREMSvsIVKetamine() {
       <li>Please arrive about 15 minutes early so you have time to park and settle in.</li>
     </ul>
     <p>
-  Patients searching for <Link href="/" className="text-[#C9A66B] font-semibold hover:underline">ketamine infusion miami</Link> are usually looking for a clinic in the Aventura / North Miami area. That is exactly where we are.
-</p>
-    <p>
-      Full directions, a map, and the option to email the parking instructions to yourself are on the <Link href="/location" className="text-[#C9A66B] font-semibold hover:underline">location page</Link>.
+      Full directions and a map are on the <Link href="/location" className="text-[#C9A66B] font-semibold hover:underline">location page</Link>.
     </p>
 
     <h2>Who travels from nearby areas</h2>
     <p>
-      Patients regularly come from North Miami Beach, Miami, Sunny Isles, Hallandale, and Fort Lauderdale. The Aventura location is a short drive for many people searching “ketamine infusion near me” in the Miami metro. We also see people from farther across South Florida.
+      Patients regularly come from North Miami Beach, Miami, Sunny Isles, Hallandale, and Fort Lauderdale. The Aventura location is a short drive for many people searching “ketamine infusion near me” in the Miami metro.
     </p>
 
     <h2>What a typical visit looks like</h2>
     <p>
-      Sessions take place in a private room with monitoring and staff present. Most mental-health infusions are about one hour, with time afterward to settle before you leave with a driver. A driver is required. Integration — a shorter follow-up conversation about applying what came up — is available and is not the same as ongoing therapy.
+      Sessions take place in a private room with monitoring and staff present. Most mental-health infusions are about one hour, with time afterward to settle before you leave with a driver. A driver is required. Integration is available as a shorter follow-up and is not the same as ongoing therapy.
     </p>
     <p>
-      Mental-health IV packages start at $2,300 for six sessions. Guided options are listed separately so you can see the full cost. Details are on the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link>.
+      Mental-health IV packages start at $2,300 for six sessions. Guided options are listed separately. Details are on the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link>.
     </p>
 
     <h2>Next step</h2>
     <p>
-      Book a free consult. We review history, medications, and goals, explain off-label use where relevant, and only then discuss whether an IV series is appropriate. Patients from Miami, North Miami, Fort Lauderdale, and South Florida are welcome. ¡Hablamos Español!
-    </p>
-
-    <p>
-      See the <Link href="/location" className="text-[#C9A66B] font-semibold hover:underline">location page</Link> for directions and the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link> for pricing.
+      Book a free consult. We review history, medications, and goals before discussing whether an IV series is appropriate. Patients from Miami, North Miami, Fort Lauderdale, and South Florida are welcome. ¡Hablamos Español!
     </p>
 
     <div className="mt-10 text-center">
@@ -263,7 +256,6 @@ export default function SpravatoREMSvsIVKetamine() {
     </div>
   </div>
 </section>
-
       {/* FOOTER */}
       <footer className="bg-[#081525] text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
