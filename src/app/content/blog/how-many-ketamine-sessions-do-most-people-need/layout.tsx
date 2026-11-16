@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How Many Ketamine Sessions Do Most People Need?",
-  description: "Most people begin with a 6-session induction series. See why packages exist, real pricing at our Aventura clinic, and how boosters are decided later. ¡Hablamos Español!",
+  title: "How Many Ketamine Sessions Do Most People Need — and What Does That Cost in Aventura?",
+  description: "Most people begin with a 6-session induction. See why packages exist, how boosters are decided, and real pricing at our locally owned Aventura clinic. ¡Hablamos Español!",
   openGraph: {
-    title: "How Many Ketamine Sessions | Rewired Ketamine Aventura",
-    description: "Typical induction series and package options at our South Florida clinic.",
+    title: "How Many Ketamine Sessions Do Most People Need? | Rewired Ketamine",
+    description: "Typical 6-session induction and package pricing at our Aventura clinic serving Miami and South Florida.",
   },
   alternates: {
     canonical: "https://www.rewiredketamine.com/content/blog/how-many-ketamine-sessions-do-most-people-need",
