@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "What Does a Full Course of IV Ketamine Cost in Aventura and Miami?",
-  description: "Typical induction is 6 sessions. See real package pricing for mental-health IV at our Aventura clinic, what is included, and how to compare total cost. ¡Hablamos Español!",
+  description: "See real package pricing for IV ketamine at our locally owned Aventura clinic. Compare single sessions vs packages, guided options, and how total cost differs from national at-home programs. ¡Hablamos Español!",
   openGraph: {
-    title: "Full Course IV Ketamine Cost | Rewired Ketamine Aventura",
-    description: "Clear package pricing and what is included at our South Florida clinic.",
+    title: "IV Ketamine Cost in Aventura & Miami | Rewired Ketamine",
+    description: "Transparent package pricing for fully guided IV sessions at our Aventura clinic serving Miami and South Florida.",
   },
   alternates: {
     canonical: "https://www.rewiredketamine.com/content/blog/what-does-a-full-course-of-iv-ketamine-cost-in-aventura",

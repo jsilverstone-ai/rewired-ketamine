@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function FullCourseIVKetamineCostPage() {
+export default function IVKetamineCostPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
@@ -18,18 +18,16 @@ export default function FullCourseIVKetamineCostPage() {
 
       {/* TOP BAR */}
       <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex flex-col items-center gap-3 lg:flex-row lg:justify-between">
-            <Link href="/" className="flex-shrink-0">
-              <Image src="/logo.png" alt="Rewired Ketamine" width={600} height={180} className="h-16 md:h-20 w-auto" priority />
-            </Link>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-2 text-sm text-[#0B1D36] text-center">
-              <a href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition">
-                2820 NE 214th St #1002, Aventura, FL 33180
-              </a>
-              <a href="mailto:info@rewiredketamine.com" className="hover:text-[#C9A66B] transition">info@rewiredketamine.com</a>
-              <a href="tel:+13056766070" className="font-semibold hover:text-[#C9A66B] transition">(305) 676-6070</a>
-            </div>
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row items-center justify-between gap-4">
+          <Link href="/" className="flex-shrink-0">
+            <Image src="/logo.png" alt="Rewired Ketamine" width={600} height={180} className="h-16 md:h-20 w-auto" priority />
+          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[#0B1D36]">
+            <a href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#C9A66B] transition">
+              <span>2820 NE 214th St #1002, Aventura, FL</span>
+            </a>
+            <a href="tel:+13056766070" className="flex items-center gap-2 hover:text-[#C9A66B] transition">(305) 676-6070</a>
+            <a href="mailto:info@rewiredketamine.com" className="flex items-center gap-2 hover:text-[#C9A66B] transition">info@rewiredketamine.com</a>
           </div>
         </div>
       </div>
@@ -48,10 +46,8 @@ export default function FullCourseIVKetamineCostPage() {
                 <div className="py-2">
                   <Link href="/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Services</Link>
                   <Link href="/services/ketamine-infusion" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine Infusion</Link>
-                  <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
                   <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
-                  <Link href="/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
-                  <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
+                  <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
                   <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
@@ -64,7 +60,7 @@ export default function FullCourseIVKetamineCostPage() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
               <div className="absolute left-0 top-full mt-2 w-64 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2 max-h-80 overflow-y-auto">
+                <div className="py-2 max-h-96 overflow-y-auto">
                   <Link href="/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Treatments</Link>
                   <Link href="/treatments/depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Depression</Link>
                   <Link href="/treatments/anxiety" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Anxiety</Link>
@@ -74,13 +70,12 @@ export default function FullCourseIVKetamineCostPage() {
                 </div>
               </div>
             </div>
-            <Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link>
             <div className="relative group">
               <button className="hover:text-[#C9A66B] transition flex items-center gap-1">
                 Content
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
-              <div className="absolute left-0 top-full mt-2 w-56 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute left-0 top-full mt-2 w-48 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
                   <Link href="/content/blog" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Blog</Link>
                   <Link href="/content/videos" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Videos</Link>
@@ -88,25 +83,13 @@ export default function FullCourseIVKetamineCostPage() {
                 </div>
               </div>
             </div>
+            <Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link>
             <Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link>
             <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link>
-            <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
           </nav>
-
-          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
-            {isMenuOpen ? (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-            ) : (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
-            )}
-          </button>
-
-          <div className="hidden md:flex items-center gap-5">
-            <a href="https://www.instagram.com/rewired_ketamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Instagram">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/@RewiredKetamine" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="YouTube">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <div className="hidden md:flex items-center gap-4">
+            <a href="https://www.instagram.com/rewiredketamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Instagram">
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
             <a href="https://www.facebook.com/RewiredKetamine/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="Facebook">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -114,23 +97,69 @@ export default function FullCourseIVKetamineCostPage() {
             <a href="https://www.linkedin.com/in/jacob-silverstone-98414547/" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition" aria-label="LinkedIn">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-            <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-6 py-2.5 rounded hover:bg-white transition">
-              FREE CONSULTATION
-            </Link>
+            <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] font-semibold px-5 py-2 rounded hover:bg-white transition">Free Consultation</Link>
           </div>
+          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMenuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
+            </svg>
+          </button>
         </div>
-
         {isMenuOpen && (
-          <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
-            <nav className="flex flex-col px-6 py-4 space-y-4">
-              <Link href="/" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Home</Link>
-              <Link href="/services" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Our Services</Link>
-              <Link href="/services/ketamine-therapy-cost" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Cost</Link>
-              <Link href="/content/blog" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Blog</Link>
-              <Link href="/location" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Location</Link>
-              <Link href="/faq" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">FAQ</Link>
-              <Link href="/#contact" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Contact</Link>
-            </nav>
+          <div className="md:hidden bg-[#0B1D36] border-t border-white/10 px-6 py-4 space-y-3">
+            <Link href="/" className="block py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <div>
+              <button className="flex items-center justify-between w-full py-2" onClick={() => setIsServicesOpen(!isServicesOpen)}>
+                Our Services <svg className={`w-4 h-4 transition ${isServicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              {isServicesOpen && (
+                <div className="pl-4 space-y-2 mt-2">
+                  <Link href="/services" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>All Services</Link>
+                  <Link href="/services/ketamine-infusion" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Ketamine Infusion</Link>
+                  <Link href="/services/spravato" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Spravato</Link>
+                  <Link href="/services/home-ketamine" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Home Ketamine</Link>
+                  <Link href="/services/functional-wellness" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link>
+                  <Link href="/services/medical-management" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Medical Management</Link>
+                  <Link href="/services/talk-therapy" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Talk Therapy</Link>
+                </div>
+              )}
+            </div>
+            <div>
+              <button className="flex items-center justify-between w-full py-2" onClick={() => setIsTreatmentsOpen(!isTreatmentsOpen)}>
+                Treatments <svg className={`w-4 h-4 transition ${isTreatmentsOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              {isTreatmentsOpen && (
+                <div className="pl-4 space-y-2 mt-2">
+                  <Link href="/treatments" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>All Treatments</Link>
+                  <Link href="/treatments/depression" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Depression</Link>
+                  <Link href="/treatments/anxiety" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Anxiety</Link>
+                  <Link href="/treatments/ptsd" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>PTSD</Link>
+                  <Link href="/treatments/ocd" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>OCD</Link>
+                  <Link href="/treatments/chronic-pain" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Chronic Pain</Link>
+                </div>
+              )}
+            </div>
+            <div>
+              <button className="flex items-center justify-between w-full py-2" onClick={() => setIsContentOpen(!isContentOpen)}>
+                Content <svg className={`w-4 h-4 transition ${isContentOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              {isContentOpen && (
+                <div className="pl-4 space-y-2 mt-2">
+                  <Link href="/content/blog" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+                  <Link href="/content/videos" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Videos</Link>
+                  <Link href="/content/ketamine-in-the-news" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Ketamine in the News</Link>
+                </div>
+              )}
+            </div>
+            <Link href="/providers" className="block py-2" onClick={() => setIsMenuOpen(false)}>Providers</Link>
+            <Link href="/location" className="block py-2" onClick={() => setIsMenuOpen(false)}>Location</Link>
+            <Link href="/faq" className="block py-2" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
+            <div className="flex gap-4 pt-3">
+              <a href="https://www.instagram.com/rewiredketamine/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+              <a href="https://www.facebook.com/RewiredKetamine/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              <a href="https://www.linkedin.com/in/jacob-silverstone-98414547/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+            <Link href="/#contact" className="block text-center bg-[#C9A66B] text-[#0B1D36] font-semibold py-3 rounded mt-3" onClick={() => setIsMenuOpen(false)}>Free Consultation</Link>
           </div>
         )}
       </header>
@@ -140,48 +169,41 @@ export default function FullCourseIVKetamineCostPage() {
         <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
         <h1 className="text-3xl md:text-5xl font-bold mb-6">What Does a Full Course of IV Ketamine Cost in Aventura and Miami?</h1>
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
-          Typical induction is 6 sessions. See real package pricing at our Aventura clinic. Serving Miami and South Florida.
+          See real package pricing and what is included at our locally owned clinic. Fully guided sessions available.
         </p>
         <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
       </section>
 
+      {/* MAIN CONTENT */}
       <section id="main-content" className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto prose prose-lg text-[#444]">
           <p>
-            When people in Miami or Fort Lauderdale ask what a full course of IV ketamine costs, they usually mean the first series—not a single session. At Rewired Ketamine in Aventura, a typical mental-health induction is built around six sessions. The package price for that series starts at $2,300. Guided options are higher so the full cost is clear before you start. Fully guided sessions are available.
-          </p>
-
-          <h2>What “a full course” usually means</h2>
-          <p>
-            Most clinics that offer IV ketamine for mood and related concerns start with an induction series of about six sessions over two to three weeks. The idea is that each session can build on the last. A single infusion may feel helpful for a short time; the series is meant to give the brain a more sustained window of change. After that, many people move to occasional boosters based on how they actually feel, not a fixed calendar.
+            Most people searching for ketamine therapy eventually land on the same question: what will a full course actually cost, and what am I getting for that money?
           </p>
           <p>
-            At our Aventura office, the base mental-health package covers the infusions themselves in a private room with monitoring and staff present. Longer sessions, a guide in the room, and integration visits are listed separately so you can compare the real total, not just the per-session number.
+            In Aventura and the broader Miami area, the answer depends on the type of clinic, the length of the session, whether guidance is included, and whether you are comparing a single infusion to a package. At Rewired Ketamine, a full course of IV ketamine for mental health typically runs between six sessions. A single standard 1-hour mental health infusion starts at $440. A package of six is $2,300. Guided sessions (where a clinician is present and working with you throughout the infusion) are higher and are listed clearly on the cost page so you can compare them side by side. Fully guided sessions are available.
           </p>
-
-          <h2>What is included vs. what is extra</h2>
+          <p>
+            The biggest difference between clinics is usually not the price of the medicine itself. It is what surrounds the infusion. Some practices include monitoring, a private room, and structured integration support in the listed price. Others advertise a lower number and add fees later. National at-home programs (companies such as Mindbloom, Joyous, and Better U) are often venture-backed and operate on a subscription or kit model. Their advertised monthly costs can look lower at first glance because the medicine is delivered to your home and the clinical oversight is remote. Those companies have raised significant funding and are built to scale across many states. That model works for some people, but it is a different product from in-clinic IV care with a clinician in the room.
+          </p>
+          <p>
+            When you are comparing options in South Florida, it is worth looking at the total package rather than the single lowest number. Questions that tend to matter:
+          </p>
           <ul>
-            <li>Base package: the six infusions, private room, continuous monitoring, and clinical staff on site</li>
-            <li>Guided sessions: available if you want someone present for the experience itself (priced separately)</li>
-            <li>Integration: a shorter follow-up to talk about what came up and how to use it day to day — not the same as ongoing therapy</li>
-            <li>Driver required after every session</li>
+            <li>Is the price for a standard infusion or a longer, guided session?</li>
+            <li>Does it include monitoring and a private room, or are those extra?</li>
+            <li>Is there structured support before and after the session, or is integration left to you?</li>
+            <li>Are you dealing with a local clinic or a national company whose clinical team is remote?</li>
           </ul>
-
-          <h2>How to compare total cost</h2>
           <p>
-            Look at the full series, not the single-session price. A package that starts at $2,300 for six sessions is easier to budget than six separate invoices. Then ask what is included and what is extra. Finally, compare that cash-pay total with other options. Spravato (esketamine) may be covered by some insurance plans when REMS criteria are met; coverage is not guaranteed and prior authorization is usually required.
+            Rewired publishes its pricing openly because the goal is for people to compare total care, not just the sticker price of one infusion. If you are looking at both local IV options and national at-home programs, the practical difference is usually the setting and the level of in-person clinical presence. Both approaches exist for a reason. The right fit depends on what you need during the session itself.
           </p>
           <p>
-            Nationally, published cash-pay ranges for a six-session IV series often fall between roughly $2,400 and $5,000 or more, depending on the clinic, city, and what is bundled. Our Aventura pricing is listed clearly on the cost page so you can see the numbers for mental-health and guided options side by side.
+            You can see the current package pricing and what is included on the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link>, or schedule a free consultation to walk through which option matches your situation. Patients from Miami, Fort Lauderdale, and South Florida are welcome. ¡Hablamos Español!
           </p>
-
-          <p>
-            See the <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">cost page</Link>, <Link href="/services/iv-ketamine-vs-spravato" className="text-[#C9A66B] font-semibold hover:underline">IV ketamine vs Spravato</Link>, and <Link href="/services" className="text-[#C9A66B] font-semibold hover:underline">all services</Link>.
-          </p>
-
           <div className="mt-10 text-center">
             <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-4 rounded hover:bg-[#0B1D36] hover:text-white transition">Book a Free Consult</Link>
-            <p className="mt-4 text-sm">Call or text (305) 676-6070 · Aventura, FL · ¡Hablamos Español!</p>
+            <p className="mt-4 text-sm">Call or text (305) 676-6070</p>
           </div>
         </div>
       </section>
@@ -191,28 +213,42 @@ export default function FullCourseIVKetamineCostPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
+              <Image src="/logo.png" alt="Rewired Ketamine" width={200} height={60} className="h-12 w-auto mb-6" />
+              <p className="text-white/70 text-sm leading-relaxed mb-6">
+                Locally owned ketamine clinic in Aventura offering fully guided sessions for depression, anxiety, PTSD, and chronic pain. Serving Miami, Fort Lauderdale & South Florida. ¡Hablamos Español!
+              </p>
+              <div className="flex gap-4">
+                <a href="https://www.instagram.com/rewiredketamine/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-[#C9A66B] transition">
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/RewiredKetamine/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-[#C9A66B] transition">
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/jacob-silverstone-98414547/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-[#C9A66B] transition">
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div>
               <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Contact Us</h4>
               <ul className="space-y-3 text-white/80 text-sm">
-                <li>Open: Monday - Friday</li>
-                <li>9:00AM - 5:00PM</li>
-                <li><a href="tel:+13056766070" className="hover:text-[#C9A66B] transition">Phone: (305) 676-6070</a></li>
-                <li><a href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A66B] transition">2820 NE 214th St #1002<br />Aventura, FL 33180</a></li>
+                <li>2820 NE 214th St #1002<br />Aventura, FL 33180</li>
+                <li><a href="tel:+13056766070" className="hover:text-[#C9A66B] transition">(305) 676-6070</a></li>
                 <li><a href="mailto:info@rewiredketamine.com" className="hover:text-[#C9A66B] transition">info@rewiredketamine.com</a></li>
               </ul>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <Image src="/logo.png" alt="Rewired Ketamine" width={200} height={60} className="h-14 w-auto mb-6" />
-              <a href="https://www.legitscript.com/websites/?checker_keywords=rewiredketamine.com" target="_blank" rel="noopener noreferrer">
-                <Image src="/legitscript.png" alt="LegitScript Certified" width={150} height={75} className="h-16 w-auto" />
-              </a>
+              <div className="mt-6">
+                <a href="https://www.legitscript.com" target="_blank" rel="noopener noreferrer">
+                  <Image src="/legitscript.png" alt="LegitScript Certified" width={150} height={75} className="h-16 w-auto" />
+                </a>
+              </div>
             </div>
             <div>
               <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Quick Links</h4>
               <ul className="space-y-3 text-white/80 text-sm">
                 <li><Link href="/" className="hover:text-[#C9A66B] transition">Home</Link></li>
                 <li><Link href="/services" className="hover:text-[#C9A66B] transition">Our Services</Link></li>
-                <li><Link href="/services/ketamine-therapy-cost" className="hover:text-[#C9A66B] transition">Cost</Link></li>
                 <li><Link href="/treatments" className="hover:text-[#C9A66B] transition">Treatments</Link></li>
+                <li><Link href="/providers" className="hover:text-[#C9A66B] transition">Providers</Link></li>
                 <li><Link href="/content/blog" className="hover:text-[#C9A66B] transition">Blog</Link></li>
                 <li><Link href="/location" className="hover:text-[#C9A66B] transition">Location</Link></li>
                 <li><Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link></li>
