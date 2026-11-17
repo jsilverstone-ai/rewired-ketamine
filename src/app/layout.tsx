@@ -98,7 +98,7 @@ export default async function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
-     <NextIntlClientProvider messages={await getMessages()}>
+<NextIntlClientProvider messages={await getMessages().catch(() => ({}))}>
   {children}
 </NextIntlClientProvider>
       </body>
