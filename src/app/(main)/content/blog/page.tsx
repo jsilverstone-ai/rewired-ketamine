@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { blogPosts } from "../../../data/blog-posts";
+import { blogPosts } from "../../../../data/blog-posts";
 
 export default function BlogPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
