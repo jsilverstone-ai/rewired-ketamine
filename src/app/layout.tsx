@@ -86,7 +86,7 @@ export default async function RootLayout({
         />
         {/* End Google Tag Manager */}
       </head>
-   <body className={`${inter.className} ${playfair.variable}`}>
+      <body className={`${inter.className} ${playfair.variable}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -97,7 +97,10 @@ export default async function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-  {children}
+
+        <NextIntlClientProvider messages={await getMessages()}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
