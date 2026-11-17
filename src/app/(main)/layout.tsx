@@ -1,6 +1,16 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
-export default function MainLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default async function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const messages = await getMessages();
+
+  return (
+    <NextIntlClientProvider messages={messages}>
+      {children}
+    </NextIntlClientProvider>
+  );
 }
