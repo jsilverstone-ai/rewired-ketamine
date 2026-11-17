@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
 
-const withNextIntl = createNextIntlPlugin("./i18n.ts");
-
-const nextConfig = {
+const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/ptsd-guide", destination: "/treatments/ptsd", permanent: true },
