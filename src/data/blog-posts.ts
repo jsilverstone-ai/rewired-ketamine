@@ -25,6 +25,12 @@ export const blogPosts: BlogPost[] = [
   date: "November 2026"
 },
 {
+  title: "Why At-Home Ketamine Companies Advertise Lower Prices — and What That Means for Care in South Florida",
+  slug: "why-at-home-ketamine-companies-advertise-lower-prices",
+  excerpt: "National at-home programs often advertise lower monthly prices. See how their model differs from in-clinic IV care.",
+  date: "November 2026"
+},
+{
   title: "How Many Ketamine Sessions Do Most People Need — and What Does That Cost in Aventura?",
   slug: "how-many-ketamine-sessions-do-most-people-need",
   excerpt: "Most people begin with a 6-session induction. See why packages exist and how boosters are decided.",
