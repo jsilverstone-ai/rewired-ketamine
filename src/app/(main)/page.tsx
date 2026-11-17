@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Home() {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +12,7 @@ const [isServicesOpen, setIsServicesOpen] = useState(false);
 const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
 const [isContentOpen, setIsContentOpen] = useState(false);
 const [openExpect, setOpenExpect] = useState<string | null>("before");
+const pathname = usePathname();
 
 
   return (
@@ -406,9 +408,12 @@ const [openExpect, setOpenExpect] = useState<string | null>("before");
     Fully guided sessions available for treatment-resistant depression, anxiety, PTSD, and chronic pain.
   </p>
 
- <p className="text-[#C9A66B] font-bold text-lg md:text-xl tracking-wide">
-    ¡Hablamos Español!
-  </p>
+<Link
+  href={pathname === "/" ? "/es" : `/es${pathname}`}
+  className="inline-block text-[#C9A66B] font-bold text-lg hover:underline"
+>
+  ¡Hablamos Español!
+</Link>
 <div className="mt-8 w-full max-w-sm mx-auto flex flex-col gap-3">
   <Link
     href="/#contact"
