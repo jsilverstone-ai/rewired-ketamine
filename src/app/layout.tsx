@@ -86,22 +86,20 @@ export default async function RootLayout({
         />
         {/* End Google Tag Manager */}
       </head>
-      <body className={`${inter.className} ${playfair.variable}`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NLD85SC9"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
+<body className={`${inter.className} ${playfair.variable}`}>
+  {/* Google Tag Manager (noscript) */}
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-NLD85SC9"
+      height="0"
+      width="0"
+      style={{ display: "none", visibility: "hidden" }}
+    />
+  </noscript>
+  {/* End Google Tag Manager (noscript) */}
 
-        <NextIntlClientProvider messages={await getMessages()}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
+  {children}
+</body>
     </html>
   );
 }
