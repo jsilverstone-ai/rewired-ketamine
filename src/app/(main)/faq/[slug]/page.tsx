@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useParams, notFound } from "next/navigation";
-import { faqs } from "../../../data/faqs";
+import { faqs } from "../../../../data/faqs";
 
 export default function FAQPage() {
   const params = useParams();
