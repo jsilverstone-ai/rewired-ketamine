@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { faqs } from "../../../data/faqs";
+import { faqs } from "../../../../data/faqs";
 
 const strongSlugs = [
   "treatment-resistant-depression",
