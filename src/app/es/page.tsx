@@ -210,12 +210,9 @@ export default function SpanishHome() {
         </div>
       </section>
 
-      {/* Miami / Trust Block */}
-      <section className="py-12 px-6 bg-white text-center">
-        <p className="text-lg text-[#0B1D36] mb-6 max-w-3xl mx-auto">
-          Rewired Ketamine es una clínica en Aventura para pacientes que vienen de Miami y Fort Lauderdale. Si buscó ketamine Miami, esta es la oficina del metro de North Miami — la infusión de ketamina en Miami se realiza aquí.
-        </p>
-        <div className="flex flex-wrap justify-center gap-6 text-sm text-[#555]">
+      {/* Trust Bar */}
+      <section className="bg-[#0B1D36] py-6">
+        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-x-10 gap-y-3 text-center text-white/90 text-sm md:text-base">
           <span>Clínica de propiedad local en Aventura</span>
           <span>Sesiones totalmente guiadas disponibles</span>
           <span>5 estrellas en Google</span>
@@ -224,13 +221,15 @@ export default function SpanishHome() {
         </div>
       </section>
 
-      {/* Patient Experiences / Reviews placeholder */}
+      {/* Google Reviews */}
       <section className="py-16 px-6 bg-[#F8F5F0]">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm tracking-widest text-[#C9A66B] font-semibold mb-2">EXPERIENCIAS DE PACIENTES</p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#0B1D36] mb-4">Lo que dicen nuestros pacientes</h2>
           <p className="text-lg text-[#555] mb-8">Comentarios reales de personas que han elegido el cuidado en nuestra clínica de propiedad local en Aventura.</p>
-          <a href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z" target="_blank" rel="noopener noreferrer" className="inline-block text-[#C9A66B] font-semibold hover:underline">
+          <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
+          <div className="elfsight-app-00d35db3-e7e4-417e-8a0b-dbc5664993a2" data-elfsight-app-lazy></div>
+          <a href="https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z" target="_blank" rel="noopener noreferrer" className="inline-block text-[#C9A66B] font-semibold hover:underline mt-6">
             Ver todas las reseñas de Google →
           </a>
         </div>
