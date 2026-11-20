@@ -88,5 +88,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
   changeFrequency: "monthly",
   priority: 0.8,
 },
+{
+  url: "https://www.rewiredketamine.com/es",
+  lastModified: new Date("2026-11-20"),
+  changeFrequency: "weekly",
+  priority: 0.9,
+},
+{
+  url: "https://www.rewiredketamine.com/es/services",
+  lastModified: new Date("2026-11-20"),
+  changeFrequency: "monthly",
+  priority: 0.8,
+},
+{
+  url: "https://www.rewiredketamine.com/es/faq",
+  lastModified: new Date("2026-11-20"),
+  changeFrequency: "monthly",
+  priority: 0.7,
+},
+{
+  url: "https://www.rewiredketamine.com/es/location",
+  lastModified: new Date("2026-11-20"),
+  changeFrequency: "monthly",
+  priority: 0.7,
+},
+{
+  url: "https://www.rewiredketamine.com/es/providers",
+  lastModified: new Date("2026-11-20"),
+  changeFrequency: "monthly",
+  priority: 0.7,
+},
   ];
 }
