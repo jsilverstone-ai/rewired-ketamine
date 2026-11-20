@@ -29,7 +29,7 @@ const burnoutJsonLd = {
       url: "https://www.rewiredketamine.com/treatments/burnout",
       name: "Ketamine for Burnout & High-Stress Professionals | Aventura, FL",
       headline: "Ketamine for Burnout and High-Stress Professionals in Aventura",
-      description: "Guided IV ketamine sessions for high-functioning professionals in Aventura. Transparent package pricing. Serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español!",
+      description: "Guided IV ketamine for high-stress professionals in Aventura. Transparent package pricing. Serving Miami and Fort Lauderdale. ¡Hablamos Español!",
       inLanguage: "en-US",
       isPartOf: { "@id": "https://www.rewiredketamine.com/#clinic" },
       about: { "@type": "Thing", name: "Burnout" },
@@ -171,6 +171,12 @@ export default function BurnoutPage() {
             <p className="text-[#555] mb-4">Fully guided options are available if you want additional support during the infusion. Integration support helps turn whatever comes up in a session into practical changes in daily life. Integration is included with guided options, or it can be arranged separately.</p>
             <p className="text-[#555] mb-8">A free consultation and medical screening come first. That visit reviews your history, current medications, and symptoms so we can determine whether a supervised course is appropriate.</p>
 
+            <h2 className="text-2xl font-bold text-[#0B1D36] mb-4">When burnout overlaps with depression or anxiety</h2>
+            <p className="text-[#555] mb-4">High-functioning professionals often continue working even when exhaustion, cynicism, and reduced performance have been present for months. In some cases those symptoms sit alongside clinical depression or anxiety that has not improved with therapy, medication, or time off. When that overlap is present, a clinician may consider whether a medically supervised course of IV ketamine could be one supportive option.</p>
+            <p className="text-[#555] mb-4">Ketamine is not a treatment for an unsustainable job, and it does not replace the need for rest, clearer boundaries, or changes in workload. It is evaluated only after a consultation and medical screening that looks at your history, current medications, and whether depression or anxiety is part of the picture. Individual results vary, and not everyone is a candidate.</p>
+            <p className="text-[#555] mb-4">Sessions take place in a private, monitored room at our Aventura clinic. A clinical team member is present throughout. Fully guided sessions are available if you want additional support during the infusion. Integration work afterward helps turn any insights into practical changes in daily life and work. Many people schedule around existing commitments; a driver is required after each session.</p>
+            <p className="text-[#555] mb-8">If a consultation shows that rest, therapy, or a change in work circumstances is the better next step, we will say so. If you already work with a psychiatrist or therapist, care here is meant to complement that relationship. With your permission we coordinate and keep them updated.</p>
+
             <h2 className="text-2xl font-bold text-[#0B1D36] mb-4">Transparent pricing for a standard course</h2>
             <p className="text-[#555] mb-4">Many clinics require a consultation before disclosing rates. Rewired lists package pricing publicly so the total cost of six sessions is clear in advance.</p>
             <div className="bg-[#F8F5F0] rounded-2xl p-6 mb-6">
@@ -214,6 +220,22 @@ export default function BurnoutPage() {
                 </div>
               ))}
             </div>
+
+            <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Sources</h2>
+            <ul className="list-disc pl-5 space-y-2 text-[#555] text-sm">
+              <li>
+                World Health Organization. “Burn-out an ‘occupational phenomenon’: International Classification of Diseases.” 28 May 2019.{" "}
+                <a href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases" target="_blank" rel="noopener noreferrer" className="text-[#C9A66B] hover:underline">who.int</a>
+              </li>
+              <li>
+                National Institute of Mental Health. “Depression.”{" "}
+                <a href="https://www.nimh.nih.gov/health/topics/depression" target="_blank" rel="noopener noreferrer" className="text-[#C9A66B] hover:underline">nimh.nih.gov</a>
+              </li>
+              <li>
+                National Institute of Mental Health. “Mental Health Medications.”{" "}
+                <a href="https://www.nimh.nih.gov/health/topics/mental-health-medications" target="_blank" rel="noopener noreferrer" className="text-[#C9A66B] hover:underline">nimh.nih.gov</a>
+              </li>
+            </ul>
           </div>
         </section>
 

@@ -227,6 +227,22 @@ export default function PostpartumDepressionPage() {
                 </div>
               ))}
             </div>
+
+            <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Sources</h2>
+            <ul className="list-disc pl-5 space-y-2 text-[#555] text-sm">
+              <li>
+                Office on Women’s Health, U.S. Department of Health & Human Services. “Postpartum depression.”{" "}
+                <a href="https://womenshealth.gov/mental-health/mental-health-conditions/postpartum-depression" target="_blank" rel="noopener noreferrer" className="text-[#C9A66B] hover:underline">womenshealth.gov</a>
+              </li>
+              <li>
+                National Institute of Mental Health. “Perinatal Depression.”{" "}
+                <a href="https://www.nimh.nih.gov/health/publications/perinatal-depression" target="_blank" rel="noopener noreferrer" className="text-[#C9A66B] hover:underline">nimh.nih.gov</a>
+              </li>
+              <li>
+                MGH Center for Women’s Mental Health. “Is Ketamine or Esketamine an Option for the Treatment of Postpartum Depression?”{" "}
+                <a href="https://womensmentalhealth.org/posts/ketamine-esketamine-for-postpartum-depression/" target="_blank" rel="noopener noreferrer" className="text-[#C9A66B] hover:underline">womensmentalhealth.org</a>
+              </li>
+            </ul>
           </div>
         </section>
 
