@@ -1,10 +1,7 @@
-// Add / update this in app/(main)/treatments/postpartum-depression/layout.tsx
-// or page.tsx metadata export
-
 import type { Metadata } from "next";
 
 const canonical = "https://www.rewiredketamine.com/treatments/postpartum-depression";
-const ogImage = "https://www.rewiredketamine.com/logo.png"; // replace with 1200x630 when available
+const ogImage = "https://www.rewiredketamine.com/logo.png";
 
 export const metadata: Metadata = {
   title: "Ketamine for Postpartum Depression | Aventura, FL",
@@ -38,3 +35,11 @@ export const metadata: Metadata = {
     images: [ogImage],
   },
 };
+
+export default function PostpartumDepressionLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+}
