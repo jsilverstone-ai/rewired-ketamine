@@ -10,19 +10,19 @@ export default function SpanishTreatments() {
   const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
   const [isContentOpen, setIsContentOpen] = useState(false);
 
-  const treatments = [
-    { title: "Depresión", href: "/es/treatments/depression", desc: "Apoyo para el estado de ánimo, la energía y la presencia cuando los enfoques tradicionales no han sido suficientes." },
-    { title: "Ansiedad", href: "/es/treatments/anxiety", desc: "Ayuda para calmar pensamientos acelerados y tensión en un entorno calmado y guiado." },
-    { title: "TEPT", href: "/es/treatments/ptsd", desc: "Apoyo cuidadoso para quienes navegan trauma y un sistema nervioso en alerta alta." },
-    { title: "Niebla Mental", href: "/es/treatments/mental-fogginess", desc: "Apoyo para un pensamiento más claro, enfoque y facilidad cognitiva." },
-    { title: "Motivación", href: "/es/treatments/motivation", desc: "Ayuda a restaurar un sentido de posibilidad y movimiento hacia adelante." },
-    { title: "Trastorno Alimentario", href: "/es/treatments/eating-disorder", desc: "Cuidado de apoyo para patrones alimentarios y la relación con la comida." },
-    { title: "Depresión Postparto", href: "/es/treatments/postpartum-depression", desc: "Apoyo durante un momento sensible, con espacio para el vínculo y el alivio." },
-    { title: "TOC", href: "/es/treatments/ocd", desc: "Apoyo para pensamientos intrusivos y comportamientos compulsivos." },
-    { title: "Dolor Crónico", href: "/es/treatments/chronic-pain", desc: "Opciones cuando el dolor persistente ha sido difícil de manejar." },
-    { title: "Cefaleas por Tensión", href: "/es/treatments/tension-headaches", desc: "Apoyo para dolores de cabeza recurrentes y tensión asociada." },
-    { title: "Cuidado Paliativo y Compasión", href: "/es/treatments/palliative-compassion-care", desc: "Cuidado de apoyo centrado en la comodidad y la dignidad." },
-  ];
+const treatments = [
+  { title: "Depresión", href: "/es/treatments", desc: "Apoyo para el estado de ánimo, la energía y la presencia cuando los enfoques tradicionales no han sido suficientes." },
+  { title: "Ansiedad", href: "/es/treatments", desc: "Ayuda para calmar pensamientos acelerados y tensión en un entorno calmado y guiado." },
+  { title: "TEPT", href: "/es/treatments", desc: "Apoyo cuidadoso para quienes navegan trauma y un sistema nervioso en alerta alta." },
+  { title: "Niebla Mental", href: "/es/treatments", desc: "Apoyo para un pensamiento más claro, enfoque y facilidad cognitiva." },
+  { title: "Motivación", href: "/es/treatments", desc: "Ayuda a restaurar un sentido de posibilidad y movimiento hacia adelante." },
+  { title: "Trastorno Alimentario", href: "/es/treatments", desc: "Cuidado de apoyo para patrones alimentarios y la relación con la comida." },
+  { title: "Depresión Postparto", href: "/es/treatments", desc: "Apoyo durante un momento sensible, con espacio para el vínculo y el alivio." },
+  { title: "TOC", href: "/es/treatments", desc: "Apoyo para pensamientos intrusivos y comportamientos compulsivos." },
+  { title: "Dolor Crónico", href: "/es/treatments", desc: "Opciones cuando el dolor persistente ha sido difícil de manejar." },
+  { title: "Cefaleas por Tensión", href: "/es/treatments", desc: "Apoyo para dolores de cabeza recurrentes y tensión asociada." },
+  { title: "Cuidado Paliativo y Compasión", href: "/es/treatments", desc: "Cuidado de apoyo centrado en la comodidad y la dignidad." },
+];
 
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a] pb-24 lg:pb-0">
