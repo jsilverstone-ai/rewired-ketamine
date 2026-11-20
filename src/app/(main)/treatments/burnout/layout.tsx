@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 const canonical = "https://www.rewiredketamine.com/treatments/burnout";
-const ogImage = "https://www.rewiredketamine.com/logo.png"; // replace with 1200x630 OG image when available
+const ogImage = "https://www.rewiredketamine.com/logo.png";
 
 export const metadata: Metadata = {
   title: "Ketamine for Burnout & High-Stress Professionals | Aventura, FL",
   description:
-    "Guided IV ketamine sessions for high-functioning professionals in Aventura. Transparent package pricing. Serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español!",
+    "Guided IV ketamine for high-stress professionals in Aventura. Transparent package pricing. Serving Miami and Fort Lauderdale. ¡Hablamos Español!",
   authors: [{ name: "Rewired Ketamine" }],
   robots: { index: true, follow: true },
   alternates: {
