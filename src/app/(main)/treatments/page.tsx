@@ -375,6 +375,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
               { title: "Depression", href: "/treatments/depression", desc: "Support for mood, energy, and presence when traditional approaches haven’t been enough." },
               { title: "Anxiety", href: "/treatments/anxiety", desc: "Help quieting racing thoughts and tension in a calm, guided setting." },
               { title: "PTSD", href: "/treatments/ptsd", desc: "Careful support for those navigating trauma and a nervous system on high alert." },
+              { title: "Burnout", href: "/treatments/burnout", desc: "Support for high-stress exhaustion when it overlaps with depression or anxiety that has not responded well to usual care." },
               { title: "Mental Fogginess", href: "/treatments/mental-fogginess", desc: "Support for clearer thinking, focus, and cognitive ease." },
               { title: "Motivation", href: "/treatments/motivation", desc: "Helping restore a sense of possibility and forward movement." },
               { title: "Eating Disorder", href: "/treatments/eating-disorder", desc: "Sensitive, collaborative support as part of a broader care plan." },
