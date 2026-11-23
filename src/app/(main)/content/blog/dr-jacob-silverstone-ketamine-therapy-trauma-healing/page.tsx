@@ -52,6 +52,7 @@ export default function DrJacobSilverstoneKetamineTherapyTraumaHealingPage() {
                   <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
                   <Link href="/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
 <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
+<Link href="/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Insurance</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
                   <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
@@ -126,6 +127,7 @@ export default function DrJacobSilverstoneKetamineTherapyTraumaHealingPage() {
             <nav className="flex flex-col px-6 py-4 space-y-4">
               <Link href="/" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Home</Link>
               <Link href="/services" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Our Services</Link>
+              <Link href="/services/ketamine-insurance" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Insurance</Link>
               <Link href="/treatments" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Treatments</Link>
               <Link href="/providers" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Providers</Link>
               <Link href="/content/blog" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Blog</Link>
@@ -143,7 +145,7 @@ export default function DrJacobSilverstoneKetamineTherapyTraumaHealingPage() {
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
           A conversation on guided ketamine care at our locally owned Aventura clinic. Serving Miami and South Florida.
         </p>
-        <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       <section id="main-content" className="py-16 px-6 bg-white">

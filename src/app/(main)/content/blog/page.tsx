@@ -53,6 +53,7 @@ export default function BlogPage() {
                   <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
                   <Link href="/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
                   <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
+                  <Link href="/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Insurance</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
                   <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
@@ -128,6 +129,7 @@ export default function BlogPage() {
               <Link href="/" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Home</Link>
               <Link href="/services" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Our Services</Link>
               <Link href="/services/ketamine-therapy-cost" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Cost</Link>
+              <Link href="/services/ketamine-insurance" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Insurance</Link>
               <Link href="/content/blog" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Blog</Link>
               <Link href="/location" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Location</Link>
               <Link href="/faq" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">FAQ</Link>
@@ -144,7 +146,7 @@ export default function BlogPage() {
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
           Insights on ketamine therapy, mental wellness, and care at our locally owned Aventura clinic. Serving Miami and South Florida.
         </p>
-        <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       <section id="main-content" className="py-16 px-6 bg-white">

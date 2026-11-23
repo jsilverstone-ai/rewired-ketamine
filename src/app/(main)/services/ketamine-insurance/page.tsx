@@ -211,7 +211,7 @@ export default function KetamineInsurancePage() {
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
           Plain answers on what insurance covers for Spravato and IV ketamine, and why using insurance is not always the cheaper path. Serving Miami, Fort Lauderdale, and South Florida.
         </p>
-        <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}

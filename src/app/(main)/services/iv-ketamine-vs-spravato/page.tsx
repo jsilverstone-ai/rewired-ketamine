@@ -52,6 +52,7 @@ export default function IVKetamineVsSpravatoPage() {
                   <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
                   <Link href="/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
 <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
+<Link href="/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Insurance</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
                   <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
@@ -129,6 +130,7 @@ export default function IVKetamineVsSpravatoPage() {
               <Link href="/services/ketamine-infusion" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Ketamine Infusion</Link>
               <Link href="/services/spravato" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Spravato</Link>
               <Link href="/services/iv-ketamine-vs-spravato" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">IV vs Spravato</Link>
+              <Link href="/services/ketamine-insurance" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Insurance</Link>
               <Link href="/location" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Location</Link>
               <Link href="/faq" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">FAQ</Link>
               <Link href="/#contact" onClick={() => setIsMenuOpen(false)} className="hover:text-[#C9A66B]">Contact</Link>
@@ -143,7 +145,7 @@ export default function IVKetamineVsSpravatoPage() {
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
           A short clinical comparison of in-clinic IV ketamine and Spravato (esketamine) at Rewired Ketamine in Aventura. Serving Miami, Fort Lauderdale, and South Florida.
         </p>
-        <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
 <section id="main-content" className="py-16 px-6 bg-white">

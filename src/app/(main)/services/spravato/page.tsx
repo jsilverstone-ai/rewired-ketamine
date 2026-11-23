@@ -83,6 +83,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
 <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
 <Link href="/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
 <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
+<Link href="/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Insurance</Link>
             <p className="mt-6">
   See also: <Link href="/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">Ketamine Therapy Cost</Link>
  </p>
@@ -185,6 +186,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
 <Link href="/services/spravato" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Spravato</Link>
 <Link href="/services/iv-ketamine-vs-spravato" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>IV vs Spravato</Link>
 <Link href="/services/ketamine-therapy-cost" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Cost</Link>
+<Link href="/services/ketamine-insurance" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Insurance</Link>
               <Link href="/services/functional-wellness" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link>
               <Link href="/services/medical-management" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Medical Management</Link>
               <Link href="/services/talk-therapy" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Talk Therapy</Link>
@@ -265,7 +267,7 @@ const [isContentOpen, setIsContentOpen] = useState(false);
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             An FDA-approved nasal spray for adults with treatment-resistant depression, given in our REMS-certified clinic and monitored on site. Patients come from Miami, Fort Lauderdale, and South Florida.
           </p>
-          <p className="text-[#C9A66B] font-semibold text-lg mb-8">¡Hablamos Español!</p>
+          <p className="text-[#C9A66B] font-semibold text-lg mb-8"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
           <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-3 rounded-full hover:bg-white transition">
             Ask about a Spravato consult
           </Link>

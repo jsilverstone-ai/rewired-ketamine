@@ -57,6 +57,7 @@ export default function KetamineInfusionNearMePage() {
 <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
 <Link href="/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
 <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
+<Link href="/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Insurance</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
                   <Link href="/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Talk Therapy</Link>
@@ -146,6 +147,7 @@ export default function KetamineInfusionNearMePage() {
 <Link href="/services/spravato" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Spravato</Link>
 <Link href="/services/iv-ketamine-vs-spravato" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>IV vs Spravato</Link>
 <Link href="/services/ketamine-therapy-cost" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Cost</Link>
+<Link href="/services/ketamine-insurance" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Insurance</Link>
                     <Link href="/services/functional-wellness" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link>
                     <Link href="/services/medical-management" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Medical Management</Link>
                     <Link href="/services/talk-therapy" className="hover:text-[#C9A66B] transition" onClick={() => setIsMenuOpen(false)}>Talk Therapy</Link>
@@ -210,7 +212,7 @@ export default function KetamineInfusionNearMePage() {
   <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
     Fully guided IV sessions at our locally owned clinic. Convenient for patients from North Miami Beach, Miami, and Fort Lauderdale.
   </p>
-  <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
+  <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
 </section>
 
 <section id="main-content" className="py-16 px-6 bg-white">

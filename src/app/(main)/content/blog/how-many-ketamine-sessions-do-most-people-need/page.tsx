@@ -44,6 +44,7 @@ export default function HowManySessionsPage() {
                   <Link href="/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Services</Link>
                   <Link href="/services/ketamine-infusion" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine Infusion</Link>
                   <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
+                  <Link href="/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Insurance</Link>
                   <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
@@ -94,7 +95,7 @@ export default function HowManySessionsPage() {
             <Link href="/" className="block py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <div>
               <button className="flex items-center justify-between w-full py-2" onClick={() => setIsServicesOpen(!isServicesOpen)}>Our Services <svg className={`w-4 h-4 transition ${isServicesOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></button>
-              {isServicesOpen && <div className="pl-4 space-y-2 mt-2"><Link href="/services" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>All Services</Link><Link href="/services/ketamine-infusion" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Ketamine Infusion</Link><Link href="/services/spravato" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Spravato</Link><Link href="/services/home-ketamine" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Home Ketamine</Link><Link href="/services/functional-wellness" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link><Link href="/services/medical-management" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Medical Management</Link><Link href="/services/talk-therapy" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Talk Therapy</Link></div>}
+              {isServicesOpen && <div className="pl-4 space-y-2 mt-2"><Link href="/services" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>All Services</Link><Link href="/services/ketamine-infusion" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Ketamine Infusion</Link><Link href="/services/spravato" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Spravato</Link><Link href="/services/ketamine-insurance" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Insurance</Link><Link href="/services/home-ketamine" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Home Ketamine</Link><Link href="/services/functional-wellness" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link><Link href="/services/medical-management" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Medical Management</Link><Link href="/services/talk-therapy" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Talk Therapy</Link></div>}
             </div>
             <div>
               <button className="flex items-center justify-between w-full py-2" onClick={() => setIsTreatmentsOpen(!isTreatmentsOpen)}>Treatments <svg className={`w-4 h-4 transition ${isTreatmentsOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></button>
@@ -122,7 +123,7 @@ export default function HowManySessionsPage() {
         <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
         <h1 className="text-3xl md:text-5xl font-bold mb-6">How Many Ketamine Sessions Do Most People Need — and What Does That Cost in Aventura?</h1>
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">Most people begin with a 6-session induction. See why packages exist and how boosters are decided. Fully guided sessions available.</p>
-        <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* CONTENT */}

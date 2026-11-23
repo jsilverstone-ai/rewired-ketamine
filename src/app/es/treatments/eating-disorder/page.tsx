@@ -27,7 +27,7 @@ export default function SpanishEatingDisorderPage() {
             <div className="relative group">
               <button className="hover:text-[#C9A66B] transition flex items-center gap-1">Nuestros Servicios <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></button>
               <div className="absolute left-0 top-full mt-2 w-56 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2"><Link href="/es/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Todos los Servicios</Link></div>
+                <div className="py-2"><Link href="/es/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Todos los Servicios</Link><Link href="/es/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Seguro Médico</Link></div>
               </div>
             </div>
             <div className="relative group">
@@ -62,7 +62,7 @@ export default function SpanishEatingDisorderPage() {
         <p className="text-[#C9A66B] font-semibold tracking-widest text-sm mb-4">AVENTURA • SUR DE FLORIDA</p>
         <h1 className="text-4xl md:text-5xl font-bold mb-6">Trastorno Alimentario</h1>
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">Cuidado sensible y colaborativo como parte de un plan de atención más amplio.</p>
-        <p className="text-[#C9A66B] font-semibold">¡Hablamos Español!</p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
       <section className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">

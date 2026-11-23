@@ -30,6 +30,7 @@ export default function SpanishChronicPainPage() {
                 <div className="py-2">
                   <Link href="/es/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Todos los Servicios</Link>
                   <Link href="/es/services/ketamine-infusion" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Infusión de Ketamina</Link>
+                  <Link href="/es/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Seguro Médico</Link>
                 </div>
               </div>
             </div>
@@ -66,7 +67,7 @@ export default function SpanishChronicPainPage() {
         <p className="text-[#C9A66B] font-semibold tracking-widest text-sm mb-4">AVENTURA • SUR DE FLORIDA</p>
         <h1 className="text-4xl md:text-5xl font-bold mb-6">Dolor Crónico</h1>
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">Apoyo con ketamina para el dolor que afecta el estado de ánimo, el sueño y la calidad de vida.</p>
-        <p className="text-[#C9A66B] font-semibold">¡Hablamos Español!</p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
       <section className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">

@@ -75,6 +75,7 @@ export default function KetamineInfusionEsPage() {
                   <Link href="/es/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
                   <Link href="/es/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
                   <Link href="/es/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Costo</Link>
+                  <Link href="/es/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Seguro Médico</Link>
                   <Link href="/es/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Bienestar Funcional</Link>
                   <Link href="/es/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Manejo Médico</Link>
                   <Link href="/es/services/talk-therapy" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Terapia de Conversación</Link>
@@ -134,7 +135,7 @@ export default function KetamineInfusionEsPage() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Sesiones IV totalmente guiadas en un entorno privado y tranquilo diseñado alrededor de usted.
         </p>
-        <p className="text-[#C9A66B] font-semibold">¡Hablamos Español!</p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}
@@ -230,6 +231,7 @@ export default function KetamineInfusionEsPage() {
               <li><Link href="/es/services/ketamine-infusion" className="hover:text-[#C9A66B]">Infusión de Ketamina</Link></li>
               <li><Link href="/es/services/home-ketamine" className="hover:text-[#C9A66B]">Ketamina en Casa</Link></li>
               <li><Link href="/es/services/spravato" className="hover:text-[#C9A66B]">Spravato</Link></li>
+              <li><Link href="/es/services/ketamine-insurance" className="hover:text-[#C9A66B]">Seguro Médico</Link></li>
             </ul>
           </div>
           <div>

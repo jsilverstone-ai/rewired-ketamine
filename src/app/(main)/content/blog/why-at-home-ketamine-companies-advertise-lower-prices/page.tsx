@@ -47,6 +47,7 @@ export default function IVKetamineCostPage() {
                   <Link href="/services" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">All Services</Link>
                   <Link href="/services/ketamine-infusion" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ketamine Infusion</Link>
                   <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
+                  <Link href="/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Insurance</Link>
                   <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
@@ -118,6 +119,7 @@ export default function IVKetamineCostPage() {
                   <Link href="/services" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>All Services</Link>
                   <Link href="/services/ketamine-infusion" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Ketamine Infusion</Link>
                   <Link href="/services/spravato" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Spravato</Link>
+                  <Link href="/services/ketamine-insurance" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Insurance</Link>
                   <Link href="/services/home-ketamine" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Home Ketamine</Link>
                   <Link href="/services/functional-wellness" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block py-1.5" onClick={() => setIsMenuOpen(false)}>Medical Management</Link>
@@ -169,7 +171,7 @@ export default function IVKetamineCostPage() {
   <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
   <h1 className="text-3xl md:text-5xl font-bold mb-6">Why At-Home Ketamine Companies Advertise Lower Prices — and What That Means for Care in South Florida</h1>
   <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">National at-home programs often advertise lower monthly prices. See how their model differs from in-clinic IV care. Fully guided sessions available.</p>
-  <p className="text-[#C9A66B] font-bold text-lg">¡Hablamos Español!</p>
+  <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
 </section>
 
       {/* MAIN CONTENT */}

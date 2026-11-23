@@ -50,6 +50,7 @@ export default function FAQIndexPage() {
                   <Link href="/services/spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Spravato</Link>
 <Link href="/services/iv-ketamine-vs-spravato" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">IV vs Spravato</Link>
 <Link href="/services/ketamine-therapy-cost" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cost</Link>
+<Link href="/services/ketamine-insurance" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Insurance</Link>
                   <Link href="/services/home-ketamine" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Home Ketamine</Link>
                   <Link href="/services/functional-wellness" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Medical Management</Link>
@@ -122,6 +123,7 @@ export default function FAQIndexPage() {
                   <Link href="/services" className="block py-1.5 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>All Services</Link>
                   <Link href="/services/ketamine-infusion" className="block py-1.5 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Ketamine Infusion</Link>
                   <Link href="/services/spravato" className="block py-1.5 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Spravato</Link>
+                  <Link href="/services/ketamine-insurance" className="block py-1.5 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Insurance</Link>
                   <Link href="/services/home-ketamine" className="block py-1.5 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Home Ketamine</Link>
                   <Link href="/services/functional-wellness" className="block py-1.5 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Functional Wellness</Link>
                   <Link href="/services/medical-management" className="block py-1.5 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Medical Management</Link>
@@ -176,7 +178,7 @@ export default function FAQIndexPage() {
           <p className="text-lg md:text-xl text-white/80 mb-8">
             Common questions about guided ketamine care at our locally owned Aventura clinic.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl">¡Hablamos Español!</p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 
