@@ -42,7 +42,7 @@ info@rewiredketamine.com`;
       <SiteHeaderEs />
 
       {/* HERO */}
-      <section className="bg-[#0B1D36] text-white py-20 px-6 text-center">
+      <section id="main-content" className="bg-[#0B1D36] text-white py-20 px-6 text-center">
         <p className="text-[#C9A66B] font-semibold tracking-widest text-sm mb-4">AVENTURA • SUR DE FLORIDA</p>
         <h1 className="text-4xl md:text-5xl font-bold mb-6">Nuestra Ubicación</h1>
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">

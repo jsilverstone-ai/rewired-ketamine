@@ -26,7 +26,7 @@ export default function SpravatoEsPage() {
             Spravato es el nombre comercial del espray nasal de esketamina, fabricado por Johnson & Johnson. No es la misma visita que una infusión de ketamina IV. La prescripción en esta clínica es dirigida por nuestro equipo de salud mental. La oficina está certificada REMS, lo cual es requerido antes de que alguien pueda recibir una dosis.
           </p>
           <p className="text-[#555] mb-10">
-            Somos de propiedad local en Aventura. Nuestra consulta inicial siempre es gratuita. La aprobación de Spravato depende de tu evaluación médica, revisión de historial y autorización del seguro.
+            Somos de propiedad local en Aventura. Nuestra consulta inicial siempre es gratuita. La aprobación de Spravato depende de su evaluación médica, revisión de historial y autorización del seguro.
           </p>
 
           <h2 className="text-2xl font-bold text-[#0B1D36] mb-4">Aprobación de la FDA, en lenguaje claro</h2>
@@ -57,7 +57,7 @@ export default function SpravatoEsPage() {
           <p className="text-[#555] mb-10">Spravato no está aprobado para niños.</p>
 
           <h2 className="text-2xl font-bold text-[#0B1D36] mb-4">Cómo se ve un curso</h2>
-          <p className="text-[#555] mb-4">Esto sigue el programa etiquetado para depresión resistente al tratamiento. Tu clínico confirma la dosis.</p>
+          <p className="text-[#555] mb-4">Esto sigue el programa etiquetado para depresión resistente al tratamiento. Su clínico confirma la dosis.</p>
           <div className="overflow-x-auto mb-10">
             <table className="min-w-full border border-gray-200 text-sm">
               <thead className="bg-[#F8F5F0]">
@@ -71,7 +71,7 @@ export default function SpravatoEsPage() {
                 <tr>
                   <td className="border border-gray-200 px-4 py-2">Semanas 1–4</td>
                   <td className="border border-gray-200 px-4 py-2">Dos veces a la semana</td>
-                  <td className="border border-gray-200 px-4 py-2">Espray nasal bajo observación, luego al menos 2 horas de monitoreo. Podemos personalizar el plan de tratamiento según tus necesidades.</td>
+                  <td className="border border-gray-200 px-4 py-2">Espray nasal bajo observación, luego al menos 2 horas de monitoreo. Podemos personalizar el plan de tratamiento según sus necesidades.</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-200 px-4 py-2">Semanas 5–8</td>
@@ -103,7 +103,7 @@ export default function SpravatoEsPage() {
                 </tr>
                 <tr>
                   <td className="border border-gray-200 px-4 py-2">2. Registros</td>
-                  <td className="border border-gray-200 px-4 py-2">La mayoría de los planes quieren depresión mayor que no mejoró después de al menos dos ensayos de antidepresivos, más un puntaje de depresión. Recopilamos lo que tu plan solicita.</td>
+                  <td className="border border-gray-200 px-4 py-2">La mayoría de los planes quieren depresión mayor que no mejoró después de al menos dos ensayos de antidepresivos, más un puntaje de depresión. Recopilamos lo que su plan solicita.</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-200 px-4 py-2">3. Autorización previa</td>
@@ -117,7 +117,7 @@ export default function SpravatoEsPage() {
             </table>
           </div>
           <p className="text-[#555] mb-6">
-            Actualmente enviamos autorizaciones de Spravato para Cigna, UnitedHealthcare y Aetna, y Blue Cross Blue Shield fuera de red. Otros planes pueden revisarse en la consulta. La cobertura, copagos y deducibles son establecidos por tu póliza, no por la clínica.
+            Actualmente enviamos autorizaciones de Spravato para Cigna, UnitedHealthcare y Aetna, y Blue Cross Blue Shield fuera de red. Otros planes pueden revisarse en la consulta. La cobertura, copagos y deducibles son establecidos por su póliza, no por la clínica.
           </p>
         </div>
       </section>
@@ -125,7 +125,7 @@ export default function SpravatoEsPage() {
       {/* CTA */}
       <section className="py-16 px-6 bg-[#F8F5F0] text-center">
         <h2 className="text-3xl font-bold text-[#0B1D36] mb-4">¿Listo para dar el siguiente paso?</h2>
-        <p className="text-lg text-[#555] mb-6">Reserve una consulta gratuita. Te diremos si Spravato es una opción y qué necesita tu plan. ¡Hablamos Español!</p>
+        <p className="text-lg text-[#555] mb-6">Reserve una consulta gratuita. Le diremos si Spravato es una opción y qué necesita su plan. ¡Hablamos Español!</p>
         <Link href="/es#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-semibold px-8 py-3 rounded-lg hover:bg-[#b8955e] transition">
           Reservar Consulta Gratuita
         </Link>

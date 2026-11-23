@@ -9,7 +9,7 @@ export default function SpanishContent() {
       <SiteHeaderEs />
 
       {/* HERO */}
-      <section className="bg-[#0B1D36] text-white py-20 px-6 text-center">
+      <section id="main-content" className="bg-[#0B1D36] text-white py-20 px-6 text-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4">Contenido</h1>
         <p className="text-lg text-white/80 max-w-3xl mx-auto">
           Artículos, videos y noticias sobre terapia de ketamina. ¡Hablamos Español!

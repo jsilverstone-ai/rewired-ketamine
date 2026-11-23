@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// Shared Spanish footer. Mirrors the English footer markup and classes.
+// Shared Spanish site footer. The English and Spanish footers are generated
+// from one template, so they always have the same structure and classes.
 
 const MAPS_URL =
   "https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu";
@@ -29,7 +30,7 @@ export default function SiteFooterEs() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
           <div>
-            <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Contáctenos</h4>
+            <h3 className="font-semibold text-lg mb-5 text-[#C9A66B]">Contáctenos</h3>
             <ul className="space-y-3 text-white/80 text-sm">
               <li>Abierto: Lunes - Viernes</li>
               <li>9:00AM - 5:00PM</li>
@@ -81,7 +82,7 @@ export default function SiteFooterEs() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-lg mb-5 text-[#C9A66B]">Enlaces Rápidos</h4>
+            <h3 className="font-semibold text-lg mb-5 text-[#C9A66B]">Enlaces Rápidos</h3>
             <ul className="space-y-3 text-white/80 text-sm">
               {QUICK_LINKS.map((l) => (
                 <li key={l.label}><Link href={l.href} className="hover:text-[#C9A66B] transition">{l.label}</Link></li>

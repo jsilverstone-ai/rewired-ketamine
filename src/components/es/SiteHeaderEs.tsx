@@ -5,12 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-// Shared Spanish header: skip link, top bar, desktop nav with dropdowns,
-// and mobile menu. Mirrors the English header markup and classes, except the
-// desktop menu starts at the xl breakpoint (1280px) instead of md and uses
-// gap-6, nowrap and a short "FAQ" label, because the Spanish labels are longer
-// and the full menu would otherwise wrap or overflow. The mobile menu says
-// "Preguntas Frecuentes".
+// Shared Spanish site header: skip link, top bar, desktop nav with dropdowns
+// and mobile menu. The English and Spanish headers are generated from one
+// template, so they always have the same structure and classes.
+// The full desktop menu shows from the xl breakpoint (1280px) up; below that
+// the mobile menu is used, so the menu never overflows on tablets.
 
 const MAPS_URL =
   "https://www.google.com/maps/place/Rewired+Ketamine/@25.9730993,-80.1475594,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9ad36917b816d:0x35046cce92dab559!8m2!3d25.9730993!4d-80.1449845!16s%2Fg%2F11srrh9xgl?entry=ttu";
@@ -60,9 +59,16 @@ const SOCIAL = [
 const DROPDOWN_LINK = "block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition";
 const NAV_LINK = "hover:text-[#C9A66B] transition";
 
+/** Matching English URL for the current Spanish page: /es/x -> /x, /es -> /. */
+function altLangHref(pathname: string | null): string {
+  if (!pathname) return "/";
+  const stripped = pathname.replace(/^\/es(?=\/|$)/, "");
+  return stripped === "" ? "/" : stripped;
+}
+
 function Chevron({ className = "w-4 h-4" }: { className?: string }) {
   return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+    <svg aria-hidden="true" className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
   );
 }
 
@@ -85,7 +91,7 @@ function DesktopDropdown({ label, items, width, scroll }: { label: string; items
         {label}
         <Chevron />
       </button>
-      <div className={`absolute left-0 top-full mt-2 ${width} bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50`}>
+      <div className={`absolute left-0 top-full mt-2 ${width} bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50`}>
         <div className={scroll ? "py-2 max-h-80 overflow-y-auto" : "py-2"}>
           {items.map((item) => (
             <Link key={item.href} href={item.href} className={DROPDOWN_LINK}>{item.label}</Link>
@@ -114,16 +120,9 @@ function MobileGroup({ label, items, open, onToggle, onNavigate }: { label: stri
   );
 }
 
-/** Matching English URL for the current Spanish page: /es/x -> /x, /es -> /. */
-function englishHref(pathname: string | null): string {
-  if (!pathname) return "/";
-  const stripped = pathname.replace(/^\/es(?=\/|$)/, "");
-  return stripped === "" ? "/" : stripped;
-}
-
-export default function SiteHeaderEs({ englishHref: englishOverride }: { englishHref?: string } = {}) {
+export default function SiteHeaderEs({ englishHref: altOverride }: { englishHref?: string } = {}) {
   const pathname = usePathname();
-  const enHref = englishOverride ?? englishHref(pathname);
+  const altHref = altOverride ?? altLangHref(pathname);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
@@ -174,7 +173,7 @@ export default function SiteHeaderEs({ englishHref: englishOverride }: { english
               </svg>
               (305) 676-6070
             </a>
-            <Link href={enHref} hrefLang="en" lang="en" className="text-[#C9A66B] font-semibold hover:underline">English</Link>
+            <Link href={altHref} hrefLang="en" lang="en" className="text-[#C9A66B] font-semibold hover:underline">English</Link>
           </div>
         </div>
       </div>
@@ -220,11 +219,11 @@ export default function SiteHeaderEs({ englishHref: englishOverride }: { english
               <Link href="/es/location" className={NAV_LINK} onClick={closeMenu}>Ubicación</Link>
               <Link href="/es/faq" className={NAV_LINK} onClick={closeMenu}>Preguntas Frecuentes</Link>
               <Link href="/es#contact" className={NAV_LINK} onClick={closeMenu}>Contacto</Link>
-              <Link href={enHref} hrefLang="en" lang="en" className="text-[#C9A66B] font-semibold" onClick={closeMenu}>English</Link>
+              <Link href={altHref} hrefLang="en" lang="en" className="text-[#C9A66B] font-semibold" onClick={closeMenu}>English</Link>
 
-              <a href="/es#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={closeMenu}>
+              <Link href="/es#contact" className="bg-[#C9A66B] text-[#0B1D36] text-center font-bold px-6 py-3 rounded mt-2" onClick={closeMenu}>
                 CONSULTA GRATUITA
-              </a>
+              </Link>
 
               <div className="flex items-center justify-center gap-6 pt-4 border-t border-white/10 mt-2">
                 <SocialIcons />
