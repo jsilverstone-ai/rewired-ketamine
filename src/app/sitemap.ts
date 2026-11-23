@@ -8,8 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.rewiredketamine.com";
   const lastModified = new Date("2026-11-20");
 
-  // Automatically include every blog post folder
-const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
+  // Automatically include every blog post folder, skipping redirected ones
+  const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
   const blogPosts = fs.existsSync(blogDir)
     ? fs.readdirSync(blogDir)
         .filter((name) => fs.statSync(path.join(blogDir, name)).isDirectory())
@@ -31,17 +31,29 @@ const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
     { url: `${baseUrl}/treatments`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/es/treatments`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/treatments/depression`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/depression`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/anxiety`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/anxiety`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/ptsd`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/ptsd`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/ocd`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/ocd`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/postpartum-depression`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/postpartum-depression`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/burnout`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/burnout`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/chronic-pain`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/chronic-pain`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/eating-disorder`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/eating-disorder`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/mental-fogginess`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/mental-fogginess`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/motivation`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/motivation`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/palliative-compassion-care`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/palliative-compassion-care`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/treatments/tension-headaches`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/treatments/tension-headaches`, lastModified, changeFrequency: "monthly", priority: 0.8 },
 
     // Services
     { url: `${baseUrl}/services`, lastModified, changeFrequency: "monthly", priority: 0.9 },
@@ -74,6 +86,9 @@ const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
     { url: `${baseUrl}/content/videos`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/content/ketamine-in-the-news`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/es/content`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/es/content/blog`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/es/content/videos`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/es/content/ketamine-in-the-news`, lastModified, changeFrequency: "monthly", priority: 0.6 },
 
     // All individual blog posts (auto-generated)
     ...blogPosts,
