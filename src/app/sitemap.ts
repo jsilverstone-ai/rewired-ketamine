@@ -1,8 +1,23 @@
 import { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.rewiredketamine.com";
   const lastModified = new Date("2026-11-20");
+
+  // Automatically include every blog post folder
+  const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
+  const blogPosts = fs.existsSync(blogDir)
+    ? fs.readdirSync(blogDir)
+        .filter((name) => fs.statSync(path.join(blogDir, name)).isDirectory())
+        .map((slug) => ({
+          url: `${baseUrl}/content/blog/${slug}`,
+          lastModified,
+          changeFrequency: "monthly" as const,
+          priority: 0.6,
+        }))
+    : [];
 
   return [
     // Homepage
@@ -56,5 +71,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/content/videos`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/content/ketamine-in-the-news`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/es/content`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+
+    // All individual blog posts (auto-generated)
+    ...blogPosts,
   ];
 }
