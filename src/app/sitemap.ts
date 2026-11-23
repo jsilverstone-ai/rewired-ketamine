@@ -2,15 +2,18 @@ import { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
 
+const REDIRECTED_BLOG_SLUGS = ["what-is-ketamine-treatment-for-depression"];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.rewiredketamine.com";
   const lastModified = new Date("2026-11-20");
 
   // Automatically include every blog post folder
-  const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
+const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
   const blogPosts = fs.existsSync(blogDir)
     ? fs.readdirSync(blogDir)
         .filter((name) => fs.statSync(path.join(blogDir, name)).isDirectory())
+        .filter((slug) => !REDIRECTED_BLOG_SLUGS.includes(slug))
         .map((slug) => ({
           url: `${baseUrl}/content/blog/${slug}`,
           lastModified,
