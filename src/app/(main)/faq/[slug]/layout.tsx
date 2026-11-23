@@ -8,6 +8,7 @@ const strongSlugs = [
   "ocd",
   "chronic-pain",
   "spravato",
+  "cost-and-coverage",
 ];
 
 export async function generateMetadata({

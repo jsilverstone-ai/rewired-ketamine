@@ -18,6 +18,15 @@ export default function SpanishFAQSlugPage() {
 
   if (!page) return notFound();
 
+  const copy = page.es ?? {
+    title: page.title,
+    description: page.description,
+    h1: page.h1,
+    related: page.related,
+    relatedLabel: page.relatedLabel,
+    faqs: page.faqs,
+  };
+
   return (
     <main className="min-h-screen bg-[#F8F5F0] text-[#1a1a1a] pb-24 lg:pb-0">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#C9A66B] focus:text-[#0B1D36] focus:px-4 focus:py-2 focus:rounded focus:font-semibold">
@@ -143,15 +152,15 @@ export default function SpanishFAQSlugPage() {
       {/* HERO */}
       <section className="bg-[#0B1D36] text-white py-20 px-6 text-center">
         <p className="text-[#C9A66B] font-semibold tracking-widest text-sm mb-4">AVENTURA • SUR DE FLORIDA</p>
-        <h1 className="text-3xl md:text-5xl font-bold mb-6">{page.h1}</h1>
-        <p className="text-lg md:text-xl text-white/80 mb-6 max-w-3xl mx-auto">{page.description}</p>
+        <h1 className="text-3xl md:text-5xl font-bold mb-6">{copy.h1}</h1>
+        <p className="text-lg md:text-xl text-white/80 mb-6 max-w-3xl mx-auto">{copy.description}</p>
         <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* FAQ Content */}
       <section id="main-content" className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto space-y-8">
-          {page.faqs.map((item, i) => (
+          {copy.faqs.map((item, i) => (
             <div key={i}>
               <h2 className="text-xl font-semibold text-[#0B1D36] mb-2">{item.question}</h2>
               <p className="text-[#555] leading-relaxed">{item.answer}</p>
@@ -160,9 +169,9 @@ export default function SpanishFAQSlugPage() {
           <p className="mt-10">
             Más información sobre nuestra <Link href="/es" className="text-[#C9A66B] font-semibold hover:underline">clínica de ketamina en Aventura que atiende Miami</Link>.
           </p>
-          {page.related && (
+          {copy.related && (
             <p className="mt-4">
-              Relacionado: <Link href={page.related.startsWith("/es") ? page.related : `/es${page.related}`} className="text-[#C9A66B] font-semibold hover:underline">página de tratamiento</Link>
+              Relacionado: <Link href={copy.related.startsWith("/es") ? copy.related : `/es${copy.related}`} className="text-[#C9A66B] font-semibold hover:underline">{copy.relatedLabel ?? "página de tratamiento"}</Link>
             </p>
           )}
           <p className="mt-6">

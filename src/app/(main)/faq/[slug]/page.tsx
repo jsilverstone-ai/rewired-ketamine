@@ -239,7 +239,7 @@ export default function FAQPage() {
           </p>
           {page.related && (
             <p className="mt-4">
-              Related: <Link href={page.related} className="text-[#C9A66B] font-semibold hover:underline">treatment page</Link>
+              Related: <Link href={page.related} className="text-[#C9A66B] font-semibold hover:underline">{page.relatedLabel ?? "treatment page"}</Link>
             </p>
           )}
           <p className="mt-6">

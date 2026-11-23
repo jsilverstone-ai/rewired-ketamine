@@ -8,6 +8,7 @@ const strongSlugs = [
   "ocd",
   "chronic-pain",
   "spravato",
+  "cost-and-coverage",
 ];
 
 export async function generateMetadata({
@@ -21,8 +22,8 @@ export async function generateMetadata({
 
   return {
     robots: isThin ? "noindex, follow" : "index, follow",
-    title: page?.title ?? "Preguntas Frecuentes",
-    description: page?.description ?? "",
+    title: page?.es?.title ?? page?.title ?? "Preguntas Frecuentes",
+    description: page?.es?.description ?? page?.description ?? "",
     alternates: {
       canonical: `https://www.rewiredketamine.com/es/faq/${slug}`,
     },

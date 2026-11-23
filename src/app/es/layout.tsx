@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import RootHtml from "@/components/RootHtml";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.rewiredketamine.com"),
   title: "Clínica de Ketamina en Miami y Aventura | Terapia IV Guiada | Rewired Ketamine",
   description: "Rewired Ketamine es una clínica de ketamina líder en la que confían los pacientes de Miami, ubicada en Aventura. Sesiones totalmente guiadas disponibles para depresión resistente al tratamiento, ansiedad, PTSD y dolor crónico. Atendiendo Miami, Fort Lauderdale y el sur de Florida. ¡Hablamos Español!",
   openGraph: {
@@ -13,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function EsLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return <RootHtml lang="es">{children}</RootHtml>;
 }

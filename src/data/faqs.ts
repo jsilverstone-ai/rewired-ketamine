@@ -1,11 +1,22 @@
 export type FAQItem = { question: string; answer: string };
 
+export type FAQLocaleCopy = {
+  title: string;
+  description: string;
+  h1: string;
+  related?: string;
+  relatedLabel?: string;
+  faqs: FAQItem[];
+};
+
 export type FAQPage = {
   slug: string;
   title: string;
   description: string;
   h1: string;
   related?: string;
+  relatedLabel?: string;
+  es?: FAQLocaleCopy;
   faqs: FAQItem[];
 };
 
@@ -744,5 +755,36 @@ export const faqs: FAQPage[] = [
       { question: "Who should not start?", answer: "Certain conditions require careful screening." },
       { question: "How do I start?", answer: "Book a free consult." },
     ],
+  },
+  {
+    slug: "cost-and-coverage",
+    title: "Cost and Insurance FAQ | Rewired Ketamine Aventura",
+    h1: "Cost and Insurance FAQ",
+    description: "Prices for IV ketamine at Rewired Ketamine in Aventura, and how Spravato insurance billing works. Cash-pay IV sessions include a superbill. ¡Hablamos Español!",
+    related: "/services/ketamine-insurance",
+    relatedLabel: "Insurance page",
+    faqs: [
+      { question: "How much does an IV ketamine session cost?", answer: "Our published 1-hour mental-health IV protocol is $440 for a single session and $2,300 for a package of 6. Guided sessions, 2-hour options, and other packages are listed on the cost page. A free consult is required before treatment." },
+      { question: "Does insurance cover Spravato?", answer: "We bill Spravato in-network with UnitedHealthcare, Cigna, and Aetna. Approval is never guaranteed and depends on your plan and prior authorization. More detail is on our insurance page." },
+      { question: "Is Blue Cross Blue Shield or Florida Blue accepted for Spravato?", answer: "Blue Cross Blue Shield plans, including Florida Blue, are out-of-network for Spravato at Rewired Ketamine. Some plans have out-of-network benefits, but what they pay varies and is not guaranteed. We can review your plan at a free consult." },
+      { question: "Does insurance cover IV ketamine?", answer: "IV ketamine is cash-pay. It is not FDA-approved for depression, and plans generally do not cover it. We give cash-pay patients a superbill (a detailed statement of the services you received and what you paid) that you may submit to your insurer for possible out-of-network reimbursement. Reimbursement is not guaranteed and depends on your plan." },
+      { question: "What is a superbill?", answer: "A superbill is a detailed statement of the services you received and what you paid. We give one to every cash-pay patient. You submit the claim; we cannot predict what, if anything, your plan will pay." },
+      { question: "How do I get started or learn more about coverage?", answer: "See our insurance page, or book a free consult. Call or text (305) 676-6070. Rewired Ketamine is at 2820 NE 214th St Suite 1002, Aventura, FL 33180. ¡Hablamos Español!" },
+    ],
+    es: {
+      title: "Costo y Seguro Médico | Preguntas Frecuentes | Rewired Ketamine Aventura",
+      h1: "Costo y Seguro Médico",
+      description: "Precios de la ketamina IV en Rewired Ketamine en Aventura, y cómo se factura Spravato al seguro. Las sesiones IV de pago en efectivo incluyen una superfactura. ¡Hablamos Español!",
+      related: "/es/services/ketamine-insurance",
+      relatedLabel: "página de seguro médico",
+      faqs: [
+        { question: "¿Cuánto cuesta una sesión de ketamina IV?", answer: "Nuestro protocolo IV publicado de salud mental de 1 hora cuesta $440 por una sesión individual y $2,300 por un paquete de 6. Las sesiones guiadas, las opciones de 2 horas y los demás paquetes están en la página de costos. Se requiere una consulta gratuita antes del tratamiento." },
+        { question: "¿El seguro cubre Spravato?", answer: "Facturamos Spravato dentro de la red (in-network) con UnitedHealthcare, Cigna y Aetna. La aprobación nunca está garantizada y depende de su plan y de la autorización previa. Encontrará más detalles en nuestra página de seguro médico." },
+        { question: "¿Aceptan Blue Cross Blue Shield o Florida Blue para Spravato?", answer: "Los planes de Blue Cross Blue Shield, incluido Florida Blue, están fuera de la red (out-of-network) para Spravato en Rewired Ketamine. Algunos planes tienen beneficios fuera de la red, pero lo que pagan varía y no está garantizado. Podemos revisar su plan en una consulta gratuita." },
+        { question: "¿El seguro cubre la ketamina IV?", answer: "La ketamina IV se paga en efectivo (cash-pay). No está aprobada por la FDA para la depresión, y los planes generalmente no la cubren. A los pacientes que pagan en efectivo les entregamos una superfactura (superbill) — un estado de cuenta detallado de los servicios que usted recibió y lo que pagó — para que la presente a su aseguradora y solicite un posible reembolso fuera de la red. El reembolso no está garantizado y depende de su plan." },
+        { question: "¿Qué es una superfactura (superbill)?", answer: "Es un estado de cuenta detallado de los servicios que usted recibió y lo que pagó. Entregamos una a cada paciente que paga en efectivo. Usted presenta el reclamo; nosotros no podemos predecir qué pagará su plan, si es que paga algo." },
+        { question: "¿Cómo empiezo o dónde obtengo más información sobre la cobertura?", answer: "Consulte nuestra página de seguro médico, o reserve una consulta gratuita. Llame o envíe un mensaje de texto al (305) 676-6070. Rewired Ketamine está en 2820 NE 214th St Suite 1002, Aventura, FL 33180. ¡Hablamos Español!" },
+      ],
+    },
   },
 ];

@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { useState } from "react";
 
 const postpartumJsonLd = {
   "@context": "https://schema.org",
@@ -70,6 +73,7 @@ const faqs = [
 ];
 
 export default function PostpartumDepressionPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
       <JsonLd data={postpartumJsonLd} />
@@ -137,13 +141,28 @@ export default function PostpartumDepressionPage() {
               <Link href="/faq" className="hover:text-[#C9A66B] transition">FAQ</Link>
               <Link href="/#contact" className="hover:text-[#C9A66B] transition">Contact</Link>
             </nav>
-            <button className="lg:hidden p-2" aria-label="Open menu">
+            <button className="md:hidden p-2" aria-label="Open menu" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
             </button>
             <div className="hidden lg:flex items-center gap-6">
               <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] font-semibold px-5 py-2.5 rounded-lg hover:bg-[#b8955e] transition">Free Consultation</Link>
             </div>
           </div>
+          {isMenuOpen && (
+            <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
+              <div className="px-6 py-4 space-y-3">
+              <Link href="/" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link href="/services" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Our Services</Link>
+              <Link href="/services/ketamine-insurance" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Insurance</Link>
+              <Link href="/treatments" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Treatments</Link>
+              <Link href="/providers" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Providers</Link>
+              <Link href="/location" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Location</Link>
+              <Link href="/faq" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>FAQ</Link>
+              <Link href="/#contact" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <Link href="/es" className="block py-2 text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Español</Link>
+              </div>
+            </div>
+          )}
         </header>
 
         {/* Hero */}
