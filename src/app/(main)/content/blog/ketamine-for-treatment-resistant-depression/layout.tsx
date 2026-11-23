@@ -8,10 +8,11 @@ export const metadata: Metadata = {
     description: "Understanding ketamine’s role when traditional antidepressants have not been enough.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/ketamine-for-treatment-resistant-depression",
+    canonical: "https://www.rewiredketamine.com/content/blog/ketamine-for-treatment-resistant-depression",
   },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;
 }
+

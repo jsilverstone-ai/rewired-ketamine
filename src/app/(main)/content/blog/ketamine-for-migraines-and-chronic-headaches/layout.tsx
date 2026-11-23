@@ -8,10 +8,11 @@ export const metadata: Metadata = {
     description: "Supportive care options for persistent migraines and headaches.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/ketamine-for-migraines-and-chronic-headaches",
+    canonical: "https://www.rewiredketamine.com/content/blog/ketamine-for-migraines-and-chronic-headaches",
   },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;
 }
+

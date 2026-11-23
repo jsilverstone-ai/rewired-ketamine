@@ -8,10 +8,11 @@ export const metadata: Metadata = {
     description: "A clear explanation of how ketamine may support mental wellness.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/how-does-ketamine-therapy-work",
+    canonical: "https://www.rewiredketamine.com/content/blog/how-does-ketamine-therapy-work",
   },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;
 }
+

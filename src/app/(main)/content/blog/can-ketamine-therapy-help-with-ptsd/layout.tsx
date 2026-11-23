@@ -8,10 +8,11 @@ export const metadata: Metadata = {
     description: "Exploring ketamine as part of a supportive plan for PTSD in South Florida.",
   },
   alternates: {
-    canonical: "https://rewiredketamine.com/content/blog/can-ketamine-therapy-help-with-ptsd",
+    canonical: "https://www.rewiredketamine.com/content/blog/can-ketamine-therapy-help-with-ptsd",
   },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;
 }
+
