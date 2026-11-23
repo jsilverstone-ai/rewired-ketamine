@@ -74,7 +74,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/es/services/medical-management`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/services/talk-therapy`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/es/services/talk-therapy`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-
+{ url: `${baseUrl}/services/ketamine-insurance`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+{ url: `${baseUrl}/es/services/ketamine-insurance`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     // Other pages
     { url: `${baseUrl}/providers`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/es/providers`, lastModified, changeFrequency: "monthly", priority: 0.6 },
