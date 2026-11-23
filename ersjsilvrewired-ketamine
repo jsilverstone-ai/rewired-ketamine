@@ -1,0 +1,65 @@
+warning: in the working copy of 'src/app/es/content/blog/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/content/ketamine-in-the-news/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/content/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/content/videos/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/faq/[slug]/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/faq/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/location/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/providers/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/functional-wellness/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/home-ketamine/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/iv-ketamine-vs-spravato/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/ketamine-infusion/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/ketamine-insurance/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/ketamine-therapy-cost/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/medical-management/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/spravato/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/services/talk-therapy/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/anxiety/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/burnout/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/chronic-pain/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/depression/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/eating-disorder/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/mental-fogginess/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/motivation/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/ocd/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/palliative-compassion-care/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/postpartum-depression/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/ptsd/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/es/treatments/tension-headaches/page.tsx', LF will be replaced by CRLF the next time Git touches it
+ src/app/es/content/blog/page.tsx                   |  4 [32m+[m[31m--[m
+ src/app/es/content/ketamine-in-the-news/page.tsx   |  4 [32m+[m[31m--[m
+ src/app/es/content/page.tsx                        | 26 [32m+++++++++++[m[31m----[m
+ src/app/es/content/videos/page.tsx                 |  4 [32m+[m[31m--[m
+ src/app/es/faq/[slug]/page.tsx                     | 29 [32m+++++++++[m[31m--------[m
+ src/app/es/faq/page.tsx                            | 29 [32m+++++++++[m[31m--------[m
+ src/app/es/location/page.tsx                       | 29 [32m+++++++++[m[31m--------[m
+ src/app/es/page.tsx                                | 29 [32m+++++++++[m[31m--------[m
+ src/app/es/providers/page.tsx                      | 29 [32m+++++++++[m[31m--------[m
+ src/app/es/services/functional-wellness/page.tsx   | 38 [32m+++++++++++++++++++[m[31m---[m
+ src/app/es/services/home-ketamine/page.tsx         | 38 [32m+++++++++++++++++++[m[31m---[m
+ .../es/services/iv-ketamine-vs-spravato/page.tsx   | 38 [32m+++++++++++++++++++[m[31m---[m
+ src/app/es/services/ketamine-infusion/page.tsx     | 38 [32m+++++++++++++++++++[m[31m---[m
+ src/app/es/services/ketamine-insurance/page.tsx    | 38 [32m+++++++++++++++++++[m[31m---[m
+ src/app/es/services/ketamine-therapy-cost/page.tsx | 38 [32m+++++++++++++++++++[m[31m---[m
+ src/app/es/services/medical-management/page.tsx    | 38 [32m+++++++++++++++++++[m[31m---[m
+ src/app/es/services/page.tsx                       | 29 [32m+++++++++[m[31m--------[m
+ src/app/es/services/spravato/page.tsx              | 38 [32m+++++++++++++++++++[m[31m---[m
+ src/app/es/services/talk-therapy/page.tsx          | 38 [32m+++++++++++++++++++[m[31m---[m
+ src/app/es/treatments/anxiety/page.tsx             | 11 [32m+++++++[m
+ src/app/es/treatments/burnout/page.tsx             | 15 [32m+++++++++[m
+ src/app/es/treatments/chronic-pain/page.tsx        | 17 [32m++++++++++[m
+ src/app/es/treatments/depression/page.tsx          | 10 [32m++++++[m
+ src/app/es/treatments/eating-disorder/page.tsx     | 13 [32m+++++++[m[31m-[m
+ src/app/es/treatments/mental-fogginess/page.tsx    |  4 [32m+[m[31m--[m
+ src/app/es/treatments/motivation/page.tsx          |  4 [32m+[m[31m--[m
+ src/app/es/treatments/ocd/page.tsx                 | 13 [32m++++++++[m
+ src/app/es/treatments/page.tsx                     | 29 [32m+++++++++[m[31m--------[m
+ .../treatments/palliative-compassion-care/page.tsx |  4 [32m+[m[31m--[m
+ .../es/treatments/postpartum-depression/page.tsx   | 15 [32m+++++++++[m
+ src/app/es/treatments/ptsd/page.tsx                | 11 [32m+++++++[m
+ src/app/es/treatments/tension-headaches/page.tsx   |  4 [32m+[m[31m--[m
+ 32 files changed, 540 insertions(+), 164 deletions(-)

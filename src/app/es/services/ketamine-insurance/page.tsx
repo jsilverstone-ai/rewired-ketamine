@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { useState } from "react";
 
 
 const faqs: { q: string; a: string; link?: { text: string; href: string } }[] = [
@@ -69,6 +72,7 @@ const insuranceJsonLd = {
 };
 
 export default function KetamineInsuranceEsPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
     <JsonLd data={insuranceJsonLd} />
@@ -141,10 +145,18 @@ export default function KetamineInsuranceEsPage() {
               <div className="absolute left-0 top-full mt-2 w-64 bg-white text-[#0B1D36] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2 max-h-80 overflow-y-auto">
                   <Link href="/es/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Todos los Tratamientos</Link>
-                  <Link href="/es/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Depresión</Link>
-                  <Link href="/es/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ansiedad</Link>
-                  <Link href="/es/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">TEPT</Link>
-                  <Link href="/es/treatments" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Dolor Crónico</Link>
+                  <Link href="/es/treatments/depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Depresión</Link>
+                  <Link href="/es/treatments/anxiety" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Ansiedad</Link>
+                  <Link href="/es/treatments/ptsd" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">TEPT</Link>
+                  <Link href="/es/treatments/burnout" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Agotamiento</Link>
+                  <Link href="/es/treatments/mental-fogginess" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Niebla Mental</Link>
+                  <Link href="/es/treatments/motivation" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Motivación</Link>
+                  <Link href="/es/treatments/eating-disorder" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Trastorno Alimentario</Link>
+                  <Link href="/es/treatments/postpartum-depression" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Depresión Postparto</Link>
+                  <Link href="/es/treatments/ocd" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">TOC</Link>
+                  <Link href="/es/treatments/chronic-pain" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Dolor Crónico</Link>
+                  <Link href="/es/treatments/tension-headaches" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cefaleas por Tensión</Link>
+                  <Link href="/es/treatments/palliative-compassion-care" className="block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B] transition">Cuidado Paliativo y Compasión</Link>
                 </div>
               </div>
             </div>
@@ -154,7 +166,7 @@ export default function KetamineInsuranceEsPage() {
             <Link href="/es/faq" className="hover:text-[#C9A66B] transition">Preguntas Frecuentes</Link>
             <Link href="/es#contact" className="hover:text-[#C9A66B] transition">Contacto</Link>
           </nav>
-          <button className="lg:hidden p-2" aria-label="Abrir menú">
+          <button className="md:hidden p-2" aria-label="Abrir menú" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
           </button>
           <div className="hidden lg:flex items-center gap-6">
@@ -163,6 +175,22 @@ export default function KetamineInsuranceEsPage() {
             </Link>
           </div>
         </div>
+        {isMenuOpen && (
+          <div className="md:hidden bg-[#0B1D36] border-t border-white/10">
+            <div className="px-6 py-4 space-y-3">
+            <Link href="/es" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Inicio</Link>
+            <Link href="/es/services" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Nuestros Servicios</Link>
+            <Link href="/es/services/ketamine-insurance" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Seguro Médico</Link>
+            <Link href="/es/treatments" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Tratamientos</Link>
+            <Link href="/es/providers" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Proveedores</Link>
+            <Link href="/es/content" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Contenido</Link>
+            <Link href="/es/location" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Ubicación</Link>
+            <Link href="/es/faq" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Preguntas Frecuentes</Link>
+            <Link href="/es/#contact" className="block py-2 hover:text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>Contacto</Link>
+            <Link href="/services/ketamine-insurance" className="block py-2 text-[#C9A66B]" onClick={() => setIsMenuOpen(false)}>English</Link>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero */}
