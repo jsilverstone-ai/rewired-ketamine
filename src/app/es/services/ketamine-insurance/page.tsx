@@ -46,7 +46,14 @@ const insuranceJsonLd = {
       inLanguage: "es-US",
       isPartOf: { "@id": "https://www.rewiredketamine.com/#clinic" },
       about: [
-        { "@type": "Drug", name: "Spravato (esketamine nasal spray)" },
+        {
+          "@type": "Substance",
+          name: "Spravato (esketamine nasal spray)",
+          nonProprietaryName: "esketamine",
+          activeIngredient: "esketamine",
+          administrationRoute: "nasal",
+          prescriptionStatus: "PrescriptionOnly",
+        },
         { "@type": "MedicalTherapy", name: "Intravenous ketamine infusion" },
       ],
       dateModified: "2026-11-23",
