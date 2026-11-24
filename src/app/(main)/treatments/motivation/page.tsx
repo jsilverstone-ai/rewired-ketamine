@@ -17,7 +17,7 @@ export default function MotivationPage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-6">
             Supportive care for individuals seeking to reconnect with drive and purpose at our locally owned Aventura clinic.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 

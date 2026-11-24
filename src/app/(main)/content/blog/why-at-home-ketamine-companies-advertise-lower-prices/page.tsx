@@ -12,7 +12,7 @@ export default function IVKetamineCostPage() {
   <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
   <h1 className="text-3xl md:text-5xl font-bold mb-6">Why At-Home Ketamine Companies Advertise Lower Prices — and What That Means for Care in South Florida</h1>
   <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">National at-home programs often advertise lower monthly prices. See how their model differs from in-clinic IV care. Fully guided sessions available.</p>
-  <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+  <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
 </section>
 
       {/* MAIN CONTENT */}

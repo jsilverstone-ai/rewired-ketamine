@@ -14,7 +14,7 @@ export default function KetamineTherapyCostEsPage() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Información clara sobre los precios de ketamina IV y Spravato en nuestra clínica de propiedad local en Aventura. Sirviendo a Miami, Fort Lauderdale y el Sur de Florida.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}

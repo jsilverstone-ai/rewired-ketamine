@@ -14,7 +14,7 @@ export default function DrJacobSilverstoneKetamineTherapyTraumaHealingPage() {
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
           A conversation on guided ketamine care at our locally owned Aventura clinic. Serving Miami and South Florida.
         </p>
-        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       <section id="main-content" className="py-16 px-6 bg-white">

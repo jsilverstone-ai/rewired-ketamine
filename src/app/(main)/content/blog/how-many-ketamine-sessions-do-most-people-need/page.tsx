@@ -13,7 +13,7 @@ export default function HowManySessionsPage() {
         <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
         <h1 className="text-3xl md:text-5xl font-bold mb-6">How Many Ketamine Sessions Do Most People Need — and What Does That Cost in Aventura?</h1>
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">Most people begin with a 6-session induction. See why packages exist and how boosters are decided. Fully guided sessions available.</p>
-        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* CONTENT */}

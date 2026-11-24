@@ -19,7 +19,7 @@ export default function KetamineOpioidInducedHyperalgesiaPage() {
     <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
       A 2026 review of the NMDA receptor — useful context for chronic pain, not a promise of results.
     </p>
-    <p className="text-[#C9A66B] font-semibold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+    <p className="text-[#C9A66B] font-semibold text-lg"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
   </div>
 </section>
 

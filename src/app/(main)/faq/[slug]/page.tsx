@@ -31,7 +31,7 @@ export default function FAQPage() {
         <p className="text-[#C9A66B] font-semibold tracking-wide mb-3">AVENTURA • SOUTH FLORIDA</p>
         <h1 className="text-3xl md:text-5xl font-bold mb-6">{page.h1}</h1>
         <p className="text-lg md:text-xl text-white/80 mb-6">{page.description}</p>
-        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       <section id="main-content" className="py-16 px-6 bg-white">

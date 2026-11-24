@@ -83,7 +83,7 @@ export default function BurnoutPage() {
           <p className="text-[#C9A66B] font-semibold tracking-widest text-sm mb-4">AVENTURA • SOUTH FLORIDA</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Ketamine for Burnout and High-Stress Professionals in Aventura</h1>
           <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">Guided IV sessions for high-functioning professionals from Miami and Fort Lauderdale. Clear package pricing so you know the full cost of a course before you schedule.</p>
-          <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </section>
 
         {/* Content */}

@@ -30,7 +30,7 @@ const treatments = [
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Apoyo con ketamina totalmente guiada para una variedad de preocupaciones de salud mental y relacionadas con el dolor — con cuidado que prioriza la seguridad, la compasión y el cambio duradero.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Miami block */}

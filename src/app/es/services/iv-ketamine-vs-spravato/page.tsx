@@ -14,7 +14,7 @@ export default function IvVsSpravatoEsPage() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Una comparación clínica breve de la ketamina IV en clínica y Spravato (esketamina) en Rewired Ketamine en Aventura. Sirviendo a Miami, Fort Lauderdale y el Sur de Florida.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}

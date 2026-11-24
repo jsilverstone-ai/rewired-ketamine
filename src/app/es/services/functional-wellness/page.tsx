@@ -14,7 +14,7 @@ export default function FunctionalWellnessEsPage() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Apoyando a la persona completa junto con el cuidado de ketamina.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}

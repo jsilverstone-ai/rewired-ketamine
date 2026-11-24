@@ -15,7 +15,7 @@ export default function Home() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             An FDA-approved nasal spray for adults with treatment-resistant depression, given in our REMS-certified clinic and monitored on site. Patients come from Miami, Fort Lauderdale, and South Florida.
           </p>
-          <p className="text-[#C9A66B] font-semibold text-lg mb-8"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-semibold text-lg mb-8"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
           <Link href="/#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-bold px-8 py-3 rounded-full hover:bg-white transition">
             Ask about a Spravato consult
           </Link>

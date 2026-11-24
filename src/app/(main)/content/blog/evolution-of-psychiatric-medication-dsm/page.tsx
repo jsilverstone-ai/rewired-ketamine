@@ -19,7 +19,7 @@ export default function EvolutionOfPsychiatricMedicationDSMPage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             A clear look at how psychiatric diagnosis and medication have changed over time — and what it means for patients exploring newer options like ketamine for depression in Miami and Aventura.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 

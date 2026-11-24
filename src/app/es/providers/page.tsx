@@ -16,7 +16,7 @@ export default function SpanishProviders() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Proveedores experimentados dedicados a un cuidado reflexivo y médicamente supervisado en nuestra clínica de propiedad local en Aventura.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         <p className="mt-4 text-sm text-white/70">Cuidado médicamente supervisado • Propiedad local en Aventura • Sesiones totalmente guiadas disponibles • Certificado LegitScript</p>
       </section>
 

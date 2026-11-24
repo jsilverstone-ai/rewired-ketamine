@@ -16,7 +16,7 @@ export default function WhatIsKetamineAssistedTherapyPage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             A clear explainer of ketamine-assisted therapy at our locally owned clinic in Aventura.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 

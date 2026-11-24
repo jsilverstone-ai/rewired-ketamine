@@ -12,7 +12,7 @@ export default function SpanishPTSDPage() {
         <p className="text-[#C9A66B] font-semibold tracking-widest text-sm mb-4">AVENTURA • SUR DE FLORIDA</p>
         <h1 className="text-4xl md:text-5xl font-bold mb-6">TEPT</h1>
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">Apoyo cuidadoso con ketamina para quienes navegan el trauma.</p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       <section className="py-16 px-6 bg-white">

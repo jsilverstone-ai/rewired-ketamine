@@ -16,7 +16,7 @@ export default function FAQIndexPage() {
           <p className="text-lg md:text-xl text-white/80 mb-8">
             Common questions about guided ketamine care at our locally owned Aventura clinic.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 

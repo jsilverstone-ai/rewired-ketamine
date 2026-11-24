@@ -14,7 +14,7 @@ export default function WhatDoesKetamineTherapyFeelLikePage() {
     <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">Aventura • South Florida</p>
     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">What Does Ketamine Therapy Feel Like? A Guide For First-Timers</h1>
     <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">A first-timer’s guide from our locally owned ketamine clinic Miami patients visit in Aventura.</p>
-    <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+    <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
   </div>
 </section>
 <section className="py-20 px-6">

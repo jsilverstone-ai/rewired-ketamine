@@ -20,7 +20,7 @@ export default function SpravatoForTreatmentResistantDepressionPage() {
             What a 2025 review found about in-clinic esketamine, and how visits work at our REMS-certified Aventura clinic.
           </p>
           <p className="text-[#C9A66B] font-bold text-lg md:text-xl">
-            <Link href="/es" className="hover:underline">¡Hablamos Español!</Link>
+            <Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link>
           </p>
         </div>
       </section>

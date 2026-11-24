@@ -14,7 +14,7 @@ export default function IsKetamineTherapyRightForYouPage() {
     <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">Aventura • South Florida</p>
     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Is Ketamine Therapy Right For You?</h1>
     <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">A consult-focused look at whether ketamine treatment in Florida may be appropriate for you.</p>
-    <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+    <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
   </div>
 </section>
 <section className="py-20 px-6">

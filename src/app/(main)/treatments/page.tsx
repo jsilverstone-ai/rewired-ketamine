@@ -23,7 +23,7 @@ export default function TreatmentsPage() {
             Fully guided ketamine support for a range of mental health and pain-related concerns — with care that prioritizes safety, compassion, and lasting change.
           </p>
           <p className="text-[#C9A66B] font-bold text-lg md:text-xl">
-            <Link href="/es" className="hover:underline">¡Hablamos Español!</Link>
+            <Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link>
           </p>
         </div>
       </section>

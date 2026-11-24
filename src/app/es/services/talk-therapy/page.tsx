@@ -14,7 +14,7 @@ export default function TalkTherapyEsPage() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Terapia centrada en la integración para ayudar a que los insights echen raíces.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}

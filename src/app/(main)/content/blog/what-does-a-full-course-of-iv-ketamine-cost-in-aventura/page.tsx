@@ -15,7 +15,7 @@ export default function IVKetamineCostPage() {
         <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-6">
           See real package pricing and what is included at our locally owned clinic. Fully guided sessions available.
         </p>
-        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-bold text-lg"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* MAIN CONTENT */}

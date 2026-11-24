@@ -18,7 +18,7 @@ export default function KetamineClinicMiamiVsAventuraPage() {
     <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
       Most “ketamine miami” searches mean the metro area. Here is how to decide whether an Aventura clinic is the right local fit.
     </p>
-    <p className="text-[#C9A66B] font-semibold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+    <p className="text-[#C9A66B] font-semibold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
   </div>
 </section>
 

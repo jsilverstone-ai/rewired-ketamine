@@ -48,7 +48,7 @@ info@rewiredketamine.com`;
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Un espacio clínico calmado y privado en el corazón de Aventura — sirviendo a Miami, Fort Lauderdale y el Sur de Florida.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Contact Cards */}

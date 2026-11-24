@@ -166,7 +166,7 @@ const pathname = usePathname();
   </p>
 
 <Link
-  href={pathname === "/" ? "/es" : `/es${pathname}`}
+  href={pathname === "/" ? "/es#bienvenida" : `/es${pathname}`}
   className="inline-block text-[#C9A66B] font-bold text-lg hover:underline"
 >
   ¡Hablamos Español!

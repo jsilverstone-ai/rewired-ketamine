@@ -17,7 +17,7 @@ export default function CanKetamineTherapyHelpWithPTSDPage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             A soft look at how ketamine may support individuals living with PTSD in South Florida.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 

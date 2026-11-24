@@ -14,7 +14,7 @@ export default function SpravatoEsPage() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Un espray nasal aprobado por la FDA para adultos con depresión resistente al tratamiento, administrado en nuestra clínica certificada REMS y monitoreado en el sitio. Pacientes vienen de Miami, Fort Lauderdale y el Sur de Florida.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}

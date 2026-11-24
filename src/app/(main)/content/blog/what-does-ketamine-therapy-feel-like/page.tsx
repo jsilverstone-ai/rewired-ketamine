@@ -17,7 +17,7 @@ export default function WhatDoesKetamineTherapyFeelLikePage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             A gentle, honest overview of the experience at our locally owned Aventura clinic.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 

@@ -17,7 +17,7 @@ export default function KetaminePsychotherapyChronicPainPage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             New research explores pairing ketamine with psychotherapy for chronic neuropathic pain — and what it could mean for patients in Miami and Aventura.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 

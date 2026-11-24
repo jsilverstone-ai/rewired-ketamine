@@ -14,7 +14,7 @@ export default function HomeKetamineEsPage() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Apoyo guiado de ketamina en la comodidad de su hogar.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}

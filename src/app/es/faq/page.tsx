@@ -26,7 +26,7 @@ export default function SpanishFAQ() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Respuestas a preguntas comunes sobre terapia de ketamina en nuestra clínica de propiedad local en Aventura. Sesiones totalmente guiadas disponibles.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Key Questions */}

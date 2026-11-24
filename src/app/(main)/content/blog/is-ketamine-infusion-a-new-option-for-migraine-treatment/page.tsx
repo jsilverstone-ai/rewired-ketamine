@@ -17,7 +17,7 @@ export default function KetamineMigrainesEffectivenessPage() {
     <p className="text-[#C9A66B] font-semibold tracking-widest uppercase text-sm mb-4">Aventura • South Florida</p>
     <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Is Ketamine Infusion A New Option For Migraine Treatment?</h1>
     <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">A careful look at ketamine infusion for migraines at our locally owned Aventura clinic.</p>
-    <p className="text-[#C9A66B] font-semibold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+    <p className="text-[#C9A66B] font-semibold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
   </div>
 </section>
 <section className="py-20 px-6">

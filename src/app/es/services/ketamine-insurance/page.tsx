@@ -84,7 +84,7 @@ export default function KetamineInsuranceEsPage() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Respuestas claras sobre lo que cubre el seguro para Spravato y la ketamina IV, y por qué usar el seguro no siempre es la opción más económica. Atendemos a Miami, Fort Lauderdale y el Sur de Florida.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Content */}

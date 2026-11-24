@@ -49,6 +49,23 @@ export default function SpanishHome() {
         }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "Hablamos español. De verdad. | Dr. Jacob Silverstone",
+            "description": "El Dr. Jacob Silverstone, de México, da la bienvenida en español a quienes buscan cuidado en Rewired Ketamine en Aventura. No es una traducción: es cómo pensamos, cómo sentimos y cómo cuidamos a nuestras familias.",
+            "thumbnailUrl": "https://www.rewiredketamine.com/videos/bienvenida-poster.jpg",
+            "uploadDate": "2026-11-23",
+            "contentUrl": "https://www.rewiredketamine.com/videos/bienvenida-dr-silverstone.mp4",
+            "duration": "PT31S",
+            "inLanguage": "es"
+          })
+        }}
+      />
+
       <SiteHeaderEs />
 
       {/* HERO */}
@@ -71,7 +88,7 @@ export default function SpanishHome() {
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto">
             Rewired Ketamine es una clínica de ketamina líder en la que confían los pacientes de Miami, ubicada en Aventura. Sesiones totalmente guiadas disponibles para depresión resistente al tratamiento, ansiedad, TEPT y dolor crónico.
           </p>
-          <p className="text-[#C9A66B] font-semibold text-lg mb-8"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-semibold text-lg mb-8"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/es/#contact" className="bg-[#C9A66B] text-[#0B1D36] font-semibold px-8 py-4 rounded-lg hover:bg-[#b8955e] transition text-lg">Consulta Gratuita</Link>
             <a href="tel:+13056766070" className="border border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition text-lg">Llamar o Mensaje</a>
@@ -87,6 +104,65 @@ export default function SpanishHome() {
           <span>5 estrellas en Google</span>
           <span>Sirviendo a Miami y el Sur de Florida</span>
           <span className="text-[#C9A66B] font-semibold">¡Hablamos Español!</span>
+        </div>
+      </section>
+
+      {/* BIENVENIDA */}
+      <section id="bienvenida" aria-labelledby="bienvenida-heading" className="scroll-mt-24 py-16 md:py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="w-full max-w-[320px] mx-auto">
+            <div className="rounded-2xl shadow-xl overflow-hidden bg-[#0B1D36]">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster="/videos/bienvenida-poster.jpg"
+                width={720}
+                height={1280}
+                className="w-full h-auto block"
+                title="Mensaje del Dr. Jacob Silverstone: Hablamos español, de verdad."
+                aria-label="Video de bienvenida del Dr. Jacob Silverstone, en español."
+              >
+                <source src="/videos/bienvenida-dr-silverstone.mp4" type="video/mp4" />
+                Su navegador no puede reproducir este video. Puede descargarlo en{" "}
+                <a href="/videos/bienvenida-dr-silverstone.mp4" className="underline">este enlace</a>.
+              </video>
+            </div>
+            <details className="mt-4 text-sm text-[#555]">
+              <summary className="cursor-pointer font-semibold text-[#0B1D36] hover:text-[#C9A66B]">Transcripción del video</summary>
+              <p className="mt-3 leading-relaxed">
+                Hola, soy el Dr. Jacob Silverstone. Soy de México, y cuando le decimos &quot;hablamos español&quot;, lo decimos en serio. No es una traducción. Es cómo pensamos, cómo sentimos, y cómo cuidamos a nuestras familias. Sé lo difícil que puede ser hablar de la salud mental en nuestra comunidad. Aquí, usted no tiene que explicarse dos veces. Desde su primera llamada hasta su seguimiento, lo atendemos en su idioma, con respeto y con corazón. Estamos aquí para usted. Hablemos.
+              </p>
+            </details>
+          </div>
+
+          <div>
+            <p className="text-sm tracking-widest text-[#C9A66B] font-semibold mb-3">UN MENSAJE DEL DR. SILVERSTONE</p>
+            <h2 id="bienvenida-heading" className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1D36] mb-6">
+              Hablamos español. De verdad.
+            </h2>
+            <p className="text-lg text-[#444] leading-relaxed mb-2">
+              Soy de México. Cuando le decimos que hablamos español, lo decimos en serio.
+            </p>
+            <p className="text-[#0B1D36] font-semibold mb-8">— Dr. Jacob Silverstone</p>
+            <ul className="space-y-5 mb-10">
+              <li className="border-l-2 border-[#C9A66B] pl-4">
+                <p className="font-semibold text-[#0B1D36]">No es una traducción.</p>
+                <p className="text-[#555]">Es cómo pensamos, cómo sentimos y cómo cuidamos a nuestras familias.</p>
+              </li>
+              <li className="border-l-2 border-[#C9A66B] pl-4">
+                <p className="font-semibold text-[#0B1D36]">Usted no tiene que explicarse dos veces.</p>
+                <p className="text-[#555]">Sé lo difícil que puede ser hablar de la salud mental en nuestra comunidad.</p>
+              </li>
+              <li className="border-l-2 border-[#C9A66B] pl-4">
+                <p className="font-semibold text-[#0B1D36]">En su idioma, de la primera llamada al seguimiento.</p>
+                <p className="text-[#555]">Lo atendemos con respeto y con corazón.</p>
+              </li>
+            </ul>
+            <Link href="#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-semibold px-8 py-4 rounded-lg hover:bg-[#b8955e] transition text-lg">
+              Hablemos
+            </Link>
+          </div>
         </div>
       </section>
 

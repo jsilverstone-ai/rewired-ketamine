@@ -85,7 +85,7 @@ export default function PostpartumDepressionPage() {
           <p className="text-[#C9A66B] font-semibold tracking-widest text-sm mb-4">AVENTURA • SOUTH FLORIDA</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Ketamine for Postpartum Depression in Aventura</h1>
           <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">Fully guided IV ketamine support for new parents in Miami, Fort Lauderdale, and South Florida. Transparent pricing published so you know the cost of a full course before you book.</p>
-          <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </section>
 
         {/* Content */}

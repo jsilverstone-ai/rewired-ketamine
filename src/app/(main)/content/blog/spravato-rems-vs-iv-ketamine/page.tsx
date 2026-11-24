@@ -20,7 +20,7 @@ export default function SpravatoREMSvsIVKetamine() {
             How in-clinic esketamine works at our Aventura clinic, and how it differs from IV ketamine.
           </p>
           <p className="text-[#C9A66B] font-bold text-lg md:text-xl">
-            <Link href="/es" className="hover:underline">¡Hablamos Español!</Link>
+            <Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link>
           </p>
         </div>
       </section>

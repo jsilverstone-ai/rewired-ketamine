@@ -21,7 +21,7 @@ export default function Home() {
             Guided ketamine support in the comfort of your home.
           </p>
 <p className="text-[#C9A66B] font-bold text-lg md:text-xl">
-  <Link href="/es" className="hover:underline">¡Hablamos Español!</Link>
+  <Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link>
 </p>
         </div>
       </section>

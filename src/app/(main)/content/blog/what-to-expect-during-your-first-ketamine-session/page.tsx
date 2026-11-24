@@ -17,7 +17,7 @@ export default function WhatToExpectDuringYourFirstKetamineSessionPage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
             A calm, practical guide to your first visit at our locally owned Aventura clinic.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 

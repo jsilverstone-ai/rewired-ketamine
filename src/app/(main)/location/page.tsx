@@ -19,7 +19,7 @@ export default function LocationPage() {
           <p className="text-xl text-white/85 max-w-2xl mx-auto mb-6">
             A calm, private clinical space in the heart of Aventura — serving Miami, Fort Lauderdale, and South Florida.
           </p>
-          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+          <p className="text-[#C9A66B] font-bold text-lg md:text-xl"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
         </div>
       </section>
 {/* LOCATION INFO + MAP */}

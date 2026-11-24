@@ -23,7 +23,7 @@ export default function Home() {
             Integration-focused therapy to help insights take root.
           </p>
 <p className="text-[#C9A66B] font-bold text-lg md:text-xl">
-  <Link href="/es" className="hover:underline">¡Hablamos Español!</Link>
+  <Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link>
 </p>
         </div>
       </section>

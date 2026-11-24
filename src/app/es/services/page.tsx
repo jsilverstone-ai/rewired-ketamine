@@ -15,7 +15,7 @@ export default function SpanishServices() {
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
           Rewired Ketamine es una clínica de ketamina de propiedad local en Aventura que sirve a Miami, Fort Lauderdale y el Sur de Florida. Los pacientes que buscan terapia de ketamina en Miami e infusión de ketamina en Miami pueden empezar aquí: sesiones IV en clínica, modalidades en casa y sesiones totalmente guiadas disponibles. El cuidado es individualizado.
         </p>
-        <p className="text-[#C9A66B] font-semibold"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+        <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
 
       {/* Ketamine infusion in Miami */}

@@ -19,7 +19,7 @@ export default function BrainSignalKetamineAntidepressantEffectsPage() {
     <p className="text-xl text-white/85 max-w-2xl mx-auto mb-8">
       New EEG research after a single infusion — useful context, not a guarantee of results.
     </p>
-    <p className="text-[#C9A66B] font-semibold text-lg"><Link href="/es" className="hover:underline">¡Hablamos Español!</Link></p>
+    <p className="text-[#C9A66B] font-semibold text-lg"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
   </div>
 </section>
 
