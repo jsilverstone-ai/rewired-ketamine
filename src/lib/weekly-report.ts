@@ -14,6 +14,8 @@ export const KEY_QUERIES = [
   "ketamine clinic aventura",
   "ketamine therapy miami",
   "ketamine clinic miami",
+  "ketamine treatment miami",
+  "ketamine infusion miami",
   "ketamine miami",
   "miami ketamine therapy",
   "ketamine clinic near me",
@@ -50,6 +52,23 @@ export type MoverRow = { key: string; thisWeek: Metrics; lastWeek: Metrics; clic
 
 export type NoiseDay = { date: string; device: string; impressions: number; clicks: number; position: number; reason: string };
 
+export type QueryOpportunity = {
+  query: string;
+  page: string | null;
+  clicks: number;
+  impressions: number;
+  ctr: number | null;
+  position: number | null;
+};
+
+export type PageOpportunity = {
+  page: string;
+  clicks: number;
+  impressions: number;
+  ctr: number | null;
+  position: number | null;
+};
+
 export type SitemapRow = {
   path: string;
   lastSubmitted: string | null;
@@ -77,6 +96,7 @@ export type WeeklyReport = {
   movers: { pagesUp: MoverRow[]; pagesDown: MoverRow[]; queriesUp: MoverRow[]; queriesDown: MoverRow[] };
   spanish: { pages: MoverRow[]; totals: { thisWeek: Metrics; lastWeek: Metrics }; gaining: number };
   newPages: MoverRow[];
+  opportunities: { strikingDistance: QueryOpportunity[]; lowCtrPages: PageOpportunity[] };
   sitemaps: SitemapRow[];
   sitemapError: string | null;
   summary: string;
@@ -309,6 +329,35 @@ export async function buildWeeklyReport(src: DataSource, site: string, today = n
     .sort((a, b) => b.thisWeek.impressions - a.thisWeek.impressions)
     .slice(0, 15);
 
+  // 7b. Opportunities (real GSC queries at pos 4–15 + pages with high impressions and low CTR).
+  const strikingDistance: QueryOpportunity[] = qThis
+    .filter((r) => r.impressions >= 5 && r.position >= 4 && r.position <= 15 && !(r.keys?.[0] ?? "").toLowerCase().includes("rewired"))
+    .sort((a, b) => b.impressions - a.impressions)
+    .slice(0, 10)
+    .map((r) => {
+      const query = r.keys?.[0] ?? "";
+      return {
+        query,
+        page: topPage(qpThis, query.toLowerCase()),
+        clicks: r.clicks,
+        impressions: r.impressions,
+        ctr: r.ctr,
+        position: r.position,
+      };
+    });
+
+  const lowCtrPages: PageOpportunity[] = pThis
+    .filter((r) => r.impressions >= 25 && r.position <= 25 && r.ctr < 0.025)
+    .sort((a, b) => b.impressions - a.impressions)
+    .slice(0, 5)
+    .map((r) => ({
+      page: r.keys?.[0] ?? "",
+      clicks: r.clicks,
+      impressions: r.impressions,
+      ctr: r.ctr,
+      position: r.position,
+    }));
+
   // 8. Sitemaps.
   const sitemaps: SitemapRow[] = sitemapResult.ok
     ? sitemapResult.s.map((s) => {
@@ -376,6 +425,7 @@ export async function buildWeeklyReport(src: DataSource, site: string, today = n
     movers: { pagesUp: up(pageMovers), pagesDown: down(pageMovers), queriesUp: up(queryMovers), queriesDown: down(queryMovers) },
     spanish: { pages: spanishPages.slice(0, 20), totals: spanishTotals, gaining: spanishGaining },
     newPages,
+    opportunities: { strikingDistance, lowCtrPages },
     sitemaps,
     sitemapError: sitemapResult.ok ? null : sitemapResult.e,
     summary: parts.join(" "),
