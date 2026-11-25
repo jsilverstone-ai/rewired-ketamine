@@ -1,8 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
-import { SEO_AUTH_COOKIE, seoAuthToken } from "@/lib/seo-auth";
+import { SEO_AUTH_COOKIE, isSeoAuthenticated, seoAuthToken } from "@/lib/seo-auth";
+
+// GET: is the current browser already signed in? Lets /seo skip the password
+// screen on reload while the 30-day cookie is valid.
+export async function GET(req: NextRequest) {
+  return NextResponse.json(
+    { authenticated: isSeoAuthenticated(req) },
+    { headers: { "Cache-Control": "private, no-store" } }
+  );
+}
+
+// DELETE: sign out.
+export async function DELETE() {
+  const response = NextResponse.json({ success: true });
+  response.cookies.set(SEO_AUTH_COOKIE, "", { httpOnly: true, path: "/", maxAge: 0 });
+  return response;
+}
 
 export async function POST(req: NextRequest) {
-  const { password } = await req.json();
+  let password: unknown = null;
+  try {
+    ({ password } = await req.json());
+  } catch {
+    return NextResponse.json({ success: false, message: "Bad request" }, { status: 400 });
+  }
 
   const correctPassword = process.env.SEO_DASHBOARD_PASSWORD;
 
