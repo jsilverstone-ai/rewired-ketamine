@@ -60,7 +60,7 @@ export default function KetamineTherapyCostEsPage() {
               <div className="space-y-2">
                 <div className="flex justify-between"><span>Sesión individual</span><span className="font-semibold">$690</span></div>
                 <div className="flex justify-between"><span>Paquete de 3</span><span className="font-semibold">$1,925</span></div>
-                <div className="flex justify-between"><span>Paquete de 6</span><span className="font-semibold">$4,000</span></div>
+                <div className="flex justify-between"><span>Paquete de 6</span><span className="font-semibold">$3,800</span></div>
               </div>
             </div>
           </div>

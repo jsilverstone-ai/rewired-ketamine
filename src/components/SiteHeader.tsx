@@ -48,7 +48,13 @@ const CONTENT = [
   { href: "/content/blog", label: "Blog" },
   { href: "/content/videos", label: "Videos" },
   { href: "/content/ketamine-in-the-news", label: "Ketamine in the News" },
-  { href: "/tools", label: "Free Self-Check Tools" },
+];
+
+const TOOLS = [
+  { href: "/tools", label: "All Tools" },
+  { href: "/tools/phq-9-depression-test", label: "PHQ-9 Depression Test" },
+  { href: "/tools/gad-7-anxiety-test", label: "GAD-7 Anxiety Test" },
+  { href: "/tools/ketamine-cost-calculator", label: "Cost Calculator" },
 ];
 
 const SOCIAL = [
@@ -134,6 +140,7 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
   const [isContentOpen, setIsContentOpen] = useState(false);
+  const [isToolsOpen, setIsToolsOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
@@ -188,12 +195,13 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
       {/* MAIN NAVIGATION */}
       <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <nav className="hidden xl:flex items-center gap-6 text-[15px] font-medium whitespace-nowrap">
+          <nav className="hidden xl:flex items-center gap-5 text-[15px] font-medium whitespace-nowrap">
             <Link href="/" className={NAV_LINK}>Home</Link>
             <DesktopDropdown label="Our Services" items={SERVICES} width="w-56" />
             <DesktopDropdown label="Treatments" items={TREATMENTS} width="w-64" scroll />
             <Link href="/providers" className={NAV_LINK}>Providers</Link>
             <DesktopDropdown label="Content" items={CONTENT} width="w-56" />
+            <DesktopDropdown label="Tools" items={TOOLS} width="w-64" />
             <Link href="/location" className={NAV_LINK}>Location</Link>
             <Link href="/faq" className={NAV_LINK}>FAQ</Link>
             <Link href="/#contact" className={NAV_LINK}>Contact</Link>
@@ -223,6 +231,7 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
               <MobileGroup label="Treatments" items={TREATMENTS} open={isTreatmentsOpen} onToggle={() => setIsTreatmentsOpen(!isTreatmentsOpen)} onNavigate={closeMenu} />
               <Link href="/providers" className={NAV_LINK} onClick={closeMenu}>Providers</Link>
               <MobileGroup label="Content" items={CONTENT} open={isContentOpen} onToggle={() => setIsContentOpen(!isContentOpen)} onNavigate={closeMenu} />
+              <MobileGroup label="Tools" items={TOOLS} open={isToolsOpen} onToggle={() => setIsToolsOpen(!isToolsOpen)} onNavigate={closeMenu} />
               <Link href="/location" className={NAV_LINK} onClick={closeMenu}>Location</Link>
               <Link href="/faq" className={NAV_LINK} onClick={closeMenu}>FAQ</Link>
               <Link href="/#contact" className={NAV_LINK} onClick={closeMenu}>Contact</Link>

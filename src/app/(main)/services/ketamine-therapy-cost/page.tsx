@@ -79,7 +79,7 @@ export default function KetamineTherapyCostPage() {
         <div className="p-6 space-y-4">
           <div className="flex justify-between border-b pb-3"><span>Single Session</span><span className="font-semibold">$690</span></div>
           <div className="flex justify-between border-b pb-3"><span>Package of 3</span><span className="font-semibold">$1,925</span></div>
-          <div className="flex justify-between"><span>Package of 6</span><span className="font-semibold">$4,000</span></div>
+          <div className="flex justify-between"><span>Package of 6</span><span className="font-semibold">$3,800</span></div>
         </div>
       </div>
     </div>
