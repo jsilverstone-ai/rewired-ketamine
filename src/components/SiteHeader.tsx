@@ -195,7 +195,7 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
       {/* MAIN NAVIGATION */}
       <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <nav className="hidden xl:flex items-center gap-5 text-[15px] font-medium whitespace-nowrap">
+          <nav className="hidden xl:flex items-center gap-3.5 text-[15px] font-medium whitespace-nowrap">
             <Link href="/" className={NAV_LINK}>Home</Link>
             <DesktopDropdown label="Our Services" items={SERVICES} width="w-56" />
             <DesktopDropdown label="Treatments" items={TREATMENTS} width="w-64" scroll />
@@ -215,9 +215,9 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
             )}
           </button>
 
-          <div className="hidden xl:flex items-center gap-5">
+          <div className="hidden xl:flex items-center gap-3">
             <SocialIcons />
-            <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-6 py-2.5 rounded hover:bg-white transition whitespace-nowrap">
+            <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-5 py-2.5 rounded hover:bg-white transition whitespace-nowrap">
               FREE CONSULTATION
             </Link>
           </div>
