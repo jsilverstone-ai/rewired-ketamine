@@ -21,10 +21,10 @@ export default function TalkTherapyEsPage() {
       <section className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <p className="text-lg text-[#555] mb-6">
-            La terapia de conversación es una parte esencial del proceso de sanación. Ofrecemos conversaciones de apoyo centradas en la integración que te ayudan a procesar las experiencias de tus sesiones y convertir los insights en cambios duraderos.
+            La terapia de conversación es una parte esencial del proceso de sanación. Ofrecemos conversaciones de apoyo centradas en la integración que le ayudan a procesar las experiencias de sus sesiones y convertir los insights en cambios duraderos.
           </p>
           <p className="text-lg text-[#555]">
-            Puedes trabajar con nuestros terapeutas internos o ser conectado con especialistas cuidadosamente seleccionados que entienden los psicodélicos y la neuroplasticidad. Esto asegura que tu apoyo terapéutico esté alineado con la naturaleza única de este trabajo.
+            Puede trabajar con nuestros terapeutas internos o ser conectado(a) con especialistas cuidadosamente seleccionados que entienden los psicodélicos y la neuroplasticidad. Esto asegura que su apoyo terapéutico esté alineado con la naturaleza única de este trabajo.
           </p>
         </div>
       </section>

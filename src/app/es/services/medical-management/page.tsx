@@ -12,7 +12,7 @@ export default function MedicalManagementEsPage() {
         <p className="text-[#C9A66B] font-semibold tracking-widest text-sm mb-4">AVENTURA • SUR DE FLORIDA</p>
         <h1 className="text-4xl md:text-5xl font-bold mb-6">Manejo Médico</h1>
         <p className="text-lg text-white/80 max-w-3xl mx-auto mb-6">
-          Supervisión clínica cuidadosa durante todo tu cuidado.
+          Supervisión clínica cuidadosa durante todo su cuidado.
         </p>
         <p className="text-[#C9A66B] font-semibold"><Link href="/es#bienvenida" className="hover:underline">¡Hablamos Español!</Link></p>
       </section>
@@ -21,10 +21,10 @@ export default function MedicalManagementEsPage() {
       <section className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <p className="text-lg text-[#555] mb-6">
-            Nuestro equipo médico proporciona una evaluación cuidadosa y un manejo continuo para que tu plan de tratamiento se mantenga seguro, apropiado y personalizado. Nuestra directora clínica puede revisar diagnósticos previos y ayudar a asegurar que tu manejo médico general esté alineado y actualizado.
+            Nuestro equipo médico proporciona una evaluación cuidadosa y un manejo continuo para que su plan de tratamiento se mantenga seguro, apropiado y personalizado. Nuestra directora clínica puede revisar diagnósticos previos y ayudar a asegurar que su manejo médico general esté alineado y actualizado.
           </p>
           <p className="text-lg text-[#555]">
-            Nos mantenemos estrechamente involucrados para monitorear el progreso y ajustar el apoyo según sea necesario, siempre con tu bienestar a largo plazo en mente.
+            Nos mantenemos estrechamente involucrados para monitorear el progreso y ajustar el apoyo según sea necesario, siempre con su bienestar a largo plazo en mente.
           </p>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
+import { blogPostsEs, BLOG_ES_BASE } from "@/data/blog-posts-es";
 
 const REDIRECTED_BLOG_SLUGS = ["what-is-ketamine-treatment-for-depression"];
 
@@ -22,6 +23,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
           priority: 0.6,
         }))
     : [];
+
+  // Original Spanish blog posts (Spanish-only: no English twin, so no hreflang pair is added below)
+  const blogPostsEsEntries = blogPostsEs.map((post) => ({
+    url: `${baseUrl}${BLOG_ES_BASE}/${post.slug}`,
+    lastModified: new Date(post.datePublished),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
 
   const entries: MetadataRoute.Sitemap = [
     // Homepage
@@ -119,6 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // All individual blog posts (auto-generated)
     ...blogPosts,
+    ...blogPostsEsEntries,
   ];
 
   // hreflang: pair each English URL with its /es counterpart when both are listed.

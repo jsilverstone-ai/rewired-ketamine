@@ -22,10 +22,10 @@ export default function IvVsSpravatoEsPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#0B1D36] mb-4">Ketamina IV vs Spravato</h2>
           <p className="text-[#555] mb-6">
-            Rewired Ketamine ofrece tanto ketamina IV como Spravato (espray nasal de esketamina) en nuestra clínica de Aventura. Son tratamientos diferentes. Esta página explica las principales diferencias para que puedas hacer mejores preguntas y decidir qué conversación tiene más sentido para ti.
+            Rewired Ketamine ofrece tanto ketamina IV como Spravato (espray nasal de esketamina) en nuestra clínica de Aventura. Son tratamientos diferentes. Esta página explica las principales diferencias para que pueda hacer mejores preguntas y decidir qué conversación tiene más sentido para usted.
           </p>
           <p className="text-[#555] mb-10">
-            No afirmamos que uno sea mejor para todos. La opción correcta depende de tu historial, metas, seguro y el tipo de apoyo que deseas durante el tratamiento.
+            No afirmamos que uno sea mejor para todos. La opción correcta depende de su historial, sus metas, su seguro y el tipo de apoyo que desea durante el tratamiento.
           </p>
 
           <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">Comparación rápida</h3>
@@ -75,10 +75,10 @@ export default function IvVsSpravatoEsPage() {
 
           <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">Cómo funciona la ketamina IV en Rewired</h3>
           <p className="text-[#555] mb-4">
-            La ketamina IV se administra como una infusión controlada en una sala privada. Un miembro del equipo clínico permanece contigo. El monitoreo es continuo. Las sesiones suelen durar aproximadamente una hora, con tiempo después para estabilizarse antes de salir con un conductor.
+            La ketamina IV se administra como una infusión controlada en una sala privada. Un miembro del equipo clínico permanece con usted. El monitoreo es continuo. Las sesiones suelen durar aproximadamente una hora, con tiempo después para estabilizarse antes de salir con un conductor.
           </p>
           <p className="text-[#555] mb-10">
-            Las sesiones totalmente guiadas están disponibles. El precio de la IV de salud mental comienza en $440 por sesión y $2,300 por una serie de seis sesiones. Las opciones guiadas se listan por separado para que puedas ver el costo completo. Ve la página de <Link href="/es/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">costo</Link> para detalles.
+            Las sesiones totalmente guiadas están disponibles. El precio de la IV de salud mental comienza en $440 por sesión y $2,300 por una serie de seis sesiones. Las opciones guiadas se listan por separado para que pueda ver el costo completo. Consulte la página de <Link href="/es/services/ketamine-therapy-cost" className="text-[#C9A66B] font-semibold hover:underline">costo</Link> para detalles.
           </p>
 
           <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">Cómo funciona Spravato en Rewired</h3>
@@ -91,19 +91,19 @@ export default function IvVsSpravatoEsPage() {
             <div>
               <p className="font-medium mb-2">La ketamina IV puede ser una mejor conversación si:</p>
               <ul className="list-disc pl-5 space-y-1 text-[#555]">
-                <li>Quieres una experiencia en clínica totalmente guiada</li>
-                <li>Estás considerando condiciones más allá de la depresión resistente al tratamiento (ansiedad, TEPT, dolor crónico, etc.)</li>
-                <li>Prefieres una opción de pago en efectivo con precios de paquete claros</li>
-                <li>Quieres la opción de sesiones más largas o con más apoyo</li>
+                <li>Quiere una experiencia en clínica totalmente guiada</li>
+                <li>Está considerando condiciones más allá de la depresión resistente al tratamiento (ansiedad, TEPT, dolor crónico, etc.)</li>
+                <li>Prefiere una opción de pago en efectivo con precios de paquete claros</li>
+                <li>Quiere la opción de sesiones más largas o con más apoyo</li>
               </ul>
             </div>
             <div>
               <p className="font-medium mb-2">Spravato puede ser una mejor conversación si:</p>
               <ul className="list-disc pl-5 space-y-1 text-[#555]">
-                <li>Tienes un diagnóstico de depresión resistente al tratamiento</li>
-                <li>Quieres usar seguro</li>
-                <li>Estás cómodo con un espray nasal bajo observación REMS</li>
-                <li>Prefieres la estructura de un producto aprobado por la FDA</li>
+                <li>Tiene un diagnóstico de depresión resistente al tratamiento</li>
+                <li>Quiere usar su seguro</li>
+                <li>Se siente cómodo(a) con un espray nasal bajo observación REMS</li>
+                <li>Prefiere la estructura de un producto aprobado por la FDA</li>
               </ul>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function IvVsSpravatoEsPage() {
         <Link href="/es#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-semibold px-8 py-3 rounded-lg hover:bg-[#b8955e] transition">
           Reservar Consulta Gratuita
         </Link>
-        <p className="mt-4 text-sm text-[#555]">O llama/texto al (305) 676-6070</p>
+        <p className="mt-4 text-sm text-[#555]">O llame o envíe un mensaje de texto al (305) 676-6070</p>
       </section>
 
       {/* Footer */}

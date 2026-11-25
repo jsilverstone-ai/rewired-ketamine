@@ -74,7 +74,7 @@ export default function KetamineInfusionEsPage() {
               </div>
             </div>
           </div>
-          <p className="text-center text-sm text-[#555] mt-8">Pregúntanos sobre descuentos disponibles. Se requiere consulta.</p>
+          <p className="text-center text-sm text-[#555] mt-8">Pregúntenos sobre los descuentos disponibles. Se requiere consulta.</p>
         </div>
       </section>
 
