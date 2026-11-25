@@ -40,18 +40,16 @@ const TIER_2 = [
 
 const normalize = (str: string) => str.toLowerCase().trim();
 
-export default function KeywordAndAuthorityPanel({
+function KeywordList({
+  title,
+  subtitle,
   keywords,
-  siteData,
-  backlinks,
-  loading,
-  feedErrors,
+  empty,
 }: {
+  title: string;
+  subtitle?: string;
   keywords: TrackedKeyword[];
-  siteData: SiteData | null;
-  backlinks: Backlink[];
-  loading: boolean;
-  feedErrors: Record<string, string>;
+  empty: string;
 }) {
   const tier1Keywords = keywords.filter((k) =>
     TIER_1.some((t) => normalize(k.keyword).includes(normalize(t)) || normalize(t).includes(normalize(k.keyword)))
@@ -59,12 +57,75 @@ export default function KeywordAndAuthorityPanel({
   const tier2Keywords = keywords.filter((k) =>
     TIER_2.some((t) => normalize(k.keyword).includes(normalize(t)) || normalize(t).includes(normalize(k.keyword)))
   );
-  const otherKeywords = keywords.filter(
-    (k) => !tier1Keywords.includes(k) && !tier2Keywords.includes(k)
+  const otherKeywords = keywords.filter((k) => !tier1Keywords.includes(k) && !tier2Keywords.includes(k));
+
+  const row = (k: TrackedKeyword, i: number, muted = false) => (
+    <div key={`${k.keyword}-${i}`} className="flex items-center justify-between gap-2 bg-slate-50 rounded-xl px-3 py-2 text-xs">
+      <span className={`truncate ${muted ? "text-slate-600" : "text-slate-700"}`}>{k.keyword}</span>
+      <span className="shrink-0 flex items-center gap-2">
+        <Delta now={k.rank} before={k.previousRank} invert />
+        <span className={`font-mono font-semibold ${muted ? "text-slate-600" : "text-slate-700"}`}>{k.rank ?? "—"}</span>
+      </span>
+    </div>
   );
 
+  return (
+    <div className={card}>
+      <h3 className="text-base font-semibold text-slate-800 mb-1 flex items-center gap-2">
+        <span className="text-emerald-500">📈</span> {title}
+      </h3>
+      <p className="text-xs text-slate-400 mb-4">{subtitle ?? "Rank vs previous window"}</p>
+      {keywords.length === 0 ? (
+        <p className="text-sm text-slate-400">{empty}</p>
+      ) : (
+        <div className="space-y-4 max-h-80 overflow-y-auto pr-1">
+          <div>
+            <h4 className="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-2">Tier 1</h4>
+            <div className="space-y-1.5">
+              {tier1Keywords.length === 0 ? <p className="text-xs text-slate-400">No matches yet</p> : tier1Keywords.map((k, i) => row(k, i))}
+            </div>
+          </div>
+          <div>
+            <h4 className="text-xs font-semibold text-sky-600 uppercase tracking-wider mb-2">Tier 2</h4>
+            <div className="space-y-1.5">
+              {tier2Keywords.length === 0 ? <p className="text-xs text-slate-400">No matches yet</p> : tier2Keywords.map((k, i) => row(k, i, true))}
+            </div>
+          </div>
+          {otherKeywords.length > 0 && (
+            <div>
+              <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Other tracked</h4>
+              <div className="space-y-1.5">{otherKeywords.map((k, i) => row(k, i, true))}</div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function KeywordAndAuthorityPanel({
+  miamiKeywords,
+  aventuraKeywords,
+  miamiLabel = "Miami 📱",
+  aventuraLabel = "Aventura 📱",
+  siteData,
+  backlinks,
+  loading,
+  feedErrors,
+}: {
+  miamiKeywords: TrackedKeyword[];
+  aventuraKeywords: TrackedKeyword[];
+  miamiLabel?: string;
+  aventuraLabel?: string;
+  siteData: SiteData | null;
+  backlinks: Backlink[];
+  loading: boolean;
+  feedErrors: Record<string, string>;
+}) {
+  const total = miamiKeywords.length + aventuraKeywords.length;
   const summaryParts: string[] = [];
-  if (keywords.length > 0) summaryParts.push(`${keywords.length} tracked keywords`);
+  if (miamiKeywords.length > 0) summaryParts.push(`${miamiLabel} ${miamiKeywords.length} kw`);
+  if (aventuraKeywords.length > 0) summaryParts.push(`${aventuraLabel} ${aventuraKeywords.length} kw`);
   if (siteData?.domainAuthority != null) summaryParts.push(`DA ${siteData.domainAuthority}`);
   if (siteData?.trustFlow != null) summaryParts.push(`Trust Flow ${siteData.trustFlow}`);
   if (backlinks.length > 0) summaryParts.push(`${backlinks.length} recent backlinks`);
@@ -73,86 +134,32 @@ export default function KeywordAndAuthorityPanel({
       ? summaryParts.join(" · ")
       : loading
         ? "Loading Mangools keywords & site authority…"
-        : "Tier 1 & Tier 2 keywords, Domain Authority, and backlinks";
+        : "Miami & Aventura mobile ranks, Domain Authority, and backlinks";
 
   return (
     <AccordionCard
       icon="🔑"
       title="Raw Keyword Tracker & Site Authority"
       summary={summary}
-      badge={keywords.length > 0 ? <Pill tone="neutral">{keywords.length} keywords</Pill> : undefined}
+      badge={total > 0 ? <Pill tone="neutral">{total} keywords</Pill> : undefined}
       defaultOpen={false}
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
-        {/* Keyword Tracker */}
-        <div className={card}>
-          <h3 className="text-base font-semibold text-slate-800 mb-1 flex items-center gap-2">
-            <span className="text-emerald-500">📈</span> Mangools Keyword Tracker
-          </h3>
-          <p className="text-xs text-slate-400 mb-4">Miami rank vs previous window</p>
-          {loading && keywords.length === 0 ? (
-            <p className="text-sm text-slate-400">Loading…</p>
-          ) : feedErrors.rankings ? (
-            <p className="text-sm text-rose-500">Couldn’t load rankings: {feedErrors.rankings}</p>
-          ) : (
-            <div className="space-y-4 max-h-80 overflow-y-auto pr-1">
-              <div>
-                <h4 className="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-2">Tier 1</h4>
-                <div className="space-y-1.5">
-                  {tier1Keywords.length === 0 ? (
-                    <p className="text-xs text-slate-400">No matches yet</p>
-                  ) : (
-                    tier1Keywords.map((k, i) => (
-                      <div key={i} className="flex items-center justify-between gap-2 bg-slate-50 rounded-xl px-3 py-2 text-xs">
-                        <span className="truncate text-slate-700">{k.keyword}</span>
-                        <span className="shrink-0 flex items-center gap-2">
-                          <Delta now={k.rank} before={k.previousRank} invert />
-                          <span className="font-mono font-semibold text-slate-700">{k.rank ?? "—"}</span>
-                        </span>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-xs font-semibold text-sky-600 uppercase tracking-wider mb-2">Tier 2</h4>
-                <div className="space-y-1.5">
-                  {tier2Keywords.length === 0 ? (
-                    <p className="text-xs text-slate-400">No matches yet</p>
-                  ) : (
-                    tier2Keywords.map((k, i) => (
-                      <div key={i} className="flex items-center justify-between gap-2 bg-slate-50/70 rounded-xl px-3 py-2 text-xs">
-                        <span className="truncate text-slate-600">{k.keyword}</span>
-                        <span className="shrink-0 flex items-center gap-2">
-                          <Delta now={k.rank} before={k.previousRank} invert />
-                          <span className="font-mono text-slate-600">{k.rank ?? "—"}</span>
-                        </span>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
-
-              {otherKeywords.length > 0 && (
-                <div>
-                  <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Other tracked</h4>
-                  <div className="space-y-1.5">
-                    {otherKeywords.map((k, i) => (
-                      <div key={i} className="flex items-center justify-between gap-2 bg-slate-50/70 rounded-xl px-3 py-2 text-xs">
-                        <span className="truncate text-slate-600">{k.keyword}</span>
-                        <span className="font-mono text-slate-600">{k.rank ?? "—"}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-          <a href="https://app.mangools.com/serpwatcher" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-xs text-teal-600 hover:text-teal-500 font-medium">
-            Open full Rank Tracking →
-          </a>
-        </div>
+      {feedErrors.rankings && (
+        <p className="text-sm text-rose-500 mb-4">Couldn’t load rankings: {feedErrors.rankings}</p>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
+        <KeywordList
+          title={`${miamiLabel} Keyword Tracker`}
+          subtitle="SERPWatcher ranks vs previous window"
+          keywords={miamiKeywords}
+          empty={loading ? "Loading…" : "No Miami tracking loaded"}
+        />
+        <KeywordList
+          title={`${aventuraLabel} Keyword Tracker`}
+          subtitle="SERPWatcher ranks vs previous window"
+          keywords={aventuraKeywords}
+          empty={loading ? "Loading…" : "No Aventura tracking loaded"}
+        />
 
         {/* Site Health + Backlinks */}
         <div className={card}>
@@ -221,7 +228,7 @@ export default function KeywordAndAuthorityPanel({
             <div className="bg-slate-50 rounded-2xl p-3.5">
               <div className="font-medium text-xs mb-1">2. Google Business Profile</div>
               <div className="text-slate-500 text-xs leading-relaxed">
-                Ask happy patients for honest Google reviews — proximity + reviews drive &ldquo;ketamine clinic miami&rdquo; map rank.
+                Ask happy patients for honest Google reviews — proximity + reviews drive “ketamine clinic miami” map rank.
               </div>
             </div>
             <div className="bg-slate-50 rounded-2xl p-3.5">
@@ -231,14 +238,14 @@ export default function KeywordAndAuthorityPanel({
               </div>
             </div>
           </div>
-          <a
-            href="https://search.google.com/search-console"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 text-xs text-teal-600 hover:text-teal-500 font-medium"
-          >
-            Open Google Search Console →
-          </a>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 mt-4">
+            <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="text-xs text-teal-600 hover:text-teal-500 font-medium">
+              Open Google Search Console →
+            </a>
+            <a href="https://app.mangools.com/serpwatcher" target="_blank" rel="noopener noreferrer" className="text-xs text-teal-600 hover:text-teal-500 font-medium">
+              Open full Rank Tracking →
+            </a>
+          </div>
         </div>
       </div>
     </AccordionCard>

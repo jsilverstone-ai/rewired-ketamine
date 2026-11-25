@@ -6,8 +6,8 @@ import type { CompetitorsPayload } from "@/lib/competitors";
 import {
   buildCompetitorComparison,
   generateWeeklyActions,
-  type TrackedKeyword,
 } from "@/lib/seo-scorecard";
+import { locationDisplayName, type RankingsPayload } from "@/lib/serpwatcher";
 import type { WeeklyReport as Report } from "@/lib/weekly-report";
 import ApiStatus from "./ApiStatus";
 import Scorecard from "./Scorecard";
@@ -34,7 +34,7 @@ export default function SEOPage() {
   const [error, setError] = useState("");
   const [checkingSession, setCheckingSession] = useState(true);
 
-  const [keywords, setKeywords] = useState<TrackedKeyword[]>([]);
+  const [rankings, setRankings] = useState<RankingsPayload | null>(null);
   const [siteData, setSiteData] = useState<SiteData | null>(null);
   const [backlinks, setBacklinks] = useState<Backlink[]>([]);
   const [reportData, setReportData] = useState<WeeklyReportApiResult | null>(null);
@@ -86,6 +86,7 @@ export default function SEOPage() {
           success: false,
           status: "unavailable",
           location: "Miami, Florida, United States",
+          platform: "mobile",
           rows: [],
           trackedSpanishCount: 0,
           error: "Session expired. Reload and sign in again.",
@@ -99,6 +100,7 @@ export default function SEOPage() {
         success: false,
         status: "unavailable",
         location: "Miami, Florida, United States",
+        platform: "mobile",
         rows: [],
         trackedSpanishCount: 0,
         error: e instanceof Error ? e.message : "Network error",
@@ -116,7 +118,7 @@ export default function SEOPage() {
 
     async function loadAll() {
       const mangoolsFeeds: Array<[string, string, (body: Record<string, unknown>) => void]> = [
-        ["rankings", "/api/mangools/rankings", (b) => setKeywords((b.keywords as TrackedKeyword[]) || [])],
+        ["rankings", "/api/mangools/rankings", (b) => setRankings(b as unknown as RankingsPayload)],
         ["site", "/api/mangools/site", (b) => setSiteData(b as unknown as SiteData)],
         ["backlinks", "/api/mangools/backlinks", (b) => setBacklinks((b.links as Backlink[]) || [])],
       ];
@@ -190,19 +192,30 @@ export default function SEOPage() {
   }
 
   const okReport: Report | null = reportData?.status === "ok" ? reportData : null;
-  const activeKeywords: TrackedKeyword[] | null = keywords.length > 0 ? keywords : null;
+  const miamiKeywords = rankings?.locations.miami?.keywords ?? [];
+  const aventuraKeywords = rankings?.locations.aventura?.keywords ?? [];
+  const activeMiami = miamiKeywords.length > 0 ? miamiKeywords : null;
+  const activeAventura = aventuraKeywords.length > 0 ? aventuraKeywords : null;
+  const miamiLabel = rankings?.locations.miami
+    ? locationDisplayName(rankings.locations.miami.meta.locationKey, rankings.locations.miami.meta.platform)
+    : "Miami 📱";
+  const aventuraLabel = rankings?.locations.aventura
+    ? locationDisplayName(rankings.locations.aventura.meta.locationKey, rankings.locations.aventura.meta.platform)
+    : "Aventura 📱";
 
   const competitorRows = buildCompetitorComparison({
     competitorsPayload: competitorsData
       ? { status: competitorsData.status, rows: competitorsData.rows }
       : null,
     report: okReport,
-    keywords: activeKeywords,
+    keywords: activeMiami,
+    aventuraKeywords: activeAventura,
   });
 
   const weeklyActions = generateWeeklyActions({
     report: okReport,
-    keywords: activeKeywords,
+    keywords: activeMiami,
+    aventuraKeywords: activeAventura,
     competitors: competitorRows,
   });
 
@@ -257,7 +270,11 @@ export default function SEOPage() {
         <Scorecard
           report={okReport}
           reportStatus={reportData?.status ?? null}
-          keywords={activeKeywords}
+          keywords={activeMiami}
+          aventuraKeywords={activeAventura}
+          miamiLabel={miamiLabel}
+          aventuraLabel={aventuraLabel}
+          rankingsWarnings={rankings?.warnings}
           loading={loading || reportLoading}
         />
 
@@ -274,6 +291,7 @@ export default function SEOPage() {
           serpStatus={competitorsData?.status ?? null}
           serpError={competitorsData?.error ?? null}
           location={competitorsData?.location ?? null}
+          platform={competitorsData?.platform ?? null}
           fetchedAt={competitorsData?.fetchedAt ?? null}
           cached={competitorsData?.cached}
           loading={competitorsLoading && !competitorsData}
@@ -292,7 +310,10 @@ export default function SEOPage() {
         />
 
         <KeywordAndAuthorityPanel
-          keywords={keywords}
+          miamiKeywords={miamiKeywords}
+          aventuraKeywords={aventuraKeywords}
+          miamiLabel={miamiLabel}
+          aventuraLabel={aventuraLabel}
           siteData={siteData}
           backlinks={backlinks}
           loading={loading}

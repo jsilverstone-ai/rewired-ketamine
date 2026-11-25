@@ -4,10 +4,11 @@ import {
   MIAMI_LOCATION_ID,
   MANGOOLS_DOMAIN,
   MangoolsError,
-  SERPWATCHER_TRACKING_ID,
+  PLATFORM_MOBILE,
   isSpanishKeyword,
   mangoolsFetch,
 } from "./mangools";
+import { listAccountTrackings, selectLocationTrackings } from "./serpwatcher";
 
 type SerpItem = {
   type?: string;
@@ -45,6 +46,7 @@ export type CompetitorsPayload = {
   success: boolean;
   status: "ok" | "partial" | "unavailable";
   location: string;
+  platform: "mobile" | "desktop";
   rows: CompetitorRow[];
   trackedSpanishCount: number;
   error: string | null;
@@ -121,19 +123,27 @@ export function normalizeSerpItems(items: SerpItem[] | undefined): {
 
 async function detectTrackedSpanishKeywords(cacheMode: "no-store" | "default"): Promise<string[]> {
   try {
-    const detail = await mangoolsFetch<DetailResponse>(
-      `/serpwatcher/trackings/${SERPWATCHER_TRACKING_ID}/detail`,
-      undefined,
-      cacheMode
+    const list = await listAccountTrackings(cacheMode);
+    const selected = selectLocationTrackings(list);
+    const ids = [selected.miami?.id, selected.aventura?.id].filter((id): id is string => !!id);
+    if (ids.length === 0) return [];
+
+    const details = await Promise.all(
+      ids.map((id) => mangoolsFetch<DetailResponse>(`/serpwatcher/trackings/${id}/detail`, undefined, cacheMode))
     );
     const coreSet = new Set<string>(CORE_MONEY_KEYWORDS.map((k) => k.toLowerCase()));
     const out: string[] = [];
-    for (const item of detail.keywords ?? []) {
-      const kw = (item.kw || "").trim();
-      if (!kw || coreSet.has(kw.toLowerCase())) continue;
-      if (isSpanishKeyword(kw)) {
-        out.push(kw);
-        if (out.length >= 3) break;
+    const seen = new Set<string>();
+    for (const detail of details) {
+      for (const item of detail.keywords ?? []) {
+        const kw = (item.kw || "").trim();
+        const key = kw.toLowerCase();
+        if (!kw || coreSet.has(key) || seen.has(key)) continue;
+        if (isSpanishKeyword(kw)) {
+          seen.add(key);
+          out.push(kw);
+          if (out.length >= 3) return out;
+        }
       }
     }
     return out;
@@ -144,7 +154,7 @@ async function detectTrackedSpanishKeywords(cacheMode: "no-store" | "default"): 
 
 async function fetchOneSerp(kw: string, cacheMode: "no-store" | "default"): Promise<CompetitorRow & { locationLabel?: string }> {
   try {
-    const qs = new URLSearchParams({ kw, location_id: String(MIAMI_LOCATION_ID) });
+    const qs = new URLSearchParams({ kw, location_id: String(MIAMI_LOCATION_ID), platform_id: String(PLATFORM_MOBILE) });
     const data = await mangoolsFetch<SerpResponse>(`/serpchecker/serps?${qs}`, undefined, cacheMode);
     const { ourSerpPosition, hasLocalPack, organic } = normalizeSerpItems(data.items);
     return {
@@ -190,7 +200,7 @@ async function fetchCompetitorsBatch(noStore: boolean): Promise<CompetitorsPaylo
     throw new Error(firstErr);
   }
 
-  const location = succeeded.find((r) => r.locationLabel)?.locationLabel || "Miami, Florida, United States";
+  const locationLabel = succeeded.find((r) => r.locationLabel)?.locationLabel || "Miami, Florida, United States";
   const rows: CompetitorRow[] = results.map(({ locationLabel: _loc, ...rest }) => {
     void _loc;
     return rest;
@@ -200,7 +210,8 @@ async function fetchCompetitorsBatch(noStore: boolean): Promise<CompetitorsPaylo
   return {
     success: true,
     status: anyFailed ? "partial" : "ok",
-    location,
+    location: locationLabel,
+    platform: "mobile",
     rows,
     trackedSpanishCount: trackedSpanish.length,
     error: anyFailed ? "Some keyword SERP lookups failed; partial results shown." : null,
@@ -213,8 +224,8 @@ let memoryCache: { at: number; body: CompetitorsPayload } | null = null;
 
 const getCachedCompetitors = unstable_cache(
   async () => fetchCompetitorsBatch(false),
-  ["seo-competitors-serp-v1"],
-  { revalidate: 86400, tags: ["seo-competitors-serp"] }
+  ["seo-competitors-serp-v2-mobile"],
+  { revalidate: 86400, tags: ["seo-competitors-serp-mobile"] }
 );
 
 export async function loadCompetitors(refresh = false): Promise<CompetitorsPayload> {
@@ -224,7 +235,7 @@ export async function loadCompetitors(refresh = false): Promise<CompetitorsPaylo
 
   try {
     if (refresh) {
-      revalidateTag("seo-competitors-serp", { expire: 0 });
+      revalidateTag("seo-competitors-serp-mobile", { expire: 0 });
       const fresh = await fetchCompetitorsBatch(true);
       memoryCache = { at: Date.now(), body: fresh };
       return { ...fresh, cached: false };
@@ -240,6 +251,7 @@ export async function loadCompetitors(refresh = false): Promise<CompetitorsPaylo
       success: false,
       status: "unavailable",
       location: "Miami, Florida, United States",
+      platform: "mobile",
       rows: [],
       trackedSpanishCount: 0,
       error: error instanceof Error ? error.message : String(error),
