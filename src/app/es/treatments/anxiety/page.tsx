@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScreenerPromo from "@/components/tools/ScreenerPromo";
 import SiteHeaderEs from "@/components/es/SiteHeaderEs";
 import SiteFooterEs from "@/components/es/SiteFooterEs";
 
@@ -30,6 +31,9 @@ export default function SpanishAnxietyPage() {
           <p className="text-[#555]">Visite nuestra <Link href="/es" className="text-[#C9A66B] font-semibold hover:underline">página de inicio</Link> o la página de <Link href="/es/services" className="text-[#C9A66B] font-semibold hover:underline">servicios</Link> para saber cómo comienzan las visitas.</p>
         </div>
       </section>
+
+      <ScreenerPromo lang="es" tool="gad7" />
+
 
       {/* CTA */}
       <section className="py-16 px-6 bg-[#F8F5F0] text-center">

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/ptsd",
       "es": "https://www.rewiredketamine.com/es/treatments/ptsd",
+      "x-default": "https://www.rewiredketamine.com/treatments/ptsd",
     },
   },
 };

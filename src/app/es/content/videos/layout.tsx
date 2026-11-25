@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/content/videos",
       "es": "https://www.rewiredketamine.com/es/content/videos",
+      "x-default": "https://www.rewiredketamine.com/content/videos",
     },
   },
 };

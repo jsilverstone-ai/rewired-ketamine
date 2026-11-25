@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/mental-fogginess",
       "es": "https://www.rewiredketamine.com/es/treatments/mental-fogginess",
+      "x-default": "https://www.rewiredketamine.com/treatments/mental-fogginess",
     },
   },
 };

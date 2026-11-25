@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/content/ketamine-in-the-news",
       "es": "https://www.rewiredketamine.com/es/content/ketamine-in-the-news",
+      "x-default": "https://www.rewiredketamine.com/content/ketamine-in-the-news",
     },
   },
 };

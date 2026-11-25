@@ -19,6 +19,8 @@ const QUICK_LINKS = [
   { href: "/es/services", label: "Nuestros Servicios" },
   { href: "/es#how-we-help", label: "Cómo Ayudamos" },
   { href: "/es#experience", label: "La Experiencia" },
+  { href: "/es/tools", label: "Pruebas Gratuitas" },
+  { href: "/es/tools/ketamine-cost-calculator", label: "Calculadora de Costos" },
   { href: "/es#contact", label: "Contacto" },
   { href: "/es#contact", label: "Consulta Gratuita" },
 ];

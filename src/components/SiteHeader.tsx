@@ -22,6 +22,7 @@ const SERVICES = [
   { href: "/services/iv-ketamine-vs-spravato", label: "IV vs Spravato" },
   { href: "/services/ketamine-therapy-cost", label: "Cost" },
   { href: "/services/ketamine-insurance", label: "Insurance" },
+  { href: "/services/hsa-fsa-ketamine", label: "HSA / FSA" },
   { href: "/services/functional-wellness", label: "Functional Wellness" },
   { href: "/services/medical-management", label: "Medical Management" },
   { href: "/services/talk-therapy", label: "Talk Therapy" },
@@ -49,6 +50,13 @@ const CONTENT = [
   { href: "/content/ketamine-in-the-news", label: "Ketamine in the News" },
 ];
 
+const TOOLS = [
+  { href: "/tools", label: "All Tools" },
+  { href: "/tools/phq-9-depression-test", label: "PHQ-9 Depression Test" },
+  { href: "/tools/gad-7-anxiety-test", label: "GAD-7 Anxiety Test" },
+  { href: "/tools/ketamine-cost-calculator", label: "Cost Calculator" },
+];
+
 const SOCIAL = [
   { href: "https://www.instagram.com/rewired_ketamine/", label: "Instagram", d: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" },
   { href: "https://www.youtube.com/@RewiredKetamine", label: "YouTube", d: "M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" },
@@ -60,7 +68,7 @@ const DROPDOWN_LINK = "block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B]
 const NAV_LINK = "hover:text-[#C9A66B] transition";
 
 // English pages that have a Spanish twin (generated from src/app/es).
-const ES_PAGES = new Set<string>(["/content", "/content/blog", "/content/ketamine-in-the-news", "/content/videos", "/faq", "/location", "/providers", "/services", "/services/functional-wellness", "/services/home-ketamine", "/services/iv-ketamine-vs-spravato", "/services/ketamine-infusion", "/services/ketamine-insurance", "/services/ketamine-therapy-cost", "/services/medical-management", "/services/spravato", "/services/talk-therapy", "/treatments", "/treatments/anxiety", "/treatments/burnout", "/treatments/chronic-pain", "/treatments/depression", "/treatments/eating-disorder", "/treatments/mental-fogginess", "/treatments/motivation", "/treatments/ocd", "/treatments/palliative-compassion-care", "/treatments/postpartum-depression", "/treatments/ptsd", "/treatments/tension-headaches"]);
+const ES_PAGES = new Set<string>(["/content", "/content/blog", "/content/ketamine-in-the-news", "/content/videos", "/faq", "/location", "/providers", "/services", "/services/functional-wellness", "/services/home-ketamine", "/services/hsa-fsa-ketamine", "/services/iv-ketamine-vs-spravato", "/services/ketamine-infusion", "/services/ketamine-insurance", "/services/ketamine-insurance/spravato-aetna", "/services/ketamine-insurance/spravato-cigna", "/services/ketamine-insurance/spravato-florida-blue-bcbs", "/services/ketamine-insurance/spravato-florida-medicaid", "/services/ketamine-insurance/spravato-medicare", "/services/ketamine-insurance/spravato-unitedhealthcare", "/services/ketamine-therapy-cost", "/services/medical-management", "/services/spravato", "/services/talk-therapy", "/tools", "/tools/gad-7-anxiety-test", "/tools/ketamine-cost-calculator", "/tools/phq-9-depression-test", "/treatments", "/treatments/anxiety", "/treatments/burnout", "/treatments/chronic-pain", "/treatments/depression", "/treatments/eating-disorder", "/treatments/mental-fogginess", "/treatments/motivation", "/treatments/ocd", "/treatments/palliative-compassion-care", "/treatments/postpartum-depression", "/treatments/ptsd", "/treatments/tension-headaches"]);
 
 /** Matching Spanish URL for the current English page, or /es if there is none. */
 function altLangHref(pathname: string | null): string {
@@ -132,6 +140,7 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
   const [isContentOpen, setIsContentOpen] = useState(false);
+  const [isToolsOpen, setIsToolsOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
@@ -186,12 +195,13 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
       {/* MAIN NAVIGATION */}
       <header className="bg-[#0B1D36] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <nav className="hidden xl:flex items-center gap-6 text-[15px] font-medium whitespace-nowrap">
+          <nav className="hidden xl:flex items-center gap-3.5 text-[15px] font-medium whitespace-nowrap">
             <Link href="/" className={NAV_LINK}>Home</Link>
             <DesktopDropdown label="Our Services" items={SERVICES} width="w-56" />
             <DesktopDropdown label="Treatments" items={TREATMENTS} width="w-64" scroll />
             <Link href="/providers" className={NAV_LINK}>Providers</Link>
             <DesktopDropdown label="Content" items={CONTENT} width="w-56" />
+            <DesktopDropdown label="Tools" items={TOOLS} width="w-64" />
             <Link href="/location" className={NAV_LINK}>Location</Link>
             <Link href="/faq" className={NAV_LINK}>FAQ</Link>
             <Link href="/#contact" className={NAV_LINK}>Contact</Link>
@@ -205,9 +215,9 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
             )}
           </button>
 
-          <div className="hidden xl:flex items-center gap-5">
+          <div className="hidden xl:flex items-center gap-3">
             <SocialIcons />
-            <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-6 py-2.5 rounded hover:bg-white transition whitespace-nowrap">
+            <Link href="/#contact" className="bg-[#C9A66B] text-[#0B1D36] text-sm font-bold px-5 py-2.5 rounded hover:bg-white transition whitespace-nowrap">
               FREE CONSULTATION
             </Link>
           </div>
@@ -221,6 +231,7 @@ export default function SiteHeader({ spanishHref: altOverride }: { spanishHref?:
               <MobileGroup label="Treatments" items={TREATMENTS} open={isTreatmentsOpen} onToggle={() => setIsTreatmentsOpen(!isTreatmentsOpen)} onNavigate={closeMenu} />
               <Link href="/providers" className={NAV_LINK} onClick={closeMenu}>Providers</Link>
               <MobileGroup label="Content" items={CONTENT} open={isContentOpen} onToggle={() => setIsContentOpen(!isContentOpen)} onNavigate={closeMenu} />
+              <MobileGroup label="Tools" items={TOOLS} open={isToolsOpen} onToggle={() => setIsToolsOpen(!isToolsOpen)} onNavigate={closeMenu} />
               <Link href="/location" className={NAV_LINK} onClick={closeMenu}>Location</Link>
               <Link href="/faq" className={NAV_LINK} onClick={closeMenu}>FAQ</Link>
               <Link href="/#contact" className={NAV_LINK} onClick={closeMenu}>Contact</Link>

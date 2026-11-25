@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/palliative-compassion-care",
       "es": "https://www.rewiredketamine.com/es/treatments/palliative-compassion-care",
+      "x-default": "https://www.rewiredketamine.com/treatments/palliative-compassion-care",
     },
   },
 };

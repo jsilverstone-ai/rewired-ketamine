@@ -79,12 +79,13 @@ export default function KetamineTherapyCostPage() {
         <div className="p-6 space-y-4">
           <div className="flex justify-between border-b pb-3"><span>Single Session</span><span className="font-semibold">$690</span></div>
           <div className="flex justify-between border-b pb-3"><span>Package of 3</span><span className="font-semibold">$1,925</span></div>
-          <div className="flex justify-between"><span>Package of 6</span><span className="font-semibold">$4,000</span></div>
+          <div className="flex justify-between"><span>Package of 6</span><span className="font-semibold">$3,800</span></div>
         </div>
       </div>
     </div>
 
     <p className="text-center text-sm text-[#555] mb-12">Ask us about available discounts. Consultation required before treatment.</p>
+<p className="text-center mb-12 -mt-8"><Link href="/tools/ketamine-cost-calculator" className="text-[#C9A66B] font-semibold hover:underline">Compare single sessions and packages with our cost calculator →</Link> · <Link href="/services/hsa-fsa-ketamine" className="text-[#C9A66B] font-semibold hover:underline">Using HSA or FSA funds →</Link></p>
 
     {/* What changes the price */}
     <div className="max-w-3xl mx-auto mb-14">

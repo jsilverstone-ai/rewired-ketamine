@@ -160,7 +160,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Package of 6</span>
-                  <span className="font-bold text-[#0B1D36]">$4,000</span>
+                  <span className="font-bold text-[#0B1D36]">$3,800</span>
                 </div>
               </div>
             </div>

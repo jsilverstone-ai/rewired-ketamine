@@ -103,6 +103,10 @@ export default function KetamineForTreatmentResistantDepressionPage() {
               <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is this a local clinic?</h3>
               <p className="text-[#555] leading-relaxed">Yes. Rewired Ketamine is locally owned and based in Aventura, serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español!</p>
             </div>
+            <div className="bg-white rounded-xl p-6 border border-[#eee]">
+              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Does ketamine replace antidepressants for everyone?</h3>
+              <p className="text-[#555] leading-relaxed">No. Plans are individualized. Some people continue other care alongside ketamine; others do not. That decision belongs with the clinical team.</p>
+            </div>
           </div>
         </div>
       </section>

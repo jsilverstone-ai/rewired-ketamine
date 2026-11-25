@@ -81,6 +81,14 @@ export default function KetamineForMigrainesAndChronicHeadachesPage() {
               <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is this a local clinic?</h3>
               <p className="text-[#555] leading-relaxed">Yes. Rewired Ketamine is locally owned and based in Aventura, serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español!</p>
             </div>
+            <div className="bg-white rounded-xl p-6 border border-[#eee]">
+              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Will ketamine stop all migraines?</h3>
+              <p className="text-[#555] leading-relaxed">No treatment works that way for everyone. Ketamine may help some people, and evaluation and follow-up matter more than marketing claims.</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-[#eee]">
+              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is ketamine FDA-approved for migraine?</h3>
+              <p className="text-[#555] leading-relaxed">No. Ketamine is not FDA-approved for migraine, so using it for headache conditions is off-label. Care decisions are individualized; ask during your consultation what may be appropriate for your history.</p>
+            </div>
           </div>
         </div>
       </section>

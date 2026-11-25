@@ -84,6 +84,14 @@ export default function WhatIsKetamineAssistedTherapyPage() {
               <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is this a local clinic?</h3>
               <p className="text-[#555] leading-relaxed">Yes. Rewired Ketamine is locally owned and based in Aventura, serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español!</p>
             </div>
+            <div className="bg-white rounded-xl p-6 border border-[#eee]">
+              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is every session fully guided?</h3>
+              <p className="text-[#555] leading-relaxed">Not every session is fully guided. Fully guided sessions are available as an option.</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-[#eee]">
+              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is monitoring part of treatment?</h3>
+              <p className="text-[#555] leading-relaxed">Yes. Professional monitoring is part of care at our Aventura clinic.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -7,6 +7,7 @@ const REDIRECTED_BLOG_SLUGS = ["what-is-ketamine-treatment-for-depression"];
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.rewiredketamine.com";
   const lastModified = new Date("2026-11-20");
+  const toolsModified = new Date("2026-11-25");
 
   // Automatically include every blog post folder, skipping redirected ones
   const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
@@ -76,6 +77,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/es/services/talk-therapy`, lastModified, changeFrequency: "monthly", priority: 0.8 },
 { url: `${baseUrl}/services/ketamine-insurance`, lastModified, changeFrequency: "monthly", priority: 0.8 },
 { url: `${baseUrl}/es/services/ketamine-insurance`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    // Free tools, HSA/FSA and per-insurer Spravato guides
+    { url: `${baseUrl}/tools`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/tools`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/tools/phq-9-depression-test`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/tools/phq-9-depression-test`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/tools/gad-7-anxiety-test`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/tools/gad-7-anxiety-test`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/tools/ketamine-cost-calculator`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/es/tools/ketamine-cost-calculator`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/services/hsa-fsa-ketamine`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/es/services/hsa-fsa-ketamine`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/services/ketamine-insurance/spravato-unitedhealthcare`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/es/services/ketamine-insurance/spravato-unitedhealthcare`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/services/ketamine-insurance/spravato-cigna`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/es/services/ketamine-insurance/spravato-cigna`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/services/ketamine-insurance/spravato-aetna`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/es/services/ketamine-insurance/spravato-aetna`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/services/ketamine-insurance/spravato-florida-blue-bcbs`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/es/services/ketamine-insurance/spravato-florida-blue-bcbs`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/services/ketamine-insurance/spravato-medicare`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/es/services/ketamine-insurance/spravato-medicare`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/services/ketamine-insurance/spravato-florida-medicaid`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/es/services/ketamine-insurance/spravato-florida-medicaid`, lastModified: toolsModified, changeFrequency: "monthly", priority: 0.7 },
     // Other pages
     { url: `${baseUrl}/providers`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/es/providers`, lastModified, changeFrequency: "monthly", priority: 0.6 },

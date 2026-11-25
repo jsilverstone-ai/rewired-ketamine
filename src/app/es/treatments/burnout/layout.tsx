@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/burnout",
       "es": "https://www.rewiredketamine.com/es/treatments/burnout",
+      "x-default": "https://www.rewiredketamine.com/treatments/burnout",
     },
   },
 };

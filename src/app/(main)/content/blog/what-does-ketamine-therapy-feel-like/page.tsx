@@ -103,6 +103,10 @@ export default function WhatDoesKetamineTherapyFeelLikePage() {
               <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Will I need a ride home?</h3>
               <p className="text-[#555] leading-relaxed">Yes. You will need a trusted driver after the session. Driving is not recommended the day of treatment.</p>
             </div>
+            <div className="bg-white rounded-xl p-6 border border-[#eee]">
+              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Will I lose control?</h3>
+              <p className="text-[#555] leading-relaxed">You are monitored throughout. Many people remain aware they are in a clinic setting. Experiences vary.</p>
+            </div>
           </div>
         </div>
       </section>

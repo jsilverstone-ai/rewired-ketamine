@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/tension-headaches",
       "es": "https://www.rewiredketamine.com/es/treatments/tension-headaches",
+      "x-default": "https://www.rewiredketamine.com/treatments/tension-headaches",
     },
   },
 };
