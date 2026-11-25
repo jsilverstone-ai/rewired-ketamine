@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }))
     : [];
 
-  return [
+  const entries: MetadataRoute.Sitemap = [
     // Homepage
     { url: `${baseUrl}`, lastModified, changeFrequency: "monthly", priority: 1.0 },
     { url: `${baseUrl}/es`, lastModified, changeFrequency: "monthly", priority: 1.0 },
@@ -96,4 +96,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // All individual blog posts (auto-generated)
     ...blogPosts,
   ];
+
+  // hreflang: pair each English URL with its /es counterpart when both are listed.
+  const listed = new Set(entries.map((e) => e.url));
+  return entries.map((entry) => {
+    const path = entry.url.slice(baseUrl.length);
+    const enPath = path === "/es" ? "" : path.startsWith("/es/") ? path.slice(3) : path;
+    const enUrl = `${baseUrl}${enPath}`;
+    const esUrl = `${baseUrl}/es${enPath}`;
+    if (!listed.has(enUrl) || !listed.has(esUrl)) return entry;
+    return {
+      ...entry,
+      alternates: {
+        languages: { en: enUrl, es: esUrl, "x-default": enUrl },
+      },
+    };
+  });
 }

@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "What Is Ketamine Treatment For Depression? | Miami & Aventura",
   description: "Understanding ketamine treatment for depression and treatment-resistant depression at our locally owned Aventura clinic serving Miami. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Ketamine Treatment For Depression | Rewired Ketamine",
     description: "How ketamine may fit into care for depression in Miami and Aventura.",
   },

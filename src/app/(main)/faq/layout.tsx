@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   description: "Frequently asked questions about ketamine therapy at Rewired Ketamine in Aventura.",
   alternates: {
     canonical: "https://www.rewiredketamine.com/faq",
+    languages: {
+      en: "https://www.rewiredketamine.com/faq",
+      es: "https://www.rewiredketamine.com/es/faq",
+      "x-default": "https://www.rewiredketamine.com/faq",
+    },
   },
 };
 

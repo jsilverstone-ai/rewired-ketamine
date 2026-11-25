@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "How Many Ketamine Sessions Are Needed For Depression Relief?",
   description: "A careful look at how many ketamine sessions may be part of a depression plan. Individual results vary. Locally owned Aventura clinic. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "How Many Ketamine Sessions Are Needed? | Rewired Ketamine",
     description: "What to know about session planning for depression care.",
   },

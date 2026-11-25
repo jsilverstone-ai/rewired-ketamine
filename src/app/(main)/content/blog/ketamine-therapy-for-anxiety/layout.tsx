@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Ketamine Therapy for Anxiety | Aventura, FL",
   description: "Exploring ketamine therapy for anxiety at our locally owned Aventura clinic. Fully guided sessions available. Serving Miami & Fort Lauderdale. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Ketamine Therapy for Anxiety | Rewired Ketamine",
     description: "Supportive ketamine options for anxiety in South Florida.",
   },

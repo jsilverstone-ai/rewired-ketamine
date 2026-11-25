@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Ketamine for Anxiety in Miami and Aventura | Rewired Ketamine",
   description: "What a 2026 review found about ketamine for anxiety, and how guided care works at our Aventura clinic. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Ketamine for Anxiety in Miami and Aventura",
     description: "A 2026 review of ketamine for anxiety, and how guided sessions are offered in Aventura.",
   },

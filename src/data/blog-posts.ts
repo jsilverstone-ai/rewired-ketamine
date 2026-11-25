@@ -6,6 +6,36 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
+{
+  title: "Repressed Memories and Ketamine: What to Know",
+  slug: "repressed-memories-and-ketamine",
+  excerpt: "What people sometimes notice during ketamine sessions, and how we help you make sense of it.",
+  date: "November 2026"
+},
+{
+  title: "Ketamine for PTSD: A Guide for First Responders and Veterans in Florida",
+  slug: "ketamine-ptsd-first-responders-veterans-florida",
+  excerpt: "What firefighters, police, EMS, and veterans should know before considering ketamine for PTSD in South Florida.",
+  date: "November 2026"
+},
+{
+  title: "Does Ketamine Lower Blood Pressure?",
+  slug: "does-ketamine-lower-blood-pressure",
+  excerpt: "How ketamine affects blood pressure and heart rate, and how we keep sessions safe.",
+  date: "November 2026"
+},
+{
+  title: "A Caregiver’s Guide to At-Home Ketamine Treatment",
+  slug: "caregivers-guide-at-home-ketamine-florida",
+  excerpt: "Practical ways to support someone you love through at-home ketamine treatment in Florida.",
+  date: "November 2026"
+},
+{
+  title: "Religious Scrupulosity OCD and Ketamine",
+  slug: "ketamine-religious-scrupulosity-ocd",
+  excerpt: "How ketamine may fit alongside ERP for scrupulosity, with respect for your faith and community.",
+  date: "November 2026"
+},
   {
   title: "Dr. Jacob Silverstone on Ketamine Therapy and Trauma Healing",
   slug: "dr-jacob-silverstone-ketamine-therapy-trauma-healing",

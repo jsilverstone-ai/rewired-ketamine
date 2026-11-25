@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const canonical = "https://www.rewiredketamine.com/treatments/postpartum-depression";
-const ogImage = "https://www.rewiredketamine.com/logo.png";
+const ogImage = "https://www.rewiredketamine.com/og/og-postpartum-depression.png";
 
 export const metadata: Metadata = {
   title: "Ketamine for Postpartum Depression | Aventura, FL",
@@ -9,7 +9,14 @@ export const metadata: Metadata = {
     "Support for postpartum depression with ketamine therapy at our Aventura clinic. Fully guided sessions available. ¡Hablamos Español!",
   authors: [{ name: "Rewired Ketamine" }],
   robots: { index: true, follow: true },
-  alternates: { canonical },
+  alternates: {
+    canonical,
+    languages: {
+      en: "https://www.rewiredketamine.com/treatments/postpartum-depression",
+      es: "https://www.rewiredketamine.com/es/treatments/postpartum-depression",
+      "x-default": "https://www.rewiredketamine.com/treatments/postpartum-depression",
+    },
+  },
   openGraph: {
     type: "article",
     url: canonical,

@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Is Ketamine Infusion A New Option For Migraine Treatment?",
   description: "A careful look at ketamine infusion for migraines in Miami and Aventura. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Ketamine Infusion for Migraines | Rewired Ketamine",
     description: "Condition-specific education for migraine treatment in South Florida.",
   },

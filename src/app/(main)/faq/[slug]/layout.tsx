@@ -26,6 +26,11 @@ export async function generateMetadata({
     description: page?.description ?? "",
     alternates: {
       canonical: `https://www.rewiredketamine.com/faq/${slug}`,
+      languages: {
+        en: `https://www.rewiredketamine.com/faq/${slug}`,
+        es: `https://www.rewiredketamine.com/es/faq/${slug}`,
+        "x-default": `https://www.rewiredketamine.com/faq/${slug}`,
+      },
     },
   };
 }

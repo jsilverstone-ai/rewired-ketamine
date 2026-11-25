@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Ketamine Infusion in Miami | Aventura Clinic Guide",
   description: "What IV ketamine infusion looks like for Miami-area patients at our Aventura clinic. Session length, IV vs at-home, and who it may help. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Ketamine Infusion in Miami | Rewired Ketamine",
     description: "Treatment overview for ketamine infusion Miami searches.",
   },

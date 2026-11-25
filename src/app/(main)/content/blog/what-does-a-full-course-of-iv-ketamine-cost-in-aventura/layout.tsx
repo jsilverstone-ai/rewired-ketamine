@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "What Does a Full Course of IV Ketamine Cost in Aventura and Miami?",
   description: "See real package pricing for IV ketamine at our locally owned Aventura clinic. Compare single sessions vs packages, guided options, and how total cost differs from national at-home programs. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "IV Ketamine Cost in Aventura & Miami | Rewired Ketamine",
     description: "Transparent package pricing for fully guided IV sessions at our Aventura clinic serving Miami and South Florida.",
   },

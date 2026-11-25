@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Rewired Ketamine | Ketamine Therapy in Aventura, South Florida",
     description:
       "Locally owned ketamine clinic in Aventura offering fully guided sessions for depression, anxiety, PTSD and chronic pain. Serving Miami & Fort Lauderdale. ¡Hablamos Español!",
@@ -40,6 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    images: ["https://www.rewiredketamine.com/og/og-home.png"],
     title: "Rewired Ketamine | Ketamine Therapy in Aventura",
     description:
       "Locally owned ketamine clinic in Aventura, FL. Fully guided sessions available. ¡Hablamos Español!",
@@ -50,6 +52,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.rewiredketamine.com",
+    languages: {
+      en: "https://www.rewiredketamine.com",
+      es: "https://www.rewiredketamine.com/es",
+      "x-default": "https://www.rewiredketamine.com",
+    },
   },
 };
 

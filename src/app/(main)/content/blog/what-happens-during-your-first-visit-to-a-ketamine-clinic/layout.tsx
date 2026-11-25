@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "What Happens During Your First Visit To A Ketamine Clinic | Aventura",
   description: "A practical walkthrough of your first visit to our locally owned ketamine clinic in Aventura, serving Miami and South Florida. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Your First Visit to a Ketamine Clinic | Rewired Ketamine",
     description: "What to expect at your first visit in Aventura.",
   },

@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
+import { isSeoAuthenticated, unauthorized } from "@/lib/seo-auth";
 
 const API_BASE = "https://api.mangools.com/v3";
 
 export async function GET(request: Request) {
+  if (!isSeoAuthenticated(request)) return unauthorized();
+
   const apiKey = process.env.MANGOOLS_API_KEY;
 
   if (!apiKey) {

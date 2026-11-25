@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Spravato for Treatment-Resistant Depression | Aventura",
   description: "What a 2025 review says about Spravato (esketamine) for treatment-resistant depression. In-clinic, REMS-certified care in Aventura. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Spravato for Treatment-Resistant Depression | Rewired Ketamine",
     description: "In-clinic esketamine for treatment-resistant depression at our Aventura clinic.",
   },

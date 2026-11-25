@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terapia de Ketamina en Casa | Aventura y Sur de Florida",
-  description: "Opciones de ketamina en casa incluyendo modalidades orales, nasales y rectales en nuestra clínica de propiedad local en Aventura. Apoyo guiado disponible. ¡Hablamos Español!",
+  title: "Ketamina en Casa en Florida | Clínica en Aventura",
+  description: "Ketamina en casa con supervisión clínica en Florida: opciones oral, nasal, rectal y subcutánea después de una consulta y evaluación real. Desde $225. Clínica en Aventura. ¡Hablamos Español!",
   openGraph: {
-    title: "Terapia de Ketamina en Casa | Rewired Ketamine",
-    description: "Modalidades convenientes de ketamina en casa con guía profesional de nuestra clínica en Aventura.",
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home-es.png", width: 1200, height: 630, alt: "Rewired Ketamine — terapia de ketamina en Aventura, Florida" }],
+    title: "Ketamina en Casa en Florida | Rewired Ketamine",
+    description: "Ketamina en casa con supervisión de un equipo médico local en Aventura. Opciones oral, nasal, rectal y subcutánea.",
+    url: "https://www.rewiredketamine.com/es/services/home-ketamine",
   },
   alternates: {
     canonical: "https://www.rewiredketamine.com/es/services/home-ketamine",
+    languages: {
+      en: "https://www.rewiredketamine.com/services/home-ketamine",
+      es: "https://www.rewiredketamine.com/es/services/home-ketamine",
+      "x-default": "https://www.rewiredketamine.com/services/home-ketamine",
+    },
   },
 };
 

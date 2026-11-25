@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { SEO_AUTH_COOKIE, seoAuthToken } from "@/lib/seo-auth";
 
 export async function POST(req: NextRequest) {
   const { password } = await req.json();
@@ -15,7 +16,7 @@ export async function POST(req: NextRequest) {
   if (password === correctPassword) {
     const response = NextResponse.json({ success: true });
 
-    response.cookies.set("seo_auth", "authenticated", {
+    response.cookies.set(SEO_AUTH_COOKIE, seoAuthToken(correctPassword), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",

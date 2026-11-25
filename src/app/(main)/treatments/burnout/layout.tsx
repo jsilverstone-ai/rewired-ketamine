@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const canonical = "https://www.rewiredketamine.com/treatments/burnout";
-const ogImage = "https://www.rewiredketamine.com/logo.png";
+const ogImage = "https://www.rewiredketamine.com/og/og-burnout.png";
 
 export const metadata: Metadata = {
   title: "Ketamine for Burnout & High-Stress Professionals | Aventura, FL",
@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: {
     canonical,
+    languages: {
+      en: "https://www.rewiredketamine.com/treatments/burnout",
+      es: "https://www.rewiredketamine.com/es/treatments/burnout",
+      "x-default": "https://www.rewiredketamine.com/treatments/burnout",
+    },
   },
   openGraph: {
     type: "article",

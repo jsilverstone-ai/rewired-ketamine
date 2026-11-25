@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Ketamine and Psychotherapy for Chronic Pain | Miami & Aventura",
   description: "New research explores combining ketamine with psychotherapy for chronic neuropathic pain. Learn what this could mean for patients seeking ketamine treatment in Miami, Aventura, and South Florida. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Ketamine + Psychotherapy for Chronic Pain | Rewired Ketamine Miami",
     description: "Emerging research on combining ketamine and psychotherapy for chronic pain. Local care available in Aventura and Miami.",
   },

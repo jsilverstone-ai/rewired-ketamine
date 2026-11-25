@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "What Is Ketamine-Assisted Therapy and How Does It Work? | Aventura",
   description: "A clear explainer of ketamine-assisted therapy and how it may work at our locally owned Aventura clinic. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "What Is Ketamine-Assisted Therapy? | Rewired Ketamine",
     description: "How ketamine-assisted therapy works at our South Florida clinic.",
   },

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const canonical = "https://www.rewiredketamine.com/services/ketamine-insurance";
-const ogImage = "https://www.rewiredketamine.com/logo.png";
+const ogImage = "https://www.rewiredketamine.com/og/og-home.png";
 
 export const metadata: Metadata = {
   title: "Ketamine & Spravato Insurance in Aventura | Rewired",

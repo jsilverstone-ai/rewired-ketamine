@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Brain Signals After Ketamine: What a New EEG Study Found | Aventura",
   description: "Texas A&M research on EEG changes after one ketamine infusion in older veterans. Context for patients exploring care at our Aventura clinic. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Brain Signal Linked to Ketamine’s Effects | Rewired Ketamine",
     description: "New EEG research after a single ketamine infusion — not a treatment claim.",
   },

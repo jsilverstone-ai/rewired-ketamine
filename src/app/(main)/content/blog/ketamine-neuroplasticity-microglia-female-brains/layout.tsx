@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Ketamine and Neuroplasticity in Female Brains | Aventura",
   description: "New research explores how ketamine may boost neuroplasticity through microglia in female brains. Insights for patients seeking ketamine for depression in Miami and Aventura. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Ketamine and Neuroplasticity | Rewired Ketamine Aventura",
     description: "Exploring new findings on ketamine, microglia, and neuroplasticity for depression care in South Florida.",
   },

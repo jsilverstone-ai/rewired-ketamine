@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
+import { isSeoAuthenticated, unauthorized } from "@/lib/seo-auth";
 
 const API_BASE = "https://api.mangools.com/v3";
 const DOMAIN = "rewiredketamine.com";
 
-export async function GET() {
+export async function GET(request: Request) {
+  if (!isSeoAuthenticated(request)) return unauthorized();
+
   const apiKey = process.env.MANGOOLS_API_KEY;
   if (!apiKey) {
     return NextResponse.json({ error: "MANGOOLS_API_KEY is not set" }, { status: 500 });
@@ -32,9 +35,9 @@ export async function GET() {
       referringIPs: majestic.RefIPs ?? null,
       fetchedAt: new Date().toISOString(),
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json(
-      { error: "Failed to reach Mangools API", details: error.message },
+      { error: "Failed to reach Mangools API", details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }

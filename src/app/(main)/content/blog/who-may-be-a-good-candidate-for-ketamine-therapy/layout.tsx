@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Who May Be A Good Candidate For Ketamine Therapy? | Aventura",
   description: "Learn who may be a good candidate for ketamine therapy at our locally owned Aventura clinic serving Miami and South Florida. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Who May Be A Good Candidate For Ketamine Therapy? | Rewired Ketamine",
     description: "An educational guide for patients considering ketamine treatment in Miami and Aventura.",
   },

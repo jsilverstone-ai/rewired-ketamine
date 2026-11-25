@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "What Conditions Can Ketamine Therapy Help Treat? | South Florida",
   description: "An overview of conditions people explore ketamine for, including depression, anxiety, PTSD, OCD, and chronic pain. Locally owned Aventura clinic. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Conditions Ketamine Therapy May Support | Rewired Ketamine",
     description: "Depression, anxiety, PTSD, OCD, chronic pain, and more.",
   },

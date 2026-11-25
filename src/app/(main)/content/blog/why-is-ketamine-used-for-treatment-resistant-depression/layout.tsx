@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Why Is Ketamine Used For Treatment-Resistant Depression? | Aventura",
   description: "Why ketamine is used for treatment-resistant depression, how it works differently, and what patients in Miami and Aventura should know. Fully guided sessions available. ¡Hablamos Español!",
   openGraph: {
+    images: [{ url: "https://www.rewiredketamine.com/og/og-home.png", width: 1200, height: 630, alt: "Rewired Ketamine — ketamine therapy in Aventura, Florida" }],
     title: "Why Ketamine Is Used for Treatment-Resistant Depression",
     description: "Educational overview of ketamine for depression care.",
   },
