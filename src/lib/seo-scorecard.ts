@@ -56,6 +56,10 @@ export type MergedCompetitorRow = {
   gscImpressions: number | null;
   trackerRank: number | null;
   mapPackRank: number | null;
+  miamiTrackerRank: number | null;
+  miamiMapPackRank: number | null;
+  aventuraTrackerRank: number | null;
+  aventuraMapPackRank: number | null;
   hasLocalPack: boolean;
   topCompetitors: CompetitorRow["topCompetitors"];
   gapLabel: string;
@@ -89,8 +93,11 @@ export function computeKeywordStats(keywords: TrackedKeyword[] | null): KeywordB
 export function computeVisibilityScore(input: {
   report: WeeklyReport | null;
   keywords: TrackedKeyword[] | null;
+  /** Label for the primary tracked-keywords pillar, e.g. "Miami 📱". */
+  trackedLabel?: string;
 }): VisibilityScoreResult {
   const { report, keywords } = input;
+  const trackedLabel = input.trackedLabel || "Miami 📱";
   const pillars: ScorePillar[] = [];
 
   // Pillar 1: Tracked Keywords (40 pts) from Mangools SERPWatcher.
@@ -108,7 +115,7 @@ export function computeVisibilityScore(input: {
       score: Math.round(nowScore * 10) / 10,
       previousScore: prevScore !== null ? Math.round(prevScore * 10) / 10 : null,
       max: 40,
-      detail: `${top10}/${keywords.length} in Top 10 (SERPWatcher)`,
+      detail: `${top10}/${keywords.length} in Top 10 (${trackedLabel} SERPWatcher)`,
     });
   } else {
     pillars.push({
@@ -209,7 +216,7 @@ export function computeVisibilityScore(input: {
       partial: false,
       pillars,
       formulaNote:
-        "Composite 0–100 score from Mangools tracked keywords (40 pts), GSC core local queries (25 pts), sitewide position & CTR (20 pts), and Spanish /es visibility (15 pts).",
+        'Composite 0–100 score built strictly from live data: Mangools tracked keywords (40 pts: #1–3 = 100%, #4–10 = 65%, #11–20 = 35%, #21–50 = 15%), GSC core Miami/local queries (25 pts, same tiers), sitewide avg position & CTR (20 pts: max at pos ≤10 and CTR ≥3%), and Spanish /es impressions & clicks (15 pts: max at 200 imp & 10 clicks/wk). The Tracked Keywords pillar uses the Miami Mobile SERPWatcher tracking as the primary score (not an average of Miami + Aventura), because Miami is the competitive money market. Aventura Mobile Top 3 / Top 10 is shown separately on the scorecard and in the keyword and competitor tables.',
     };
   }
 
@@ -231,7 +238,7 @@ export function computeVisibilityScore(input: {
     partial: active.length < pillars.length,
     pillars,
     formulaNote:
-      "Composite 0–100 score built strictly from live data: Mangools tracked keywords (40 pts: #1–3 = 100%, #4–10 = 65%, #11–20 = 35%, #21–50 = 15%), GSC core Miami/local queries (25 pts, same tiers), sitewide avg position & CTR (20 pts: max at pos ≤10 and CTR ≥3%), and Spanish /es impressions & clicks (15 pts: max at 200 imp & 10 clicks/wk).",
+      'Composite 0–100 score built strictly from live data: Mangools tracked keywords (40 pts: #1–3 = 100%, #4–10 = 65%, #11–20 = 35%, #21–50 = 15%), GSC core Miami/local queries (25 pts, same tiers), sitewide avg position & CTR (20 pts: max at pos ≤10 and CTR ≥3%), and Spanish /es impressions & clicks (15 pts: max at 200 imp & 10 clicks/wk). The Tracked Keywords pillar uses the Miami Mobile SERPWatcher tracking as the primary score (not an average of Miami + Aventura), because Miami is the competitive money market. Aventura Mobile Top 3 / Top 10 is shown separately on the scorecard and in the keyword and competitor tables.',
   };
 }
 
@@ -245,9 +252,11 @@ function shortLabel(url: string | null): string {
 export function generateWeeklyActions(input: {
   report: WeeklyReport | null;
   keywords: TrackedKeyword[] | null;
+  aventuraKeywords?: TrackedKeyword[] | null;
   competitors: MergedCompetitorRow[] | null;
 }): ActionItem[] {
   const { report, keywords, competitors } = input;
+  const aventuraKeywords = input.aventuraKeywords ?? null;
   const actions: ActionItem[] = [];
   const seenTargets = new Set<string>();
 
@@ -294,21 +303,24 @@ export function generateWeeklyActions(input: {
     }
   }
 
-  if (keywords && keywords.length > 0) {
-    const trackerDrops = keywords
+  const trackerSets: Array<{ label: string; list: TrackedKeyword[] }> = [];
+  if (keywords && keywords.length > 0) trackerSets.push({ label: "Miami 📱", list: keywords });
+  if (aventuraKeywords && aventuraKeywords.length > 0) trackerSets.push({ label: "Aventura 📱", list: aventuraKeywords });
+  const allTrackerDrops = trackerSets.flatMap((set) =>
+    set.list
       .filter((k) => k.rank !== null && k.previousRank !== null && k.rank - k.previousRank >= 3)
-      .sort((a, b) => (b.searchVolume ?? 0) - (a.searchVolume ?? 0));
-    if (trackerDrops.length > 0) {
-      const top = trackerDrops[0];
-      push({
-        id: `tracker-drop-${top.keyword}`,
-        priority: "high",
-        category: "Rank drop",
-        title: `Investigate "${top.keyword}" (#${top.previousRank} → #${top.rank})`,
-        detail: `Dropped ${top.rank! - top.previousRank!} spots in Mangools Miami tracking${top.url ? ` (${shortLabel(top.url)})` : ""}.`,
-        target: top.keyword,
-      });
-    }
+      .map((k) => ({ ...k, label: set.label }))
+  ).sort((a, b) => (b.searchVolume ?? 0) - (a.searchVolume ?? 0) || (b.rank! - b.previousRank!) - (a.rank! - a.previousRank!));
+  if (allTrackerDrops.length > 0) {
+    const top = allTrackerDrops[0];
+    push({
+      id: `tracker-drop-${top.label}-${top.keyword}`,
+      priority: "high",
+      category: "Rank drop",
+      title: `Investigate "${top.keyword}" (${top.label} #${top.previousRank} → #${top.rank})`,
+      detail: `Dropped ${top.rank! - top.previousRank!} spots in the ${top.label} SERPWatcher tracking${top.url ? ` (${shortLabel(top.url)})` : ""}.`,
+      target: top.keyword,
+    });
   }
 
   // 3. Striking distance (pos 4–15 with highest impressions) -> push page.
@@ -325,8 +337,12 @@ export function generateWeeklyActions(input: {
         target: best.query,
       });
     }
-  } else if (keywords && keywords.length > 0) {
-    const bestKw = keywords
+  } else {
+    const pool = [
+      ...((keywords ?? []).map((k) => ({ ...k, label: "Miami 📱" }))),
+      ...((aventuraKeywords ?? []).map((k) => ({ ...k, label: "Aventura 📱" }))),
+    ];
+    const bestKw = pool
       .filter((k) => k.rank !== null && k.rank >= 4 && k.rank <= 15 && !seenTargets.has(k.keyword.toLowerCase()))
       .sort((a, b) => (b.searchVolume ?? 0) - (a.searchVolume ?? 0))[0];
     if (bestKw) {
@@ -335,7 +351,7 @@ export function generateWeeklyActions(input: {
         priority: "high",
         category: "Quick win (#4–15)",
         title: `Push "${bestKw.keyword}" from #${bestKw.rank} into Top 3`,
-        detail: `Tracked at #${bestKw.rank}${bestKw.searchVolume ? ` (${bestKw.searchVolume}/mo searches)` : ""}. Add internal links and FAQ coverage on ${shortLabel(bestKw.url)}.`,
+        detail: `Tracked at #${bestKw.rank} on ${bestKw.label}${bestKw.searchVolume ? ` (${bestKw.searchVolume}/mo searches)` : ""}. Add internal links and FAQ coverage on ${shortLabel(bestKw.url)}.`,
         target: bestKw.keyword,
       });
     }
@@ -420,12 +436,18 @@ export function buildCompetitorComparison(input: {
   competitorsPayload: { status: "ok" | "partial" | "unavailable"; rows: CompetitorRow[] } | null;
   report: WeeklyReport | null;
   keywords: TrackedKeyword[] | null;
+  aventuraKeywords?: TrackedKeyword[] | null;
 }): MergedCompetitorRow[] {
   const { competitorsPayload, report, keywords } = input;
+  const aventuraKeywords = input.aventuraKeywords ?? null;
 
-  const trackerMap = new Map<string, TrackedKeyword>();
+  const miamiMap = new Map<string, TrackedKeyword>();
   for (const k of keywords ?? []) {
-    trackerMap.set(k.keyword.toLowerCase().trim(), k);
+    miamiMap.set(k.keyword.toLowerCase().trim(), k);
+  }
+  const aventuraMap = new Map<string, TrackedKeyword>();
+  for (const k of aventuraKeywords ?? []) {
+    aventuraMap.set(k.keyword.toLowerCase().trim(), k);
   }
 
   const gscMap = new Map<string, { position: number | null; impressions: number }>();
@@ -453,7 +475,8 @@ export function buildCompetitorComparison(input: {
     for (const r of serpRows) orderedKeywords.push(r.keyword);
   } else {
     orderedKeywords.push(...CORE_MONEY_KEYWORDS);
-    for (const k of keywords ?? []) {
+    const extras = [...(keywords ?? []), ...(aventuraKeywords ?? [])];
+    for (const k of extras) {
       if (isSpanishKeyword(k.keyword) && !orderedKeywords.some((x) => x.toLowerCase() === k.keyword.toLowerCase())) {
         orderedKeywords.push(k.keyword);
         if (orderedKeywords.length >= CORE_MONEY_KEYWORDS.length + 3) break;
@@ -464,11 +487,14 @@ export function buildCompetitorComparison(input: {
   return orderedKeywords.map((kw) => {
     const norm = kw.toLowerCase().trim();
     const serp = rowsByKw.get(norm);
-    const tracker = trackerMap.get(norm);
+    const miamiKw = miamiMap.get(norm);
+    const aventuraKw = aventuraMap.get(norm);
     const gsc = gscMap.get(norm);
 
     const serpPos = serp?.ourSerpPosition ?? null;
-    const trackerRank = tracker?.rank ?? null;
+    const miamiTrackerRank = miamiKw?.rank ?? null;
+    const aventuraTrackerRank = aventuraKw?.rank ?? null;
+    const trackerRank = miamiTrackerRank ?? aventuraTrackerRank;
     const gscPos = gsc?.position ?? null;
 
     let ourPosition: number | null = null;
@@ -476,8 +502,11 @@ export function buildCompetitorComparison(input: {
     if (serpPos !== null) {
       ourPosition = serpPos;
       positionSource = "serp";
-    } else if (trackerRank !== null) {
-      ourPosition = trackerRank;
+    } else if (miamiTrackerRank !== null) {
+      ourPosition = miamiTrackerRank;
+      positionSource = "tracker";
+    } else if (aventuraTrackerRank !== null) {
+      ourPosition = aventuraTrackerRank;
       positionSource = "tracker";
     } else if (gscPos !== null) {
       ourPosition = gscPos;
@@ -513,7 +542,11 @@ export function buildCompetitorComparison(input: {
       gscPosition: gscPos,
       gscImpressions: gsc?.impressions ?? null,
       trackerRank,
-      mapPackRank: tracker?.mapPackRank ?? null,
+      mapPackRank: miamiKw?.mapPackRank ?? aventuraKw?.mapPackRank ?? null,
+      miamiTrackerRank,
+      miamiMapPackRank: miamiKw?.mapPackRank ?? null,
+      aventuraTrackerRank,
+      aventuraMapPackRank: aventuraKw?.mapPackRank ?? null,
       hasLocalPack: serp?.hasLocalPack ?? false,
       topCompetitors: serp?.topCompetitors ?? [],
       gapLabel,

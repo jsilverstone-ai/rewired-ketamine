@@ -53,17 +53,26 @@ export default function Scorecard({
   report,
   reportStatus,
   keywords,
+  aventuraKeywords,
+  miamiLabel = "Miami 📱",
+  aventuraLabel = "Aventura 📱",
+  rankingsWarnings,
   loading,
 }: {
   report: WeeklyReport | null;
   reportStatus: string | null;
   keywords: TrackedKeyword[] | null;
+  aventuraKeywords?: TrackedKeyword[] | null;
+  miamiLabel?: string;
+  aventuraLabel?: string;
+  rankingsWarnings?: string[];
   loading: boolean;
 }) {
   const [showFormula, setShowFormula] = useState(false);
 
-  const scoreData = computeVisibilityScore({ report, keywords });
-  const kwStats = computeKeywordStats(keywords);
+  const scoreData = computeVisibilityScore({ report, keywords, trackedLabel: miamiLabel });
+  const miamiStats = computeKeywordStats(keywords);
+  const aventuraStats = computeKeywordStats(aventuraKeywords ?? null);
 
   const t = report?.totals.thisWeek ?? null;
   const l = report?.totals.lastWeek ?? null;
@@ -107,6 +116,14 @@ export default function Scorecard({
           </button>
         </div>
       </div>
+
+      {rankingsWarnings && rankingsWarnings.length > 0 && (
+        <div className="mb-4 bg-amber-50 border border-amber-200/80 text-amber-800 rounded-2xl px-4 py-3 text-xs leading-relaxed space-y-1.5">
+          {rankingsWarnings.map((w) => (
+            <p key={w}>{w}</p>
+          ))}
+        </div>
+      )}
 
       {loading && !report && !keywords ? (
         <Skeleton rows={3} />
@@ -202,11 +219,18 @@ export default function Scorecard({
               sub={posBefore !== null ? `vs ${fmtPos(posBefore)}` : undefined}
             />
             <KpiTile
-              label="Keywords in Top 10"
-              value={kwStats ? `${kwStats.top10}/${kwStats.total}` : "—"}
-              now={kwStats?.top10 ?? null}
-              before={kwStats?.prevTop10 ?? null}
-              sub={kwStats ? `${kwStats.top3} in Top 3` : "No tracker data"}
+              label={`${miamiLabel} Top 10`}
+              value={miamiStats ? `${miamiStats.top10}/${miamiStats.total}` : "—"}
+              now={miamiStats?.top10 ?? null}
+              before={miamiStats?.prevTop10 ?? null}
+              sub={miamiStats ? `${miamiStats.top3} in Top 3` : "No Miami tracker"}
+            />
+            <KpiTile
+              label={`${aventuraLabel} Top 10`}
+              value={aventuraStats ? `${aventuraStats.top10}/${aventuraStats.total}` : "—"}
+              now={aventuraStats?.top10 ?? null}
+              before={aventuraStats?.prevTop10 ?? null}
+              sub={aventuraStats ? `${aventuraStats.top3} in Top 3` : "No Aventura tracker"}
             />
             <KpiTile
               label="Spanish (/es) Imp."

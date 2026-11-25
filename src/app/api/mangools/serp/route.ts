@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { unstable_cache } from "next/cache";
 import { isSeoAuthenticated, unauthorized } from "@/lib/seo-auth";
-import { MIAMI_LOCATION_ID, mangoolsErrorResponse, mangoolsFetch } from "@/lib/mangools";
+import { MIAMI_LOCATION_ID, PLATFORM_MOBILE, mangoolsErrorResponse, mangoolsFetch } from "@/lib/mangools";
 import { normalizeSerpItems } from "@/lib/competitors";
 
 type SerpItem = {
@@ -21,20 +21,21 @@ const TTL_MS = 24 * 60 * 60 * 1000;
 
 const fetchCachedSingleSerp = unstable_cache(
   async (kw: string) => {
-    const qs = new URLSearchParams({ kw, location_id: String(MIAMI_LOCATION_ID) });
+    const qs = new URLSearchParams({ kw, location_id: String(MIAMI_LOCATION_ID), platform_id: String(PLATFORM_MOBILE) });
     const data = await mangoolsFetch<SerpResponse>(`/serpchecker/serps?${qs}`, undefined, "default");
     const { ourSerpPosition, hasLocalPack, organic } = normalizeSerpItems(data.items);
     return {
       success: true,
       keyword: kw,
       location: data.location?.label ?? "Miami, Florida, United States",
+      platform: "mobile" as const,
       ourPosition: ourSerpPosition,
       hasLocalPack,
       organic,
       fetchedAt: new Date().toISOString(),
     };
   },
-  ["mangools-single-serp-v1"],
+  ["mangools-single-serp-v2-mobile"],
   { revalidate: 86400 }
 );
 
@@ -51,13 +52,14 @@ export async function GET(request: Request) {
   try {
     const body = refresh
       ? await (async () => {
-          const qs = new URLSearchParams({ kw, location_id: String(MIAMI_LOCATION_ID) });
+          const qs = new URLSearchParams({ kw, location_id: String(MIAMI_LOCATION_ID), platform_id: String(PLATFORM_MOBILE) });
           const data = await mangoolsFetch<SerpResponse>(`/serpchecker/serps?${qs}`, undefined, "no-store");
           const { ourSerpPosition, hasLocalPack, organic } = normalizeSerpItems(data.items);
           return {
             success: true,
             keyword: kw,
             location: data.location?.label ?? "Miami, Florida, United States",
+      platform: "mobile" as const,
             ourPosition: ourSerpPosition,
             hasLocalPack,
             organic,

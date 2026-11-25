@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { isSeoAuthenticated, unauthorized } from "@/lib/seo-auth";
 import { GSC_SITE, GscNotConfiguredError, gscServiceAccountEmail, listSitemaps } from "@/lib/gsc";
-import { mangoolsFetch, MANGOOLS_DOMAIN, SERPWATCHER_TRACKING_ID } from "@/lib/mangools";
+import { MANGOOLS_DOMAIN } from "@/lib/mangools";
+import { mangoolsFetch } from "@/lib/mangools";
+import { listAccountTrackings, locationDisplayName, selectLocationTrackings } from "@/lib/serpwatcher";
 
 export const dynamic = "force-dynamic";
 
@@ -25,17 +27,29 @@ async function timed(name: string, route: string, fn: () => Promise<string>): Pr
 }
 
 // One-call health check for every upstream the dashboard depends on.
-// Uses only cheap/free Mangools endpoints where possible (SERPWatcher detail is free;
-// SiteProfiler/LinkMiner/SERPChecker lookups would burn quota, so they are checked
-// only for a configured key here and exercised by their own routes).
+// Uses only cheap/free Mangools endpoints where possible (SERPWatcher list/detail
+// are free; SiteProfiler/LinkMiner/SERPChecker lookups would burn quota, so they
+// are checked only for a configured key here and exercised by their own routes).
 export async function GET(request: Request) {
   if (!isSeoAuthenticated(request)) return unauthorized();
 
   const key = process.env.MANGOOLS_API_KEY;
   const checks = await Promise.all([
     timed("Mangools rank tracking (SERPWatcher)", "/api/mangools/rankings", async () => {
-      const data = await mangoolsFetch<{ keywords?: unknown[] }>(`/serpwatcher/trackings/${SERPWATCHER_TRACKING_ID}/detail`);
-      return `${data.keywords?.length ?? 0} tracked keywords`;
+      const list = await listAccountTrackings("no-store");
+      const selected = selectLocationTrackings(list);
+      const bits: string[] = [];
+      for (const key of ["miami", "aventura"] as const) {
+        const meta = selected[key];
+        if (!meta) {
+          bits.push(`No ${key === "miami" ? "Miami" : "Aventura"} tracking`);
+          continue;
+        }
+        const label = locationDisplayName(meta.locationKey, meta.platform);
+        bits.push(`${label}: ${meta.keywordCount ?? "?"} kw`);
+      }
+      const warn = selected.warnings[0] ? ` ⚠ ${selected.warnings[0]}` : "";
+      return `${bits.join(" · ")}${warn}`;
     }),
     timed("Mangools API key", "/api/mangools/site, /backlinks, /serp", async () => {
       if (!key) throw new Error("MANGOOLS_API_KEY is not set");

@@ -6,6 +6,10 @@ export const MANGOOLS_DOMAIN = "rewiredketamine.com";
 export const SERPWATCHER_TRACKING_ID = "6a9ef04c556f519f568cba28";
 // Google location id for Miami, Florida (from /v3/mangools/locations?query=Miami).
 export const MIAMI_LOCATION_ID = 1015116;
+// Mangools platform_id is fixed on each SERPWatcher tracking and is a query
+// param on SERPChecker. 1 = desktop, 2 = mobile.
+export const PLATFORM_DESKTOP = 1;
+export const PLATFORM_MOBILE = 2;
 
 // Core money keywords tracked in the Miami Competitor view.
 export const CORE_MONEY_KEYWORDS = [
