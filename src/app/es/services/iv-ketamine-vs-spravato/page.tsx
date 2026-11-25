@@ -52,7 +52,7 @@ export default function IvVsSpravatoEsPage() {
                 <tr>
                   <td className="border border-gray-200 px-4 py-2 font-medium">Monitoreo</td>
                   <td className="border border-gray-200 px-4 py-2">Monitoreo continuo durante la sesión</td>
-                  <td className="border border-gray-200 px-4 py-2">Monitoreo requerido bajo REMS</td>
+                  <td className="border border-gray-200 px-4 py-2">Al menos 2 horas de monitoreo bajo REMS; no debe manejar hasta el día siguiente, después de una noche de buen descanso</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-200 px-4 py-2 font-medium">Seguro</td>
@@ -67,7 +67,7 @@ export default function IvVsSpravatoEsPage() {
                 <tr>
                   <td className="border border-gray-200 px-4 py-2 font-medium">Uso típico</td>
                   <td className="border border-gray-200 px-4 py-2">Depresión resistente al tratamiento, ansiedad, TEPT, dolor crónico y preocupaciones relacionadas</td>
-                  <td className="border border-gray-200 px-4 py-2">Aprobado por la FDA para depresión resistente al tratamiento (y ciertos otros usos etiquetados)</td>
+                  <td className="border border-gray-200 px-4 py-2">Aprobado por la FDA para la depresión resistente al tratamiento en adultos (solo o junto con un antidepresivo oral) y para el TDM con ideación o conducta suicida aguda (junto con un antidepresivo oral)</td>
                 </tr>
               </tbody>
             </table>
@@ -83,7 +83,7 @@ export default function IvVsSpravatoEsPage() {
 
           <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">Cómo funciona Spravato en Rewired</h3>
           <p className="text-[#555] mb-10">
-            Spravato es un espray nasal aprobado por la FDA (esketamina). Se administra en la oficina bajo observación. Rewired Ketamine es una clínica certificada REMS, lo que significa que seguimos las reglas requeridas de monitoreo y reporte. La mayoría de los pacientes que califican para Spravato usan seguro. Usualmente se requiere autorización previa. La visita incluye tiempo de observación después de la dosis.
+            Spravato es un espray nasal aprobado por la FDA (esketamina). Desde el 17 de enero de 2025 está aprobado para la depresión resistente al tratamiento en adultos, solo o junto con un antidepresivo oral. Para los síntomas depresivos del trastorno depresivo mayor con ideación o conducta suicida aguda, se sigue usando junto con un antidepresivo oral. Se administra en la oficina bajo observación. Rewired Ketamine es una clínica certificada REMS, lo que significa que seguimos las reglas requeridas de monitoreo y reporte. La mayoría de los pacientes que califican para Spravato usan seguro. Por lo general se requiere autorización previa. Después de cada dosis, el paciente permanece al menos dos horas en observación y no debe manejar hasta el día siguiente, después de una noche de buen descanso.
           </p>
 
           <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">A quién puede adaptarse cada opción</h3>

@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 
 
 const faqs: { q: string; a: string; link?: { text: string; href: string } }[] = [
-  { q: "Does insurance cover ketamine therapy?", a: "It depends on the treatment. Spravato (esketamine) is FDA-approved for treatment-resistant depression and is often covered with prior authorization. IV ketamine is not FDA-approved for depression, and plans generally do not cover it. Coverage is never guaranteed and is set by your policy." },
+  { q: "Does insurance cover ketamine therapy?", a: "It depends on the treatment. Spravato (esketamine) is FDA-approved for treatment-resistant depression in adults, used on its own or with an oral antidepressant, and is often covered with prior authorization. IV ketamine is not FDA-approved for depression, and plans generally do not cover it. Coverage is never guaranteed and is set by your policy." },
   { q: "Which insurance plans does Rewired bill for Spravato?", a: "We bill Spravato in-network with UnitedHealthcare, Cigna, and Aetna. Other plans can be reviewed at your free consultation. Approval depends on your medical evaluation and your insurer’s prior authorization." },
   { q: "Is Florida Blue or BCBS accepted for Spravato?", a: "Blue Cross Blue Shield plans, including Florida Blue, are out-of-network for Spravato at Rewired. Some plans offer out-of-network benefits, but what they pay varies and is not guaranteed. Call the number on your card and ask us to review your plan at your consultation." },
   { q: "Does insurance cover IV ketamine?", a: "Generally no. IV ketamine for depression is off-label, and insurers typically do not pay for it, so it is cash-pay at Rewired. Some patients submit our superbill for possible out-of-network reimbursement." },

@@ -32,7 +32,7 @@ export default function SpravatoForTreatmentResistantDepressionPage() {
             A 2025 review in <em>Neuropsychiatric Disease and Treatment</em> looked at intranasal esketamine, sold as Spravato, for major depression and treatment-resistant depression. The authors summarized trials that reported rapid antidepressant effects, often within hours, through NMDA receptor antagonism. This is a research summary, not a promise about any one person.
           </p>
           <p className="text-lg leading-relaxed mb-6">
-            Spravato is FDA-approved esketamine nasal spray for adults with treatment-resistant depression. It is not taken home. Under the REMS program it is self-administered in a certified clinic and followed by a monitoring period. That is different from IV ketamine. At Rewired Ketamine in Aventura we offer both, and the right fit is decided after a consult.
+            Spravato is FDA-approved esketamine nasal spray. For treatment-resistant depression in adults, it may be used on its own or with an oral antidepressant (monotherapy has been approved since January 17, 2025). For depressive symptoms in major depressive disorder with acute suicidal ideation or behavior, it is used with an oral antidepressant. It is not taken home. Under the REMS program it is self-administered in a certified clinic and followed by at least two hours of monitoring. You should not drive until the next day after a restful sleep. That is different from IV ketamine. At Rewired Ketamine in Aventura we offer both, and the right fit is decided after a consult.
           </p>
           <h2 className="text-2xl font-bold text-[#0B1D36] mt-10 mb-4">What the review covered</h2>
           <p className="text-lg leading-relaxed mb-6">

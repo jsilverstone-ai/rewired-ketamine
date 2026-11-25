@@ -29,14 +29,14 @@ export default function SpravatoREMSvsIVKetamine() {
         <div className="max-w-3xl mx-auto prose prose-lg">
           <p className="text-sm text-[#C9A66B] font-semibold mb-2">October 2026</p>
           <p className="text-lg leading-relaxed mb-6">
-            Spravato is FDA-approved esketamine nasal spray for adults with treatment-resistant depression. It is not taken home. Under the REMS program it is self-administered only in a certified clinic, then followed by on-site monitoring. That is different from IV ketamine, which is a different route and is used off-label for depression. Neither is a cure, and neither is automatically better than the other.
+            Spravato is FDA-approved esketamine nasal spray. For treatment-resistant depression in adults, it may be used on its own or with an oral antidepressant (monotherapy has been approved since January 17, 2025). For depressive symptoms in major depressive disorder with acute suicidal ideation or behavior, it is used with an oral antidepressant. It is not taken home. Under the REMS program it is self-administered only in a certified clinic, then followed by at least two hours of on-site monitoring. You should not drive until the next day after a restful sleep. That is different from IV ketamine, which is a different route and is used off-label for depression. Neither is a cure, and neither is automatically better than the other.
           </p>
           <p className="text-lg leading-relaxed mb-6">
             A 2025 review in <em>Neuropsychiatric Disease and Treatment</em> summarized trials of intranasal esketamine, including TRANSFORM-2, SUSTAIN-1, and ASPIRE. Those studies are often cited for rapid antidepressant effects, often within hours, through NMDA receptor antagonism. Side effects discussed in the literature include dissociation and blood pressure changes, which is why the observation window exists. This is a research summary, not a promise about any one person.
           </p>
           <h2 className="text-2xl font-bold text-[#0B1D36] mt-10 mb-4">How Spravato REMS works</h2>
           <p className="text-lg leading-relaxed mb-6">
-            REMS means the medicine is restricted to certified sites. At Rewired Ketamine in Aventura, Spravato is given in the office under observation. You stay for monitoring after the dose. Visits are scheduled, not mailed. A consult and medical screening decide whether it is appropriate.
+            REMS means the medicine is restricted to certified sites. At Rewired Ketamine in Aventura, Spravato is given in the office under observation. You stay for at least two hours of monitoring after the dose and should not drive until the next day after a restful sleep. Visits are scheduled, not mailed. A consult and medical screening decide whether it is appropriate.
           </p>
           <h2 className="text-2xl font-bold text-[#0B1D36] mt-10 mb-4">Spravato vs IV ketamine</h2>
           <p className="text-lg leading-relaxed mb-6">

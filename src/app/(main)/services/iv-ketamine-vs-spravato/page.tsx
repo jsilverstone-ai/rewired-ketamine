@@ -40,10 +40,10 @@ export default function IVKetamineVsSpravatoPage() {
         <tbody>
           <tr className="border-b"><td className="p-4 font-semibold">Route</td><td className="p-4">Intravenous infusion</td><td className="p-4">Nasal spray</td></tr>
           <tr className="border-b"><td className="p-4 font-semibold">Setting</td><td className="p-4">Private treatment room at our Aventura clinic</td><td className="p-4">Private treatment room at our Aventura clinic</td></tr>
-          <tr className="border-b"><td className="p-4 font-semibold">Monitoring</td><td className="p-4">Continuous monitoring during the session</td><td className="p-4">Monitoring required under REMS</td></tr>
+          <tr className="border-b"><td className="p-4 font-semibold">Monitoring</td><td className="p-4">Continuous monitoring during the session</td><td className="p-4">At least 2 hours of monitoring under REMS; do not drive until the next day after a restful sleep</td></tr>
           <tr className="border-b"><td className="p-4 font-semibold">Insurance</td><td className="p-4">Typically cash-pay</td><td className="p-4">Often covered by insurance for treatment-resistant depression (prior authorization usually required)</td></tr>
           <tr className="border-b"><td className="p-4 font-semibold">Guidance</td><td className="p-4">Fully guided sessions available</td><td className="p-4">Administered under observation per REMS</td></tr>
-          <tr><td className="p-4 font-semibold">Typical use</td><td className="p-4">Treatment-resistant depression, anxiety, PTSD, chronic pain, and related concerns</td><td className="p-4">FDA-approved for treatment-resistant depression (and certain other labeled uses)</td></tr>
+          <tr><td className="p-4 font-semibold">Typical use</td><td className="p-4">Treatment-resistant depression, anxiety, PTSD, chronic pain, and related concerns</td><td className="p-4">FDA-approved for treatment-resistant depression in adults (alone or with an oral antidepressant), and for MDD with acute suicidal ideation or behavior (with an oral antidepressant)</td></tr>
         </tbody>
       </table>
     </div>
@@ -58,10 +58,10 @@ export default function IVKetamineVsSpravatoPage() {
 
     <h3 className="text-2xl font-bold text-[#0B1D36] mb-4">How Spravato works at Rewired</h3>
     <p className="leading-relaxed mb-6">
-      Spravato is an FDA-approved nasal spray (esketamine). It is given in the office under observation. Rewired Ketamine is a REMS-certified clinic, which means we follow the required monitoring and reporting rules.
+      Spravato is an FDA-approved nasal spray (esketamine). Since January 17, 2025, it is approved for treatment-resistant depression in adults either on its own or with an oral antidepressant. For depressive symptoms in major depressive disorder with acute suicidal ideation or behavior, it is still used with an oral antidepressant. It is given in the office under observation. Rewired Ketamine is a REMS-certified clinic, which means we follow the required monitoring and reporting rules.
     </p>
     <p className="leading-relaxed mb-6">
-      Most patients who qualify for Spravato use insurance. Prior authorization is usually required. The visit includes observation time after the dose.
+      Most patients who qualify for Spravato use insurance. Prior authorization is usually required. After each dose, patients stay for at least two hours of monitoring and should not drive until the next day after a restful sleep.
     </p>
 
     <h3 className="text-2xl font-bold text-[#0B1D36] mb-4">Who each option may fit</h3>
