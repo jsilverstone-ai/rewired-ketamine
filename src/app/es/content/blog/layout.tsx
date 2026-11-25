@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | Terapia con Ketamina en Aventura | Rewired Ketamine",
-  description: "Artículos educativos sobre terapia con ketamina. Clínica de propiedad local en Aventura, FL. ¡Hablamos Español!",
+  title: { absolute: "Blog en Español | Ketamina, Depresión y Ansiedad | Rewired Ketamine" },
+  description: "Artículos escritos en español sobre depresión, ansiedad, trauma y terapia con ketamina, con revisión médica. Clínica de propiedad local en Aventura, FL. ¡Hablamos Español!",
   alternates: {
     canonical: "https://www.rewiredketamine.com/es/content/blog",
     languages: {

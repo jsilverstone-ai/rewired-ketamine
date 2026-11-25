@@ -19,6 +19,21 @@ export function pairedMetadata(lang: "en" | "es", enPath: string, title: string,
   };
 }
 
+/**
+ * Metadata for a Spanish-only page (for example an original Spanish blog post with no true English
+ * equivalent): self-referencing canonical and no hreflang alternates, so Google does not pair it
+ * with an unrelated English URL.
+ */
+export function esOnlyMetadata(path: string, title: string, description: string): Metadata {
+  const url = `${SITE}${path}`;
+  return {
+    title: { absolute: `${title} | Rewired Ketamine` },
+    description,
+    openGraph: { title, description, url, locale: "es_US", type: "article", images: [OG_ES] },
+    alternates: { canonical: url },
+  };
+}
+
 type Crumb = { name: string; path: string };
 
 /**
@@ -33,6 +48,10 @@ export function pageJsonLd(opts: {
   description: string;
   about?: Record<string, unknown> | Record<string, unknown>[];
   crumbs: Crumb[];
+  /** Optional author (blog posts). */
+  author?: Record<string, unknown>;
+  /** Optional first-published date (YYYY-MM-DD). */
+  datePublished?: string;
 }) {
   const url = `${SITE}${opts.path}`;
   const graph: Record<string, unknown>[] = [
@@ -45,6 +64,8 @@ export function pageJsonLd(opts: {
       inLanguage: opts.lang === "es" ? "es-US" : "en-US",
       isPartOf: CLINIC_REF,
       ...(opts.about ? { about: opts.about } : {}),
+      ...(opts.author ? { author: opts.author } : {}),
+      ...(opts.datePublished ? { datePublished: opts.datePublished } : {}),
       reviewedBy: REVIEWER_JSONLD,
       lastReviewed: LAST_REVIEWED,
       dateModified: LAST_REVIEWED,

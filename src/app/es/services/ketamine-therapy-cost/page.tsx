@@ -22,7 +22,7 @@ export default function KetamineTherapyCostEsPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#0B1D36] mb-4">¿Cuánto cuesta la terapia con ketamina en Aventura y Miami?</h2>
           <p className="text-[#555] mb-10">
-            En Rewired Ketamine mostramos precios reales y explicamos qué está incluido. Compara el cuidado total — guía, monitoreo, salas privadas y próximos pasos — no solo el precio de la infusión.
+            En Rewired Ketamine mostramos precios reales y explicamos qué está incluido. Compare el cuidado total — guía, monitoreo, salas privadas y próximos pasos — no solo el precio de la infusión.
           </p>
 
           <h3 className="text-xl font-semibold text-[#0B1D36] mb-6">Precios de Ketamina IV</h3>
@@ -64,29 +64,29 @@ export default function KetamineTherapyCostEsPage() {
               </div>
             </div>
           </div>
-          <p className="text-sm text-[#555] mb-10">Pregúntanos sobre descuentos disponibles. Se requiere consulta antes del tratamiento.</p>
+          <p className="text-sm text-[#555] mb-10">Pregúntenos sobre los descuentos disponibles. Se requiere consulta antes del tratamiento.</p>
           <p className="text-center mb-10"><Link href="/es/tools/ketamine-cost-calculator" className="text-[#C9A66B] font-semibold hover:underline">Compare sesiones y paquetes con nuestra calculadora de costos →</Link> · <Link href="/es/services/hsa-fsa-ketamine" className="text-[#C9A66B] font-semibold hover:underline">Cómo usar su HSA o FSA →</Link></p>
 
           <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">¿Qué cambia el precio?</h3>
           <ul className="list-disc pl-5 space-y-2 text-[#555] mb-10">
             <li>Protocolo de salud mental de 1 hora vs protocolo de dolor crónico de 2 horas</li>
-            <li>Sesión estándar vs sesión completamente guiada (un miembro del equipo clínico permanece contigo)</li>
+            <li>Sesión estándar vs sesión completamente guiada (un miembro del equipo clínico permanece con usted)</li>
             <li>Sesión individual vs paquete de 3 o 6</li>
             <li>Consulta, monitoreo continuo, sala de tratamiento privada y seguimiento</li>
             <li>Apoyo de integración (incluido en opciones guiadas o disponible por separado)</li>
           </ul>
 
           <p className="text-[#555] mb-6">
-            Nuestro protocolo IV de salud mental publicado comienza en $440 por sesión y $2,300 por seis. Las opciones guiadas se listan por separado para que puedas ver el costo total de un curso típico.
+            Nuestro protocolo IV de salud mental publicado comienza en $440 por sesión y $2,300 por seis. Las opciones guiadas se listan por separado para que pueda ver el costo total de un curso típico.
           </p>
           <p className="text-[#555] mb-10">
             La ketamina IV suele ser de pago en efectivo. Spravato (espray nasal de esketamina) puede estar cubierto por algunos planes de seguro cuando se cumplen los criterios REMS. La cobertura no está garantizada y generalmente se requiere autorización previa.
           </p>
 
-          <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">Si estás comparando clínicas de ketamina en Aventura, haz estas preguntas</h3>
+          <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">Si está comparando clínicas de ketamina en Aventura, haga estas preguntas</h3>
           <ul className="list-disc pl-5 space-y-2 text-[#555]">
             <li>¿La clínica se enfoca en salud mental, o la ketamina es uno de muchos servicios de bienestar?</li>
-            <li>¿Quién permanece contigo durante la infusión?</li>
+            <li>¿Quién permanece con usted durante la infusión?</li>
             <li>¿La sesión es completamente guiada?</li>
             <li>¿Qué monitoreo se utiliza?</li>
             <li>¿Qué sucede después de la infusión?</li>
@@ -107,7 +107,7 @@ export default function KetamineTherapyCostEsPage() {
         <Link href="/es#contact" className="inline-block bg-[#C9A66B] text-[#0B1D36] font-semibold px-8 py-3 rounded-lg hover:bg-[#b8955e] transition">
           Reservar Consulta Gratuita
         </Link>
-        <p className="mt-4 text-sm text-[#555]">O llama/texto al (305) 676-6070</p>
+        <p className="mt-4 text-sm text-[#555]">O llame o envíe un mensaje de texto al (305) 676-6070</p>
       </section>
 
       {/* Footer */}

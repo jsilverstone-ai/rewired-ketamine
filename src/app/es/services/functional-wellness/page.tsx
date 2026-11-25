@@ -21,10 +21,10 @@ export default function FunctionalWellnessEsPage() {
       <section className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <p className="text-lg text-[#555] mb-6">
-            Nuestro enfoque de bienestar funcional examina el panorama más amplio de tu salud — sueño, estrés, nutrición y estilo de vida — para ayudar a crear la base más sólida posible para la sanación. Estos apoyos están diseñados para trabajar junto con tu tratamiento de ketamina y el proceso de integración.
+            Nuestro enfoque de bienestar funcional examina el panorama más amplio de su salud — sueño, estrés, nutrición y estilo de vida — para ayudar a crear la base más sólida posible para la sanación. Estos apoyos están diseñados para trabajar junto con su tratamiento de ketamina y el proceso de integración.
           </p>
           <p className="text-lg text-[#555]">
-            Cuando es apropiado, también podemos ordenar vitaminas personalizadas para incluirlas en tus infusiones de ketamina, ofreciendo una capa adicional de apoyo personalizado.
+            Cuando es apropiado, también podemos ordenar vitaminas personalizadas para incluirlas en sus infusiones de ketamina, ofreciendo una capa adicional de apoyo personalizado.
           </p>
         </div>
       </section>
