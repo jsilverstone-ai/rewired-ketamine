@@ -103,6 +103,10 @@ export default function MigraineAndMentalHealthConnectionPage() {
               <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is this a local clinic?</h3>
               <p className="text-[#555] leading-relaxed">Yes. Rewired Ketamine is locally owned and based in Aventura, serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español!</p>
             </div>
+            <div className="bg-white rounded-xl p-6 border border-[#eee]">
+              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Can migraines affect mood?</h3>
+              <p className="text-[#555] leading-relaxed">Yes. Many people notice mood, sleep, or anxiety changes around migraine patterns. An evaluation can help sort out next steps.</p>
+            </div>
           </div>
         </div>
       </section>

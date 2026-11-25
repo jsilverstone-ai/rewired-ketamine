@@ -22,6 +22,7 @@ const SERVICES = [
   { href: "/services/iv-ketamine-vs-spravato", label: "IV vs Spravato" },
   { href: "/services/ketamine-therapy-cost", label: "Cost" },
   { href: "/services/ketamine-insurance", label: "Insurance" },
+  { href: "/services/hsa-fsa-ketamine", label: "HSA / FSA" },
   { href: "/services/functional-wellness", label: "Functional Wellness" },
   { href: "/services/medical-management", label: "Medical Management" },
   { href: "/services/talk-therapy", label: "Talk Therapy" },
@@ -47,6 +48,7 @@ const CONTENT = [
   { href: "/content/blog", label: "Blog" },
   { href: "/content/videos", label: "Videos" },
   { href: "/content/ketamine-in-the-news", label: "Ketamine in the News" },
+  { href: "/tools", label: "Free Self-Check Tools" },
 ];
 
 const SOCIAL = [
@@ -60,7 +62,7 @@ const DROPDOWN_LINK = "block px-4 py-2.5 hover:bg-[#F8F5F0] hover:text-[#C9A66B]
 const NAV_LINK = "hover:text-[#C9A66B] transition";
 
 // English pages that have a Spanish twin (generated from src/app/es).
-const ES_PAGES = new Set<string>(["/content", "/content/blog", "/content/ketamine-in-the-news", "/content/videos", "/faq", "/location", "/providers", "/services", "/services/functional-wellness", "/services/home-ketamine", "/services/iv-ketamine-vs-spravato", "/services/ketamine-infusion", "/services/ketamine-insurance", "/services/ketamine-therapy-cost", "/services/medical-management", "/services/spravato", "/services/talk-therapy", "/treatments", "/treatments/anxiety", "/treatments/burnout", "/treatments/chronic-pain", "/treatments/depression", "/treatments/eating-disorder", "/treatments/mental-fogginess", "/treatments/motivation", "/treatments/ocd", "/treatments/palliative-compassion-care", "/treatments/postpartum-depression", "/treatments/ptsd", "/treatments/tension-headaches"]);
+const ES_PAGES = new Set<string>(["/content", "/content/blog", "/content/ketamine-in-the-news", "/content/videos", "/faq", "/location", "/providers", "/services", "/services/functional-wellness", "/services/home-ketamine", "/services/hsa-fsa-ketamine", "/services/iv-ketamine-vs-spravato", "/services/ketamine-infusion", "/services/ketamine-insurance", "/services/ketamine-insurance/spravato-aetna", "/services/ketamine-insurance/spravato-cigna", "/services/ketamine-insurance/spravato-florida-blue-bcbs", "/services/ketamine-insurance/spravato-florida-medicaid", "/services/ketamine-insurance/spravato-medicare", "/services/ketamine-insurance/spravato-unitedhealthcare", "/services/ketamine-therapy-cost", "/services/medical-management", "/services/spravato", "/services/talk-therapy", "/tools", "/tools/gad-7-anxiety-test", "/tools/ketamine-cost-calculator", "/tools/phq-9-depression-test", "/treatments", "/treatments/anxiety", "/treatments/burnout", "/treatments/chronic-pain", "/treatments/depression", "/treatments/eating-disorder", "/treatments/mental-fogginess", "/treatments/motivation", "/treatments/ocd", "/treatments/palliative-compassion-care", "/treatments/postpartum-depression", "/treatments/ptsd", "/treatments/tension-headaches"]);
 
 /** Matching Spanish URL for the current English page, or /es if there is none. */
 function altLangHref(pathname: string | null): string {

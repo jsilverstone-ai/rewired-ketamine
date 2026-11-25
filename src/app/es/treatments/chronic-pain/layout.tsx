@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/chronic-pain",
       "es": "https://www.rewiredketamine.com/es/treatments/chronic-pain",
+      "x-default": "https://www.rewiredketamine.com/treatments/chronic-pain",
     },
   },
 };

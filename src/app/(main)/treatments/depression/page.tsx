@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScreenerPromo from "@/components/tools/ScreenerPromo";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -101,6 +102,8 @@ export default function DepressionPage() {
     </div>
   </div>
 </section>
+      <ScreenerPromo lang="en" tool="phq9" />
+
       {/* ===== CTA ===== */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">
         <div className="max-w-3xl mx-auto text-center">

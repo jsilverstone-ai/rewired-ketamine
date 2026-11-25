@@ -42,6 +42,7 @@ export default function KetamineVsTraditionalAntidepressantsPage() {
       <div><h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Do I have to stop my antidepressant to try ketamine?</h3><p className="text-[#555] leading-relaxed">Not automatically. Medication decisions are individualized during evaluation.</p></div>
       <div><h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Are fully guided sessions available?</h3><p className="text-[#555] leading-relaxed">Yes.</p></div>
       <div><h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is this a local clinic?</h3><p className="text-[#555] leading-relaxed">Yes. Locally owned in Aventura, serving Miami and South Florida. ¡Hablamos Español!</p></div>
+      <div><h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is ketamine faster than antidepressants?</h3><p className="text-[#555] leading-relaxed">Some people notice changes sooner. That is not a guarantee, and plans remain individualized.</p></div>
     </div>
   </div>
 </section>

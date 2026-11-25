@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/depression",
       "es": "https://www.rewiredketamine.com/es/treatments/depression",
+      "x-default": "https://www.rewiredketamine.com/treatments/depression",
     },
   },
 };

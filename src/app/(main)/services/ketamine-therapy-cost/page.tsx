@@ -85,6 +85,7 @@ export default function KetamineTherapyCostPage() {
     </div>
 
     <p className="text-center text-sm text-[#555] mb-12">Ask us about available discounts. Consultation required before treatment.</p>
+<p className="text-center mb-12 -mt-8"><Link href="/tools/ketamine-cost-calculator" className="text-[#C9A66B] font-semibold hover:underline">Compare single sessions and packages with our cost calculator →</Link> · <Link href="/services/hsa-fsa-ketamine" className="text-[#C9A66B] font-semibold hover:underline">Using HSA or FSA funds →</Link></p>
 
     {/* What changes the price */}
     <div className="max-w-3xl mx-auto mb-14">

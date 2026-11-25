@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/ocd",
       "es": "https://www.rewiredketamine.com/es/treatments/ocd",
+      "x-default": "https://www.rewiredketamine.com/treatments/ocd",
     },
   },
 };

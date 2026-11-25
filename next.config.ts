@@ -9,6 +9,17 @@ type Redirect = { source: string; destination: string; permanent: true };
 // Each entry is added with and without a trailing slash, so an old link
 // such as /our-team/ takes one 308 hop straight to its final page.
 const OLD_URLS: Array<[string, string]> = [
+  // Merged duplicate blog posts (weaker post -> stronger post on the same topic)
+  ["/content/blog/migraine-and-mental-health-is-there-a-connection", "/content/blog/migraine-and-mental-health-connection"],
+  ["/content/blog/what-is-ketamine-assisted-therapy-and-how-does-it-work", "/content/blog/what-is-ketamine-assisted-therapy"],
+  ["/content/blog/what-does-ketamine-therapy-feel-like-a-guide-for-first-timers", "/content/blog/what-does-ketamine-therapy-feel-like"],
+  ["/content/blog/how-many-ketamine-sessions-are-needed-for-depression-relief", "/content/blog/how-many-ketamine-sessions-do-most-people-need"],
+  ["/content/blog/why-is-ketamine-used-for-treatment-resistant-depression", "/content/blog/ketamine-for-treatment-resistant-depression"],
+  ["/content/blog/ketamine-infusion-therapy-for-migraines-is-it-effective", "/content/blog/ketamine-for-migraines-and-chronic-headaches"],
+  ["/content/blog/is-ketamine-infusion-a-new-option-for-migraine-treatment", "/content/blog/ketamine-for-migraines-and-chronic-headaches"],
+  ["/content/blog/can-ketamine-therapy-help-anxiety-disorders", "/content/blog/ketamine-therapy-for-anxiety"],
+  ["/content/blog/what-happens-during-your-first-visit-to-a-ketamine-clinic", "/content/blog/what-to-expect-during-your-first-ketamine-session"],
+  ["/content/blog/what-makes-ketamine-different-from-other-depression-treatments", "/content/blog/how-ketamine-therapy-differs-from-traditional-antidepressants"],
   // Restored posts
   ["/repressed-memories-and-relief-from-ketamine", "/content/blog/repressed-memories-and-ketamine"],
   ["/first-responders-and-veterans-in-florida-a-specialized-guide-to-ketamine-treatment-for-ptsd", "/content/blog/ketamine-ptsd-first-responders-veterans-florida"],
@@ -99,7 +110,7 @@ const OLD_URLS: Array<[string, string]> = [
   // Anxiety
   ["/finding-ketamine-treatment-for-anxiety-near-fort-lauderdale-a-locals-guide", "/content/blog/ketamine-for-anxiety-miami-aventura"],
   ["/the-commuters-guide-accessing-rewired-ketamines-premium-anxiety-treatment-from-fort-lauderdale", "/content/blog/ketamine-for-anxiety-miami-aventura"],
-  ["/can-ketamine-therapy-help-anxiety-disorders", "/content/blog/can-ketamine-therapy-help-anxiety-disorders"],
+  ["/can-ketamine-therapy-help-anxiety-disorders", "/content/blog/ketamine-therapy-for-anxiety"],
   // PTSD
   ["/ptsd-guide", "/treatments/ptsd"],
   ["/how-to-choose-the-right-provider-of-ketamine-therapy-for-ptsd", "/treatments/ptsd"],
@@ -132,7 +143,7 @@ const OLD_URLS: Array<[string, string]> = [
   ["/a-simple-guide-to-ketamine-treatment-for-mental-health", "/content/blog/how-does-ketamine-therapy-work"],
   ["/the-role-of-ketamine-in-modern-mental-health-treatment", "/content/blog/how-does-ketamine-therapy-work"],
   ["/the-remarkable-benefits-of-ketamine-treatment-florida-to-brain-health", "/content/blog/how-does-ketamine-therapy-work"],
-  ["/what-is-ketamine-assisted-therapy-and-how-does-it-work", "/content/blog/what-is-ketamine-assisted-therapy-and-how-does-it-work"],
+  ["/what-is-ketamine-assisted-therapy-and-how-does-it-work", "/content/blog/what-is-ketamine-assisted-therapy"],
   ["/ketamine-assisted-therapy-rewired-ketamines-integrated-approach-to-breakthrough-mental-health-treatment", "/content/blog/what-is-ketamine-assisted-therapy"],
   ["/how-ketamine-therapy-differs-from-traditional-psychotherapy", "/content/blog/what-makes-ketamine-therapy-different-from-traditional-talk-therapy"],
   ["/what-makes-ketamine-therapy-different-from-traditional-talk-therapy", "/content/blog/what-makes-ketamine-therapy-different-from-traditional-talk-therapy"],

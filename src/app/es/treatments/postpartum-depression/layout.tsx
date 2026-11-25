@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/postpartum-depression",
       "es": "https://www.rewiredketamine.com/es/treatments/postpartum-depression",
+      "x-default": "https://www.rewiredketamine.com/treatments/postpartum-depression",
     },
   },
 };

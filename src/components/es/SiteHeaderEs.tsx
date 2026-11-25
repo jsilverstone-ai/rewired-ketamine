@@ -22,6 +22,7 @@ const SERVICES = [
   { href: "/es/services/iv-ketamine-vs-spravato", label: "IV vs Spravato" },
   { href: "/es/services/ketamine-therapy-cost", label: "Costo" },
   { href: "/es/services/ketamine-insurance", label: "Seguro Médico" },
+  { href: "/es/services/hsa-fsa-ketamine", label: "HSA / FSA" },
   { href: "/es/services/functional-wellness", label: "Bienestar Funcional" },
   { href: "/es/services/medical-management", label: "Manejo Médico" },
   { href: "/es/services/talk-therapy", label: "Terapia de Conversación" },
@@ -47,6 +48,7 @@ const CONTENT = [
   { href: "/es/content/blog", label: "Blog" },
   { href: "/es/content/videos", label: "Videos" },
   { href: "/es/content/ketamine-in-the-news", label: "Ketamina en las Noticias" },
+  { href: "/es/tools", label: "Herramientas Gratuitas" },
 ];
 
 const SOCIAL = [

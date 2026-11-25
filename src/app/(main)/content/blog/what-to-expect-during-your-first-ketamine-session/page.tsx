@@ -93,6 +93,10 @@ export default function WhatToExpectDuringYourFirstKetamineSessionPage() {
               <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">Is this a local clinic?</h3>
               <p className="text-[#555] leading-relaxed">Yes. Rewired Ketamine is locally owned and based in Aventura, serving Miami, Fort Lauderdale, and South Florida. ¡Hablamos Español!</p>
             </div>
+            <div className="bg-white rounded-xl p-6 border border-[#eee]">
+              <h3 className="font-semibold text-[#0B1D36] text-lg mb-2">How early should I arrive?</h3>
+              <p className="text-[#555] leading-relaxed">About 15 minutes early is helpful so you can park, complete paperwork, and settle in without rushing.</p>
+            </div>
           </div>
         </div>
       </section>

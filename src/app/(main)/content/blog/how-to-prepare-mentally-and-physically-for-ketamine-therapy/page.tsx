@@ -21,7 +21,7 @@ export default function HowToPrepareForKetamineTherapyPage() {
   <div className="max-w-3xl mx-auto">
     <div className="text-[#444] space-y-6 text-lg leading-relaxed">
       <p>Preparing for a first ketamine session is mostly about reducing rush and uncertainty. Arrive about 15 minutes early. Wear comfortable clothing. Plan a ride home if advised during your evaluation.</p>
-      <p>For arrival details, see <Link href="/content/blog/what-happens-during-your-first-visit-to-a-ketamine-clinic" className="text-[#C9A66B] hover:underline">what happens during your first visit</Link> and our <Link href="/location" className="text-[#C9A66B] hover:underline">parking instructions</Link>.</p>
+      <p>For arrival details, see <Link href="/content/blog/what-to-expect-during-your-first-ketamine-session" className="text-[#C9A66B] hover:underline">what to expect during your first session</Link> and our <Link href="/location" className="text-[#C9A66B] hover:underline">parking instructions</Link>.</p>
     </div>
     <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">Mental preparation</h2>
     <div className="text-[#444] space-y-5 text-lg leading-relaxed">

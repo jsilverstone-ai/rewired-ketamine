@@ -65,6 +65,7 @@ export default function KetamineTherapyCostEsPage() {
             </div>
           </div>
           <p className="text-sm text-[#555] mb-10">Pregúntanos sobre descuentos disponibles. Se requiere consulta antes del tratamiento.</p>
+          <p className="text-center mb-10"><Link href="/es/tools/ketamine-cost-calculator" className="text-[#C9A66B] font-semibold hover:underline">Compare sesiones y paquetes con nuestra calculadora de costos →</Link> · <Link href="/es/services/hsa-fsa-ketamine" className="text-[#C9A66B] font-semibold hover:underline">Cómo usar su HSA o FSA →</Link></p>
 
           <h3 className="text-xl font-semibold text-[#0B1D36] mb-4">¿Qué cambia el precio?</h3>
           <ul className="list-disc pl-5 space-y-2 text-[#555] mb-10">

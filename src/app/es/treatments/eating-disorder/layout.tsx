@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.rewiredketamine.com/treatments/eating-disorder",
       "es": "https://www.rewiredketamine.com/es/treatments/eating-disorder",
+      "x-default": "https://www.rewiredketamine.com/treatments/eating-disorder",
     },
   },
 };
