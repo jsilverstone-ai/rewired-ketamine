@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import WeeklyReport from "./WeeklyReport";
+import SocialWeek from "./SocialWeek";
+import ApiStatus from "./ApiStatus";
 
 type Priority = "high" | "medium" | "low";
 
@@ -10,6 +13,25 @@ interface Task {
   text: string;
   completed: boolean;
   priority?: Priority;
+}
+
+interface SiteData {
+  domainAuthority: number | null;
+  pageAuthority: number | null;
+  citationFlow: number | null;
+  trustFlow: number | null;
+  referringIPs: number | null;
+}
+
+interface Backlink {
+  source: string | null;
+}
+
+interface SerpData {
+  keyword: string;
+  location: string;
+  ourPosition: number | null;
+  organic: Array<{ position: number; title: string | null; domain: string | null; url: string | null }>;
 }
 
 interface Keyword {
@@ -81,10 +103,24 @@ export default function SEOPage() {
   const [note5, setNote5] = useState("");
 
   const [keywords, setKeywords] = useState<Keyword[]>([]);
-  const [siteData, setSiteData] = useState<any>(null);
-  const [backlinks, setBacklinks] = useState<any[]>([]);
-  const [serpData, setSerpData] = useState<any>(null);
+  const [siteData, setSiteData] = useState<SiteData | null>(null);
+  const [backlinks, setBacklinks] = useState<Backlink[]>([]);
+  const [serpData, setSerpData] = useState<SerpData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [checkingSession, setCheckingSession] = useState(true);
+  // Per-feed error messages so a failed upstream shows an error instead of "Loading..." forever.
+  const [feedErrors, setFeedErrors] = useState<Record<string, string>>({});
+
+  // Skip the password screen when the 30-day login cookie is still valid.
+  useEffect(() => {
+    fetch("/api/seo-login", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((b: { authenticated?: boolean }) => {
+        if (b.authenticated) setAuthenticated(true);
+      })
+      .catch(() => {})
+      .finally(() => setCheckingSession(false));
+  }, []);
 
   useEffect(() => {
     const savedWeekly = localStorage.getItem("seo-weekly-todos");
@@ -134,28 +170,26 @@ export default function SEOPage() {
 
   useEffect(() => {
     async function loadData() {
-      try {
-        const [rankRes, siteRes, backRes, serpRes] = await Promise.all([
-          fetch("/api/mangools/rankings", { cache: "no-store" }),
-          fetch("/api/mangools/site", { cache: "no-store" }),
-          fetch("/api/mangools/backlinks", { cache: "no-store" }),
-          fetch("/api/mangools/serp?kw=ketamine%20clinic%20miami", { cache: "no-store" }),
-        ]);
-
-        const rankData = await rankRes.json();
-        const site = await siteRes.json();
-        const back = await backRes.json();
-        const serp = await serpRes.json();
-
-        if (rankData.success) setKeywords(rankData.keywords || []);
-        if (site.success) setSiteData(site);
-        if (back.success) setBacklinks(back.links || []);
-        if (serp.success) setSerpData(serp);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
+      // Each feed loads independently: one failing upstream never blanks the others.
+      const feeds: Array<[string, string, (body: Record<string, unknown>) => void]> = [
+        ["rankings", "/api/mangools/rankings", (b) => setKeywords((b.keywords as Keyword[]) || [])],
+        ["site", "/api/mangools/site", (b) => setSiteData(b as unknown as SiteData)],
+        ["backlinks", "/api/mangools/backlinks", (b) => setBacklinks((b.links as Backlink[]) || [])],
+        ["serp", "/api/mangools/serp?kw=ketamine%20clinic%20miami", (b) => setSerpData(b as unknown as SerpData)],
+      ];
+      await Promise.all(
+        feeds.map(async ([name, url, apply]) => {
+          try {
+            const res = await fetch(url, { cache: "no-store" });
+            const body = (await res.json()) as Record<string, unknown>;
+            if (res.ok && body.success) apply(body);
+            else setFeedErrors((e) => ({ ...e, [name]: String(body.details || body.error || `HTTP ${res.status}`) }));
+          } catch (err) {
+            setFeedErrors((e) => ({ ...e, [name]: err instanceof Error ? err.message : "Network error" }));
+          }
+        })
+      );
+      setLoading(false);
     }
     if (authenticated) loadData();
   }, [authenticated]);
@@ -208,6 +242,10 @@ export default function SEOPage() {
     TIER_2.some((t) => normalize(k.keyword).includes(normalize(t)) || normalize(t).includes(normalize(k.keyword)))
   );
 
+  if (!authenticated && checkingSession) {
+    return <div className="min-h-screen bg-[#f5f7fa] flex items-center justify-center text-sm text-slate-400">Loading…</div>;
+  }
+
   if (!authenticated) {
     return (
       <div className="min-h-screen bg-[#f5f7fa] flex items-center justify-center p-4">
@@ -238,7 +276,16 @@ export default function SEOPage() {
             ← Home
           </Link>
           <h1 className="text-lg font-semibold text-slate-700 hidden sm:block">SEO Control Center</h1>
-          <div className="w-28" />
+          <button
+            type="button"
+            onClick={async () => {
+              await fetch("/api/seo-login", { method: "DELETE" }).catch(() => {});
+              setAuthenticated(false);
+            }}
+            className="bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2.5 rounded-2xl text-sm font-medium transition"
+          >
+            Sign out
+          </button>
         </div>
       </div>
 
@@ -255,6 +302,11 @@ export default function SEOPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-5 pb-16">
+        {/* LIVE DATA: API health, Monday Search Console report, this week's social plan */}
+        <ApiStatus />
+        <WeeklyReport />
+        <SocialWeek />
+
         {/* MASTER CONTENT REQUESTS – EDITABLE */}
 <div className="max-w-7xl mx-auto px-5 mb-10">
   <h2 className="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
@@ -548,6 +600,8 @@ Please give me a clear, practical action plan for the page I’m focusing on. Te
             <p className="text-xs text-slate-400 mb-4">Open Mangools for full rankings</p>
             {loading ? (
               <p className="text-sm text-slate-400">Loading...</p>
+            ) : feedErrors.rankings ? (
+              <p className="text-sm text-rose-500">Couldn’t load rankings: {feedErrors.rankings}</p>
             ) : (
               <div className="space-y-5 flex-1 overflow-y-auto max-h-80">
                 <div>
@@ -611,12 +665,12 @@ Please give me a clear, practical action plan for the page I’m focusing on. Te
                 </div>
               </div>
             ) : (
-              <p className="text-sm text-slate-400 mb-4">Loading metrics...</p>
+              <p className={`text-sm mb-4 ${feedErrors.site ? "text-rose-500" : "text-slate-400"}`}>{feedErrors.site ? `Couldn’t load: ${feedErrors.site}` : "Loading metrics..."}</p>
             )}
             <div className="border-t border-slate-100 pt-4">
               <h3 className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2">Recent Backlinks</h3>
               {backlinks.length === 0 ? (
-                <p className="text-xs text-slate-400">No backlink data yet</p>
+                <p className={`text-xs ${feedErrors.backlinks ? "text-rose-500" : "text-slate-400"}`}>{feedErrors.backlinks ? `Couldn’t load: ${feedErrors.backlinks}` : loading ? "Loading..." : "No backlink data yet"}</p>
               ) : (
                 <div className="space-y-1.5 max-h-32 overflow-y-auto">
                   {backlinks.slice(0, 5).map((link, i) => (
@@ -670,10 +724,13 @@ Please give me a clear, practical action plan for the page I’m focusing on. Te
             <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2">
               <span className="text-rose-500">👀</span> Competitors
             </h2>
-            <p className="text-xs text-slate-400 mb-4">Live SERP: ketamine clinic miami</p>
-            {serpData?.organic?.length > 0 ? (
+            <p className="text-xs text-slate-400 mb-4">
+              Live SERP: ketamine clinic miami (Miami, FL)
+              {serpData && ` · you: ${serpData.ourPosition ?? "not in top results"}`}
+            </p>
+            {serpData && serpData.organic.length > 0 ? (
               <div className="space-y-2 max-h-72 overflow-y-auto">
-                {serpData.organic.slice(0, 6).map((item: any, i: number) => (
+                {serpData.organic.slice(0, 6).map((item, i) => (
                   <div key={i} className="bg-slate-50 rounded-2xl px-3.5 py-2.5 text-sm">
                     <div className="flex items-center gap-2">
                       <span className="text-rose-500 font-mono text-xs font-bold w-5">{item.position}</span>
@@ -684,7 +741,7 @@ Please give me a clear, practical action plan for the page I’m focusing on. Te
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-slate-400">Loading SERP data...</p>
+              <p className={`text-sm ${feedErrors.serp ? "text-rose-500" : "text-slate-400"}`}>{feedErrors.serp ? `Couldn’t load: ${feedErrors.serp}` : loading ? "Loading SERP data..." : "No SERP results"}</p>
             )}
           </div>
         </div>

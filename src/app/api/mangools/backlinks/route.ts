@@ -1,30 +1,30 @@
 import { NextResponse } from "next/server";
 import { isSeoAuthenticated, unauthorized } from "@/lib/seo-auth";
+import { MANGOOLS_DOMAIN, mangoolsErrorResponse, mangoolsFetch } from "@/lib/mangools";
 
-const API_BASE = "https://api.mangools.com/v3";
-const DOMAIN = "rewiredketamine.com";
+type LinkMinerLink = {
+  source?: string;
+  anchor?: string;
+  no_follow?: boolean | string;
+  source_tf?: number;
+  source_cf?: number;
+  first_seen?: string;
+  last_seen?: string;
+};
+type LinkMinerResponse = { meta?: { available_links?: number }; links?: LinkMinerLink[] };
+
+// LinkMiner backlinks, one per referring domain. Cached 6 hours (spends quota).
+let cache: { at: number; body: unknown } | null = null;
+const TTL_MS = 6 * 60 * 60 * 1000;
 
 export async function GET(request: Request) {
   if (!isSeoAuthenticated(request)) return unauthorized();
-
-  const apiKey = process.env.MANGOOLS_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json({ error: "MANGOOLS_API_KEY is not set" }, { status: 500 });
-  }
+  if (cache && Date.now() - cache.at < TTL_MS) return NextResponse.json(cache.body);
 
   try {
-
-    const url = `${API_BASE}/linkminer?url=${DOMAIN}`;
-        const res = await fetch(url, {
-          headers: {
-            "x-access-token": apiKey,
-            "Content-Type": "application/json",
-          },
-          cache: "no-store",
-        });
-    const data = await res.json();
-
-    const links = (data.links || []).slice(0, 15).map((link: Record<string, unknown>) => ({
+    const qs = new URLSearchParams({ url: MANGOOLS_DOMAIN, source: "0", page: "0", links_per_domain: "1" });
+    const data = await mangoolsFetch<LinkMinerResponse>(`/linkminer/links?${qs}`);
+    const links = (data.links ?? []).slice(0, 15).map((link) => ({
       source: link.source || null,
       anchor: link.anchor || null,
       noFollow: link.no_follow === "true" || link.no_follow === true,
@@ -33,19 +33,18 @@ export async function GET(request: Request) {
       firstSeen: link.first_seen || null,
       lastSeen: link.last_seen || null,
     }));
-
-    return NextResponse.json({
+    const body = {
       success: true,
-      domain: DOMAIN,
-      availableLinks: data.available_links ?? null,
+      domain: MANGOOLS_DOMAIN,
+      availableLinks: data.meta?.available_links ?? null,
       count: links.length,
       links,
       fetchedAt: new Date().toISOString(),
-    });
+    };
+    cache = { at: Date.now(), body };
+    return NextResponse.json(body);
   } catch (error: unknown) {
-    return NextResponse.json(
-      { error: "Failed to reach Mangools API", details: error instanceof Error ? error.message : String(error) },
-      { status: 500 }
-    );
+    const { body, status } = mangoolsErrorResponse(error);
+    return NextResponse.json(body, { status });
   }
 }

@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { isSeoAuthenticated, unauthorized } from "@/lib/seo-auth";
+import { SERPWATCHER_TRACKING_ID as TRACKING_ID, mangoolsErrorResponse, mangoolsFetch } from "@/lib/mangools";
 
-const TRACKING_ID = "6a9ef04c556f519f568cba28";
-const API_BASE = "https://api.mangools.com/v3";
 
 // Mangools SERPWatcher:
 //  - GET  /serpwatcher/trackings/{id}/detail -> keyword text + ranking URL (no ranks)
@@ -62,29 +61,8 @@ function previousRankOf(stats: StatsKeyword, dates: string[] | undefined): numbe
   return null;
 }
 
-async function mangools<T>(path: string, apiKey: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_BASE}${path}`, {
-    ...init,
-    headers: {
-      "x-access-token": apiKey,
-      "Content-Type": "application/json",
-      ...(init?.headers ?? {}),
-    },
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    throw new Error(`Mangools ${path} returned ${res.status}`);
-  }
-  return (await res.json()) as T;
-}
-
 export async function GET(request: Request) {
   if (!isSeoAuthenticated(request)) return unauthorized();
-
-  const apiKey = process.env.MANGOOLS_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json({ error: "MANGOOLS_API_KEY is not set" }, { status: 500 });
-  }
 
   const to = new Date();
   const from = new Date(to.getTime() - 30 * 24 * 60 * 60 * 1000);
@@ -92,10 +70,10 @@ export async function GET(request: Request) {
 
   try {
     const [detail, stats] = await Promise.all([
-      mangools<DetailResponse>(`/serpwatcher/trackings/${TRACKING_ID}/detail`, apiKey),
-      mangools<StatsResponse>(`/serpwatcher/trackings/${TRACKING_ID}/stats?${range}`, apiKey, {
+      mangoolsFetch<DetailResponse>(`/serpwatcher/trackings/${TRACKING_ID}/detail`),
+      mangoolsFetch<StatsResponse>(`/serpwatcher/trackings/${TRACKING_ID}/stats?${range}`, {
         method: "POST",
-        body: JSON.stringify({ from: isoDay(from), to: isoDay(to) }),
+        body: JSON.stringify({}),
       }),
     ]);
 
@@ -126,12 +104,7 @@ export async function GET(request: Request) {
       fetchedAt: new Date().toISOString(),
     });
   } catch (error: unknown) {
-    return NextResponse.json(
-      {
-        error: "Failed to reach Mangools API",
-        details: error instanceof Error ? error.message : String(error),
-      },
-      { status: 502 }
-    );
+    const { body, status } = mangoolsErrorResponse(error);
+    return NextResponse.json(body, { status });
   }
 }
