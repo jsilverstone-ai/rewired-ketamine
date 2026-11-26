@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import RelatedQuestions from "@/components/RelatedQuestions";
 
 export default function MotivationPage() {
 
@@ -86,6 +87,8 @@ export default function MotivationPage() {
           </div>
         </div>
       </section>
+
+      <RelatedQuestions path="/treatments/motivation" />
 
       {/* FOOTER */}
       <SiteFooter />

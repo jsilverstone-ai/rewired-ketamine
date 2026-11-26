@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import RelatedQuestions from "@/components/RelatedQuestions";
 
 export default function KetamineForMigrainesAndChronicHeadachesPage() {
 
@@ -92,6 +93,8 @@ export default function KetamineForMigrainesAndChronicHeadachesPage() {
           </div>
         </div>
       </section>
+
+      <RelatedQuestions path="/content/blog/ketamine-for-migraines-and-chronic-headaches" />
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">

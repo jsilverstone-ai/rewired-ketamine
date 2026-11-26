@@ -160,6 +160,48 @@ const OLD_URLS: Array<[string, string]> = [
   ["/key-factors-to-consider-before-trying-ketamine-infusion-therapy", "/content/blog/is-ketamine-therapy-right-for-you"],
   ["/what-to-consider-before-getting-ketamine-infusion-therapy", "/content/blog/is-ketamine-therapy-right-for-you"],
   ["/reasons-for-ketamine-therapy-why-patients-choose-rewired-ketamines-breakthrough-treatment", "/content/blog/who-may-be-a-good-candidate-for-ketamine-therapy"],
+  // Old root-level blog URLs that still returned 404 (Search Console, Nov 2026)
+  ["/who-may-be-a-good-candidate-for-ketamine-therapy", "/content/blog/who-may-be-a-good-candidate-for-ketamine-therapy"],
+  ["/ketamine-infusion-therapy-for-migraines-is-it-effective", "/content/blog/ketamine-for-migraines-and-chronic-headaches"],
+  ["/migraine-and-mental-health-is-there-a-connection", "/content/blog/migraine-and-mental-health-connection"],
+  ["/how-does-ketamine-therapy-work-inside-rewired-ketamines-breakthrough-treatment-mechanisms", "/content/blog/how-does-ketamine-therapy-work"],
+];
+
+// Thin template FAQ pages merged into the main page for the same topic.
+// Their best questions now live on the target page (see src/data/related-questions.ts).
+// Each slug redirects in English (/faq/slug) and Spanish (/es/faq/slug).
+// [slug, English target, Spanish target]
+const FAQ_MERGES: Array<[string, string, string]> = [
+  ["major-depressive-disorder", "/treatments/depression", "/es/treatments/depression"],
+  ["bipolar-depression", "/treatments/depression", "/es/treatments/depression"],
+  ["mood-instability", "/treatments/depression", "/es/treatments/depression"],
+  ["suicidal-ideation", "/treatments/depression", "/es/treatments/depression"],
+  ["emotional-numbness", "/treatments/depression", "/es/treatments/depression"],
+  ["grief", "/treatments/depression", "/es/treatments/depression"],
+  ["insomnia", "/treatments/depression", "/es/treatments/depression"],
+  ["anxiety-in-depression", "/treatments/depression", "/es/treatments/depression"],
+  ["self-criticism", "/treatments/depression", "/es/treatments/depression"],
+  ["negative-self-talk", "/treatments/depression", "/es/treatments/depression"],
+  ["emotional-dysregulation", "/treatments/depression", "/es/treatments/depression"],
+  // No addiction-treatment page exists; the depression page explains how
+  // substance use is screened, which is the honest answer for these searches.
+  ["substance-use", "/treatments/depression", "/es/treatments/depression"],
+  ["addictive-behaviors", "/treatments/depression", "/es/treatments/depression"],
+  ["postpartum-depression", "/treatments/postpartum-depression", "/es/treatments/postpartum-depression"],
+  ["low-motivation", "/treatments/motivation", "/es/treatments/motivation"],
+  ["anhedonia", "/treatments/motivation", "/es/treatments/motivation"],
+  ["burnout", "/treatments/burnout", "/es/treatments/burnout"],
+  ["social-anxiety", "/treatments/anxiety", "/es/treatments/anxiety"],
+  ["panic-disorder", "/treatments/anxiety", "/es/treatments/anxiety"],
+  ["phobias", "/treatments/anxiety", "/es/treatments/anxiety"],
+  ["rumination", "/treatments/anxiety", "/es/treatments/anxiety"],
+  ["treatment-resistant-anxiety", "/treatments/anxiety", "/es/treatments/anxiety"],
+  ["complex-ptsd", "/treatments/ptsd", "/es/treatments/ptsd"],
+  ["trauma-related-symptoms", "/treatments/ptsd", "/es/treatments/ptsd"],
+  ["neuropathic-pain", "/treatments/chronic-pain", "/es/treatments/chronic-pain"],
+  // The migraine blog post has no Spanish twin; the Spanish headache page is the closest match.
+  ["migraines", "/content/blog/ketamine-for-migraines-and-chronic-headaches", "/es/treatments/tension-headaches"],
+  ["cluster-headaches", "/content/blog/ketamine-for-migraines-and-chronic-headaches", "/es/treatments/tension-headaches"],
 ];
 
 // WordPress archive patterns (category, author, date and ?p= style IDs)
@@ -175,6 +217,12 @@ function buildRedirects(): Redirect[] {
   for (const [source, destination] of OLD_URLS) {
     list.push({ source, destination, permanent: true });
     list.push({ source: `${source}/`, destination, permanent: true });
+  }
+  for (const [slug, en, es] of FAQ_MERGES) {
+    for (const [source, destination] of [[`/faq/${slug}`, en], [`/es/faq/${slug}`, es]]) {
+      list.push({ source, destination, permanent: true });
+      list.push({ source: `${source}/`, destination, permanent: true });
+    }
   }
   for (const [source, destination] of OLD_PATTERNS) {
     list.push({ source, destination, permanent: true });

@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { faqs } from "../../../../data/faqs";
 
-const strongSlugs = [
-  "treatment-resistant-depression",
-  "generalized-anxiety",
-  "ptsd",
-  "ocd",
-  "chronic-pain",
-  "spravato",
-  "cost-and-coverage",
-];
+const BASE = "https://www.rewiredketamine.com";
+
+// FAQs whose topic is fully covered by a main page: Google is pointed at that page instead.
+const CANONICAL_OVERRIDES: Record<string, string> = {
+  ocd: "/treatments/ocd",
+  "generalized-anxiety": "/treatments/anxiety",
+};
 
 export async function generateMetadata({
   params,
@@ -18,19 +16,22 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const page = faqs.find((f) => f.slug === slug);
-  const isThin = !page || !strongSlugs.includes(slug);
+  const override = CANONICAL_OVERRIDES[slug];
+  const self = `${BASE}/faq/${slug}`;
+
+  // Only pair with /es when the FAQ has real Spanish copy.
+  const languages =
+    page?.es && !override
+      ? { en: self, es: `${BASE}/es/faq/${slug}`, "x-default": self }
+      : undefined;
 
   return {
-    robots: isThin ? "noindex, follow" : "index, follow",
+    robots: page ? "index, follow" : "noindex, follow",
     title: page?.title ?? "FAQ",
     description: page?.description ?? "",
     alternates: {
-      canonical: `https://www.rewiredketamine.com/faq/${slug}`,
-      languages: {
-        en: `https://www.rewiredketamine.com/faq/${slug}`,
-        es: `https://www.rewiredketamine.com/es/faq/${slug}`,
-        "x-default": `https://www.rewiredketamine.com/faq/${slug}`,
-      },
+      canonical: override ? `${BASE}${override}` : self,
+      ...(languages ? { languages } : {}),
     },
   };
 }

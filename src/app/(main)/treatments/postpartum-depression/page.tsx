@@ -4,6 +4,7 @@ import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import RelatedQuestions from "@/components/RelatedQuestions";
 
 const postpartumJsonLd = {
   "@context": "https://schema.org",
@@ -180,6 +181,8 @@ export default function PostpartumDepressionPage() {
             </ul>
           </div>
         </section>
+
+        <RelatedQuestions path="/treatments/postpartum-depression" />
 
         {/* CTA */}
         <section className="py-16 px-6 bg-[#F8F5F0] text-center">
