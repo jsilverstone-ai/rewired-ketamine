@@ -4,14 +4,16 @@ import SiteFooterEs from "@/components/es/SiteFooterEs";
 
 export default function SpanishFAQ() {
 
+  // Only "Costo y Cobertura" has a full Spanish FAQ; the other topics link to the
+  // Spanish treatment and service pages, which already answer these questions in Spanish.
   const faqTopics = [
-    { title: "Depresión Resistente al Tratamiento", href: "/es/faq/treatment-resistant-depression", desc: "Preguntas sobre ketamina para depresión que no ha respondido a tratamientos habituales." },
-    { title: "Ansiedad", href: "/es/faq/generalized-anxiety", desc: "Cómo se apoya la ansiedad en nuestra clínica de Aventura." },
-    { title: "TEPT", href: "/es/faq/ptsd", desc: "Preguntas sobre ketamina y apoyo para trauma." },
-    { title: "TOC", href: "/es/faq/ocd", desc: "Apoyo para pensamientos intrusivos y comportamientos compulsivos." },
-    { title: "Dolor Crónico", href: "/es/faq/chronic-pain", desc: "Opciones cuando el dolor persistente ha sido difícil de manejar." },
-    { title: "Spravato", href: "/es/faq/spravato", desc: "Preguntas sobre esketamina nasal aprobado por la FDA." },
-    { title: "Depresión Postparto", href: "/es/faq/postpartum-depression", desc: "Apoyo durante un momento sensible." },
+    { title: "Depresión Resistente al Tratamiento", href: "/es/treatments/depression", desc: "Preguntas sobre ketamina para depresión que no ha respondido a tratamientos habituales." },
+    { title: "Ansiedad", href: "/es/treatments/anxiety", desc: "Cómo se apoya la ansiedad en nuestra clínica de Aventura." },
+    { title: "TEPT", href: "/es/treatments/ptsd", desc: "Preguntas sobre ketamina y apoyo para trauma." },
+    { title: "TOC", href: "/es/treatments/ocd", desc: "Apoyo para pensamientos intrusivos y comportamientos compulsivos." },
+    { title: "Dolor Crónico", href: "/es/treatments/chronic-pain", desc: "Opciones cuando el dolor persistente ha sido difícil de manejar." },
+    { title: "Spravato", href: "/es/services/spravato", desc: "Preguntas sobre la esketamina nasal aprobada por la FDA." },
+    { title: "Depresión Posparto", href: "/es/treatments/postpartum-depression", desc: "Apoyo durante un momento sensible." },
     { title: "Costo y Cobertura", href: "/es/faq/cost-and-coverage", desc: "Información sobre precios, seguro y opciones de pago." },
   ];
 
@@ -60,7 +62,7 @@ export default function SpanishFAQ() {
               <Link key={topic.href} href={topic.href} className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-md transition block">
                 <h3 className="text-xl font-semibold text-[#0B1D36] mb-2">{topic.title}</h3>
                 <p className="text-[#555] text-sm mb-3">{topic.desc}</p>
-                <span className="text-[#C9A66B] font-semibold text-sm">Ver preguntas →</span>
+                <span className="text-[#C9A66B] font-semibold text-sm">Ver más →</span>
               </Link>
             ))}
           </div>

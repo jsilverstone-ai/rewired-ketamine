@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import RelatedQuestions from "@/components/RelatedQuestions";
 
 export default function ChronicPainPage() {
 
@@ -45,6 +46,9 @@ export default function ChronicPainPage() {
       <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Care at Our Aventura Clinic</h2>
       <p className="mb-6">
         As a locally owned practice serving Miami, Fort Lauderdale, and South Florida, we provide thoughtful, medically supervised care. ¡Hablamos Español!
+      </p>
+      <p className="mb-6">
+        If you live in Fort Lauderdale or elsewhere in Broward County, our Aventura office is just south of the county line, roughly 30 minutes from downtown Fort Lauderdale depending on traffic. Please bring a list of your current pain medications to the free consult so we can review them safely.
       </p>
     </div>
 
@@ -104,6 +108,8 @@ export default function ChronicPainPage() {
     </div>
   </div>
 </section>
+
+      <RelatedQuestions path="/treatments/chronic-pain" />
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">

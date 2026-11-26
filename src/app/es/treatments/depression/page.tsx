@@ -2,6 +2,7 @@ import Link from "next/link";
 import ScreenerPromo from "@/components/tools/ScreenerPromo";
 import SiteHeaderEs from "@/components/es/SiteHeaderEs";
 import SiteFooterEs from "@/components/es/SiteFooterEs";
+import { CrisisNote } from "@/components/RelatedQuestions";
 
 export default function SpanishDepressionPage() {
 
@@ -29,6 +30,12 @@ export default function SpanishDepressionPage() {
           <h2 className="text-2xl font-bold text-[#0B1D36] mb-4">Cuidado en nuestra clínica de Aventura</h2>
           <p className="text-[#555] mb-6">Como práctica de propiedad local que sirve a Miami, Fort Lauderdale y el Sur de Florida, priorizamos un cuidado cuidadoso y médicamente supervisado. ¡Hablamos Español!</p>
           <p className="text-[#555]">Visite nuestra <Link href="/es" className="text-[#C9A66B] font-semibold hover:underline">página de inicio</Link> o la página de <Link href="/es/services" className="text-[#C9A66B] font-semibold hover:underline">servicios</Link> para saber cómo comienzan las visitas.</p>
+        </div>
+      </section>
+
+      <section className="pb-12 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <CrisisNote lang="es" />
         </div>
       </section>
 

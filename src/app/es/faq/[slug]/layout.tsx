@@ -1,15 +1,7 @@
 import type { Metadata } from "next";
 import { faqs } from "../../../../data/faqs";
 
-const strongSlugs = [
-  "treatment-resistant-depression",
-  "generalized-anxiety",
-  "ptsd",
-  "ocd",
-  "chronic-pain",
-  "spravato",
-  "cost-and-coverage",
-];
+const BASE = "https://www.rewiredketamine.com";
 
 export async function generateMetadata({
   params,
@@ -18,19 +10,27 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const page = faqs.find((f) => f.slug === slug);
-  const isThin = !page || !strongSlugs.includes(slug);
+  const self = `${BASE}/es/faq/${slug}`;
+
+  // Only FAQs with real Spanish copy are indexed and paired with English.
+  // The rest fall back to English text, so they stay out of the index for now.
+  const hasSpanish = Boolean(page?.es);
 
   return {
-    robots: isThin ? "noindex, follow" : "index, follow",
+    robots: hasSpanish ? "index, follow" : "noindex, follow",
     title: page?.es?.title ?? page?.title ?? "Preguntas Frecuentes",
     description: page?.es?.description ?? page?.description ?? "",
     alternates: {
-      canonical: `https://www.rewiredketamine.com/es/faq/${slug}`,
-      languages: {
-        en: `https://www.rewiredketamine.com/faq/${slug}`,
-        es: `https://www.rewiredketamine.com/es/faq/${slug}`,
-        "x-default": `https://www.rewiredketamine.com/faq/${slug}`,
-      },
+      canonical: self,
+      ...(hasSpanish
+        ? {
+            languages: {
+              en: `${BASE}/faq/${slug}`,
+              es: self,
+              "x-default": `${BASE}/faq/${slug}`,
+            },
+          }
+        : {}),
     },
   };
 }

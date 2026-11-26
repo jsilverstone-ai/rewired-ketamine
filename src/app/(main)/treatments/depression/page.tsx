@@ -2,6 +2,7 @@ import Link from "next/link";
 import ScreenerPromo from "@/components/tools/ScreenerPromo";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import RelatedQuestions from "@/components/RelatedQuestions";
 
 export default function DepressionPage() {
 
@@ -102,6 +103,8 @@ export default function DepressionPage() {
     </div>
   </div>
 </section>
+      <RelatedQuestions path="/treatments/depression" />
+
       <ScreenerPromo lang="en" tool="phq9" />
 
       {/* ===== CTA ===== */}

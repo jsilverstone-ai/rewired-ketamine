@@ -2,6 +2,7 @@ import Link from "next/link";
 import ScreenerPromo from "@/components/tools/ScreenerPromo";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import RelatedQuestions from "@/components/RelatedQuestions";
 
 export default function AnxietyPage() {
 
@@ -102,6 +103,8 @@ export default function AnxietyPage() {
     </div>
   </div>
 </section>
+
+      <RelatedQuestions path="/treatments/anxiety" />
 
       <ScreenerPromo lang="en" tool="gad7" />
 

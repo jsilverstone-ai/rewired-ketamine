@@ -209,6 +209,13 @@ export default function SpravatoPage() {
               </table>
             </div>
 
+            <p className="text-[#555] mb-4">
+              Coming from Fort Lauderdale or elsewhere in Broward County? Our office at 2820 NE 214th St in Aventura is
+              just south of the county line, roughly 30 minutes from downtown Fort Lauderdale depending on traffic. Since
+              the early weeks mean two visits a week and you cannot drive afterward, it helps to line up your rides before
+              you start.
+            </p>
+
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B1D36] mt-14 mb-5">Insurance and prior authorization</h2>
             <p className="text-[#555] mb-4">
               We bill Spravato <strong>in-network with UnitedHealthcare, Cigna, and Aetna</strong>.{" "}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import RelatedQuestions from "@/components/RelatedQuestions";
 
 export default function PtsdPage() {
   return (
@@ -41,6 +42,9 @@ export default function PtsdPage() {
       <h2 className="text-2xl font-bold text-[#0B1D36] mt-12 mb-4">Thoughtful Care in Aventura</h2>
       <p className="mb-6">
         We are a locally owned clinic serving Miami, Fort Lauderdale, and the greater South Florida area. ¡Hablamos Español! Our team prioritizes clear communication, medical supervision, and a calm setting for every visit.
+      </p>
+      <p className="mb-6">
+        Many of our PTSD patients come from Fort Lauderdale, Hollywood, and other parts of Broward County. The clinic sits just south of the county line, roughly 30 minutes from downtown Fort Lauderdale depending on traffic, and you will need someone to drive you home after each session.
       </p>
     </div>
 
@@ -101,6 +105,8 @@ export default function PtsdPage() {
     </div>
   </div>
 </section>
+
+      <RelatedQuestions path="/treatments/ptsd" />
 
       {/* CTA */}
       <section className="py-20 px-6 bg-[#0B1D36] text-white">

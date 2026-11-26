@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.rewiredketamine.com";
   const lastModified = new Date("2026-11-20");
   const toolsModified = new Date("2026-11-25");
+  const faqModified = new Date("2026-11-26");
 
   // Automatically include every blog post folder, skipping redirected ones
   const blogDir = path.join(process.cwd(), "src/app/(main)/content/blog");
@@ -116,8 +117,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/es/location`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/faq`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/faq/cost-and-coverage`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    // English-only FAQs that rank for their own long-tail searches. Their /es twins
+    // have no Spanish copy yet (noindex), so they are left out and get no hreflang pair.
+    { url: `${baseUrl}/faq/ptsd`, lastModified: faqModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/faq/spravato`, lastModified: faqModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/faq/chronic-pain`, lastModified: faqModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/faq/treatment-resistant-depression`, lastModified: faqModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/es/faq`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/es/faq/cost-and-coverage`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/content`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/content/blog`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/content/videos`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/content/ketamine-in-the-news`, lastModified, changeFrequency: "monthly", priority: 0.6 },
